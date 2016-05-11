@@ -12,11 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('HR.index'); //this is the path of main page
-
+     return view('HR.index'); //this is the path of main page
 });
 
-Route::get('/kusal','PageController@n');
+Route::get('kusal','PageController@n');
+
+
+Route::get('AddEmployees','PageController@addEmployee');
 
 
 

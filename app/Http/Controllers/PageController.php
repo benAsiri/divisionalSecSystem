@@ -8,8 +8,16 @@ use App\Http\Requests;
 
 class PageController extends Controller
 {
-    public function n(){
-
+    public function n()
+    {
         return view('starter');
     }
+
+
+    public function addEmployee()
+    {
+        return view('HR.employee.newEmployee');
+    }
 }
+
+
