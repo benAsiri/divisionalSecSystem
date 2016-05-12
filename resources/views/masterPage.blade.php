@@ -316,17 +316,17 @@
             <li class="header">MAIN NAVIGATION</li>
             <li><a href="{{action('PageController@addEmployee')}}"><i class="fa fa-circle-o text-red"></i> <span>Employee Manage</span></a></li>
             <li class="active treeview">
-              <a href="#">
+              <a href="{{action('PageController@yearly_Increment_Calculator')}}">
                 <i class="fa fa-dashboard"></i> <span>Yearly Increment Calculator</span><i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-circle-o"></i> xxx </a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i> xxx </a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i> xxx </a></li>
+                <li><a href="{{action('PageController@Page1')}}"><i class="fa fa-circle-o"></i> Page1 </a></li>
+                <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i> Page2 </a></li>
+                <li><a href="{{action('PageController@Page3')}}"><i class="fa fa-circle-o"></i> Page3 </a></li>
               </ul>
             </li>
-            <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Loan Calculator</span></a></li>
-            <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Maternity Leaves</span></a></li>
+            <li><a href="{{action('PageController@Loans')}}"><i class="fa fa-circle-o text-red"></i> <span>Loan Calculator</span></a></li>
+            <li><a href="{{action('PageController@maternityLeaves')}}"><i class="fa fa-circle-o text-red"></i> <span>Maternity Leaves</span></a></li>
           </ul>
         </section>
         <!-- /.sidebar -->
