@@ -32,7 +32,7 @@ Route::get('loans','PageController@Loans');
 
 Route::get('maternityLeaves','PageController@maternityLeaves');
 
-
+Route::get('currentleaves','PageController@currentleaves');
 
 
 

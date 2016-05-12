@@ -326,7 +326,17 @@
               </ul>
             </li>
             <li><a href="{{action('PageController@Loans')}}"><i class="fa fa-circle-o text-red"></i> <span>Loan Calculator</span></a></li>
-            <li><a href="{{action('PageController@maternityLeaves')}}"><i class="fa fa-circle-o text-red"></i> <span>Maternity Leaves</span></a></li>
+
+            <li class="active treeview">
+            <li><a href="{{action('PageController@maternityLeaves')}}"><i class="fa fa-circle-o"></i> <span>Leave Management</span><i class="fa fa-angle-left pull-right"></i>
+
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="{{action('PageController@maternityLeaves')}}"><i class="fa fa-circle-o"></i>Leave Apply </a></li>
+                <li><a href="{{action('PageController@currentleaves')}}"><i class="fa fa-circle-o"></i>Current Status </a></li>
+               </ul>
+            </li>
+
           </ul>
         </section>
         <!-- /.sidebar -->

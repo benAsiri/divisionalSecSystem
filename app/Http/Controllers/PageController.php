@@ -49,6 +49,11 @@ class PageController extends Controller
         return view('HR.mLeaves.applyMaternityLeaves');
     }
 
+    public function currentleaves()
+    {
+        return view('HR.mLeaves.currentleaves');
+    }
+
 
 
 }
