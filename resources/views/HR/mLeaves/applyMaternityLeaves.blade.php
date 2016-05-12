@@ -1,49 +1,6 @@
 @extends('masterPage')
 
 @section('content')
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="box">
-              <div class="box-header"><h3 class="box-title">Apply Leave</h3>
-              </div>
-
-        <!-- /.box-header -->
-        <div class="box-body">
-            <form role="form">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Name</label>
-                        <input class="form-control" id="#" placeholder="Write Here" type="name">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">NIC</label>
-                        <input class="form-control" id="#" placeholder="Write Here" type="nic">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Leave Type</label>
-
-                        <select class="form-control">
-                            <option value="volvo">Vacation</option>
-                            <option value="saab">Saab</option>
-                            <option value="opel">Opel</option>
-                            <option value="audi">Labs</option>
-                        </select>
-                    </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">No of Days</label>
-                    <input class="form-control" id="#" placeholder="Write Here" type="nodays">
-                </div>
-
-
-                <div class="box-footer">
-                    <button type="submit" class="btn btn-primary">Apply Leave</button>
-                </div>
-            </form>
-        </div>
-    </div>
-    </div>
-   </div>
- </div>
-
 
     <div class="row">
         <div class="col-xs-12">
@@ -100,6 +57,49 @@
                 </div><!-- /.box-body -->
             </div><!-- /.box -->
         </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header"><h3 class="box-title">Apply Leave</h3>
+                </div>
+
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Name</label>
+                            <input class="form-control" id="#" placeholder="Write Here" type="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">NIC</label>
+                            <input class="form-control" id="#" placeholder="Write Here" type="nic">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Leave Type</label>
+
+                            <select class="form-control">
+                                <option value="volvo">Vacation</option>
+                                <option value="saab">Saab</option>
+                                <option value="opel">Opel</option>
+                                <option value="audi">Labs</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">No of Days</label>
+                            <input class="form-control" id="#" placeholder="Write Here" type="nodays">
+                        </div>
+
+
+                        <div class="box-footer">
+                            <button type="submit" class="btn btn-primary">Apply Leave</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
 
 @endsection
