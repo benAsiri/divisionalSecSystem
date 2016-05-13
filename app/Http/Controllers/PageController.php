@@ -46,12 +46,12 @@ class PageController extends Controller
 
      public function maternityLeaves()
     {
-        return view('HR.LeaveManagement.applyLeaves');
+        return view('HR.LeaveManage.applyLeaves');
     }
 
     public function currentleaves()
     {
-        return view('HR.LeaveManagement.currentleaves');
+        return view('HR.LeaveManage.currentleaves');
     }
 
 
