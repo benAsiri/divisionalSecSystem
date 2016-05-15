@@ -15,23 +15,6 @@
 
 
 
-Route::get('AddEmployees','PageController@addEmployee');
-
-Route::get('yearlyIncrements','PageController@yearly_Increment_Calculator');
-
-Route::get('/page1','PageController@Page1');
-
-Route::get('/page2','PageController@Page2');
-
-Route::get('/page3','PageController@Page3');
-
-Route::get('loans','PageController@Loans');
-
-Route::get('maternityLeaves','PageController@maternityLeaves');
-
-Route::get('currentleaves','PageController@currentleaves');
-
-
 
 
 Route::group(['middleware' => 'web'], function () {
@@ -39,6 +22,32 @@ Route::group(['middleware' => 'web'], function () {
      Route::get('/', 'HomeController@index');
 
      Route::get('/home', 'HomeController@index');
+
+
+     Route::get('/userReg','UserRegisterController@index');
+
+
+
+
+     Route::get('AddEmployees','PageController@addEmployee');
+
+     Route::get('yearlyIncrements','PageController@yearly_Increment_Calculator');
+
+
+
+
+     Route::get('/',array('as'=>'viewEmployees','uses'=>'UserRegisterController@index'));
+
+     Route::get('/page2','PageController@Page2');
+
+     Route::get('/page3','PageController@Page3');
+
+     Route::get('loans','PageController@Loans');
+
+     Route::get('maternityLeaves','PageController@maternityLeaves');
+
+     Route::get('currentleaves','PageController@currentleaves');
+
 });
 
 

@@ -304,17 +304,16 @@
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
+
             <li class="active treeview">
               <a href="{{action('PageController@yearly_Increment_Calculator')}}">
                 <i class="fa-user"></i> <span>HR Management</span><i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="{{action('PageController@Page1')}}"><i class="fa fa-circle-o"></i> Page1 </a></li>
+                <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i> Page1 </a></li>
                 <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i> Page2 </a></li>
-                <li><a href="{{action('PageController@Page3')}}"><i class="fa fa-circle-o"></i> Page3 </a></li>
-                <li><a href="{{action('PageController@Page3')}}"><i class="fa fa-circle-o"></i> Page3 </a></li>
-                <li><a href="{{action('PageController@Page3')}}"><i class="fa fa-circle-o"></i> Page3 </a></li>
-                <li><a href="{{action('PageController@Page3')}}"><i class="fa fa-circle-o"></i> Page3 </a></li>
+                <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i> Page3 </a></li>
+
 
               </ul>
             </li>
@@ -322,14 +321,17 @@
             <li><a href="{{action('PageController@maternityLeaves')}}"><i class="fa fa-circle-o"></i> <span>Land Division</span><i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="{{action('PageController@maternityLeaves')}}"><i class="fa fa-circle-o"></i>option1</a></li>
-                <li><a href="{{action('PageController@currentleaves')}}"><i class="fa fa-circle-o"></i>option2 </a></li>
-                <li><a href="{{action('PageController@currentleaves')}}"><i class="fa fa-circle-o"></i>Current Status </a></li>
-                <li><a href="{{action('PageController@currentleaves')}}"><i class="fa fa-circle-o"></i>Current Status </a></li>
-
-
+                <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>option1</a></li>
+                <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>option2 </a></li>
+                <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>Current Status </a></li>
+                <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>Current Status </a></li>
               </ul>
+
             </li>
+
+
+            <li><a href="{{action('UserRegisterController@index')}}"><i class="fa fa-circle-o"></i> <span>User Management</span><i class="fa fa-angle-left pull-right"></i></a>
+          </li>
           </ul>
 
         </section>
