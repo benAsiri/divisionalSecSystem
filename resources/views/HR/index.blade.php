@@ -141,7 +141,9 @@
         {{--</div><!-- /.box-body -->--}}
     {{--</div>--}}
 
-    <h1>THIS IS JUST A HOME PAGE</h1>
+    <h1>WELCOME</h1>
+
+
 </section><!-- /.content -->
 @endsection
 {{--end section of the masterpage content--}}

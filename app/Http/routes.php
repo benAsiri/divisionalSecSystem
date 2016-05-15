@@ -11,28 +11,35 @@
 |
 */
 
-Route::get('/', function () {
-     return view('HR.index'); //this is the path of main page
-});
 
-Route::get('kusal','PageController@n');
+
 
 
 Route::get('AddEmployees','PageController@addEmployee');
 
 Route::get('yearlyIncrements','PageController@yearly_Increment_Calculator');
 
-Route::get('page1','PageController@Page1');
+Route::get('/page1','PageController@Page1');
 
-Route::get('page2','PageController@Page2');
+Route::get('/page2','PageController@Page2');
 
-Route::get('page3','PageController@Page3');
+Route::get('/page3','PageController@Page3');
 
 Route::get('loans','PageController@Loans');
 
 Route::get('maternityLeaves','PageController@maternityLeaves');
 
 Route::get('currentleaves','PageController@currentleaves');
+
+
+
+
+Route::group(['middleware' => 'web'], function () {
+     Route::auth();
+     Route::get('/', 'HomeController@index');
+
+     Route::get('/home', 'HomeController@index');
+});
 
 
 
@@ -47,6 +54,6 @@ Route::get('currentleaves','PageController@currentleaves');
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-    //
-});
+
+
+

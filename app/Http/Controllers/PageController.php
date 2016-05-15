@@ -8,6 +8,11 @@ use App\Http\Requests;
 
 class PageController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function n()
     {
         return view('starter');
