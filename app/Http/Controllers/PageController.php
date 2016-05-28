@@ -19,10 +19,6 @@ class PageController extends Controller
     }
 
 
-    public function addEmployee()
-    {
-        return view('HR.employee.newEmployee');
-    }
 
     public function yearly_Increment_Calculator()
     {

@@ -24,7 +24,7 @@ Route::group(['middleware' => 'web'], function () {
 
 
 
-     Route::get('AddEmployees','PageController@addEmployee');
+     Route::get('AddEmployees','HRController@addEmployee');
 
      Route::get('yearlyIncrements','PageController@yearly_Increment_Calculator');
 
