@@ -11,7 +11,9 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password'];
+    protected $fillable = [
+       'NIC', 'name', 'username', 'password','status','position'
+    ];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -21,9 +23,4 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
-    public function employe()
-    {
-        return $this->belongsTo('App\Employe');
-    }
 }
