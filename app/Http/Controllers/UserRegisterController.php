@@ -23,5 +23,6 @@ class UserRegisterController extends Controller
 
       return view('UserMgt/usermgt',compact('employees'));
 
+
    }
 }

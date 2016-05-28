@@ -21,15 +21,14 @@
 
 
     <!-- Main row -->
-    <div class="nav-tabs-custom">
+        <div class="nav-tabs-custom">
         <!-- Tabs within a box -->
         <ul class="nav nav-tabs pull-right">
             <li class="pull-left header"><i class="fa fa-inbox"></i>Add Users</li>
         </ul>
         <div class="tab-content no-padding">
             <div class="box box-primary">
-                <div class="box-header with-border">
-                </div><!-- /.box-header -->
+                <div class="box-header with-border"></div><!-- /.box-header -->
 
                 <!-- form start -->
                 <form role="form">
@@ -46,7 +45,55 @@
                             <label for="exampleInputEmail1">Selected Position</label>
                             <input class="form-control" id="#" placeholder="Write Here" type="nic">
                         </div>
+
+                        <label>Date of Birth:</label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                            <input class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="" type="text">
+                        </div><!-- /.input group -->
+
+                        <br>
+                        <div class="input-group">
+                                <label>Male :    </label>
+                                <input name="optionsRadios" id="optionsRadios1" value="option1" checked="" type="radio">
+                                &nbsp;
+                                <label>Female :  </label>
+                                <input name="optionsRadios" id="optionsRadios1" value="option1" checked="" type="radio">
+                        </div>
                     </div><!-- /.box-body -->
+
+                    <!-- Main row -->
+                    <div class="nav-tabs-custom">
+                        <!-- Tabs within a box -->
+                        <ul class="nav nav-tabs pull-right">
+                            <li class="pull-left header"><i class="fa fa-inbox"></i>Birth Certificate Details</li>
+                        </ul>
+                        <div class="tab-content no-padding">
+                            <div class="box box-primary">
+                                <div class="box-header with-border">
+                                    <form role="form">
+                                        <div class="box-body">
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Name</label>
+                                                <input class="form-control" id="#" placeholder="Write Here" type="email">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">NIC</label>
+                                                <input class="form-control" id="#" placeholder="Write Here" type="nic">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Selected Position</label>
+                                                <input class="form-control" id="#" placeholder="Write Here" type="nic">
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div><!-- /.box-header -->
+                                </div>
+                            </div>
+                        </div>
+
 
                     <div class="box-footer">
                         <button type="submit" class="btn btn-primary">Insert New User</button>
@@ -55,7 +102,6 @@
             </div>
         </div>
     </div><!-- /.row (main row) -->
-
 
 
     <div class="box">

@@ -15,7 +15,9 @@
                             </div>
                         </div>
                     </div>
-                </div><!-- /.box-header -->
+                </div>
+
+                <!-- /.box-header -->
                 <div class="box-body table-responsive no-padding">
                     <table class="table table-hover">
                         <tr>
@@ -58,6 +60,7 @@
             </div><!-- /.box -->
         </div>
     </div>
+
 
     <div class="row">
         <div class="col-xs-12">

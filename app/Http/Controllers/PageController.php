@@ -49,7 +49,7 @@ class PageController extends Controller
         return view('HR.loans.applyLoans');
     }
 
-     public function maternityLeaves()
+     public function ApplyMyLeave()
     {
         return view('HR.LeaveManage.applyLeaves');
     }
