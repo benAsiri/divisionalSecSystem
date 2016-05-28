@@ -1,3 +1,4 @@
+
 <?php
 
 /*
@@ -21,7 +22,7 @@ Route::group(['middleware' => 'web'], function () {
      Route::auth();
      Route::get('/', 'HomeController@index');
 
-     Route::get('/home', 'HomeController@index');
+
 
      Route::get('AddEmployees','PageController@addEmployee');
 
@@ -30,7 +31,7 @@ Route::group(['middleware' => 'web'], function () {
 
 
 
-     Route::get('/userReg',array('as'=>'viewEmployees','uses'=>'UserRegisterController@index'));
+     Route::get('/Usr_register',array('as'=>'viewEmployees','uses'=>'UserRegisterController@index'));
 
      Route::get('/page2','PageController@Page2');
 
@@ -38,10 +39,25 @@ Route::group(['middleware' => 'web'], function () {
 
      Route::get('loans','PageController@Loans');
 
-     Route::get('ApplyLeave','PageController@ApplyMyLeave');
+     Route::get('maternityLeaves','PageController@maternityLeaves');
 
      Route::get('currentleaves','PageController@currentleaves');
 
 });
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Application Routes
+|--------------------------------------------------------------------------
+|
+| This route group applies the "web" middleware group to every route
+| it contains. The "web" middleware group is defined in your HTTP
+| kernel and includes session state, CSRF protection, and more.
+|
+*/
+
+
 
 

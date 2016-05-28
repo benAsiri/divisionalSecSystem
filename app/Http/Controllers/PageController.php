@@ -54,7 +54,7 @@ class PageController extends Controller
         return view('HR.LeaveManage.applyLeaves');
     }
 
-    public function currentleaves()
+    public function leaves()
     {
         return view('HR.LeaveManage.currentleaves');
     }
