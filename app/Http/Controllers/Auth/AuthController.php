@@ -52,6 +52,7 @@ class AuthController extends Controller
             'name' => 'required|max:255',
             'username' => 'required|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
+
         ]);
     }
 
@@ -65,8 +66,11 @@ class AuthController extends Controller
     {
         return User::create([
             'name' => $data['name'],
-            'username' => $data['username'],
+            'NIC' => $data['NIC'],
+             'username' => $data['username'],
             'password' => bcrypt($data['password']),
+            'status' => $data['status'],
+            'position' => $data['position'],
         ]);
     }
 }

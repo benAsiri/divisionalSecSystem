@@ -10,18 +10,18 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">Register</div>
                         <div class="panel-body">
-                            <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
+                            <form class="form-horizontal" role="form" method="POST" action="{{ url('/regi') }}">
                                 {!! csrf_field() !!}
 
                                 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                                     <label class="col-md-4 control-label">Name</label>
 
                                     <div class="col-md-6">
-                                            <select class="form-control" id="fname" onchange="loadfields()">
+                                            <select class="form-control" name="faname" id="fname" onchange="loadfields()">
                                                 <option value="#"></option>
                                                 @foreach($employees as $employee)
 
-                                                    <option value="{{$employee->NIC}}">{{$employee->name}}</option>
+                                                    <option value="{{$employee->fullname}}">{{$employee->fullname}}</option>
 
                                                 @endforeach
 
@@ -34,7 +34,7 @@
                                     <label class="col-md-4 control-label">NIC</label>
 
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control" id="natic" name="NIC" readonly >
+                                        <input type="text" class="form-control" id="natic" name="NIC"  >
 
                                     </div>
                                 </div>
@@ -89,8 +89,8 @@
                                     <div class="col-md-6">
                                         <select name="status" class="form-control" id="statid" onchange="positionchange()">
                                             <option value="#"></option>
-                                            <option value=1>Admin</option>
-                                            <option value=2>User</option>
+                                            <option value="Admin">Admin</option>
+                                            <option value="User">User</option>
                                             </select>
                                     </div>
                                 </div>
@@ -118,142 +118,216 @@
                 </div>
             </div>
         </div>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-14 col-md-offset-0">
+                    <div class="panel panel-default">
 
-
-
-
-
-
-
-
-
-
-
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-14 col-md-offset-0">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Register</div>
-                    <div class="panel-body">
-                            <div class="panel-heading">User Details</div>
-                            <div class="panel-body">
-
-                <div class="table-responsive">
-
-
-                    <table id="mytable" class="table table-bordred table-striped">
-
-                        <thead>
-
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>NIC</th>
-                        <th>Status</th>
-                        <th>Position</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
-                        </thead>
-                        <tbody>
-
-
-                        @foreach($employees as $employee)
-                            <tr>
-                                <td>{{$employee->id}}</td>
-                                <td>{{$employee->name}}</td>
-                                <td>{{$employee->NIC}}</td>
-                                <td>{{$employee->status}}</td>
-                                <td>{{$employee->position}}</td>
-                                <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-                                <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
-
-                            </tr>
-                        @endforeach
-
-                        </tbody>
-
-                    </table>
-
-                    <div class="clearfix"></div>
-                    <ul class="pagination pull-right">
-                        <li class="disabled"><a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
-                    </ul>
-
-                </div>
-
+        <section class="panel panel-primary">
+            <div class="panel-heading">
+                <b>Employee Info</b>
             </div>
+            <div class="panel-body">
+                <table id="tab" class="table table-hover table-bordered">
+                    <thead>
+
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>NIC</th>
+                    <th>Status</th>
+                    <th>Position</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                    <th>Reset Password</th>
+                    </thead>
+                    <tbody>
+
+
+                    @foreach($users as $user)
+                        <tr class="row-of-data">
+                            <td>{{$user->id}}</td>
+                            <td>{{$user->name}}</td>
+                            <td>{{$user->NIC}}</td>
+                            <td>{{$user->status}}</td>
+                            <td>{{$user->position}}</td>
+                            <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button  class="lol" data-title="Edit" data-toggle="modal" data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+                            <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="rofl" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
+                            <td><p data-placement="top" data-toggle="tooltip" title="Reset"><button class="hmm" data-title="Reset"  data-toggle="modal" data-target="#reset" ><span class="glyphicon glyphicon-repeat"></span></button></p></td>
+                            </td>
+                        </tr>
+                    @endforeach
+
+                    </tbody>
+
+                </table>
+            </div>
+        </section>
         </div>
-    </div>
-
-
-    <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-                    <h4 class="modal-title custom_align" id="Heading">Edit User Details</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <input class="form-control " type="text" placeholder="Status">
-                    </div>
-                    <div class="form-group">
-
-                        <input class="form-control " type="text" placeholder="Position">
-                    </div>
-                    <div class="form-group">
-                        <textarea rows="2" class="form-control" placeholder="Password"></textarea>
-
 
                     </div>
-                </div>
-                <div class="modal-footer ">
-                    <button type="button" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span> Update</button>
-                </div>
             </div>
-            <!-- /.modal-content -->
         </div>
-        <!-- /.modal-dialog -->
-    </div>
 
 
 
-    <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-                    <h4 class="modal-title custom_align" id="Heading">Delete this entry</h4>
+
+
+
+                <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                                <h4 class="modal-title custom_align" id="Heading">Update User Details</h4>
+                            </div>
+                            <div class="modal-body">
+                                 <div class="form-group">
+                                    <label class="col-md-4 control-label">Status</label>
+                                    <div class="col-md-6">
+                                        <select name="status" class="form-control" id="statid1" onchange="positionchange1()">
+                                            <option value="#"></option>
+                                            <option value='Admin'>Admin</option>
+                                            <option value='User'>User</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                </br>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Position</label>
+
+                                    <div class="col-md-6">
+                                        <select name="position" class="form-control" id="postid1">
+                                        </select>
+                                    </div>
+                                </div>
+                                </br>
+                            </div>
+
+                            <div class="modal-footer ">
+                                <button  type="button" class="updateform" style="width: 100%;" aria-hidden="true" data-dismiss="modal"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> Update</button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
                 </div>
-                <div class="modal-body">
 
-                    <div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span> Are you sure you want to delete this Record?</div>
 
+        <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                        <h4 class="modal-title custom_align" id="Heading">Delete this entry</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span> Are you sure you want to delete this Record?</div>
+
+                    </div>
+                    <div class="modal-footer ">
+                        <button type="button" class="yesdel"  aria-hidden="true" data-dismiss="modal" ><span class="glyphicon glyphicon-ok-sign"></span> Yes</button>
+                        <button type="button" class="nodel" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
+                    </div>
                 </div>
-                <div class="modal-footer ">
-                    <button type="button" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Yes</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
                 </div>
-            </div>
-            <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-    </div>
-    </div>
-        </div>
-    </div>
+                </div>
 
 
 
 
-<script type="text/javascript">
+
+
+
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.10/js/jquery.dataTables.js"></script>
+
+
+ <script type="text/javascript">
+
+     $('#tab').DataTable({
+         select:true,
+         "order": [[0,"asc"]],
+         "scrollY": "300px",
+         "scrollCollapse": false,
+         "paging"  : false,
+         "bProcessing" :true,
+
+     });
+
+
+
+
+    $(".lol").click(function() {
+
+        var $row = $(this).closest("tr"),
+                $t = $row.find("td:nth-child(3)");
+                $s = $row.find("td:nth-child(4)");
+                $p = $row.find("td:nth-child(5)");
+
+        var nic = $t.text();
+
+       $(".updateform").click(function(){
+
+           var valuestat = document.getElementById("statid1").value;
+           var valuepos = document.getElementById("postid1").value;
+
+           jQuery.ajax({
+
+               dataType : "json",
+               contentType : "application/json; charset=utf-8",
+               type: 'get',
+               url:'/Usr_register/updateUser',
+               data: {stat:valuestat,post:valuepos,id:nic},
+               success: function(max){
+               }
+
+           });
+
+
+
+
+
+       });
+
+
+
+
+
+    });
+
+
+
+
+
+    $(".rofl").click(function() {
+
+        var $row = $(this).closest("tr"),
+                $tds = $row.find("td:nth-child(3)");
+
+        var k= $tds.text();
+
+
+        $(".yesdel").click(function(){
+
+        jQuery.ajax({
+
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            type: 'get',
+            url: '/Usr_register/deleteUser',
+            data: {id: k},
+            success: function (max) {
+            }
+
+        });
+
+        });
+
+    });
+
 
     function loadfields() {
         var prefer = document.getElementById("fname").value;
@@ -271,41 +345,80 @@
 
    function positionchange() {
 
-        var statid = document.getElementById("statid").value;
-
-        if (statid == 1) {
-            removeOptions(document.getElementById("postid"));
-            var options = ["Human Resources Operator", "Land Division Operator"];
-
-            for (var i = 0; i < options.length; i++) {
-                var opt = options[i];
-                var ek = document.createElement("option");
-                ek.textContent = opt;
-                ek.value = opt;
-                document.getElementById("postid").appendChild(ek);
+         var statid = document.getElementById("statid").value;
 
 
-            }
-        }
-        else if (statid == 2) {
+         if("Admin"=== statid){
 
-            removeOptions(document.getElementById("postid"));
-            var options1 = ["Divisional Secretary", "Asst.Divisional Secretary", "IT Manager"];
+             removeOptions(document.getElementById("postid"));
+             var options = ["Divisional Secretary", "Asst.Divisional Secretary", "IT Manager"];
+             for (var i = 0; i < options.length; i++) {
+                 var opt = options[i];
+                 var ek = document.createElement("option");
+                 ek.textContent = opt;
+                 ek.value = opt;
+                 document.getElementById("postid").appendChild(ek);
 
-            for (var i = 0; i < options1.length; i++) {
-                var opt1 = options1[i];
-                var ek1 = document.createElement("option");
-                ek1.textContent = opt1;
-                ek1.value = opt1;
-                document.getElementById("postid").appendChild(ek1);
+             }
+         }
+         else if ("User"===statid) {
 
-            }
-        }
-       else {
+             removeOptions(document.getElementById("postid"));
+             var options1 = ["Human Resources Operator", "Land Division Operator"];
 
-            removeOptions(document.getElementById("postid"));
-        }
-    }
+
+             for (var i = 0; i < options1.length; i++) {
+                 var opt1 = options1[i];
+                 var ek1 = document.createElement("option");
+                 ek1.textContent = opt1;
+                 ek1.value = opt1;
+                 document.getElementById("postid").appendChild(ek1);
+
+             }
+         }
+         else {
+
+             removeOptions(document.getElementById("postid"));
+         }
+     }
+     function positionchange1() {
+
+         var statid = document.getElementById("statid1").value;
+
+
+         if("Admin"=== statid){
+
+             removeOptions(document.getElementById("postid1"));
+             var options = ["Divisional Secretary", "Asst.Divisional Secretary", "IT Manager"];
+             for (var i = 0; i < options.length; i++) {
+                 var opt = options[i];
+                 var ek = document.createElement("option");
+                 ek.textContent = opt;
+                 ek.value = opt;
+                 document.getElementById("postid1").appendChild(ek);
+
+             }
+         }
+         else if ("User"===statid) {
+
+             removeOptions(document.getElementById("postid1"));
+             var options1 = ["Human Resources Operator", "Land Division Operator"];
+
+
+             for (var i = 0; i < options1.length; i++) {
+                 var opt1 = options1[i];
+                 var ek1 = document.createElement("option");
+                 ek1.textContent = opt1;
+                 ek1.value = opt1;
+                 document.getElementById("postid1").appendChild(ek1);
+
+             }
+         }
+         else {
+
+             removeOptions(document.getElementById("postid1"));
+         }
+     }
 
 
 
