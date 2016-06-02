@@ -36,6 +36,8 @@ Route::group(['middleware' => 'web'], function () {
 
      Route::get('/page2','PageController@Page2');
 
+     Route::get('/profile','PageController@profileIndex');
+
      Route::get('/page3','PageController@Page3');
 
      Route::get('loans','PageController@Loans');
