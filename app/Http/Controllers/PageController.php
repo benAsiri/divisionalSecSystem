@@ -55,6 +55,10 @@ class PageController extends Controller
         return view('HR.LeaveManage.currentleaves');
     }
 
+    public function profileindex(){
+        
+    }
+
 
 
 }

@@ -12,7 +12,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-       'NIC', 'name', 'username', 'password','status','position','emp_id'
+       'NIC', 'name', 'username', 'password','status','position'
     ];
 
     /**
@@ -28,4 +28,8 @@ class User extends Authenticatable
         return $this->belongsTo('App\Employe');
     }
 
+
+    public function adPrograms(){
+        return $this->hasMany('App\AdvanceProgram');
+    }
 }

@@ -22,20 +22,23 @@ Route::group(['middleware' =>'web'], function () {
      Route::auth();
      Route::get('/', 'HomeController@index');
 
-
+     Route::post('/regi','UserRegisterController@registeruser');
 
      Route::get('AddEmployees','HRController@addEmployee');
      Route::get('SearchEmployee',array('as'=>'ViewEmployee','uses'=>'HRController@searchEmployee'));
 
 
      Route::get('yearlyIncrements','PageController@yearly_Increment_Calculator');
-
-
-
+     Route::get('/Usr_register/updateUser', 'UserRegisterController@update');
+     Route::get('/Usr_register/deleteUser', 'UserRegisterController@delete');
 
      Route::get('/Usr_register',array('as'=>'viewEmployees','uses'=>'UserRegisterController@index'));
 
+
+
      Route::get('/page2','PageController@Page2');
+
+     Route::get('/profile','PageController@profileIndex');
 
      Route::get('/page3','PageController@Page3');
 
