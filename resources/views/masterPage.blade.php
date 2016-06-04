@@ -315,19 +315,25 @@
                       <li><a href="#"><i class="fa fa-circle-o"></i> Level 3</a></li>
                     </ul>
                   </li>
-                  <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o text-yellow"></i> Loan Calculator</a></li>
+                  <li class="">
+                    <a href="#"><i class="fa fa-circle-o text-yellow"></i> Loan Calculator</a>
+                    <ul class="treeview-menu menu-open" style="display: block;">
+                      <li><a href="{{action('LoanPagesController@viewLoans')}}"><i class="fa fa-circle-o"></i> View Leaves</a></li>
+                      <li><a href="{{action('LoanPagesController@applyLoans')}}"><i class="fa fa-circle-o"></i> Apply Loan</a></li>
+                    </ul>
+                  </li>
                   <li class="">
                     <a href=""><i class="fa fa-circle-o text-yellow"></i> Maternity Leaves</a>
                     <ul class="treeview-menu menu-open" style="display: block;">
-                      <li><a href="{{action('PageController@currentleaves')}}"><i class="fa fa-circle-o"></i> Current Leaves</a></li>
-                      <li><a href="{{action('PageController@ApplyMyLeave')}}"><i class="fa fa-circle-o"></i> Apply Leave</a></li>
+                      <li><a href="{{action('LeavePagesController@CurrentLeaves')}}"><i class="fa fa-circle-o"></i> View Leaves</a></li>
+                      <li><a href="{{action('LeavePagesController@ApplyMyLeave')}}"><i class="fa fa-circle-o"></i> Apply Leave</a></li>
                     </ul>
                   </li>
                 </ul>
             </li>
 
                 <li class="active treeview">
-                <li><a href="{{action('PageController@ApplyMyLeave')}}"><i class="fa fa-circle-o text-blue"></i>
+                <li><a href="#"><i class="fa fa-circle-o text-blue"></i>
                     <span>Land Division</span><i class="fa fa-angle-left pull-right"></i></a>
                     <ul class="treeview-menu">
                         <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>option1</a></li>

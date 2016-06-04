@@ -35,11 +35,16 @@ Route::group(['middleware' => 'web'], function () {
 
      Route::get('/page3','PageController@Page3');
 
-     Route::get('loans','PageController@Loans');
 
-     Route::get('ApplyLeave','PageController@ApplyMyLeave');
 
-     Route::get('currentleaves','PageController@currentleaves');
+     Route::get('ApplyLeave','LeavePagesController@ApplyMyLeave');
+
+     Route::get('currentleaves','LeavePagesController@CurrentLeaves');
+
+
+     Route::post('ApplyLoans','LoanPagesController@applyLoans');
+
+     Route::get('viewLoans','LoanPagesController@viewLoans');
 
 });
 

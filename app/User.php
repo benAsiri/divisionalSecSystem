@@ -23,4 +23,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function Loan(){
+        // in here um creating the same mapping form the user side
+        return $this->hasMany('App\Loan');
+    }
 }
