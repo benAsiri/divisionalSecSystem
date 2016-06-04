@@ -13,6 +13,8 @@
 
             <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+    @section('css_ref')
     <!-- Bootstrap 3.3.5 -->
     <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
     <!-- Font Awesome -->
@@ -34,7 +36,7 @@
     <link rel="stylesheet" href="{{asset('/plugins/jquery.dataTables/jquery.dataTables.css')}}">
 
 
-
+  @show
 
 
 
@@ -563,10 +565,10 @@
     <script src="{{asset('plugins/jvectormap/jquery-jvectormap-world-mill-en.js')}}"></script>
     <!-- SlimScroll 1.3.0 -->
     <script src="{{asset('plugins/slimScroll/jquery.slimscroll.min.js')}}"></script>
-    <!-- ChartJS 1.0.1 -->
-    <script src="{{asset('plugins/chartjs/Chart.min.js')}}"></script>
-    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <script src="{{asset('dist/js/pages/dashboard2.js')}}"></script>
+    {{--<!-- ChartJS 1.0.1 -->--}}
+    {{--<script src="{{asset('plugins/chartjs/Chart.min.js')}}"></script>--}}
+    {{--<!-- AdminLTE dashboard demo (This is only for demo purposes) -->--}}
+    {{--<script src="{{asset('dist/js/pages/dashboard2.js')}}"></script>--}}
     <!-- AdminLTE for demo purposes -->
     <script src="{{asset('dist/js/demo.js')}}"></script>
 
@@ -575,7 +577,7 @@
 
     <script>
 
-//      $("#example1").DataTable();
+//  $("#example1").DataTable();
 
 
     </script>

@@ -31,7 +31,7 @@ class CreateEmployesTable extends Migration
             $table->integer('widow_no');
             $table->string('job_position');
             $table->string('job_grade');
-            $table->dateTime('penssion_date');
+            $table->date('penssion_date');
 
             $table->timestamps();
         });

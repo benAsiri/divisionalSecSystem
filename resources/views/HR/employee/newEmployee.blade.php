@@ -1,4 +1,9 @@
 @extends('masterPage')
+@section('css_ref')
+    @parent
+
+<link rel="stylesheet" href="{{asset('/plugins/datepicker/datepicker3.css')}}">
+@stop
 
 @section('content')
 {{--AddNew Employee Page--}}
@@ -14,6 +19,7 @@
 <section class="content">
     <!-- Small boxes (Stat box) -->
     <div class="row">
+        <div class="col-lg-3 col-xs-6">
         <div class="col-lg-3 col-xs-6">
 
         </div><!-- ./col -->
@@ -51,6 +57,18 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Date of Birth</label>
+                            <!-- Date dd/mm/yyyy -->
+                            <div class="form-group">
+                                <label>Date:</label>
+
+                                <div class="input-group date">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-calendar"></i>
+                                    </div>
+                                    <input type="text" class="form-control pull-right" id="datepicker">
+                                </div>
+                                <!-- /.input group -->
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Gender</label>
@@ -117,18 +135,22 @@
                                 </select>
 
                         </div>
-                        {{--<div class="form-group">--}}
-                            {{--<label for="exampleInputEmail1">Selected Position</label>--}}
-                            {{--<input class="form-control" id="#" placeholder="Write Here" type="nic">--}}
-                        {{--</div>--}}
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Selected Position</label>
+                            <input class="form-control" id="#" placeholder="Write Here" type="nic">
+                        </div>
 
-                        {{--<label>Date of Birth:</label>--}}
-                        {{--<div class="input-group">--}}
-                            {{--<div class="input-group-addon">--}}
-                                {{--<i class="fa fa-calendar"></i>--}}
-                            {{--</div>--}}
-                            {{--<input class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="" type="text">--}}
-                        {{--</div><!-- /.input group -->--}}
+                        <label>Date of Birth:</label>
+                        <!-- Date range -->
+                        <div class="form-group">
+                            <label>Date range:</label>
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                                <input type="text" class="form-control pull-right" id="reservation">
+                            </div><!-- /.input group -->
+                        </div><!-- /.form group -->
 
                         <br>
 
@@ -252,11 +274,19 @@
     {{--</div>--}}
 
 
-@endsection
+@stop
     @section('js_ref')
         @parent
 
-        <script>
 
+        <script src="{{asset('/plugins/datepicker/bootstrap-datepicker.js')}}"></script>
+
+        <script>
+            $(function () {
+                //Date picker
+                $('#datepicker').datepicker({
+                    autoclose: true
+                });
+            });
         </script>
 @stop
