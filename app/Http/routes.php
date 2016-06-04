@@ -14,10 +14,6 @@
 
 
 
-
-
-
-
 Route::group(['middleware' => 'web'], function () {
      Route::auth();
      Route::get('/', 'HomeController@index');
@@ -60,6 +56,7 @@ Route::group(['middleware' => 'web'], function () {
 | kernel and includes session state, CSRF protection, and more.
 |
 */
+
 
 
 
