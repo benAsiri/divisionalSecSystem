@@ -29,7 +29,6 @@ Route::group(['middleware' => 'web'], function () {
 
 
 
-
      Route::get('/userReg',array('as'=>'viewEmployees','uses'=>'UserRegisterController@index'));
 
      Route::get('/page2','PageController@Page2');

@@ -57,7 +57,7 @@
         <section class="panel panel-primary">
             <div class="panel-heading">
                 <b>Add User</b>
-                </div>
+            </div>
             <form role="form" id="form1">
                 <div class="form-group">
                     <label for="email">Email:</label>
@@ -83,14 +83,9 @@
 
 
 
-                </div>
+
             </section>
-
     </div>
-
-
-
-
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.10/js/jquery.dataTables.js"></script>
