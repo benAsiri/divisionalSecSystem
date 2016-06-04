@@ -20,8 +20,14 @@ class CreateUsersTable extends Migration
             $table->string('status');
             $table->string('position');
             $table->string('password', 60);
+
+            $table->integer('emp_id')->unsigned();
+
             $table->rememberToken();
             $table->timestamps();
+
+
+
         });
     }
 

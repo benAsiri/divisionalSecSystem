@@ -53,23 +53,69 @@
                             <label for="exampleInputEmail1">Date of Birth</label>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Sex</label>
+                            <label for="exampleInputEmail1">Gender</label>
+                            <select class="form-control">
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Other</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Race</label>
+                            <select class="form-control">
+                                <option>Sinhalese</option>
+                                <option>Sri Lankan Tamils</option>
+                                <option>Sri Lankan Malays</option>
+                                <option>Others</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Marital status</label>
-                            <div class="input-group">
-                                <label>Male :    </label>
-                                <input name="optionsRadios" id="optionsRadios1" value="option1" checked="" type="radio">
-                                &nbsp;
-                                <label>Female :  </label>
-                                <input name="optionsRadios" id="optionsRadios1" value="option1" checked="" type="radio">
-                            </div>
+
+                            <select class="form-control">
+                                <option>Married</option>
+                                <option>Single</option>
+                            </select>
+
+                            {{--<div class="input-group">--}}
+                                {{--<label>Male :    </label>--}}
+                                {{--<input name="optionsRadios" id="optionsRadios1" value="option1" checked="" type="radio">--}}
+                                {{--&nbsp;--}}
+                                {{--<label>Female :  </label>--}}
+                                {{--<input name="optionsRadios" id="optionsRadios1" value="option1" checked="" type="radio">--}}
+                            {{--</div>--}}
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">District</label>
+
+                                <select class="form-control">
+                                    <option>Ampara</option>
+                                    <option>Anuradhapura</option>
+                                    <option>Badulla</option>
+                                    <option>Batticalo</option>
+                                    <option>Colombo</option>
+                                    <option>Galle</option>
+                                    <option>Gampaha</option>
+                                    <option>Hambantota</option>
+                                    <option>Jaffna</option>
+                                    <option>Kalutara</option>
+                                    <option>Kandy</option>
+                                    <option>Kegalle</option>
+                                    <option>Kilinochchi</option>
+                                    <option>Kurunegala</option>
+                                    <option>Mannar</option>
+                                    <option>Matale</option>
+                                    <option>Matara</option>
+                                    <option>Monaragala</option>
+                                    <option>Mullaitivu</option>
+                                    <option>Nuwara Eliya</option>
+                                    <option>Polonnaruwa</option>
+                                    <option>Puttalam</option>
+                                    <option>Ratnapura</option>
+                                    <option>Trincomalee</option>
+                                    <option>Vavuniya</option>
+                                </select>
+
                         </div>
                         {{--<div class="form-group">--}}
                             {{--<label for="exampleInputEmail1">Selected Position</label>--}}
@@ -129,8 +175,8 @@
                         </div>
 
 
-                    <div class="box-footer">
-                        <button type="submit" class="btn btn-primary">Insert New User</button>
+                    <div class="box-footer insert">
+                        <button type="submit" class="btn btn-primary">Insert New Employee</button>
                     </div>
                 </form>
             </div>
@@ -138,72 +184,79 @@
     </div><!-- /.row (main row) -->
 
 
-    <div class="box">
-        <div class="box-header"><h3 class="box-title">Position Requirement Documents</h3></div>
+    {{--<div class="box">--}}
+        {{--<div class="box-header"><h3 class="box-title">Position Requirement Documents</h3></div>--}}
 
-        <!-- /.box-header -->
-        <div class="box-body">
-            <form role="form">
-                <div class="box-body">
-                    <label>Selected the subject</label>
-                    <div class="form-group">
-                        <select class="form-control">
-                            <option> 1</option>
-                            <option>option 2</option>
-                            <option>option 3</option>
-                            <option>option 4</option>
-                            <option>option 5</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Adavence Level</label>
-                        <input class="form-control" id="#" placeholder="Write Here" type="nic">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Aother course info</label>
-                        <input class="form-control" id="#" placeholder="Write Here" type="nic">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Aother course info</label>
-                        <input class="form-control" id="#" placeholder="Write Here" type="nic">
-                    </div>
-                </div><!-- /.box-body -->
+        {{--<!-- /.box-header -->--}}
+        {{--<div class="box-body">--}}
+            {{--<form role="form">--}}
+                {{--<div class="box-body">--}}
+                    {{--<label>Selected the subject</label>--}}
+                    {{--<div class="form-group">--}}
+                        {{--<select class="form-control">--}}
+                            {{--<option> 1</option>--}}
+                            {{--<option>option 2</option>--}}
+                            {{--<option>option 3</option>--}}
+                            {{--<option>option 4</option>--}}
+                            {{--<option>option 5</option>--}}
+                        {{--</select>--}}
+                    {{--</div>--}}
+                    {{--<div class="form-group">--}}
+                        {{--<label for="exampleInputEmail1">Adavence Level</label>--}}
+                        {{--<input class="form-control" id="#" placeholder="Write Here" type="nic">--}}
+                    {{--</div>--}}
+                    {{--<div class="form-group">--}}
+                        {{--<label for="exampleInputEmail1">Aother course info</label>--}}
+                        {{--<input class="form-control" id="#" placeholder="Write Here" type="nic">--}}
+                    {{--</div>--}}
+                    {{--<div class="form-group">--}}
+                        {{--<label for="exampleInputEmail1">Aother course info</label>--}}
+                        {{--<input class="form-control" id="#" placeholder="Write Here" type="nic">--}}
+                    {{--</div>--}}
+                {{--</div><!-- /.box-body -->--}}
 
-                <div class="box-footer">
-                    <button type="submit" class="btn btn-primary">Update</button>
-                </div>
-            </form>
-        </div><!-- /.box-body -->
+                {{--<div class="box-footer">--}}
+                    {{--<button type="submit" class="btn btn-primary">Update</button>--}}
+                {{--</div>--}}
+            {{--</form>--}}
+        {{--</div><!-- /.box-body -->--}}
 
-        &nbsp;
+        {{--&nbsp;--}}
 
 
-        <div class="box">
-            <div class="box-header"><h3 class="box-title">Must Have Documents fro Employrees</h3></div>
+        {{--<div class="box">--}}
+            {{--<div class="box-header"><h3 class="box-title">Must Have Documents fro Employrees</h3></div>--}}
 
-            <!-- /.box-header -->
-            <div class="box-body">
-                <form role="form">
-                    <div class="box-body">
-                        <div class="form-group">
-                            <ul>
-                                <li><label><input type="checkbox"> NO.278 FORM </label></li>
-                                <li><label><input type="checkbox"> NO.160 FORM </label></li>
-                                <li><label><input type="checkbox"> NO.169 FORM </label></li>
-                                <li><label><input type="checkbox"> NO.261 FORM </label></li>
-                                <li><label><input type="checkbox"> NO.157 FORM </label></li>
-                            </ul>
-                        </div>
+            {{--<!-- /.box-header -->--}}
+            {{--<div class="box-body">--}}
+                {{--<form role="form">--}}
+                    {{--<div class="box-body">--}}
+                        {{--<div class="form-group">--}}
+                            {{--<ul>--}}
+                                {{--<li><label><input type="checkbox"> NO.278 FORM </label></li>--}}
+                                {{--<li><label><input type="checkbox"> NO.160 FORM </label></li>--}}
+                                {{--<li><label><input type="checkbox"> NO.169 FORM </label></li>--}}
+                                {{--<li><label><input type="checkbox"> NO.261 FORM </label></li>--}}
+                                {{--<li><label><input type="checkbox"> NO.157 FORM </label></li>--}}
+                            {{--</ul>--}}
+                        {{--</div>--}}
 
-                    </div><!-- /.box-body -->
+                    {{--</div><!-- /.box-body -->--}}
 
-                    <div class="box-footer">
-                        <button type="submit" class="btn btn-primary">Update</button>
-                    </div>
-                </form>
-            </div><!-- /.box-body -->
+                    {{--<div class="box-footer">--}}
+                        {{--<button type="submit" class="btn btn-primary">Update</button>--}}
+                    {{--</div>--}}
+                {{--</form>--}}
+            {{--</div><!-- /.box-body -->--}}
 
-    </div>
+    {{--</div>--}}
 
 
 @endsection
+    @section('js_ref')
+        @parent
+
+        <script>
+
+        </script>
+@stop

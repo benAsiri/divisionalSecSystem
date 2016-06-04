@@ -4,7 +4,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title> HR Section - Home</title>
-    <!-- Tell the browser to be responsive to screen width -->
+
+    {{--{!! Html::style('../resources/assets/css/bootstrap.css') !!}}--}}
+    {{--{!! Html::style('../resources/assets/css/jquery.dataTables.css') !!}}--}}
+    {{--{!! Html::script('../resources/assets/js/jquery-1.12.4.js') !!}--}}
+    {{--{!! Html::script('../resources/assets/js/jquery.dataTables.js') !!}--}}
+
+
+            <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
     <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
@@ -20,12 +27,29 @@
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{asset('dist/css/skins/_all-skins.min.css')}}">
 
+
+
+
+
+    <link rel="stylesheet" href="{{asset('/plugins/jquery.dataTables/jquery.dataTables.css')}}">
+
+
+
+
+
+
+
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+
+
+
   </head>
   <body class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
@@ -33,7 +57,7 @@
       <header class="main-header">
 
         <!-- Logo -->
-        <a href="masterPage.blade.php" class="logo">
+        <a href="{{action('HomeController@index')}}" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>H</b>R</span>
           <!-- logo for regular state and mobile devices -->
@@ -311,7 +335,7 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="{{action('HRController@addEmployee')}}"><i class="fa fa-circle-o"></i> Add Employee Details </a></li>
-                <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i> Page2 </a></li>
+                <li><a href="{{action('HRController@searchEmployee')}}"><i class="fa fa-circle-o"></i> Search Employee Details </a></li>
                 <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i> Page3 </a></li>
 
 
@@ -523,7 +547,7 @@
       <div class="control-sidebar-bg"></div>
 
     </div><!-- ./wrapper -->
-
+@section('js_ref')
     <!-- jQuery 2.1.4 -->
     <script src="{{asset('plugins/jQuery/jQuery-2.1.4.min.js')}}"></script>
     <!-- Bootstrap 3.3.5 -->
@@ -545,5 +569,17 @@
     <script src="{{asset('dist/js/pages/dashboard2.js')}}"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="{{asset('dist/js/demo.js')}}"></script>
+
+
+    <script src="{{asset('/plugins/jquery.dataTables/jquery.dataTables.js')}}"></script>
+
+    <script>
+
+//      $("#example1").DataTable();
+
+
+    </script>
+    @show
+
   </body>
 </html>

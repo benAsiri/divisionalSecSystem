@@ -18,13 +18,15 @@
 
 
 
-Route::group(['middleware' => 'web'], function () {
+Route::group(['middleware' =>'web'], function () {
      Route::auth();
      Route::get('/', 'HomeController@index');
 
 
 
      Route::get('AddEmployees','HRController@addEmployee');
+     Route::get('SearchEmployee',array('as'=>'ViewEmployee','uses'=>'HRController@searchEmployee'));
+
 
      Route::get('yearlyIncrements','PageController@yearly_Increment_Calculator');
 
