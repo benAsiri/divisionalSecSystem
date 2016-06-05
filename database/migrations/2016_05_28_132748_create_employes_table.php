@@ -19,23 +19,19 @@ class CreateEmployesTable extends Migration
             $table->string('id_num');
             $table->string('address');
             $table->dateTime('dob');
-            $table->string('sex');
+            $table->string('gender');
             $table->string('race');
             $table->string('marital_state');
             $table->string('District');
 
-            $table->integer('user_id')->unsigned();
+
 
             $table->dateTime('date_of_appoint');
             $table->integer('appointment_no');
             $table->integer('widow_no');
             $table->string('job_position');
             $table->string('job_grade');
-            $table->dateTime('penssion_date');
-
-            $table->foreign('user_id')->references('id')->on('users');
-
-
+            $table->date('penssion_date');
 
             $table->timestamps();
         });
