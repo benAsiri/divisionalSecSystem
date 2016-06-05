@@ -29,7 +29,7 @@ class AuthController extends Controller
      * @var string
      */
     protected $redirectTo = '/';
-
+    protected $username = 'username';
     /**
      * Create a new authentication controller instance.
      *
@@ -37,6 +37,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
+
         $this->middleware('guest', ['except' => 'logout']);
     }
 
@@ -50,8 +51,9 @@ class AuthController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
+            'username' => 'required|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
+
         ]);
     }
 
@@ -65,8 +67,11 @@ class AuthController extends Controller
     {
         return User::create([
             'name' => $data['name'],
-            'email' => $data['email'],
+            'NIC' => $data['NIC'],
+             'username' => $data['username'],
             'password' => bcrypt($data['password']),
+            'status' => $data['status'],
+            'position' => $data['position'],
         ]);
     }
 }

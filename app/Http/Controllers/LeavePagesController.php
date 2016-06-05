@@ -8,9 +8,16 @@ use App\Http\Requests;
 
 class LeavePagesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     //leaves
     public function ApplyMyLeave()
     {
+
+
+
         return view('HR.LeaveManage.applyLeaves');
     }
 

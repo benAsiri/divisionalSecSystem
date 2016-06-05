@@ -71,7 +71,7 @@
                 <!-- /.box-header -->
                 <div class="box-body">
                     <form role="form" method="post" action="{{url('/ApplyLoans')}}">
-                        {!! ! csrf_field() !!}}
+                        {!! csrf_field() !!}
                         <div class="form-group">
                             <label for="exampleInputEmail1">Name</label>
                             <input class="form-control" id="#" placeholder="Write Here" type="name">

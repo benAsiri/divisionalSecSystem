@@ -4,8 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title> HR Section - Home</title>
-
+    <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    @section('css_ref')
     <!-- Bootstrap 3.3.5 -->
     <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
     <!-- Font Awesome -->
@@ -16,9 +17,17 @@
     <link rel="stylesheet" href="{{asset('plugins/jvectormap/jquery-jvectormap-1.2.2.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('dist/css/AdminLTE.min.css')}}">
-
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{asset('dist/css/skins/_all-skins.min.css')}}">
+    @show
 
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
   </head>
   <body class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
@@ -232,7 +241,10 @@
               @if (Auth::guest())
 
                 <li><a href="{{ url('/login') }}">Login</a></li>
+
+
                 @else
+
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -252,7 +264,7 @@
 
                   <li class="user-footer">
                     <div class="pull-left">
-                      <a href="#" class="btn btn-default btn-flat">Profile</a>
+                      <a href="{{url('/profile')}}" class="btn btn-default btn-flat">Profile</a>
                     </div>
                     <div class="pull-right">
                       <a href="{{url('/logout')}}" class="btn btn-default btn-flat">Sign out</a>
@@ -296,6 +308,7 @@
             <li class="header">MAIN NAVIGATION</li>
 
             <li class="active treeview">
+
                 <a href="#"><i class="fa fa-circle-o text-red"></i>
                   <span>HR Management</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
@@ -303,7 +316,7 @@
                     <a href="#"><i class="fa fa-circle-o text-yellow"></i> Manage My Employees</a>
                     <ul class="treeview-menu menu-open" style="display: block;">
                       <li><a href="#"><i class="fa fa-circle-o"></i> Update Details</a></li>
-                      <li><a href="{{action('PageController@addEmployee')}}"><i class="fa fa-circle-o"></i> Add Employees</a></li>
+                      <li><a href="{{action('HRController@addEmployee')}}"><i class="fa fa-circle-o"></i> Add Employees</a></li>
                       <li><a href="#"><i class="fa fa-circle-o"></i> View All</a></li>
                     </ul>
                   </li>
@@ -330,6 +343,13 @@
                     </ul>
                   </li>
                 </ul>
+              <a href="{{action('PageController@yearly_Increment_Calculator')}}">
+                <i class="fa-user"></i> <span>HR Management</span><i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="{{action('HRController@addEmployee')}}"><i class="fa fa-circle-o"></i> Add Employee Details </a></li>
+                <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i> Page2 </a></li>
+                <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i> Page3 </a></li>              </ul>
             </li>
 
                 <li class="active treeview">
@@ -344,8 +364,10 @@
                 </li>
             <li><a href="{{action('UserRegisterController@index')}}"><i class="fa fa-circle-o text-green"></i>
                 <span>User Management</span></a>
-          </li>
+
+            </li>
           </ul>
+
         </section>
         <!-- /.sidebar -->
       </aside>
@@ -355,18 +377,20 @@
 
       <!-- Content Wrapper. Contains page content -->
      <div class="content-wrapper">
+       <!-- Main content -->
+       <section class="content">
+
        @yield('content')
+       </section>
+
      </div>
+
       <footer class="main-footer">
         <div class="pull-right hidden-xs">
           <b>Version</b> 2.3.0
         </div>
         <strong>Copyright &copy; 2015-2016 <a href="http://almsaeedstudio.com">Wanathawilluwa Sectrial Office</a>.</strong> All rights reserved.
       </footer>
-
-
-
-
 
       <!-- Control Sidebar -->
       <aside class="control-sidebar control-sidebar-dark">
@@ -534,12 +558,11 @@
       <div class="control-sidebar-bg"></div>
 
     </div><!-- ./wrapper -->
-
+    @section('js_ref')
     <!-- jQuery 2.1.4 -->
     <script src="{{asset('plugins/jQuery/jQuery-2.1.4.min.js')}}"></script>
     <!-- Bootstrap 3.3.5 -->
     <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
-
     <!-- FastClick -->
     <script src="{{asset('plugins/fastclick/fastclick.min.js')}}"></script>
     <!-- AdminLTE App -->
@@ -551,13 +574,8 @@
     <script src="{{asset('plugins/jvectormap/jquery-jvectormap-world-mill-en.js')}}"></script>
     <!-- SlimScroll 1.3.0 -->
     <script src="{{asset('plugins/slimScroll/jquery.slimscroll.min.js')}}"></script>
-
-    <!-- AdminLTE for demo purposes -->
+   <!-- AdminLTE for demo purposes -->
     <script src="{{asset('dist/js/demo.js')}}"></script>
-
-
-
-
-
+  @show
   </body>
 </html>

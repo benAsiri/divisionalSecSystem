@@ -12,7 +12,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+       'NIC', 'name', 'username', 'password','status','position'
     ];
 
     /**
@@ -24,8 +24,13 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function Loan(){
-        // in here um creating the same mapping form the user side
-        return $this->hasMany('App\Loan');
-    }
+
+//    public function Loan(){
+//        // in here um creating the same mapping form the user side
+//        return $this->hasMany('App\Loan');
+
+//    public function adPrograms(){
+//        return $this->hasMany('App\AdvanceProgram');
+//
+//    }
 }

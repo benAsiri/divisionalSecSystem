@@ -8,9 +8,12 @@ use App\Http\Requests;
 
 class LoanPagesController extends Controller
 {
-    //loan Controller
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
-    public function applyLoans(Requests $requests)
+    public function applyLoans()
     {
        // $loans = DB::table('')->get();
 

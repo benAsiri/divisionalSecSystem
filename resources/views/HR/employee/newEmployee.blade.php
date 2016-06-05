@@ -34,41 +34,65 @@
                 <form role="form">
                     <div class="box-body">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Name</label>
-                            <input class="form-control" id="#" placeholder="Write Here" type="email">
+                            <label for="exampleInputEmail1">SurName</label>
+                            <input class="form-control" id="#" placeholder="Enter surname" type="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Full Name</label>
+                            <input class="form-control" id="#" placeholder="Enter full name" type="email">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">NIC</label>
-                            <input class="form-control" id="#" placeholder="Write Here" type="nic">
+                            <input class="form-control" id="#" placeholder="Enter National Identitiy Card Number" type="nic">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Selected Position</label>
-                            <input class="form-control" id="#" placeholder="Write Here" type="nic">
+                            <label for="exampleInputEmail1">Address</label>
+                            <input class="form-control" id="#" placeholder="Enter Address" type="nic">
                         </div>
-
-                        <label>Date of Birth:</label>
-                        <div class="input-group">
-                            <div class="input-group-addon">
-                                <i class="fa fa-calendar"></i>
-                            </div>
-                            <input class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="" type="text">
-                        </div><!-- /.input group -->
-
-                        <br>
-                        <div class="input-group">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Date of Birth</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Sex</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Race</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Marital status</label>
+                            <div class="input-group">
                                 <label>Male :    </label>
                                 <input name="optionsRadios" id="optionsRadios1" value="option1" checked="" type="radio">
                                 &nbsp;
                                 <label>Female :  </label>
                                 <input name="optionsRadios" id="optionsRadios1" value="option1" checked="" type="radio">
+                            </div>
                         </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">District</label>
+                        </div>
+                        {{--<div class="form-group">--}}
+                            {{--<label for="exampleInputEmail1">Selected Position</label>--}}
+                            {{--<input class="form-control" id="#" placeholder="Write Here" type="nic">--}}
+                        {{--</div>--}}
+
+                        {{--<label>Date of Birth:</label>--}}
+                        {{--<div class="input-group">--}}
+                            {{--<div class="input-group-addon">--}}
+                                {{--<i class="fa fa-calendar"></i>--}}
+                            {{--</div>--}}
+                            {{--<input class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="" type="text">--}}
+                        {{--</div><!-- /.input group -->--}}
+
+                        <br>
+
                     </div><!-- /.box-body -->
 
                     <!-- Main row -->
                     <div class="nav-tabs-custom">
                         <!-- Tabs within a box -->
                         <ul class="nav nav-tabs pull-right">
-                            <li class="pull-left header"><i class="fa fa-inbox"></i>Birth Certificate Details</li>
+                            <li class="pull-left header"><i class="fa fa-inbox"></i>Job Details</li>
                         </ul>
                         <div class="tab-content no-padding">
                             <div class="box box-primary">
@@ -76,16 +100,26 @@
                                     <form role="form">
                                         <div class="box-body">
                                             <div class="form-group">
-                                                <label for="exampleInputEmail1">Name</label>
-                                                <input class="form-control" id="#" placeholder="Write Here" type="email">
+                                                <label for="exampleInputEmail1">Date of Appointment</label>
                                             </div>
                                             <div class="form-group">
-                                                <label for="exampleInputEmail1">NIC</label>
+                                                <label for="exampleInputEmail1">Appointment Number</label>
+                                                <input class="form-control" id="#" placeholder="Enter Appointment number" type="nic">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Job Position</label>
                                                 <input class="form-control" id="#" placeholder="Write Here" type="nic">
                                             </div>
                                             <div class="form-group">
-                                                <label for="exampleInputEmail1">Selected Position</label>
-                                                <input class="form-control" id="#" placeholder="Write Here" type="nic">
+                                                <label for="exampleInputEmail1">Job Grade</label>
+                                                <input class="form-control" id="#" placeholder="Enter Grade if have" type="nic">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Widow Number</label>
+                                                <input class="form-control" id="#" placeholder="Enter if have" type="nic">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Pension Date</label>
                                             </div>
                                         </div>
                                     </form>
