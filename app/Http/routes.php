@@ -35,17 +35,25 @@ Route::group(['middleware' => 'web'], function () {
 
 
 
+     Route::get('/userReg',array('as'=>'viewEmployees','uses'=>'UserRegisterController@index'));
+
+
      Route::get('/page2','PageController@Page2');
 
      Route::get('/profile','PageController@profileIndex');
 
      Route::get('/page3','PageController@Page3');
 
-     Route::get('loans','PageController@Loans');
 
-     Route::get('maternityLeaves','PageController@maternityLeaves');
 
-     Route::get('currentleaves','PageController@currentleaves');
+     Route::get('ApplyLeave','LeavePagesController@ApplyMyLeave');
+
+     Route::get('currentleaves','LeavePagesController@CurrentLeaves');
+
+
+     Route::get('ApplyLoans','LoanPagesController@applyLoans');
+
+     Route::get('viewLoans','LoanPagesController@viewLoans');
 
 });
 

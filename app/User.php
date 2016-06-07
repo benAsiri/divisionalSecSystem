@@ -29,7 +29,13 @@ class User extends Authenticatable
     }
 
 
-    public function adPrograms(){
-        return $this->hasMany('App\AdvanceProgram');
-    }
+
+//    public function Loan(){
+//        // in here um creating the same mapping form the user side
+//        return $this->hasMany('App\Loan');
+
+//    public function adPrograms(){
+//        return $this->hasMany('App\AdvanceProgram');
+//
+//    }
 }

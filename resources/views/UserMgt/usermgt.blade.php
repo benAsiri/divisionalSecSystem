@@ -127,6 +127,18 @@
 
         <section class="panel panel-primary">
             <div class="panel-heading">
+<<<<<<< HEAD
+                <b>Add User</b>
+            </div>
+            <form role="form" id="form1">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="num1" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="num2" placeholder="Enter email">
+=======
                 <b>Employee Info</b>
             </div>
             <div class="panel-body">
@@ -212,6 +224,7 @@
                         <!-- /.modal-content -->
                     </div>
                     <!-- /.modal-dialog -->
+>>>>>>> e055a0f7cc05b2a4e3d0659f2d15cb2a10be7c56
                 </div>
 
 
@@ -238,6 +251,14 @@
 
 
 
+<<<<<<< HEAD
+            </section>
+    </div>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.10/js/jquery.dataTables.js"></script>
+<script type="text/javascript">
+=======
 
 
 
@@ -373,6 +394,7 @@
                  ek1.textContent = opt1;
                  ek1.value = opt1;
                  document.getElementById("postid").appendChild(ek1);
+>>>>>>> e055a0f7cc05b2a4e3d0659f2d15cb2a10be7c56
 
              }
          }

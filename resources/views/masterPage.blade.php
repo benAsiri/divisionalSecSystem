@@ -5,14 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title> HR Section - Home</title>
-
-    {{--{!! Html::style('../resources/assets/css/bootstrap.css') !!}}--}}
-    {{--{!! Html::style('../resources/assets/css/jquery.dataTables.css') !!}}--}}
-    {{--{!! Html::script('../resources/assets/js/jquery-1.12.4.js') !!}--}}
-    {{--{!! Html::script('../resources/assets/js/jquery.dataTables.js') !!}--}}
-
-
-            <!-- Tell the browser to be responsive to screen width -->
+    <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
     @section('css_ref')
@@ -30,6 +23,7 @@
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{asset('dist/css/skins/_all-skins.min.css')}}">
+    @show
 
     {{--<link rel="stylesheet" href="{{asset('/sweetalert.css')}}">--}}
     {{--<script src="{{ asset("/sweetalert.min.js") }}">--}}
@@ -55,10 +49,6 @@
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-
-
-
   </head>
   <body class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
@@ -66,7 +56,7 @@
       <header class="main-header">
 
         <!-- Logo -->
-        <a href="{{action('HomeController@index')}}" class="logo">
+        <a href="masterPage.blade.php" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>H</b>R</span>
           <!-- logo for regular state and mobile devices -->
@@ -339,6 +329,41 @@
             <li class="header">MAIN NAVIGATION</li>
 
             <li class="active treeview">
+
+                <a href="#"><i class="fa fa-circle-o text-red"></i>
+                  <span>HR Management</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                  <li class="">
+                    <a href="#"><i class="fa fa-circle-o text-yellow"></i> Manage My Employees</a>
+                    <ul class="treeview-menu menu-open" style="display: block;">
+                      <li><a href="#"><i class="fa fa-circle-o"></i> Update Details</a></li>
+                      <li><a href="{{action('HRController@addEmployee')}}"><i class="fa fa-circle-o"></i> Add Employees</a></li>
+                      <li><a href="#"><i class="fa fa-circle-o"></i> View All</a></li>
+                    </ul>
+                  </li>
+                  <li class="">
+                    <a href="{{action('PageController@yearly_Increment_Calculator')}}"><i class="fa fa-circle-o text-yellow"></i> Yearly Increment Calculator</a>
+                    <ul class="treeview-menu menu-open" style="display: block;">
+                      <li><a href="#"><i class="fa fa-circle-o"></i> Level 1</a></li>
+                      <li><a href="#"><i class="fa fa-circle-o"></i> Level 2</a></li>
+                      <li><a href="#"><i class="fa fa-circle-o"></i> Level 3</a></li>
+                    </ul>
+                  </li>
+                  <li class="">
+                    <a href="#"><i class="fa fa-circle-o text-yellow"></i> Loan Calculator</a>
+                    <ul class="treeview-menu menu-open" style="display: block;">
+                      <li><a href="{{action('LoanPagesController@viewLoans')}}"><i class="fa fa-circle-o"></i> View Leaves</a></li>
+                      <li><a href="{{action('LoanPagesController@applyLoans')}}"><i class="fa fa-circle-o"></i> Apply Loan</a></li>
+                    </ul>
+                  </li>
+                  <li class="">
+                    <a href=""><i class="fa fa-circle-o text-yellow"></i> Maternity Leaves</a>
+                    <ul class="treeview-menu menu-open" style="display: block;">
+                      <li><a href="{{action('LeavePagesController@CurrentLeaves')}}"><i class="fa fa-circle-o"></i> View Leaves</a></li>
+                      <li><a href="{{action('LeavePagesController@ApplyMyLeave')}}"><i class="fa fa-circle-o"></i> Apply Leave</a></li>
+                    </ul>
+                  </li>
+                </ul>
               <a href="{{action('PageController@yearly_Increment_Calculator')}}">
                 <i class="fa-user"></i> <span>HR Management</span><i class="fa fa-angle-left pull-right"></i>
               </a>
@@ -360,11 +385,20 @@
                 <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>Current Status </a></li>
               </ul>
 
+                <li class="active treeview">
+                <li><a href="#"><i class="fa fa-circle-o text-blue"></i>
+                    <span>Land Division</span><i class="fa fa-angle-left pull-right"></i></a>
+                    <ul class="treeview-menu">
+                        <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>option1</a></li>
+                        <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>option2 </a></li>
+                        <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>Current Status </a></li>
+                        <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>Current Status </a></li>
+                    </ul>
+                </li>
+            <li><a href="{{action('UserRegisterController@index')}}"><i class="fa fa-circle-o text-green"></i>
+                <span>User Management</span></a>
+
             </li>
-
-
-            <li><a href="{{action('UserRegisterController@index')}}"><i class="fa fa-circle-o"></i> <span>User Management</span><i class="fa fa-angle-left pull-right"></i></a>
-          </li>
           </ul>
 
         </section>
@@ -376,9 +410,12 @@
 
       <!-- Content Wrapper. Contains page content -->
      <div class="content-wrapper">
+       <!-- Main content -->
+       <section class="content">
 
 
        @yield('content')
+       </section>
 
 
      </div>
@@ -590,6 +627,6 @@
 
     </script>
     @show
-
+  
   </body>
 </html>

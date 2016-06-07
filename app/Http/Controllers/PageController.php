@@ -40,21 +40,6 @@ class PageController extends Controller
         return view('HR.yearly_Increment_Calc.YICPage3');
     }
 
-     public function Loans()
-    {
-        return view('HR.loans.applyLoans');
-    }
-
-     public function ApplyMyLeave()
-    {
-        return view('HR.LeaveManage.applyLeaves');
-    }
-
-    public function leaves()
-    {
-        return view('HR.LeaveManage.currentleaves');
-    }
-
     public function profileindex(){
         
     }
