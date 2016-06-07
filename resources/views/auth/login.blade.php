@@ -9,6 +9,7 @@
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
                         {!! csrf_field() !!}
+<<<<<<< HEAD
 
                         <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
                             <label class="col-md-4 control-label">Username</label>
@@ -16,6 +17,12 @@
                             <div class="col-md-6">
                                 <input type="username" class="form-control" name="username" value="{{ old('username') }}">
 
+=======
+                        <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">Username</label>
+                            <div class="col-md-6">
+                                <input type="username" class="form-control" name="username" value="{{ old('username') }}">
+>>>>>>> 9433c531a44c6f164c418979d3209923dfbd288e
                                 @if ($errors->has('username'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('username') }}</strong>
@@ -53,7 +60,10 @@
                                 <button type="submit" class="btn btn-primary">
                                     <i class="fa fa-btn fa-sign-in"></i>Login
                                 </button>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9433c531a44c6f164c418979d3209923dfbd288e
                                 <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
                             </div>
                         </div>
@@ -62,5 +72,9 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
 </div>
+=======
+ </div>
+>>>>>>> 9433c531a44c6f164c418979d3209923dfbd288e
 @endsection

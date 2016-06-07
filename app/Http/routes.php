@@ -1,3 +1,4 @@
+
 <?php
 
 /*
@@ -13,25 +14,33 @@
 
 
 
-
-
-
-
 Route::group(['middleware' => 'web'], function () {
      Route::auth();
      Route::get('/', 'HomeController@index');
 
-     Route::get('/home', 'HomeController@index');
+     Route::post('/regi','UserRegisterController@registeruser');
 
-     Route::get('AddEmployees','PageController@addEmployee');
+     Route::get('AddEmployees','HRController@addEmployee');
+     Route::get('SearchEmployee',array('as'=>'ViewEmployee','uses'=>'HRController@searchEmployee'));
+     Route::post('AddEmployeeDetails','HRController@addEmployeeDetails');
+
+
+
 
      Route::get('yearlyIncrements','PageController@yearly_Increment_Calculator');
+     Route::get('/Usr_register/updateUser', 'UserRegisterController@update');
+     Route::get('/Usr_register/deleteUser', 'UserRegisterController@delete');
+
+     Route::get('/Usr_register',array('as'=>'viewEmployees','uses'=>'UserRegisterController@index'));
 
 
 
      Route::get('/userReg',array('as'=>'viewEmployees','uses'=>'UserRegisterController@index'));
 
+
      Route::get('/page2','PageController@Page2');
+
+     Route::get('/profile','PageController@profileIndex');
 
      Route::get('/page3','PageController@Page3');
 
@@ -45,6 +54,7 @@ Route::group(['middleware' => 'web'], function () {
      Route::get('ApplyLoans','LoanPagesController@applyLoans');
 
      Route::get('viewLoans','LoanPagesController@viewLoans');
+<<<<<<< HEAD
 
      /**
       * User Profile edit route
@@ -72,7 +82,25 @@ Route::group(['middleware' => 'web'], function () {
      Route::get('ad_pro/{ad_pro}/edit','AdvanceController@edit_data');
 
      Route::get('ad_pro/{ad_pro}/update','AdvanceController@update_data');
+=======
+>>>>>>> 9433c531a44c6f164c418979d3209923dfbd288e
 
 });
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Application Routes
+|--------------------------------------------------------------------------
+|
+| This route group applies the "web" middleware group to every route
+| it contains. The "web" middleware group is defined in your HTTP
+| kernel and includes session state, CSRF protection, and more.
+|
+*/
+
+
+
 
 

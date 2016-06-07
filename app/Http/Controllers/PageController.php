@@ -19,10 +19,6 @@ class PageController extends Controller
     }
 
 
-    public function addEmployee()
-    {
-        return view('HR.employee.newEmployee');
-    }
 
     public function yearly_Increment_Calculator()
     {
@@ -44,6 +40,7 @@ class PageController extends Controller
         return view('HR.yearly_Increment_Calc.YICPage3');
     }
 
+<<<<<<< HEAD
 //     public function Loans()
 //    {
 //        return view('HR.loans.applyLoans');
@@ -58,6 +55,11 @@ class PageController extends Controller
 //    {
 //        return view('HR.LeaveManage.currentleaves');
 //    }
+=======
+    public function profileindex(){
+        
+    }
+>>>>>>> 9433c531a44c6f164c418979d3209923dfbd288e
 
 
 
