@@ -85,7 +85,7 @@
         $('#example1').DataTable({
             select:true,
             "order": [[0,"asc"]],
-            "scrollY": "300px",
+            "scrollY": "400px",
             "scrollCollapse": false,
             "paging"  : false,
             "bProcessing" :true,

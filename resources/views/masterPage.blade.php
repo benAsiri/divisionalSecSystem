@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title> HR Section - Home</title>
 
     {{--{!! Html::style('../resources/assets/css/bootstrap.css') !!}}--}}
@@ -25,9 +26,15 @@
     <link rel="stylesheet" href="{{asset('plugins/jvectormap/jquery-jvectormap-1.2.2.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('dist/css/AdminLTE.min.css')}}">
+    <link rel="stylesheet" href="{{asset('/plugins/sweetAlert/sweetalert.css')}}">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{asset('dist/css/skins/_all-skins.min.css')}}">
+
+    {{--<link rel="stylesheet" href="{{asset('/sweetalert.css')}}">--}}
+    {{--<script src="{{ asset("/sweetalert.min.js") }}">--}}
+
+    {{--</script>--}}
 
 
 
@@ -571,6 +578,7 @@
     {{--<script src="{{asset('dist/js/pages/dashboard2.js')}}"></script>--}}
     <!-- AdminLTE for demo purposes -->
     <script src="{{asset('dist/js/demo.js')}}"></script>
+    <script src="{{asset('/plugins/sweetAlert/sweetalert.min.js')}}"></script>
 
 
     <script src="{{asset('/plugins/jquery.dataTables/jquery.dataTables.js')}}"></script>

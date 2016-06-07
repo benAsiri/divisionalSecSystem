@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 
-use App\Http\Requests;
-use Illuminate\Support\Str;
+use App\Employe;
 use DB;
+use Illuminate\Support\Facades\Input;
+use UxWeb\SweetAlert;
 
 class HRController extends Controller
 {
@@ -27,7 +27,45 @@ class HRController extends Controller
         return view('HR.employee.searchEmployee',compact('employee'));
     }
 
+    public function addEmployeeDetails()
+    {
 
+
+        if(Input::ajax()) {
+            $data = Input::all();
+            print_r($data['dob']);
+
+
+            $employe=new Employe();
+
+            $employe->surname=$data['surname'];
+            $employe->fullname=$data['fullname'];
+            $employe->id_num=$data['nic'];
+            $employe->address=$data['address'];
+            $employe->dob=$data['dob'];
+            $employe->gender=$data['gender'];
+            $employe->race=$data['race'];
+            $employe->marital_state=$data['maritals'];
+            $employe->District=$data['district'];
+            $employe->date_of_appoint=$data['doa'];
+            $employe->appointment_no=$data['appNo'];
+            $employe->widow_no=$data['widowNo'];
+            $employe->job_position=$data['jobPos'];
+            $employe->job_grade=$data['jobGrade'];
+
+
+
+
+           $employe->save();
+
+
+
+        }
+
+
+
+
+    }
 
 
 

@@ -22,6 +22,10 @@ Route::group(['middleware' => 'web'], function () {
 
      Route::get('AddEmployees','HRController@addEmployee');
      Route::get('SearchEmployee',array('as'=>'ViewEmployee','uses'=>'HRController@searchEmployee'));
+     Route::post('AddEmployeeDetails','HRController@addEmployeeDetails');
+
+
+
 
      Route::get('yearlyIncrements','PageController@yearly_Increment_Calculator');
      Route::get('/Usr_register/updateUser', 'UserRegisterController@update');
