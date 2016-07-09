@@ -269,13 +269,13 @@
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="user-image" alt="User Image">
+                  <img src="@if(Auth::user()->image != "null"){{asset('/profile_images/'.Auth::user()->image )}}@else{{asset('dist/img/user2-160x160.jpg')}}@endif" class="user-image" alt="User Image">
                   <span class="hidden-xs">Assistant Manager</span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
-                    <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
+                    <img src="@if(Auth::user()->image != "null"){{asset('/profile_images/'.Auth::user()->image )}}@else{{asset('dist/img/user2-160x160.jpg')}}@endif" class="img-circle" alt="User Image">
                     <p>
                       {{ Auth::user()->name }}
                       <small>Member since Nov. 2012</small>
@@ -285,7 +285,11 @@
 
                   <li class="user-footer">
                     <div class="pull-left">
+<<<<<<< HEAD
+                      <a href="/EditProfile" class="btn btn-default btn-flat">Profile</a>
+=======
                       <a href="{{url('/profile')}}" class="btn btn-default btn-flat">Profile</a>
+>>>>>>> 9433c531a44c6f164c418979d3209923dfbd288e
                     </div>
                     <div class="pull-right">
                       <a href="{{url('/logout')}}" class="btn btn-default btn-flat">Sign out</a>
@@ -361,8 +365,19 @@
                     <ul class="treeview-menu menu-open" style="display: block;">
                       <li><a href="{{action('LeavePagesController@CurrentLeaves')}}"><i class="fa fa-circle-o"></i> View Leaves</a></li>
                       <li><a href="{{action('LeavePagesController@ApplyMyLeave')}}"><i class="fa fa-circle-o"></i> Apply Leave</a></li>
+<<<<<<< HEAD
                     </ul>
                   </li>
+                  <li class="">
+                    <a href="#"><i class="fa fa-circle-o text-yellow"></i> Advance Program</a>
+                    <ul class="treeview-menu menu-open" style="display: block;">
+                      <li><a href="{{action('AdvanceController@InsertInfo')}}"><i class="fa fa-circle-o"></i> Insert Info</a></li>
+                      <li><a href="{{action('AdvanceController@show')}}"><i class="fa fa-circle-o"></i> edit or delete</a></li>
+=======
+>>>>>>> 9433c531a44c6f164c418979d3209923dfbd288e
+                    </ul>
+                  </li>
+
                 </ul>
               <a href="{{action('PageController@yearly_Increment_Calculator')}}">
                 <i class="fa-user"></i> <span>HR Management</span><i class="fa fa-angle-left pull-right"></i>
@@ -395,7 +410,8 @@
                         <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>Current Status </a></li>
                     </ul>
                 </li>
-            <li><a href="{{action('UserRegisterController@index')}}"><i class="fa fa-circle-o text-green"></i>
+            <li>
+              <a href="{{action('UserRegisterController@index')}}"><i class="fa fa-circle-o text-green"></i>
                 <span>User Management</span></a>
 
             </li>
@@ -618,9 +634,55 @@
     <script src="{{asset('/plugins/sweetAlert/sweetalert.min.js')}}"></script>
 
 
+<<<<<<< HEAD
+    <!-- Profile Edit Page Js -->
+    <script>
+      var profile_pick=false;
+      function profile_image_over(para){
+        if(para=="view")
+          $("#profile-img-picker").fadeIn();
+        else if(profile_pick && para!="view")
+          $("#profile-img-picker").fadeOut();
+      };
+      function get_image(para_1,para_2){
+        $("#"+para_2).trigger('click');
+      };
+      $(document).ready(function(){
+        $('.file_input').on('change', function(){ //on file input change
+          var div_id = $(this).attr("data-id");
+          var base_url = $(this).attr("data-icon");
+
+          if (window.File && window.FileReader && window.FileList && window.Blob) //check File API supported browser
+          {
+            //$('#thumb_output_'+id).html(''); //clear html of output element
+            var data = $(this)[0].files; //this file data
+            $.each(data, function(index, file){ //loop though each file
+              if(/(\.|\/)(gif|jpe?g|png)$/i.test(file.type)){ //check supported file type
+                var fRead = new FileReader(); //new filereader
+                fRead.onload = (function(file){ //trigger function on successful read
+                  return function(e) {
+                    //var img = $('<img/>').addClass('thumb').attr('src', e.target.result); //create image element
+                    profile_pick=true;
+                    profile_image_over("close");
+                    $('#'+div_id).css("background-image",'url("'+e.target.result+'")'); //append image to output element
+                  };
+                })(file);
+                fRead.readAsDataURL(file); //URL representing the file's data.
+              }
+            });
+
+          }else{
+            profile_pick=false;
+            alert("Your browser doesn't support File API!"); //if File API is absent
+          }
+        });
+      });
+    </script>
+=======
     <script src="{{asset('/plugins/jquery.dataTables/jquery.dataTables.js')}}"></script>
 
     <script>
+>>>>>>> 9433c531a44c6f164c418979d3209923dfbd288e
 
 //  $("#example1").DataTable();
 

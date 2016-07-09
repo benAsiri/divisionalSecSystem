@@ -70,8 +70,12 @@
 
                 <!-- /.box-header -->
                 <div class="box-body">
+<<<<<<< HEAD
+                    <form role="form">
+=======
                     <form role="form" method="post" action="{{url('/ApplyLoans')}}">
                         {!! csrf_field() !!}
+>>>>>>> 9433c531a44c6f164c418979d3209923dfbd288e
                         <div class="form-group">
                             <label for="exampleInputEmail1">Name</label>
                             <input class="form-control" id="#" placeholder="Write Here" type="name">
@@ -94,13 +98,26 @@
                             <label for="exampleInputEmail1">No of Days</label>
                             <input class="form-control" id="#" placeholder="Write Here" type="nodays">
                         </div>
+<<<<<<< HEAD
+
+
+                        <div class="box-footer">
+                            <button type="submit" class="btn btn-primary">Apply Leave</button>
+=======
                         <div class="box-footer">
                             <button type="submit" class="btn btn-primary Add">Apply Leave</button>
+>>>>>>> 9433c531a44c6f164c418979d3209923dfbd288e
                         </div>
                     </form>
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
+    </div>
+    </div>
+
+@endsection
+=======
     </div>
     </div>
 
@@ -109,3 +126,4 @@
 <script>
 
 </script>
+>>>>>>> 9433c531a44c6f164c418979d3209923dfbd288e

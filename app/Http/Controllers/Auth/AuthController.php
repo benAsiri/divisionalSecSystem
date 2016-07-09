@@ -29,7 +29,11 @@ class AuthController extends Controller
      * @var string
      */
     protected $redirectTo = '/';
+<<<<<<< HEAD
+    protected $username= 'username';
+=======
     protected $username = 'username';
+>>>>>>> 9433c531a44c6f164c418979d3209923dfbd288e
     /**
      * Create a new authentication controller instance.
      *
@@ -51,7 +55,11 @@ class AuthController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|max:255',
+<<<<<<< HEAD
+            'username' => 'required|username|max:255|unique:users',
+=======
             'username' => 'required|max:255|unique:users',
+>>>>>>> 9433c531a44c6f164c418979d3209923dfbd288e
             'password' => 'required|confirmed|min:6',
 
         ]);
@@ -70,8 +78,12 @@ class AuthController extends Controller
             'NIC' => $data['NIC'],
              'username' => $data['username'],
             'password' => bcrypt($data['password']),
+<<<<<<< HEAD
+            'image' => "null"
+=======
             'status' => $data['status'],
             'position' => $data['position'],
+>>>>>>> 9433c531a44c6f164c418979d3209923dfbd288e
         ]);
     }
 }

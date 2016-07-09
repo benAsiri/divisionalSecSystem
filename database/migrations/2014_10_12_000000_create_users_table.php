@@ -16,6 +16,10 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('username')->unique();
+<<<<<<< HEAD
+            $table->string('password', 60);
+            $table->string('image');
+=======
             $table->string('NIC')->unique();
             $table->string('status');
             $table->string('position');
@@ -23,6 +27,7 @@ class CreateUsersTable extends Migration
 
             $table->integer('emp_id')->unsigned();
 
+>>>>>>> 9433c531a44c6f164c418979d3209923dfbd288e
             $table->rememberToken();
             $table->timestamps();
 

@@ -11,6 +11,20 @@
 @section('content')
 <script type="text/javascript">
 
+<<<<<<< HEAD
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Leave Table</h3>
+                    <div class="box-tools">
+                        <div class="input-group" style="width: 150px;">
+                            <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Search">
+                            <div class="input-group-btn">
+                                <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
+                            </div>
+                        </div>
+=======
     function submit(){
         alert("d");
 
@@ -124,6 +138,7 @@
                             <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
                             Female
                         </label>
+>>>>>>> 9433c531a44c6f164c418979d3209923dfbd288e
                     </div>
                   </div>
 
