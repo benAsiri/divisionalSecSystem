@@ -391,7 +391,7 @@
               </ul>
             </li>
             <li class="active treeview">
-            <li><a href="{{action('PageController@maternityLeaves')}}"><i class="fa fa-circle-o"></i> <span>Land Division</span><i class="fa fa-angle-left pull-right"></i>
+            <li><a href="#"><i class="fa fa-circle-o"></i> <span>Land Division</span><i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
                 <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>option1</a></li>
@@ -681,14 +681,8 @@
 =======
     <script src="{{asset('/plugins/jquery.dataTables/jquery.dataTables.js')}}"></script>
 
-    <script>
->>>>>>> 9433c531a44c6f164c418979d3209923dfbd288e
 
-//  $("#example1").DataTable();
-
-
-    </script>
     @show
-  
+
   </body>
 </html>

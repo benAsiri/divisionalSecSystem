@@ -12,11 +12,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-<<<<<<< HEAD
         'name', 'username', 'password',
-=======
-       'NIC', 'name', 'username', 'password','status','position'
->>>>>>> 9433c531a44c6f164c418979d3209923dfbd288e
     ];
 
     /**
@@ -27,25 +23,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-<<<<<<< HEAD
     public function adPrograms(){
-               return $this->hasMany('App\AdvanceProgram');
+        return $this->hasMany('App\AdvanceProgram');
     }
-=======
-    public function employe()
-    {
-        return $this->belongsTo('App\Employe');
-    }
-
-
-
-//    public function Loan(){
-//        // in here um creating the same mapping form the user side
-//        return $this->hasMany('App\Loan');
-
-//    public function adPrograms(){
-//        return $this->hasMany('App\AdvanceProgram');
-//
-//    }
->>>>>>> 9433c531a44c6f164c418979d3209923dfbd288e
 }
