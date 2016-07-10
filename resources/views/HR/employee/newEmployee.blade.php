@@ -4,12 +4,11 @@
 
     <link rel="stylesheet" href="{{asset('/plugins/datepicker/datepicker3.css')}}">
     <style>
-        .error
-        {
-            color:red;
-            font-family:verdana, Helvetica;
+        .error {
+            color: red;
+            font-family: verdana, Helvetica;
             border-color: red;
-            border-width:1px ;
+            border-width: 1px;
         }
 
     </style>
@@ -48,30 +47,34 @@
                         <!-- /.box-header -->
 
                         <!-- form start -->
-                        <form class="" id="form-add-employee" role="form" method="POST" action="{{url('/AddEmployeeDetails')}}">
+                        <form class="" id="form-add-employee" role="form" method="POST"
+                              action="{{url('/AddEmployeeDetails')}}">
+
                             <div class="box-body">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">SurName</label>
-                                    <input class="form-control" name="surname" id="surname" placeholder="Enter surname" type="text">
+                                    <input class="form-control" name="surname" id="surname" placeholder="Enter surname"
+                                           type="text">
                                 </div>
                                 <br>
 
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Full Name</label>
-                                    <input class="form-control" name="fullname" id="fullname" placeholder="Enter full name" type="text">
+                                    <input class="form-control" name="fullname" id="fullname"
+                                           placeholder="Enter full name" type="text">
                                 </div>
                                 <br>
 
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">NIC</label>
-                                    <input class="form-control" id="nic"
+                                    <input class="form-control" id="nic" name="nic"
                                            placeholder="Enter National Identitiy Card Number" type="nic">
                                 </div>
                                 <br>
 
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Address</label>
-                                    <input class="form-control" id="address" placeholder="Enter Address" type="nic">
+                                    <input class="form-control" name="address" id="address" placeholder="Enter Address" type="nic">
                                 </div>
                                 <br>
 
@@ -83,7 +86,8 @@
                                             <div class="input-group-addon">
                                                 <i class="fa fa-calendar"></i>
                                             </div>
-                                            <input type="text" class="form-control pull-right" id="datepicker_dob"
+                                            <input type="text" class="form-control pull-right" name="datepicker_dob"
+                                                   id="datepicker_dob"
                                                    placeholder="Select the date">
                                         </div>
                                         <!-- /.input group -->
@@ -182,7 +186,7 @@
                                                                     <i class="fa fa-calendar"></i>
                                                                 </div>
                                                                 <input type="text" class="form-control pull-right"
-                                                                       id="datepicker_doa"
+                                                                       id="datepicker_doa" name="datepicker_doa"
                                                                        placeholder="Select the date">
                                                             </div>
                                                             <!-- /.input group -->
@@ -205,7 +209,8 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="exampleInputEmail1">Widow Number</label>
-                                                        <input class="form-control" id="widowNo" placeholder="Enter if have"
+                                                        <input class="form-control" id="widowNo"
+                                                               placeholder="Enter if have"
                                                                type="nic">
                                                     </div>
                                                     <div class="form-group">
@@ -237,33 +242,33 @@
 
                 <script src="{{asset('/plugins/datepicker/bootstrap-datepicker.js')}}"></script>
                 <script src="{{asset('/plugins/jqueryValidater/jquery.validate.min.js')}}"></script>
+                <script src="{{asset('/plugins/jqueryValidater/additional-methods.min.js')}}"></script>
 
 
 
 
 
-<script>
+                <script>
 
 
-
-//                    /**
-//                     *This is jquery function is for the date picker used at the Date of birth field
-//                     */
-//                    $(function () {
-//                        //Date picker
-//
-//                    });
-//
-//
-//
-//
-//                    /**
-//                     *This is jquery function is for the date picker used at the Date of appointment
-//                     */
-//                    $(function () {
-//                       // $("#datepicker_dob").datepicker({ dateFormat: 'yy-mm-dd' });
-//
-//                    });
+                    //                    /**
+                    //                     *This is jquery function is for the date picker used at the Date of birth field
+                    //                     */
+                    //                    $(function () {
+                    //                        //Date picker
+                    //
+                    //                    });
+                    //
+                    //
+                    //
+                    //
+                    //                    /**
+                    //                     *This is jquery function is for the date picker used at the Date of appointment
+                    //                     */
+                    //                    $(function () {
+                    //                       // $("#datepicker_dob").datepicker({ dateFormat: 'yy-mm-dd' });
+                    //
+                    //                    });
 
 
                     $(function () {
@@ -272,43 +277,66 @@
                     });
 
 
-
-
                     /**
                      * This ajax code has written to the onclick event of the insert button
                      * This method will submit the details of the form to the database
                      */
                     $(document).ready(function () {
 
-                       var form =  $('#form-add-employee');
+                        var form = $('#form-add-employee');
                         form.validate({
                             rules: {
-                                surname:{
+                                surname: {
                                     required: true,
-                                    minlength:10
-                                } ,
+                                    pattern: /^[A-z]+$/
+                                },
 
-                                fullname:{
+                                fullname: {
                                     required: true,
-                                    minlength:10
-                                }
+                                    pattern: /^[A-z]+$/
+                                },
+
+                                nic:{
+                                    required:true,
+                                    pattern:/^[0-9]{9}[vV]$/
+                                },
+                                address:{
+                                    required:true,
+                                },
+                                datepicker_dob:{
+                                    required:true,
+                                },
+
+
+
 
 
                             },
 
-                            messages:{
-                                surname:{
-                                    required: "Empty fields are not allowed..Please Fill",
-                                    minlength:"bith need min 10 chars"
+                            messages: {
+                                surname: {
+                                    required: "Empty fields are not allowed...Please Fill",
+                                    pattern: "Please enter characters only "
                                 },
-                                fullname:{
-                                    required: "Empty fields are not allowed..Please Fill",
-                                    minlength:"bith need min 10 chars"
-                                }
+                                fullname: {
+                                    required: "Empty fields are not allowed...Please Fill",
+                                    // minlength:"bith need min 10 chars"
+                                },
+                                nic:{
+                                    required:"Empty fields are not allowed..Please Fill",
+                                    pattern:"NIC Number is not in correct Format...Please Correct"
+                                },
+                                address:{
+                                    required:"Empty fields are not allowed..Please Fill",
+                                },
+                                datepicker_dob:{
+                                    required:"Empty fields are not allowed..Please Fill",
+                                },
+
+
 
                             }
                         });
-
 
 
                         $('#datepicker_doa').datepicker({
@@ -324,12 +352,10 @@
                         });
 
 
-
-
                         $('.insert').click(function (e) {
 
 
-                            if(form.valid()) {
+                            if (form.valid()) {
 
                                 $.ajaxSetup({
                                     headers: {
@@ -338,44 +364,38 @@
                                 });
 
 
-
                                 $.ajax({
                                     url: '/AddEmployeeDetails',
                                     type: "post",
                                     data: {
-                                        'surname':$("#surname").val(),
-                                        'fullname' :$('#fullname').val(),
-                                        'nic'      :$('#nic').val(),
-                                        'address'  :$('#address').val(),
-                                        'dob'      :$('#datepicker_dob').datepicker().val(),
-                                        'gender'   :$('#gender').val(),
-                                        'race'    :$('#race').val(),
-                                        'maritals' :$('#maritalState').val(),
-                                        'district' :$('#district').val(),
-                                        'doa'      :$('#datepicker_doa').datepicker().val(),
-                                        'appNo'    :$('#appNo').val(),
-                                        'jobPos'   :$('#jobp').val(),
-                                        'jobGrade' :$('#jobg').val(),
-                                        'widowNo' :$('#widowNo').val(),
-
-
-
+                                        'surname': $("#surname").val(),
+                                        'fullname': $('#fullname').val(),
+                                        'nic': $('#nic').val(),
+                                        'address': $('#address').val(),
+                                        'dob': $('#datepicker_dob').datepicker().val(),
+                                        'gender': $('#gender').val(),
+                                        'race': $('#race').val(),
+                                        'maritals': $('#maritalState').val(),
+                                        'district': $('#district').val(),
+                                        'doa': $('#datepicker_doa').datepicker().val(),
+                                        'appNo': $('#appNo').val(),
+                                        'jobPos': $('#jobp').val(),
+                                        'jobGrade': $('#jobg').val(),
+                                        'widowNo': $('#widowNo').val(),
                                     },
-                                    success: function (data) {
-                                        //alert("Employee details Added");
-                                        //alert(data);
-                                        swal("Good job!", "You clicked the button!", "success");
-                                        //0alert()->success('tuiii','errr')->persistent("ok");
+                                    success: function (e) {
+                                        swal("New Employee Added", "", "success");
+                                    },
+                                    error: function (e) {
 
                                     }
-                                });
+
+                                })
+
                             }
-
-
                         });
-                    });
+                    })
 
 
                 </script>
-
 @stop

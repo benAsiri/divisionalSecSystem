@@ -18,7 +18,7 @@ class CreateEmployesTable extends Migration
             $table->string('fullname');
             $table->string('id_num');
             $table->string('address');
-            $table->dateTime('dob');
+            $table->date('dob');
             $table->string('gender');
             $table->string('race');
             $table->string('marital_state');

@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="{{asset('plugins/jvectormap/jquery-jvectormap-1.2.2.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('dist/css/AdminLTE.min.css')}}">
+    <link rel="stylesheet" href="{{asset('/plugins/jquery.dataTables/jquery.dataTables.css')}}">
     <link rel="stylesheet" href="{{asset('/plugins/sweetAlert/sweetalert.css')}}">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
@@ -262,22 +263,19 @@
               @if (Auth::guest())
 
                 <li><a href="{{ url('/login') }}">Login</a></li>
-
-
                 @else
-
-              <!-- User Account: style can be found in dropdown.less -->
-              <li class="dropdown user user-menu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="user-image" alt="User Image">
-                  <span class="hidden-xs">Assistant Manager</span>
-                </a>
-                <ul class="dropdown-menu">
-                  <!-- User image -->
-                  <li class="user-header">
-                    <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
-                    <p>
-                      {{ Auth::user()->name }}
+                        <!-- User Account: style can be found in dropdown.less -->
+                <li class="dropdown user user-menu">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <img src="@if(Auth::user()->image != "null"){{asset('/profile_images/'.Auth::user()->image )}}@else{{asset('dist/img/user2-160x160.jpg')}}@endif" class="user-image" alt="User Image">
+                    <span class="hidden-xs">Assistant Manager</span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <!-- User image -->
+                    <li class="user-header">
+                      <img src="@if(Auth::user()->image != "null"){{asset('/profile_images/'.Auth::user()->image )}}@else{{asset('dist/img/user2-160x160.jpg')}}@endif" class="img-circle" alt="User Image">
+                      <p>
+                        {{ Auth::user()->name }}
                       <small>Member since Nov. 2012</small>
                     </p>
                   </li>
@@ -285,7 +283,7 @@
 
                   <li class="user-footer">
                     <div class="pull-left">
-                      <a href="{{url('/profile')}}" class="btn btn-default btn-flat">Profile</a>
+                      <a href="{{url('/EditProfile')}}" class="btn btn-default btn-flat">Profile</a>
                     </div>
                     <div class="pull-right">
                       <a href="{{url('/logout')}}" class="btn btn-default btn-flat">Sign out</a>
@@ -336,15 +334,15 @@
                   <li class="">
                     <a href="#"><i class="fa fa-circle-o text-yellow"></i> Manage My Employees</a>
                     <ul class="treeview-menu menu-open" style="display: block;">
-                      <li><a href="#"><i class="fa fa-circle-o"></i> Update Details</a></li>
                       <li><a href="{{action('HRController@addEmployee')}}"><i class="fa fa-circle-o"></i> Add Employees</a></li>
-                      <li><a href="#"><i class="fa fa-circle-o"></i> View All</a></li>
+                      <li><a href="{{action('HRController@loadUpdateEmployees')}}"><i class="fa fa-circle-o"></i> Update Employee Details</a></li>
+                      <li><a href="{{action('HRController@searchEmployee')}}"><i class="fa fa-circle-o"></i> View All</a></li>
                     </ul>
                   </li>
                   <li class="">
-                    <a href="{{action('PageController@yearly_Increment_Calculator')}}"><i class="fa fa-circle-o text-yellow"></i> Yearly Increment Calculator</a>
+                    <a href="{{action('PageController@yearly_Increment_Calculator')}}"><i class="fa fa-circle-o text-yellow"></i> Yearly increment Calculator</a>
                     <ul class="treeview-menu menu-open" style="display: block;">
-                      <li><a href="#"><i class="fa fa-circle-o"></i> Level 1</a></li>
+                      <li><a href="{{action('HRController@loadEmpSalary')}}"><i class="fa fa-circle-o"></i> Add Employee Salary Details</a></li>
                       <li><a href="#"><i class="fa fa-circle-o"></i> Level 2</a></li>
                       <li><a href="#"><i class="fa fa-circle-o"></i> Level 3</a></li>
                     </ul>
@@ -363,27 +361,34 @@
                       <li><a href="{{action('LeavePagesController@ApplyMyLeave')}}"><i class="fa fa-circle-o"></i> Apply Leave</a></li>
                     </ul>
                   </li>
+                  <li class="">
+                    <a href="#"><i class="fa fa-circle-o text-yellow"></i> Advance Program</a>
+                    <ul class="treeview-menu menu-open" style="display: block;">
+                      <li><a href="{{action('AdvanceController@InsertInfo')}}"><i class="fa fa-circle-o"></i> Insert Info</a></li>
+                      <li><a href="{{action('AdvanceController@show')}}"><i class="fa fa-circle-o"></i> edit or delete</a></li>
+                    </ul>
+                  </li>
                 </ul>
               <a href="{{action('PageController@yearly_Increment_Calculator')}}">
-                <i class="fa-user"></i> <span>HR Management</span><i class="fa fa-angle-left pull-right"></i>
+                {{--<i class="fa-user"></i> <span>HR Managent</span><i class="fa fa-angle-left pull-right"></i>--}}
               </a>
               <ul class="treeview-menu">
-                <li><a href="{{action('HRController@addEmployee')}}"><i class="fa fa-circle-o"></i> Add Employee Details </a></li>
-                <li><a href="{{action('HRController@searchEmployee')}}"><i class="fa fa-circle-o"></i> Search Employee Details </a></li>
-                <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i> Page3 </a></li>
+                {{--<li><a href="{{action('HRController@addEmployee')}}"><i class="fa fa-circle-o"></i> Add Employee Details </a></li>--}}
+                {{--<li><a href="{{action('HRController@searchEmployee')}}"><i class="fa fa-circle-o"></i> Search Employee Details </a></li>--}}
+                {{--<li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i> Page3 </a></li>--}}
 
 
               </ul>
             </li>
-            <li class="active treeview">
-            <li><a href="{{action('PageController@maternityLeaves')}}"><i class="fa fa-circle-o"></i> <span>Land Division</span><i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>option1</a></li>
-                <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>option2 </a></li>
-                <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>Current Status </a></li>
-                <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>Current Status </a></li>
-              </ul>
+            {{--<li class="active treeview">--}}
+            {{--<li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i> <span>Land Dision</span><i class="fa fa-angle-left pull-right"></i>--}}
+              {{--</a>--}}
+              {{--<ul class="treeview-menu">--}}
+                {{--<li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>option1</a></li>--}}
+                {{--<li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>option2 </a></li>--}}
+                {{--<li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>Current Status </a></li>--}}
+                {{--<li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>Current Status </a></li>--}}
+              {{--</ul>--}}
 
                 <li class="active treeview">
                 <li><a href="#"><i class="fa fa-circle-o text-blue"></i>
@@ -411,13 +416,15 @@
       <!-- Content Wrapper. Contains page content -->
      <div class="content-wrapper">
        <!-- Main content -->
-       <section class="content">
-
-
-       @yield('content')
+       <section class="content-header">
+         @yield('content_header')
        </section>
 
+       <section class="content">
+       @yield('content')
 
+
+       </section>
      </div>
 
       <footer class="main-footer">
@@ -620,12 +627,67 @@
 
     <script src="{{asset('/plugins/jquery.dataTables/jquery.dataTables.js')}}"></script>
 
-    <script>
+    {{--<script>--}}
 
-//  $("#example1").DataTable();
+      {{--var profile_pick=false;--}}
+      {{--function profile_image_over(para){--}}
+        {{--if(para=="view")--}}
+          {{--$("#profile-img-picker").fadeIn();--}}
+        {{--else if(profile_pick && para!="view")--}}
+          {{--$("#profile-img-picker").fadeOut();--}}
+      {{--};--}}
+      {{--function get_image(para_1,para_2){--}}
+        {{--$("#"+para_2).trigger('click');--}}
+      {{--};--}}
+      {{--$(document).ready(function(){--}}
+        {{--// alert("chalitha!");--}}
+        {{--// $("#example2_info").DataTable();--}}
+        {{--$('.file_input').on('change', function(){ //on file input change--}}
+          {{--var div_id = $(this).attr("data-id");--}}
+          {{--var base_url = $(this).attr("data-icon");--}}
+
+          {{--if (window.File && window.FileReader && window.FileList && window.Blob) //check File API supported browser--}}
+          {{--{--}}
+            {{--//$('#thumb_output_'+id).html(''); //clear html of output element--}}
+            {{--var data = $(this)[0].files; //this file data--}}
+            {{--$.each(data, function(index, file){ //loop though each file--}}
+              {{--if(/(\.|\/)(gif|jpe?g|png)$/i.test(file.type)){ //check supported file type--}}
+                {{--var fRead = new FileReader(); //new filereader--}}
+                {{--fRead.onload = (function(file){ //trigger function on successful read--}}
+                  {{--return function(e) {--}}
+                    {{--//var img = $('<img/>').addClass('thumb').attr('src', e.target.result); //create image element--}}
+                    {{--profile_pick=true;--}}
+                    {{--profile_image_over("close");--}}
+                    {{--$('#'+div_id).css("background-image",'url("'+e.target.result+'")'); //append image to output element--}}
+                  {{--};--}}
+                {{--})(file);--}}
+                {{--fRead.readAsDataURL(file); //URL representing the file's data.--}}
+              {{--}--}}
+            {{--});--}}
+
+          {{--}else{--}}
+            {{--profile_pick=false;--}}
+            {{--alert("Your browser doesn't support File API!"); //if File API is absent--}}
+          {{--}--}}
+        {{--});--}}
+
+      {{--});--}}
+
+      {{--// Data Table--}}
+      {{--$(function () {--}}
+        {{--$("#example1").DataTable();--}}
+        {{--$('#example2').DataTable({--}}
+          {{--"paging": true,--}}
+          {{--"lengthChange": false,--}}
+          {{--"searching": false,--}}
+          {{--"ordering": true,--}}
+          {{--"info": true,--}}
+          {{--"autoWidth": false--}}
+        {{--});--}}
+      {{--});--}}
 
 
-    </script>
+    {{--</script>--}}
     @show
   
   </body>

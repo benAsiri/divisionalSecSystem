@@ -19,7 +19,8 @@ class CreateSalariesTable extends Migration
             $table->timestamps();
 
 
-           // $table->foreign('emp_id')->referencees('id')->on('employes');put it manually.maira db
+            //$table->foreign('emp_id')->referencees('id')->on('employes'); // Apply ON DELETE Cascade for fk
+            //put it manually.maira db
 
         });
     }

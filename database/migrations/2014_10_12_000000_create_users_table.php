@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('NIC')->unique();
             $table->string('status');
             $table->string('position');
+            $table->string('image');
             $table->string('password', 60);
 
             $table->integer('emp_id')->unsigned();

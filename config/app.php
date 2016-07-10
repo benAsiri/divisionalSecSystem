@@ -149,6 +149,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Yajra\Datatables\DatatablesServiceProvider::class,
         UxWeb\SweetAlert\SweetAlertServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
 
 
         /*
@@ -206,6 +207,7 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
         'Datatables'=> Yajra\Datatables\Datatables::class,
        'Alert' => UxWeb\SweetAlert\SweetAlert::class,
+        'PDF'       => Barryvdh\DomPDF\Facade::class,
 
 
 

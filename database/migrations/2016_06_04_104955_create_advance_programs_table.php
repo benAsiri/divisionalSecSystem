@@ -14,12 +14,13 @@ class CreateAdvanceProgramsTable extends Migration
     {
         Schema::create('advance_programs', function (Blueprint $table) {
             $table->increments('id');
+            $table->text('Duty');
             $table->integer('emp_id')->unsigned();
             $table->dateTime('handOverDate');
             $table->dateTime('approvedDate');
-            $table->boolean('Status');
+            $table->text('Status');
             $table->timestamps();
-            $table->foreign('emp_id')->references('id')->on('employes');
+            //$table->foreign('emp_id')->references('id')->on('employes');
         });
     }
 

@@ -43,30 +43,27 @@
     }
 </style>
 
-<h3 style="text-align: center">Employee Details Report</h3>
+<h3 style="text-align: center">Monthly Report</h3>
 <div>
     <table class="table">
         <thead>
         <tr>
             <th>Employee ID</th>
-            <th>Full Nane</th>
-            <th>NIC</th>
-            <th>Gender</th>
-            <th>SAppointment Date</th>
+            <th>Duty</th>
+            <th>HandOver Date</th>
+            <th>Approved Date</th>
+            <th>Status</th>
         </tr>
         </thead>
         <tbody>
-        @foreach($employee as $emp)
-            <tr>
-                <td>{{ $emp->id }}</td>
-                <td>{{ $emp->fullname }}</td>
-                <td>{{ $emp->id_num }}</td>
-                <td>{{ $emp->gender}}</td>
-                <td>{{ $emp->appointment_no}}</td>
-                {{--<td>{{ $emp->handOverDate }}</td>--}}
-                {{--<td>{{ $emp->approvedDate }}</td>--}}
-                {{--<td align="center">{{ $ad_pro->Status }}</td>--}}
-            </tr>
+        @foreach($advance_pro as $ad_pro)
+        <tr>
+            <td>{{ $ad_pro->emp_id }}</td>
+            <td>{{ $ad_pro->Duty }}</td>
+            <td>{{ $ad_pro->handOverDate }}</td>
+            <td>{{ $ad_pro->approvedDate }}</td>
+            <td align="center">{{ $ad_pro->Status }}</td>
+        </tr>
         @endforeach
         </tbody>
     </table>

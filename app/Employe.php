@@ -15,6 +15,11 @@ class Employe extends Model
         return $this->hasOne('App\User');
     }
 
+    public function salary()
+    {
+        return $this->hasOne('App\Salary');
+    }
+
 
 
 }

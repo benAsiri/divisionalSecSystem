@@ -3,13 +3,68 @@
 
 @section('content')
 
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-18 col-md-offset-0">
+                    <div class="panel panel-default">
+
+        <section class="panel panel-primary">
+            <div class="panel-heading">
+                <b>Employee Info</b>
+            </div>
+            <div class="panel-body">
+                <table id="tab" class="table table-hover table-bordered">
+                    <thead>
+
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>NIC</th>
+                    <th>Status</th>
+                    <th>Position</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                    <th>Reset Password</th>
+                    </thead>
+                    <tbody>
+
+
+                    @foreach($users as $user)
+                        <tr class="row-of-data">
+                            <td>{{$user->id}}</td>
+                            <td>{{$user->name}}</td>
+                            <td>{{$user->NIC}}</td>
+                            <td>{{$user->status}}</td>
+                            <td>{{$user->position}}</td>
+                            <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button  class="editt" data-title="Edit" data-toggle="modal" data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+                            <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="deletee" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
+                            <td><p data-placement="top" data-toggle="tooltip" title="Reset"><button class="pwreset" data-title="Reset"  data-toggle="modal" data-target="#reset" ><span class="glyphicon glyphicon-repeat"></span></button></p></td>
+                            </td>
+                        </tr>
+                    @endforeach
+
+                    </tbody>
+
+                </table>
+            </div>
+        </section>
+        </div>
+
+                    </div>
+            </div>
+        </div>
+
+
+
 
         <div class="container">
             <div class="row">
-                <div class="col-md-10 col-md-offset-0">
+                <div class="col-md-15 col-md-offset-0">
                     <div class="panel panel-default">
-                        <div class="panel-heading">Register</div>
+
                         <div class="panel-body">
+                            <div class="panel-heading">Register</div>
                             <form class="form-horizontal" role="form" method="POST" action="{{ url('/regi') }}">
                                 {!! csrf_field() !!}
 
@@ -17,15 +72,15 @@
                                     <label class="col-md-4 control-label">Name</label>
 
                                     <div class="col-md-6">
-                                            <select class="form-control" name="faname" id="fname" onchange="loadfields()">
-                                                <option value="#"></option>
-                                                @foreach($employees as $employee)
+                                        <select class="form-control" name="faname" id="fname" onchange="loadfields()">
+                                            <option value="#"></option>
+                                            @foreach($employees as $employee)
 
-                                                    <option value="{{$employee->fullname}}">{{$employee->fullname}}</option>
+                                                <option id="optionavalue_1" value="{{$employee->fullname}}" data-parent="{{$employee->id_num}}" >{{$employee->fullname}}</option>
 
-                                                @endforeach
+                                            @endforeach
 
-                                            </select>
+                                        </select>
                                     </div>
                                 </div>
 
@@ -34,7 +89,7 @@
                                     <label class="col-md-4 control-label">NIC</label>
 
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control" id="natic" name="NIC"  >
+                                        <input type="text" class="form-control" id="natic" name="NIC" readonly >
 
                                     </div>
                                 </div>
@@ -88,10 +143,10 @@
 
                                     <div class="col-md-6">
                                         <select name="status" class="form-control" id="statid" onchange="positionchange()">
-                                            <option value="#"></option>
+                                            <option value=" "></option>
                                             <option value="Admin">Admin</option>
                                             <option value="User">User</option>
-                                            </select>
+                                        </select>
                                     </div>
                                 </div>
 
@@ -118,69 +173,8 @@
                 </div>
             </div>
         </div>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-14 col-md-offset-0">
-                    <div class="panel panel-default">
-
-        <section class="panel panel-primary">
-            <div class="panel-heading">
-<<<<<<< HEAD
-                <b>Add User</b>
-            </div>
-            <form role="form" id="form1">
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="num1" placeholder="Enter email">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="num2" placeholder="Enter email">
-=======
-                <b>Employee Info</b>
-            </div>
-            <div class="panel-body">
-                <table id="tab" class="table table-hover table-bordered">
-                    <thead>
-
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>NIC</th>
-                    <th>Status</th>
-                    <th>Position</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                    <th>Reset Password</th>
-                    </thead>
-                    <tbody>
 
 
-                    @foreach($users as $user)
-                        <tr class="row-of-data">
-                            <td>{{$user->id}}</td>
-                            <td>{{$user->name}}</td>
-                            <td>{{$user->NIC}}</td>
-                            <td>{{$user->status}}</td>
-                            <td>{{$user->position}}</td>
-                            <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button  class="lol" data-title="Edit" data-toggle="modal" data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-                            <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="rofl" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
-                            <td><p data-placement="top" data-toggle="tooltip" title="Reset"><button class="hmm" data-title="Reset"  data-toggle="modal" data-target="#reset" ><span class="glyphicon glyphicon-repeat"></span></button></p></td>
-                            </td>
-                        </tr>
-                    @endforeach
-
-                    </tbody>
-
-                </table>
-            </div>
-        </section>
-        </div>
-
-                    </div>
-            </div>
-        </div>
 
 
 
@@ -224,7 +218,6 @@
                         <!-- /.modal-content -->
                     </div>
                     <!-- /.modal-dialog -->
->>>>>>> e055a0f7cc05b2a4e3d0659f2d15cb2a10be7c56
                 </div>
 
 
@@ -250,15 +243,31 @@
 
 
 
+        <div class="modal fade" id="reset" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                        <h4 class="modal-title custom_align" id="Heading">Reset user Password</h4>
+                    </div>
 
-<<<<<<< HEAD
-            </section>
-    </div>
 
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-<script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.10/js/jquery.dataTables.js"></script>
-<script type="text/javascript">
-=======
+                    <div class="modal-body">
+                            <div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span> Are you sure you want to reset?</div>
+                        <div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span> Note : Password will be automatically change to NIC  when resetting passwords</div>
+
+                    </div>
+                    <div class="modal-footer ">
+                        <button type="button" class="resetttt"  aria-hidden="true" data-dismiss="modal" ><span class="glyphicon glyphicon-ok-sign"></span> Yes</button>
+                        <button type="button" class="nodel" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
 
 
 
@@ -281,7 +290,7 @@
 
 
 
-    $(".lol").click(function() {
+    $(".editt").click(function() {
 
         var $row = $(this).closest("tr"),
                 $t = $row.find("td:nth-child(3)");
@@ -306,24 +315,37 @@
                }
 
            });
-
-
-
-
-
        });
-
-
-
-
-
     });
 
+     $(".pwreset").click(function() { //resetting passwords
+
+         var $row = $(this).closest("tr"),
+         $t = $row.find("td:nth-child(3)");
+
+         var nic = $t.text();
+            alert(nic);
+         $(".resetttt").click(function(){
+
+
+             jQuery.ajax({
+
+                 dataType : "json",
+                 contentType : "application/json; charset=utf-8",
+                 type: 'get',
+                 url:'/Usr_register/resetPwd',
+                 data: {id:nic},
+                 success: function(max){
+                 }
+
+             });
+         });
+     });
 
 
 
 
-    $(".rofl").click(function() {
+     $(".deletee").click(function() {
 
         var $row = $(this).closest("tr"),
                 $tds = $row.find("td:nth-child(3)");
@@ -351,8 +373,11 @@
 
 
     function loadfields() {
-        var prefer = document.getElementById("fname").value;
-              $("#natic").val(prefer);
+        var prefer = document.getElementById("optionavalue_1");
+
+        var show = prefer.getAttribute("data-parent");
+
+              $("#natic").val(show);
     }
 
     function removeOptions(selectbox)
@@ -394,7 +419,6 @@
                  ek1.textContent = opt1;
                  ek1.value = opt1;
                  document.getElementById("postid").appendChild(ek1);
->>>>>>> e055a0f7cc05b2a4e3d0659f2d15cb2a10be7c56
 
              }
          }
@@ -441,7 +465,6 @@
              removeOptions(document.getElementById("postid1"));
          }
      }
-
 
 
 

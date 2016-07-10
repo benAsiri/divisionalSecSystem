@@ -8,7 +8,7 @@ class AdvanceProgram extends Model
 {
     //
     protected $fillable = [
-        'emp_id', 'handOverDate', 'approvedDate','Status'
+        'emp_id','Duty', 'handOverDate', 'approvedDate','Status'
     ];
 
     public function user()

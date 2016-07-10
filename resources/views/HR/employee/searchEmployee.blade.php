@@ -8,18 +8,27 @@
 
 
 
-<section class="content-header">
-<h1>Search Employee Details</h1>
-</section>
+
+        <section class="content-header">
+            <h1>Search Employee Details</h1>
+        </section>
+
+
+
+<div class="pull-right">
+
+    <div class="col-lg-12"><a href="{{ url('generatePDF_Emp') }}"><button class="btn btn-block btn-warning"><i class="fa fa-file">
+
+            </i>Generate Report</button></a></div>
+</div>
+
         <!-- Main content -->
 <section class="content">
     <div class="row">
         <div class="col-xs-12">
 
             <div class="box">
-                {{--<div class="box-header">--}}
-                    {{--<h3 class="box-title">Data Table With Full Features</h3>--}}
-                {{--</div><!-- /.box-header -->--}}
+
                 <div class="box-body">
                     <table id="example1" class="table table-bordered table-striped tr">
                         <thead>
@@ -87,7 +96,7 @@
             "order": [[0,"asc"]],
             "scrollY": "400px",
             "scrollCollapse": false,
-            "paging"  : false,
+            "paging"  : true,
             "bProcessing" :true,
 
         });
