@@ -2,40 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f46c150-cbb5-4e00-9f26-863e6286dc91" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdvanceController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/LeaveController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Leave.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_06_08_183709_leaves.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/HR/AdvanceProgram/AdvanceTable.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/HR/AdvanceProgram/InsertInfo.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/HR/AdvanceProgram/editInfo.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/HR/AdvanceProgram/submit.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/HR/LeaveManage/applyleavess.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/HR/leavesopinions.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/auth/profile.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/reports/monthlyReport.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/divisionalSecSystem.iml" afterPath="$PROJECT_DIR$/.idea/divisionalSecSystem.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/AdvanceProgram.php" afterPath="$PROJECT_DIR$/app/AdvanceProgram.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Employe.php" afterPath="$PROJECT_DIR$/app/Employe.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/HRController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/HRController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/UserRegisterController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserRegisterController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/app.php" afterPath="$PROJECT_DIR$/config/app.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_05_28_132748_create_employes_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_05_28_132748_create_employes_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_06_04_104955_create_advance_programs_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_06_04_104955_create_advance_programs_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_06_11_041717_create_salaries_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_06_11_041717_create_salaries_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/HR/employee/UpdateDetails.blade.php" afterPath="$PROJECT_DIR$/resources/views/HR/employee/UpdateDetails.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/HR/employee/employeeSalary.blade.php" afterPath="$PROJECT_DIR$/resources/views/HR/employee/employeeSalary.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/HR/employee/newEmployee.blade.php" afterPath="$PROJECT_DIR$/resources/views/HR/employee/newEmployee.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/HR/employee/searchEmployee.blade.php" afterPath="$PROJECT_DIR$/resources/views/HR/employee/searchEmployee.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/HR/reports/employeeRecordsReport.blade.php" afterPath="$PROJECT_DIR$/resources/views/HR/reports/employeeRecordsReport.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/UserMgt/usermgt.blade.php" afterPath="$PROJECT_DIR$/resources/views/UserMgt/usermgt.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/masterPage.blade.php" afterPath="$PROJECT_DIR$/resources/views/masterPage.blade.php" />
     </list>
     <ignored path="divisionalSecSystem.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -615,7 +582,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3391000" />
+    <option name="totallyTimeSpent" value="3540000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -628,7 +595,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29180887" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25597268" sideWeight="0.49092284" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25641027" sideWeight="0.49092284" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
