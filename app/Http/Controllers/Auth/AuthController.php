@@ -29,7 +29,9 @@ class AuthController extends Controller
      * @var string
      */
     protected $redirectTo = '/';
+
     protected $username = 'username';
+
     /**
      * Create a new authentication controller instance.
      *
@@ -70,6 +72,7 @@ class AuthController extends Controller
             'NIC' => $data['NIC'],
              'username' => $data['username'],
             'password' => bcrypt($data['password']),
+
             'status' => $data['status'],
             'position' => $data['position'],
         ]);

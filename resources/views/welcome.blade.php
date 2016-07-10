@@ -1,5 +1,7 @@
 
+
 @extends('masterPage')
+
 
 
 @section('content')
@@ -33,9 +35,11 @@
 
 
 
+
                 <div class="panel-body">
                     Your Application's Landing Page.
                 </div>
+
             </div>
         </div>
     </div>

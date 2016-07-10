@@ -61,6 +61,21 @@ Route::group(['middleware' => 'web'], function () {
      Route::get('ApplyLoans','LoanPagesController@applyLoans');
 
      Route::get('viewLoans','LoanPagesController@viewLoans');
+//
+
+     Route::get('insert','AdvanceController@InsertInfo');
+
+     Route::get('addDetails',['uses'=>'AdvanceController@add_Programs','as' => 'addPrograms']);
+
+     Route::get('deleteData',['uses'=>'AdvanceController@Delete_Data','as' => 'deleteData']);
+
+     Route::get('/show','AdvanceController@show');
+
+     Route::get('ad_pro/{ad_pro}/delete','AdvanceController@Delete_Data');
+
+     Route::get('ad_pro/{ad_pro}/edit','AdvanceController@edit_data');
+
+     Route::get('ad_pro/{ad_pro}/update','AdvanceController@update_data');
 
 
 
