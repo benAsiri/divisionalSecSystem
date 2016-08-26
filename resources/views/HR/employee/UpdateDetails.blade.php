@@ -31,7 +31,7 @@
                 {{--</div>--}}
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <table id="example1" class="table table-bordered table-striped tr">
+                    <table id="example1" class="table table-bordered table-striped tr" >
                         <thead>
                         <tr>
                             <th></th>
@@ -253,6 +253,9 @@
                                 <label for="exampleInputEmail1">Pension Date</label>
                                 <input type="hidden"  id="empid" name="empid" class="form-control" required placeholder="">
                             </div>
+                            <div class="form-group">
+                                <p>Date: <input type="text" id="datepicker"></p>
+                            </div>
                             <br>
                             <br>
                         </div>
@@ -264,7 +267,7 @@
                 </div>
 
                 <div class="col-md-6">
-                    <button type="submit" id="submit" class="btn btn-primary col-md-5 pull-left btn-submit">Submit</button>
+                    <button type="submit" id="submit" class="btn btn-primary col-md-5 pull-left btn-submit">Update Details</button>
                     <button type="reset" class="btn btn-warning col-md-5  pull-right  ">Reset</button>
                 </div>
 
@@ -284,11 +287,22 @@
 
     <script type="text/javascript">
 
+        $( function() {
+            $( "#datepicker" ).datepicker({
+
+                format: 'yyyy-mm-dd',
+                autoclose: true,
+
+            });
+        } );
+
+
         $(document).ready(function () {
            var table = $('#example1').DataTable({
                 select: true,
                 "order": [[0, "asc"]],
                 "scrollY": "400px",
+               "scrollX": "400px",
                 "scrollCollapse": false,
                 "paging": true,
                 "bProcessing": true,
@@ -314,6 +328,8 @@
 //                var data = table.row($(this).parents('tr')).data();
 //                setData(data);
                 swal("Employee Record updated", "", "success");
+
+
             });
 
 
@@ -349,6 +365,7 @@
                             // console.log(path);
                             window.location.replace(path);
                             swal("Deleted!", "Your record has been deleted.", "success");
+
                         });
 
 
@@ -384,7 +401,8 @@
             $('#datepicker_dob').datepicker({
                 // minDate: new Date(currentYear, currentMonth, currentDate),
                 format: 'yyyy-mm-dd',
-                autoclose: true
+                autoclose: true,
+
             });
 
 

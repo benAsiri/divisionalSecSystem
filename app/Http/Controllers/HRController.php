@@ -121,8 +121,7 @@ class HRController extends Controller
         $employee =  Employe::find($id);
 
         $employee->delete();
-
-        return redirect()->action('HRController@loadUpdateEmployees');
+        return redirect('LoadEmployeeDetails');
 
     }
 
@@ -155,8 +154,8 @@ class HRController extends Controller
 
         $employee->save();
 
-
-        return redirect()->action('HRController@loadUpdateEmployees');
+        
+        return redirect('LoadEmployeeDetails');
 
 
     }
