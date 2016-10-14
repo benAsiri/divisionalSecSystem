@@ -42,7 +42,7 @@
       <file leaf-file-name="applyleavess.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/HR/LeaveManage/applyleavess.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8005019">
+            <state vertical-scroll-proportion="1.6192894">
               <caret line="357" column="0" selection-start-line="357" selection-start-column="0" selection-end-line="357" selection-end-column="0" />
               <folding />
             </state>
@@ -652,21 +652,21 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="SearchEverywhereHistoryKey" value="master&#9;FILE&#9;file://C:/Users/Kusal Rodrigo/Desktop/SYSTEM/Kusal/divisionalSecSystem/resources/views/masterPage.blade.php&#10;user&#9;FILE&#9;file://C:/Users/Kusal Rodrigo/Desktop/SYSTEM/Kusal/divisionalSecSystem/app/Http/Controllers/UserRegisterController.php&#10;lea&#9;null&#9;null&#10;mas&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/masterPage.blade.php&#10;rou&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/routes.php&#10;hr&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/Controllers/HRController.php&#10;app&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/config/app.php&#10;new&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/HR/employee/newEmployee.blade.php&#10;compo&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/composer.json&#10;sea&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/HR/employee/searchEmployee.blade.php&#10;HR&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/Controllers/HRController.php&#10;app.&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/config/app.php&#10;comp&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/composer.json&#10;rout&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/routes.php&#10;adva&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/Controllers/AdvanceController.php&#10;adv&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/HR/AdvanceProgram/AdvanceTable.blade.php&#10;emp&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/database/migrations/2016_05_28_132748_create_employes_table.php&#10;up&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/HR/employee/UpdateDetails.blade.php&#10;sa&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/HR/employee/employeeSalary.blade.php&#10;Hr&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/Controllers/HRController.php&#10;upd&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/HR/employee/UpdateDetails.blade.php&#10;jquery.&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/public/plugins/jquery.dataTables/jquery.dataTables.css&#10;sort&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/images/sort_asc.png&#10;ud&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/HR/employee/UpdateDetails.blade.php&#10;salary&#9;null&#9;null&#10;salari&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/database/migrations/2016_06_11_041717_create_salaries_table.php&#10;routeCo&#9;null&#9;null&#10;ma&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/masterPage.blade.php&#10;ne&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/HR/employee/newEmployee.blade.php&#10;com&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/composer.json&#10;se&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/HR/employee/searchEmployee.blade.php&#10;authc&#9;null&#9;null&#10;auth&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/Middleware/Authenticate.php&#10;login&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/auth/login.blade.php&#10;mast&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/masterPage.blade.php&#10;maste&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/masterPage.blade.php&#10;emplo&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/database/migrations/2016_05_28_132748_create_employes_table.php&#10;route&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/routes.php&#10;u&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/UserMgt/usermgt.blade.php&#10;use&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/UserMgt/usermgt.blade.php&#10;dashboard&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/public/dist/js/pages/dashboard2.js&#10;home&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/Controllers/HomeController.php&#10;employes&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/database/migrations/2016_05_28_132748_create_employes_table.php&#10;userm&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/UserMgt/usermgt.blade.php&#10;en&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/.env&#10;empl&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/database/migrations/2016_05_28_132748_create_employes_table.php" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="202" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="204" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="235" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="237" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="235" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="238" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="1136" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="1145" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="356" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="360" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="356" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="360" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="356" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="360" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="740" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="744" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="recentsLimit" value="5" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -819,7 +819,13 @@
       <option name="project" value="LOCAL" />
       <updated>1476475489301</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Leave management, user management has been modified&#10;">
+      <created>1476475858096</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1476475858096</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -827,7 +833,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1932" height="1038" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17741935" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -835,7 +841,7 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39419794" sideWeight="0.50907713" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.018244013" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4777651" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.238041" sideWeight="0.49092284" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -887,6 +893,7 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <MESSAGE value="Create Employee model and its migration file" />
     <MESSAGE value="edit add employe blade page" />
     <MESSAGE value="Migration file changed(employees)" />
@@ -1253,7 +1260,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/HR/LeaveManage/applyleavess.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8005019">
+        <state vertical-scroll-proportion="1.6192894">
           <caret line="357" column="0" selection-start-line="357" selection-start-column="0" selection-end-line="357" selection-end-column="0" />
           <folding />
         </state>
