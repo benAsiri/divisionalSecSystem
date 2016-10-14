@@ -19,8 +19,23 @@
     <link rel="stylesheet" href="{{asset('plugins/jvectormap/jquery-jvectormap-1.2.2.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('dist/css/AdminLTE.min.css')}}">
-    <link rel="stylesheet" href="{{asset('/plugins/jquery.dataTables/jquery.dataTables.css')}}">
-    <link rel="stylesheet" href="{{asset('/plugins/sweetAlert/sweetalert.css')}}">
+
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+
+    <script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.10/js/jquery.dataTables.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="{{asset('plugins/jquery.datepick.package-5.0.1/jquery.datepick.css')}}">
+
+    <script type="text/javascript" src="{{asset('plugins/jquery.datepick.package-5.0.1/jquery.plugin.js')}}"></script>
+
+    <script type="text/javascript" src="{{asset('plugins/jquery.datepick.package-5.0.1/jquery.datepick.js')}}"></script>
+
+
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{asset('dist/css/skins/_all-skins.min.css')}}">
@@ -370,25 +385,17 @@
                   </li>
                 </ul>
               <a href="{{action('PageController@yearly_Increment_Calculator')}}">
-                {{--<i class="fa-user"></i> <span>HR Managent</span><i class="fa fa-angle-left pull-right"></i>--}}
+                <i class="fa-user"></i> <span>HR Management</span><i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                {{--<li><a href="{{action('HRController@addEmployee')}}"><i class="fa fa-circle-o"></i> Add Employee Details </a></li>--}}
-                {{--<li><a href="{{action('HRController@searchEmployee')}}"><i class="fa fa-circle-o"></i> Search Employee Details </a></li>--}}
-                {{--<li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i> Page3 </a></li>--}}
-
+                <li><a href="{{action('HRController@addEmployee')}}"><i class="fa fa-circle-o"></i> Add Employee Details </a></li>
+                <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i> Page2 </a></li>
+                <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i> Page3 </a></li>
+                 <li><a href="{{url('/LeaveMgt/applyleave')}}"><i class="fa fa-circle-o"></i>Apply Leave </a></li>
+                 <li><a href="{{url('/view_remaining_leaves')}}"><i class="fa fa-circle-o"></i>View Remaining Leaves </a></li>
 
               </ul>
             </li>
-            {{--<li class="active treeview">--}}
-            {{--<li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i> <span>Land Dision</span><i class="fa fa-angle-left pull-right"></i>--}}
-              {{--</a>--}}
-              {{--<ul class="treeview-menu">--}}
-                {{--<li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>option1</a></li>--}}
-                {{--<li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>option2 </a></li>--}}
-                {{--<li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>Current Status </a></li>--}}
-                {{--<li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>Current Status </a></li>--}}
-              {{--</ul>--}}
 
                 <li class="active treeview">
                 <li><a href="#"><i class="fa fa-circle-o text-blue"></i>
@@ -403,7 +410,9 @@
             <li><a href="{{action('UserRegisterController@index')}}"><i class="fa fa-circle-o text-green"></i>
                 <span>User Management</span></a>
 
-            </li>
+
+            <li><a href="{{url('/Usr_register')}}"><i class="fa fa-circle-o"></i> <span>User Management</span><i class="fa fa-angle-left pull-right"></i></a>
+          </li>
           </ul>
 
         </section>

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Leave extends Model
 {
     protected $fillable = [
-        'Emp_Id', 'position','leavetype','dept', 'commencingleave','resumingduties','reason','status'
+        'Emp_Id', 'position','leavetype','dept', 'commencingleave','days','reason','status'
     ];
 
 
