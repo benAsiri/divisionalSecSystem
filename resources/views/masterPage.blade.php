@@ -392,7 +392,7 @@
                 <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i> Page2 </a></li>
                 <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i> Page3 </a></li>
                  <li><a href="{{url('/LeaveMgt/applyleave')}}"><i class="fa fa-circle-o"></i>Apply Leave </a></li>
-                 <li><a href="{{url('/view_remaining_leaves')}}"><i class="fa fa-circle-o"></i>View Remaining Leaves </a></li>
+                 <li><a href="{{url('/view_remaining')}}"><i class="fa fa-circle-o"></i>View Remaining Leaves </a></li>
 
               </ul>
             </li>

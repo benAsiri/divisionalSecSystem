@@ -17,13 +17,13 @@ class CreatAdvanceProgram extends Migration
         Schema::create('advance_programs', function (Blueprint $table) {
             $table->increments('id');
             $table->text("name");
-            $table->integer('emp_id')->unsigned();
+            $table->string('emp_id');
             $table->dateTime('handOverDate');
             $table->dateTime('approvedDate');
             $table->boolean('Status');
             $table->timestamps();
             $table->foreign('emp_id')->references('id_num')->on('employes')->onDelete('cascade');
-        }); //
+        });
     }
 
     /**

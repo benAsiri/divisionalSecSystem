@@ -19,13 +19,10 @@ class Leaves extends Migration
             $table->string('leavetype');
             $table->string('dept');
             $table->date('commencingleave');
-            $table->date('resumingduties');
             $table->string('reason');
+            $table->string('days');
             $table->string('status');
             $table->foreign('Emp_Id')->references('id_num')->on('employes')->onDelete('cascade');
-
-
-
             $table->timestamps('published_at');
         });
 
