@@ -22,8 +22,7 @@
                                 <th>Leave Type</th>
                                 <th>Department</th>
                                 <th>Commencing Leave</th>
-                                <th>Resuming Duties</th>
-                                <th>Reason</th>
+                                 <th>Reason</th>
                                 <th>Status</th>
                                 <th>Approve</th>
                                 <th>Reject</th>
@@ -38,8 +37,7 @@
                                         <td>{{$leave->leavetype}}</td>
                                         <td>{{$leave->dept}}</td>
                                         <td>{{$leave->commencingleave}}</td>
-                                        <td>{{$leave->resumingduties}}</td>
-                                        <td>{{$leave->reason}}</td>
+                                  <td>{{$leave->reason}}</td>
                                         <td>{{$leave->status}}</td>
                                         <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button  class="approve" data-title="Edit" data-toggle="modal" data-target="#approve"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
                                         <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="reject" data-title="Delete" data-toggle="modal" data-target="#reject" ><span class="glyphicon glyphicon-trash"></span></button></p></td>

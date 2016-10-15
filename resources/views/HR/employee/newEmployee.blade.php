@@ -269,6 +269,34 @@
 
 
                 <script>
+
+
+                    //                    /**
+                    //                     *This is jquery function is for the date picker used at the Date of birth field
+                    //                     */
+                    //                    $(function () {
+                    //                        //Date picker
+                    //
+                    //                    });
+                    //
+                    //
+                    //
+                    //
+                    //                    /**
+                    //                     *This is jquery function is for the date picker used at the Date of appointment
+                    //                     */
+                    //                    $(function () {
+                    //                       // $("#datepicker_dob").datepicker({ dateFormat: 'yy-mm-dd' });
+                    //
+                    //                    });
+
+
+                    $(function () {
+
+
+                    });
+
+
                     /**
                      * This ajax code has written to the onclick event of the insert button
                      * This method will submit the details of the form to the database

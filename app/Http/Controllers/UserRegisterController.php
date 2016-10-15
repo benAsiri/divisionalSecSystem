@@ -41,7 +41,21 @@ class UserRegisterController extends Controller
 
    }
 
-   public function registeruser(Request $request){
+   protected function registeruser(Request $request){
+
+      $this->validate($request, array(
+         'faname'=> 'required',
+          'NIC'=> 'required',
+          'username'=>'required|max:20',
+          'password'=>'required',
+          'status'=> 'required',
+          'position'=>'required'
+
+
+      ));
+
+
+
 
        $this->validate($request, array(
            'faname'=> 'required',
@@ -81,7 +95,7 @@ class UserRegisterController extends Controller
 
       return back();
    }
-   public function update()
+   protected function update()
    {
       $id = $_GET['id'];
       $st = $_GET['stat'];

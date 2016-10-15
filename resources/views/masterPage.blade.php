@@ -19,8 +19,23 @@
     <link rel="stylesheet" href="{{asset('plugins/jvectormap/jquery-jvectormap-1.2.2.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('dist/css/AdminLTE.min.css')}}">
-    <link rel="stylesheet" href="{{asset('/plugins/jquery.dataTables/jquery.dataTables.css')}}">
-    <link rel="stylesheet" href="{{asset('/plugins/sweetAlert/sweetalert.css')}}">
+
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+
+    <script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.10/js/jquery.dataTables.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="{{asset('plugins/jquery.datepick.package-5.0.1/jquery.datepick.css')}}">
+
+    <script type="text/javascript" src="{{asset('plugins/jquery.datepick.package-5.0.1/jquery.plugin.js')}}"></script>
+
+    <script type="text/javascript" src="{{asset('plugins/jquery.datepick.package-5.0.1/jquery.datepick.js')}}"></script>
+
+
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{asset('dist/css/skins/_all-skins.min.css')}}">
@@ -404,7 +419,9 @@
             <li><a href="{{action('UserRegisterController@index')}}"><i class="fa fa-circle-o text-green"></i>
                 <span>User Management</span></a>
 
-            </li>
+
+            <li><a href="{{url('/Usr_register')}}"><i class="fa fa-circle-o"></i> <span>User Management</span><i class="fa fa-angle-left pull-right"></i></a>
+          </li>
           </ul>
 
         </section>
@@ -449,7 +466,7 @@
             <h3 class="control-sidebar-heading">Recent Activity</h3>
             <ul class="control-sidebar-menu">
               <li>
-                <a href="javascript:;">
+                <a href="">
                   <i class="menu-icon fa fa-birthday-cake bg-red"></i>
                   <div class="menu-info">
                     <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
@@ -458,7 +475,7 @@
                 </a>
               </li>
               <li>
-                <a href="javascript:;">
+                <a href="">
                   <i class="menu-icon fa fa-user bg-yellow"></i>
                   <div class="menu-info">
                     <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
@@ -467,7 +484,7 @@
                 </a>
               </li>
               <li>
-                <a href="javascript:;">
+                <a href="">
                   <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
                   <div class="menu-info">
                     <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
@@ -476,7 +493,7 @@
                 </a>
               </li>
               <li>
-                <a href="javascript:;">
+                <a href="">
                   <i class="menu-icon fa fa-file-code-o bg-green"></i>
                   <div class="menu-info">
                     <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
@@ -489,7 +506,7 @@
             <h3 class="control-sidebar-heading">Tasks Progress</h3>
             <ul class="control-sidebar-menu">
               <li>
-                <a href="javascript:;">
+                <a href="">
                   <h4 class="control-sidebar-subheading">
                     Custom Template Design
                     <span class="label label-danger pull-right">70%</span>
@@ -500,7 +517,7 @@
                 </a>
               </li>
               <li>
-                <a href="javascript:;">
+                <a href="">
                   <h4 class="control-sidebar-subheading">
                     Update Resume
                     <span class="label label-success pull-right">95%</span>
@@ -511,7 +528,7 @@
                 </a>
               </li>
               <li>
-                <a href="javascript:;">
+                <a href="">
                   <h4 class="control-sidebar-subheading">
                     Laravel Integration
                     <span class="label label-warning pull-right">50%</span>
@@ -522,7 +539,7 @@
                 </a>
               </li>
               <li>
-                <a href="javascript:;">
+                <a href="">
                   <h4 class="control-sidebar-subheading">
                     Back End Framework
                     <span class="label label-primary pull-right">68%</span>
@@ -589,7 +606,7 @@
               <div class="form-group">
                 <label class="control-sidebar-subheading">
                   Delete chat history
-                  <a href="javascript:;" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
+                  <a href="" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
                 </label>
               </div><!-- /.form-group -->
             </form>

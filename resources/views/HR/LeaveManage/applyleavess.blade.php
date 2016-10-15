@@ -4,9 +4,6 @@
 
 
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="{{asset('/plugins/datepicker/datepicker3.css')}}">
     <div class="container">
         <div class="row">
             <div class="col-md-18 col-md-offset-0">
@@ -24,8 +21,7 @@
                                 <th>Leave Type</th>
                                 <th>Department</th>
                                 <th>Commencing Leave</th>
-                                <th>Resuming Duties</th>
-                                <th>Reason</th>
+                                 <th>Reason</th>
                                 <th>Status</th>
                                 <th>Edit</th>
                                 <th>Delete</th>
@@ -39,9 +35,8 @@
                                         <td>{{$leave->position}}</td>
                                         <td>{{$leave->leavetype}}</td>
                                         <td>{{$leave->dept}}</td>
-                                        <td>{{$leave->commencingleave}}</td>
-                                        <td>{{$leave->resumingduties}}</td>
-                                        <td>{{$leave->reason}}</td>
+                                       <td>{{$leave->commencingleave}}</td>
+                                      <td>{{$leave->reason}}</td>
                                         <td>{{$leave->status}}</td>
                                         <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button  class="editt" data-title="Edit" data-toggle="modal" data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
                                         <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="deletee" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
@@ -131,7 +126,9 @@
                             </div>
 
                             <div class="form-group{{ $errors->has('cleave') ? ' has-error' : '' }}">
-                                <label class="col-md-4 control-label">Commencing Leave</label>
+
+                                <label class="col-md-4 control-label">Dates Taken for Leaves</label>
+
                                 <div class="col-md-6">
 
 
@@ -140,7 +137,7 @@
                                                 <div class="input-group-addon">
                                                     <i class="fa fa-calendar"></i>
                                                 </div>
-                                                <input type="text" class="form-control" name="cleave" id="cleave" placeholder="Select Commencing date">
+                                                <input type="text" class="form-control" name="cleave" id="cleave"  placeholder="Select Dates">
                                             </div>
                                     </br>
 
@@ -170,6 +167,7 @@
                                     @endif
                                 </div>
                             </div>
+
                             <div class="form-group{{ $errors->has('reason') ? ' has-error' : '' }}">
                                 <label class="col-md-4 control-label">Reason</label>
 
@@ -187,7 +185,8 @@
 
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
-                                    <button type="submit" class="btn btn-primary">
+
+                                    <button type="submit" class="btn btn-primary" id="form_submit" name="form_submit" onclick="processdata()">
                                         <i class="fa fa-btn fa-user"></i>Apply Leave</button>
                                 </div>
                             </div>
@@ -275,25 +274,42 @@
 
 
 
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-    <script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.10/js/jquery.dataTables.js"></script>
-            <script src="{{asset('/plugins/datepicker/bootstrap-datepicker.js')}}"></script>
-
-
     <script type="text/javascript">
 
 
-        $('#cleave').datepicker({
-            // minDate: new Date(currentYear, currentMonth, currentDate),
-            format: 'yyyy-mm-dd',
-            autoclose: true
-        });
-        $('#rleave').datepicker({
-            // minDate: new Date(currentYear, currentMonth, currentDate),
-            format: 'yyyy-mm-dd',
-            autoclose: true
-        });
+        $('#cleave').datepick({
+            autoclose:true,
+            dateFormat: 'yyyy-mm-dd',
+            rangeSelect: false,
+            onDate: $.datepick.noWeekends,
+            startDate:new Date(),
+            todayHighlight:'true',
+            minDate: new Date(),
+            multiSelect: 24, monthsToShow: 1,
 
+
+
+           });
+
+        function processdata(){
+            var k = document.getElementById("cleave").value;
+             var noOfDays = (k.split(",")).length;
+            alert(noOfDays);
+
+            jQuery.ajax({
+
+                dataType : "json",
+                contentType : "application/json; charset=utf-8",
+                type: 'POST',
+                url:'LeaveMgt/addleave',
+                data:{nodays:noOfDays},
+                success: function(max){
+                }
+
+            });
+
+
+        }
 
 
 
@@ -308,7 +324,8 @@
             $(".updateform").click(function(){
 
                 var valuestat = document.getElementById("cleave").value;
-                var valuepos = document.getElementById("rleave").value;
+
+
                 var rsn  = document.getElementById("reason1").value;
                 jQuery.ajax({
 
@@ -316,8 +333,9 @@
                     contentType : "application/json; charset=utf-8",
                     type: 'get',
                     url:'/LeaveMgt/updateleave',
-                    data: {commence:valuestat,resume:valuepos,reason:rsn,id:nic},
-                    success: function(max){
+
+                    data: {commence:valuestat,reason:rsn,id:nic},
+                   success: function(max){
                     }
 
                 });
@@ -328,7 +346,8 @@
 
 
 
-        function loadfields() {
+                function loadfields() {
+
 
             var prefer = document.getElementById("optiona_value_1");
 
@@ -342,13 +361,6 @@
             var prefer = document.getElementById("leavestype").value;
 
         }
-
-        $('#datepicker_dob').datepicker({
-            // minDate: new Date(currentYear, currentMonth, currentDate),
-            format: 'yyyy-mm-dd',
-            autoclose: true
-        })
-
 
 
         $('#tab').DataTable({
@@ -391,33 +403,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -29,8 +29,8 @@
 
             <div class="box">
 
-                <div class="box-body">
-                    <table id="example1" class="table table-bordered table-striped tr">
+                <div class="box-body" >
+                    <table id="example1" class="table table-bordered table-striped tr" >
                         <thead>
                         <tr>
                             <th>NO</th>
@@ -85,7 +85,7 @@
     @parent
 
     <script type="text/javascript">
-        $().DataTable
+
 
         //$("#example1").DataTable();
 
@@ -95,13 +95,29 @@
 
             select:true,
             "order": [[0,"asc"]],
-            "scrollY": "400px",
+            "scrollY": "500px",
+            "scrollX": "400px",
             "scrollCollapse": false,
             "paging"  : true,
             "bProcessing" :true,
             "scrollX":true,
 
+
+
+
         });
+
+        $('#example1').on('click', function(){
+
+            alert("BAM!");
+        });
+
+
+
+
+
+
+
 
 
     </script>
