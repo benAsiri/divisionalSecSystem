@@ -92,12 +92,14 @@
 
 
         $('#example1').DataTable({
+
             select:true,
             "order": [[0,"asc"]],
             "scrollY": "400px",
             "scrollCollapse": false,
             "paging"  : true,
             "bProcessing" :true,
+            "scrollX":true,
 
         });
 

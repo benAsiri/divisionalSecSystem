@@ -72,11 +72,10 @@ class HRController extends Controller
             $employe->job_grade=$data['jobGrade'];
 
 
-
-
           $employe->save();
-
-
+            //return url('AddEmployees');
+            
+           
 
         }
 
@@ -122,7 +121,7 @@ class HRController extends Controller
 
         $employee->delete();
 
-        return redirect()->action('HRController@loadUpdateEmployees');
+        //return redirect()->action('HRController@loadUpdateEmployees');
 
     }
 
@@ -156,7 +155,8 @@ class HRController extends Controller
         $employee->save();
 
 
-        return redirect()->action('HRController@loadUpdateEmployees');
+        //return redirect()->action('HRController@loadUpdateEmployees');
+        //return redirect()->action('HRController@addEmployee');
 
 
     }

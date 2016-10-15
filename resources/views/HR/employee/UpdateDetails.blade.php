@@ -31,7 +31,7 @@
                 {{--</div>--}}
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <table id="example1" class="table table-bordered table-striped tr">
+                    <table id="example1" class="table table-bordered table-striped tr" >
                         <thead>
                         <tr>
                             <th></th>
@@ -264,7 +264,7 @@
                 </div>
 
                 <div class="col-md-6">
-                    <button type="submit" id="submit" class="btn btn-primary col-md-5 pull-left btn-submit">Submit</button>
+                    <button type="submit" id="submit" class="btn btn-primary col-md-5 pull-left btn-submit">Update Details</button>
                     <button type="reset" class="btn btn-warning col-md-5  pull-right  ">Reset</button>
                 </div>
 
@@ -292,6 +292,7 @@
                 "scrollCollapse": false,
                 "paging": true,
                 "bProcessing": true,
+               "scrollX":true,
 
             });
 
@@ -314,6 +315,8 @@
 //                var data = table.row($(this).parents('tr')).data();
 //                setData(data);
                 swal("Employee Record updated", "", "success");
+                //return redirect();
+
             });
 
 
@@ -384,7 +387,8 @@
             $('#datepicker_dob').datepicker({
                 // minDate: new Date(currentYear, currentMonth, currentDate),
                 format: 'yyyy-mm-dd',
-                autoclose: true
+                autoclose: true,
+
             });
 
 
