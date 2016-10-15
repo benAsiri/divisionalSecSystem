@@ -72,11 +72,11 @@
       <header class="main-header">
 
         <!-- Logo -->
-        <a href="masterPage.blade.php" class="logo">
+        <a href="{{action('HomeController@index')}}" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>H</b>R</span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>HR</b>SECTION</span>
+          <span class="logo-lg"><b>HOME</b></span>
         </a>
 
         <!-- Header Navbar: style can be found in header.less -->
@@ -343,16 +343,17 @@
 
             <li class="active treeview">
 
-                <a href="#"><i class="fa fa-circle-o text-red"></i>
+                <li><a href="#"><i class="fa fa-circle-o text-red"></i>
                   <span>HR Management</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
                   <li class="">
-                    <a href="#"><i class="fa fa-circle-o text-yellow"></i> Manage My Employees</a>
-                    <ul class="treeview-menu menu-open" style="display: block;">
+                    <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> Manage My Employees</a>
+                    <ul class="treeview-menu " style="display: block;">
                       <li><a href="{{action('HRController@addEmployee')}}"><i class="fa fa-circle-o"></i> Add Employees</a></li>
                       <li><a href="{{action('HRController@loadUpdateEmployees')}}"><i class="fa fa-circle-o"></i> Update Employee Details</a></li>
                       <li><a href="{{action('HRController@searchEmployee')}}"><i class="fa fa-circle-o"></i> View All</a></li>
                     </ul>
+                  </li>
                   </li>
                   <li class="">
                     <a href="{{action('PageController@yearly_Increment_Calculator')}}"><i class="fa fa-circle-o text-yellow"></i> Yearly increment Calculator</a>

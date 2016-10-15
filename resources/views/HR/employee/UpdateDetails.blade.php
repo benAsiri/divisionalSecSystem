@@ -31,7 +31,7 @@
                 {{--</div>--}}
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <table id="example1" class="table table-bordered table-striped tr" >
+                    <table id="example1" class="table table-bordered table-striped tr">
                         <thead>
                         <tr>
                             <th></th>
@@ -253,9 +253,6 @@
                                 <label for="exampleInputEmail1">Pension Date</label>
                                 <input type="hidden"  id="empid" name="empid" class="form-control" required placeholder="">
                             </div>
-                            <div class="form-group">
-                                <p>Date: <input type="text" id="datepicker"></p>
-                            </div>
                             <br>
                             <br>
                         </div>
@@ -287,16 +284,6 @@
 
     <script type="text/javascript">
 
-        $( function() {
-            $( "#datepicker" ).datepicker({
-
-                format: 'yyyy-mm-dd',
-                autoclose: true,
-
-            });
-        } );
-
-
         $(document).ready(function () {
            var table = $('#example1').DataTable({
                 select: true,
@@ -306,6 +293,7 @@
                 "scrollCollapse": false,
                 "paging": true,
                 "bProcessing": true,
+               "scrollX":true,
 
             });
 
@@ -328,7 +316,7 @@
 //                var data = table.row($(this).parents('tr')).data();
 //                setData(data);
                 swal("Employee Record updated", "", "success");
-
+                //return redirect();
 
             });
 
@@ -365,7 +353,6 @@
                             // console.log(path);
                             window.location.replace(path);
                             swal("Deleted!", "Your record has been deleted.", "success");
-
                         });
 
 

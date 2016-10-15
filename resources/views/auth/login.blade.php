@@ -9,15 +9,7 @@
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
                         {!! csrf_field() !!}
-{{--<<<<<<< HEAD--}}
 
-                        {{--<div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">--}}
-                            {{--<label class="col-md-4 control-label">Username</label>--}}
-
-                            {{--<div class="col-md-6">--}}
-                                {{--<input type="username" class="form-control" name="username" value="{{ old('username') }}">--}}
-
-{{--=======--}}
                         <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
                             <label class="col-md-4 control-label">Username</label>
                             <div class="col-md-6">

@@ -19,9 +19,13 @@
 
 
     <!-- Content Header (Page header) -->
-    <section class="content-header">
-        <h1>Add Employee </h1>
-    </section>
+    {{--<section class="content-header">--}}
+        {{--<h1>Add Employee </h1>--}}
+    {{--</section>--}}
+
+    <div align="center" style="background:#CED2CD" >
+        <h1>Add Employee</h1>
+    </div>
 
     <!-- Main content -->
     {{--<section class="content">--}}
@@ -40,7 +44,7 @@
             <div class="nav-tabs-custom">
                 <!-- Tabs within a box -->
                 <ul class="nav nav-tabs pull-right">
-                    <li class="pull-left header"><i class="fa fa-inbox"></i>Personal Details</li>
+                    <li class="pull-left header" ><i class="fa fa-inbox"></i>Personal Details</li>
                 </ul>
 
                 <div class="tab-content no-padding">
@@ -51,7 +55,7 @@
                         <!-- form start -->
                             <form class="" id="form-add-employee" role="form" method="POST"
                                 action="{{url('/AddEmployeeDetails')}}">
-
+                                <input type="hidden" name="_token"  value="{{ csrf_token() }}">
                                 <div class="box-body">
 
                                     <div class="col-md-12">
@@ -60,7 +64,7 @@
 
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">SurName</label>
-                                            <input class="form-control" name="surname" value="" id="surname" placeholder="Enter surname"
+                                            <input class="form-control" name="surname" id="surname" placeholder="Enter surname"
                                                 type="text">
                                         </div>
                                         <br>
@@ -199,21 +203,21 @@
 
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Appointment Number</label>
-                                        <input class="form-control" id="appNo"
-                                               placeholder="Enter Appointment number" type="nic">
+                                        <input class="form-control " id="appNo" name="appNo"
+                                               placeholder="Enter Appointment number" type="text">
                                     </div>
                                     <br>
 
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Job Position</label>
-                                        <input class="form-control" id="jobp" placeholder="Write Here"
+                                        <input class="form-control" id="jobp" placeholder="Write Here" name="jobp"
                                                type="nic">
                                     </div>
                                     <br>
 
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Job Grade</label>
-                                        <input class="form-control" id="jobg" value=""
+                                        <input class="form-control" id="jobg"
                                                placeholder="Enter Grade if have" type="nic">
                                     </div>
                                     <br>
@@ -234,19 +238,17 @@
 
                                     <div class="box-footer ">
                                         <input type="submit" class="btn btn-primary insert" value="Submit">
+                                        <input type="button" class="btn btn-primary" value="DEMO Fill" onclick="Demo()">
                                     </div>
-                                            <div class="box-footer ">
-                                                <input type="button" class="btn btn-primary Demo" value="Demo" id="DemoFill">
-                                            </div>
 
-                                            </div>
 
                                 </div>
+                                </div>
+                                <!-- /.box-body -->
+
                             </div>
-                            <!-- /.box-body -->
 
-
-                        </form>
+                            </form>
 
                 </div>
             </div>
@@ -267,6 +269,34 @@
 
 
                 <script>
+
+
+                    //                    /**
+                    //                     *This is jquery function is for the date picker used at the Date of birth field
+                    //                     */
+                    //                    $(function () {
+                    //                        //Date picker
+                    //
+                    //                    });
+                    //
+                    //
+                    //
+                    //
+                    //                    /**
+                    //                     *This is jquery function is for the date picker used at the Date of appointment
+                    //                     */
+                    //                    $(function () {
+                    //                       // $("#datepicker_dob").datepicker({ dateFormat: 'yy-mm-dd' });
+                    //
+                    //                    });
+
+
+                    $(function () {
+
+
+                    });
+
+
                     /**
                      * This ajax code has written to the onclick event of the insert button
                      * This method will submit the details of the form to the database
@@ -278,12 +308,12 @@
                             rules: {
                                 surname: {
                                     required: true,
-                                    pattern: /^[A-z]+$/
+
                                 },
 
                                 fullname: {
                                     required: true,
-                                    pattern: /^[A-z]+$/
+
                                 },
 
                                 nic: {
@@ -296,6 +326,15 @@
                                 datepicker_dob: {
                                     required: true,
                                 },
+                                datepicker_doa:{
+                                    required:true,
+                                },
+                                appNo:{
+                                  required:true,
+                                },
+                                jobp:{
+                                    required:true,
+                                }
 
 
                             },
@@ -303,7 +342,7 @@
                             messages: {
                                 surname: {
                                     required: "This field cannot be empty",
-                                    pattern: "Please enter characters only "
+//                                    pattern: "Please enter characters only "
                                 },
                                 fullname: {
                                     required: "This field cannot be empty",
@@ -319,6 +358,15 @@
                                 datepicker_dob: {
                                     required: "This field cannot be empty",
                                 },
+                                datepicker_doa:{
+                                    required:"This field cannot be empty"
+                                },
+                                appNo:{
+                                    required:"This field cannot be empty"
+                                },
+                                jobp:{
+                                    required:"This field cannot be empty"
+                                },
 
 
                             }
@@ -330,18 +378,14 @@
                             autoclose: true,
 
 
-
-
-
-                        }).valid();
+                        });
 
 
 
                         $('#datepicker_dob').datepicker({
                             // minDate: new Date(currentYear, currentMonth, currentDate),
                             format: 'yyyy-mm-dd',
-                            autoclose: true,
-
+                            autoclose: true
 
 
 
@@ -382,6 +426,8 @@
                                     },
                                     success: function (e) {
                                         swal("New Employee Added", "", "success");
+//                                        return back();
+                                       //window.location="http://localhost:8000/AddEmployees";
                                     },
                                     error: function (e) {
 
@@ -392,6 +438,23 @@
                             }
                         });
                     })
+
+                    function Demo(){
+
+                        $("#surname").val("DemoSurname");
+                        $("#fullname").val("DemoFullname");
+                        $("#nic").val("987654321V");
+                        $("#address").val("DemoAddress");
+                        $("#datepicker_dob").val("2016-01-01");
+                        $("#datepicker_doa").val("2016-01-01");
+                        $("#appNo").val("20001");
+                        $("#jobp").val("DemoJopPosition");
+                        $("#jobg").val("DemoGrade");
+                        $("#widowNo").val("50001");
+
+                    }
+
+
 
 
 
