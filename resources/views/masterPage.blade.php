@@ -389,25 +389,17 @@
                   </li>
                 </ul>
               <a href="{{action('PageController@yearly_Increment_Calculator')}}">
-                {{--<i class="fa-user"></i> <span>HR Managent</span><i class="fa fa-angle-left pull-right"></i>--}}
+                <i class="fa-user"></i> <span>HR Management</span><i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                {{--<li><a href="{{action('HRController@addEmployee')}}"><i class="fa fa-circle-o"></i> Add Employee Details </a></li>--}}
-                {{--<li><a href="{{action('HRController@searchEmployee')}}"><i class="fa fa-circle-o"></i> Search Employee Details </a></li>--}}
-                {{--<li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i> Page3 </a></li>--}}
-
+                <li><a href="{{action('HRController@addEmployee')}}"><i class="fa fa-circle-o"></i> Add Employee Details </a></li>
+                <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i> Page2 </a></li>
+                <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i> Page3 </a></li>
+                 <li><a href="{{url('/LeaveMgt/applyleave')}}"><i class="fa fa-circle-o"></i>Apply Leave </a></li>
+                 <li><a href="{{url('/view_remaining')}}"><i class="fa fa-circle-o"></i>View Remaining Leaves </a></li>
 
               </ul>
             </li>
-            {{--<li class="active treeview">--}}
-            {{--<li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i> <span>Land Dision</span><i class="fa fa-angle-left pull-right"></i>--}}
-              {{--</a>--}}
-              {{--<ul class="treeview-menu">--}}
-                {{--<li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>option1</a></li>--}}
-                {{--<li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>option2 </a></li>--}}
-                {{--<li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>Current Status </a></li>--}}
-                {{--<li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>Current Status </a></li>--}}
-              {{--</ul>--}}
 
                 <li class="active treeview">
                 <li><a href="#"><i class="fa fa-circle-o text-blue"></i>
@@ -624,6 +616,7 @@
 @section('js_ref')
     <!-- jQuery 2.1.4 -->
     <script src="{{asset('plugins/jQuery/jQuery-2.1.4.min.js')}}"></script>
+
     <!-- Bootstrap 3.3.5 -->
     <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
     <!-- FastClick -->

@@ -137,7 +137,7 @@
                                                 <div class="input-group-addon">
                                                     <i class="fa fa-calendar"></i>
                                                 </div>
-                                                <input type="text" class="form-control" name="cleave" id="cleave"  placeholder="Select Dates">
+                                                <input type="text" class="form-control" name="cleave" id="cleave" " placeholder="Select Dates">
                                             </div>
                                     </br>
 
@@ -148,24 +148,6 @@
                                     </span>
                                     @endif
 
-                            </div>
-                            <div class="form-group{{ $errors->has('rleave') ? ' has-error' : '' }}">
-                                <label class="col-md-4 control-label">Resuming Leave</label>
-
-                                <div class="col-md-6">
-                                    <div class="input-group date">
-                                        <div class="input-group-addon">
-                                            <i class="fa fa-calendar"></i>
-                                        </div>
-                                        <input type="text" class="form-control" id="rleave" name="rleave" placeholder="Select Resuming date">
-                                    </div>
-                                    </br>
-                                    @if ($errors->has('rleave'))
-                                        <span class="help-block">
-                                        <strong>{{ $errors->first('rleave') }}</strong>
-                                    </span>
-                                    @endif
-                                </div>
                             </div>
 
                             <div class="form-group{{ $errors->has('reason') ? ' has-error' : '' }}">
@@ -182,11 +164,13 @@
                                 </div>
                             </div>
 
+                                <input id="nofdayss" name="nofdayss" type="hidden" >
+
 
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
 
-                                    <button type="submit" class="btn btn-primary" id="form_submit" name="form_submit" onclick="processdata()">
+                                    <button type="submit" class="btn btn-primary" id="form_submit" onclick="processdata()" name="form_submit" >
                                         <i class="fa fa-btn fa-user"></i>Apply Leave</button>
                                 </div>
                             </div>
@@ -293,23 +277,11 @@
 
         function processdata(){
             var k = document.getElementById("cleave").value;
-             var noOfDays = (k.split(",")).length;
-            alert(noOfDays);
+             var noOfDaysss = (k.split(",")).length;
 
-            jQuery.ajax({
+            document.getElementById("nofdayss").value=noOfDaysss;
 
-                dataType : "json",
-                contentType : "application/json; charset=utf-8",
-                type: 'POST',
-                url:'LeaveMgt/addleave',
-                data:{nodays:noOfDays},
-                success: function(max){
-                }
-
-            });
-
-
-        }
+           }
 
 
 

@@ -31,9 +31,16 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\VerifyCsrfToken::class,
         ],
 
+
+
         'api' => [
             'throttle:60,1',
-        ],
+             ],
+
+        'userfilter' => [\App\Http\Middleware\UserFilterMiddleware::class],
+        'HR' =>[\App\Http\Middleware\HRmiddleware::class],
+        'LD' =>[\App\Http\Middleware\Landdivisionmiddleware::class],
+
     ];
 
     /**
@@ -48,5 +55,6 @@ class Kernel extends HttpKernel
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'userfilter' => \App\Http\Middleware\UserFilterMiddleware::class,
     ];
 }
