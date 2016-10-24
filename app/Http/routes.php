@@ -18,6 +18,7 @@ Route::group(['middleware' => 'web'], function () {
      Route::auth();
      Route::get('/', 'HomeController@index');
 
+
      Route::group(['middleware'=>'userfilter'],function(){
 
           Route::post('/regi','UserRegisterController@registeruser');
@@ -57,7 +58,7 @@ Route::group(['middleware' => 'web'], function () {
 
      });
 
-     Route::group(['middleware'=>'HR'],function(){
+     Route::group(['middleware'=>'HR'],function() {
 
      Route::get('AddEmployees','HRController@addEmployee');
 
@@ -74,11 +75,11 @@ Route::group(['middleware' => 'web'], function () {
      Route::get('ApplyLeave','LeavePagesController@ApplyMyLeave');
      Route::get('currentleaves','LeavePagesController@CurrentLeaves');
 
-    //Matenarity Leaves
+
+              //Matenarity Leaves
      Route::get('ViewMateneryLeaves','MleavesController@viewMleaves');
      Route::get('AddMateneryLeaves','MleavesController@addMleaves');
      Route::post('addMleavesDetails','MleavesController@addMleavesDetails');
-
 
 
 
@@ -172,8 +173,6 @@ Route::group(['middleware' => 'web'], function () {
 
 
 });
-
-
 
 /*
 |--------------------------------------------------------------------------

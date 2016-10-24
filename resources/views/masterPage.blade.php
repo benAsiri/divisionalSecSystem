@@ -292,6 +292,7 @@
                       <img src="@if(Auth::user()->image != "null"){{asset('/profile_images/'.Auth::user()->image )}}@else{{asset('dist/img/user2-160x160.jpg')}}@endif" class="img-circle" alt="User Image">
                       <p>
                         {{ Auth::user()->name }}
+
                       <small>Member since Nov. 2012</small>
                     </p>
                   </li>
@@ -610,7 +611,13 @@
       </aside><!-- /.control-sidebar -->
       <!-- Add the sidebar's background. This div must be placed
            immediately after the control sidebar -->
-      <div class="control-sidebar-bg"></div>
+         
+
+      <div class="control-sidebar-bg">
+        
+      </div>
+
+
 
     </div><!-- ./wrapper -->
 @section('js_ref')

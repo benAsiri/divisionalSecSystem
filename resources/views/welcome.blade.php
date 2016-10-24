@@ -18,6 +18,9 @@
                     <br>
                 <div class="panel-body">
                     <img src="{{asset('dist/img/Header.png')}}" class="user-image" alt="HeaderImage">
+                    <pre>
+                    {{var_dump(Auth::user())}}
+                    </pre>
                 </div>
                     <br>
                     <br>
