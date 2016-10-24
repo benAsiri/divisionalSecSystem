@@ -2,7 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f46c150-cbb5-4e00-9f26-863e6286dc91" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/MleavesController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Mleave.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_09_08_100000_Mleaves.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/HR/LeaveManage/Mleaves/AddNewMleaves.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/HR/LeaveManage/Mleaves/viewMleaves.blade.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/database/migrations/2016_06_04_104955_create_advance_programs_table.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/database/migrations/2016_06_05_164750_employes.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/HRController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/HRController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_05_28_132748_create_employes_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_05_28_132748_create_employes_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_06_05_162440_creat_Advance_Program.php" afterPath="$PROJECT_DIR$/database/migrations/2016_06_05_162440_creat_Advance_Program.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_06_08_183709_leaves.php" afterPath="$PROJECT_DIR$/database/migrations/2016_06_08_183709_leaves.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/HR/employee/newEmployee.blade.php" afterPath="$PROJECT_DIR$/resources/views/HR/employee/newEmployee.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/masterPage.blade.php" afterPath="$PROJECT_DIR$/resources/views/masterPage.blade.php" />
     </list>
     <ignored path="divisionalSecSystem.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -14,7 +30,6 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="ComposerSettings">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <pharPath>C:\xampp\htdocs\divisionalSecSystem\composer.phar</pharPath>
@@ -28,108 +43,68 @@
     <favorites_list name="divisionalSecSystem" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="currentleaves.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/HR/LeaveManage/currentleaves.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="53.935482">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="applyleavess.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/HR/LeaveManage/applyleavess.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.6192894">
-              <caret line="357" column="0" selection-start-line="357" selection-start-column="0" selection-end-line="357" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="leavesopinions.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/HR/leavesopinions.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="68.645164">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="view_remaining_leaves.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/HR/LeaveManage/view_remaining_leaves.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="19.67742">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Leave.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Leave.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Loan.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Loan.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Salary.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Salary.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/User.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdvanceProgram.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/AdvanceProgram.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.677419">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Employe.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Employe.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.18203883">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="374">
+                  <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="Mleave.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/Mleave.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="170">
+                  <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="AddNewMleaves.blade.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/resources/views/HR/LeaveManage/Mleaves/AddNewMleaves.blade.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="656">
+                  <caret line="252" column="43" selection-start-line="252" selection-start-column="33" selection-end-line="252" selection-end-column="43" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="MleavesController.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MleavesController.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="466">
+                  <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+                  <folding>
+                    <element signature="e#121#136#0#PHP" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="2016_09_08_100000_Mleaves.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/database/migrations/2016_09_08_100000_Mleaves.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="391">
+                  <caret line="24" column="73" selection-start-line="24" selection-start-column="73" selection-end-line="24" selection-end-column="73" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -160,7 +135,6 @@
         <option value="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_05_28_132748_create_employes_table.php" />
-        <option value="$PROJECT_DIR$/app/Employe.php" />
         <option value="$PROJECT_DIR$/app/Salary.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/config/app.php" />
@@ -168,34 +142,37 @@
         <option value="$PROJECT_DIR$/public/plugins/jquery.dataTables/jquery.dataTables.css" />
         <option value="$PROJECT_DIR$/resources/views/HR/employee/employeeSalary.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_06_11_041717_create_salaries_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_06_04_104955_create_advance_programs_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AdvanceController.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/resources/views/HR/employee/searchEmployee.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/HR/employee/newEmployee.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/HRController.php" />
         <option value="$PROJECT_DIR$/resources/views/HR/employee/UpdateDetails.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/LeaveController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/UserRegisterController.php" />
         <option value="$PROJECT_DIR$/resources/views/HR/leavesopinions.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/HR/LeaveManage/applyleavess.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/masterPage.blade.php" />
         <option value="$PROJECT_DIR$/app/Leave.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/app/AdvanceProgram.php" />
+        <option value="$PROJECT_DIR$/vendor/symfony/debug/Exception/FatalThrowableError.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/HRController.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_09_08_100000_Mleaves.php" />
+        <option value="$PROJECT_DIR$/app/Employe.php" />
+        <option value="$PROJECT_DIR$/app/Mleave.php" />
+        <option value="$PROJECT_DIR$/resources/views/HR/LeaveManage/Mleaves/viewMleaves.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/HR/employee/newEmployee.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/resources/views/masterPage.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/MleavesController.php" />
+        <option value="$PROJECT_DIR$/resources/views/HR/LeaveManage/Mleaves/AddNewMleaves.blade.php" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" />
-  <component name="JsBuildToolPackageJson" detection-done="true" />
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
-    <gulpfiles>
-      <GulpfileState>
-        <gulpfile-path>$PROJECT_DIR$/gulpfile.js</gulpfile-path>
-      </GulpfileState>
-    </gulpfiles>
+    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpServers">
     <servers />
@@ -272,9 +249,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="width" value="1932" />
-    <option name="height" value="1038" />
+    <option name="x" value="1358" />
+    <option name="y" value="-8" />
+    <option name="width" value="1296" />
+    <option name="height" value="1010" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -287,7 +265,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="Scope" currentSubView="Project Files" proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -301,357 +279,19 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files" />
+      </pane>
       <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="divisionalSecSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="divisionalSecSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="divisionalSecSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="divisionalSecSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="divisionalSecSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="divisionalSecSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="divisionalSecSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="divisionalSecSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="divisionalSecSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="divisionalSecSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="divisionalSecSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="divisionalSecSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="divisionalSecSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="divisionalSecSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="divisionalSecSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="divisionalSecSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="divisionalSecSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plugins" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="divisionalSecSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="divisionalSecSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plugins" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jquery.dataTables" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="divisionalSecSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="divisionalSecSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="divisionalSecSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="divisionalSecSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="divisionalSecSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="divisionalSecSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Middleware" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
+        <subPane />
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="divisionalSecSystem">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="divisionalSecSystem">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="storage">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="divisionalSecSystem">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="resources">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="views">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="divisionalSecSystem">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="resources">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="views">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="HR">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="divisionalSecSystem">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="resources">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="views">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="HR">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="LeaveManage">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="divisionalSecSystem">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="resources">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="divisionalSecSystem">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="app">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="master&#9;FILE&#9;file://C:/Users/Kusal Rodrigo/Desktop/SYSTEM/Kusal/divisionalSecSystem/resources/views/masterPage.blade.php&#10;user&#9;FILE&#9;file://C:/Users/Kusal Rodrigo/Desktop/SYSTEM/Kusal/divisionalSecSystem/app/Http/Controllers/UserRegisterController.php&#10;lea&#9;null&#9;null&#10;mas&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/masterPage.blade.php&#10;rou&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/routes.php&#10;hr&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/Controllers/HRController.php&#10;app&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/config/app.php&#10;new&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/HR/employee/newEmployee.blade.php&#10;compo&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/composer.json&#10;sea&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/HR/employee/searchEmployee.blade.php&#10;HR&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/Controllers/HRController.php&#10;app.&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/config/app.php&#10;comp&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/composer.json&#10;rout&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/routes.php&#10;adva&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/Controllers/AdvanceController.php&#10;adv&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/HR/AdvanceProgram/AdvanceTable.blade.php&#10;emp&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/database/migrations/2016_05_28_132748_create_employes_table.php&#10;up&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/HR/employee/UpdateDetails.blade.php&#10;sa&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/HR/employee/employeeSalary.blade.php&#10;Hr&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/Controllers/HRController.php&#10;upd&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/HR/employee/UpdateDetails.blade.php&#10;jquery.&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/public/plugins/jquery.dataTables/jquery.dataTables.css&#10;sort&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/images/sort_asc.png&#10;ud&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/HR/employee/UpdateDetails.blade.php&#10;salary&#9;null&#9;null&#10;salari&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/database/migrations/2016_06_11_041717_create_salaries_table.php&#10;routeCo&#9;null&#9;null&#10;ma&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/masterPage.blade.php&#10;ne&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/HR/employee/newEmployee.blade.php&#10;com&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/composer.json&#10;se&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/HR/employee/searchEmployee.blade.php&#10;authc&#9;null&#9;null&#10;auth&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/Middleware/Authenticate.php&#10;login&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/auth/login.blade.php&#10;mast&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/masterPage.blade.php&#10;maste&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/masterPage.blade.php&#10;emplo&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/database/migrations/2016_05_28_132748_create_employes_table.php&#10;route&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/routes.php&#10;u&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/UserMgt/usermgt.blade.php&#10;use&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/UserMgt/usermgt.blade.php&#10;dashboard&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/public/dist/js/pages/dashboard2.js&#10;home&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/Controllers/HomeController.php&#10;employes&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/database/migrations/2016_05_28_132748_create_employes_table.php&#10;userm&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/UserMgt/usermgt.blade.php&#10;en&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/.env&#10;empl&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/database/migrations/2016_05_28_132748_create_employes_table.php" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/Controllers/MleavesController.php&#10;hr&#9;null&#9;null&#10;ML&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/Controllers/MleavesController.php&#10;Mlea&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/database/migrations/2016_09_08_100000_Mleaves.php&#10;M&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Mleave.php&#10;master&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/masterPage.blade.php&#10;rou&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/routes.php&#10;mleav&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/Controllers/MleavesController.php&#10;emplo&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/database/migrations/2016_05_28_132748_create_employes_table.php&#10;HR&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/Controllers/HRController.php&#10;en&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/.env&#10;FatalT&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/vendor/symfony/debug/Exception/FatalThrowableError.php&#10;user&#9;FILE&#9;file://C:/Users/Kusal Rodrigo/Desktop/SYSTEM/Kusal/divisionalSecSystem/app/Http/Controllers/UserRegisterController.php&#10;lea&#9;null&#9;null&#10;mas&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/masterPage.blade.php&#10;app&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/config/app.php&#10;new&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/HR/employee/newEmployee.blade.php&#10;compo&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/composer.json&#10;sea&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/HR/employee/searchEmployee.blade.php&#10;app.&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/config/app.php&#10;comp&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/composer.json&#10;rout&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/routes.php&#10;adva&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/Controllers/AdvanceController.php&#10;adv&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/HR/AdvanceProgram/AdvanceTable.blade.php&#10;emp&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/database/migrations/2016_05_28_132748_create_employes_table.php&#10;up&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/HR/employee/UpdateDetails.blade.php&#10;sa&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/HR/employee/employeeSalary.blade.php&#10;Hr&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/Controllers/HRController.php&#10;upd&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/HR/employee/UpdateDetails.blade.php&#10;jquery.&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/public/plugins/jquery.dataTables/jquery.dataTables.css&#10;sort&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/images/sort_asc.png&#10;ud&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/HR/employee/UpdateDetails.blade.php&#10;salary&#9;null&#9;null&#10;salari&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/database/migrations/2016_06_11_041717_create_salaries_table.php&#10;routeCo&#9;null&#9;null&#10;ma&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/masterPage.blade.php&#10;ne&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/HR/employee/newEmployee.blade.php&#10;com&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/composer.json&#10;se&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/HR/employee/searchEmployee.blade.php&#10;authc&#9;null&#9;null&#10;auth&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/Middleware/Authenticate.php&#10;login&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/auth/login.blade.php&#10;mast&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/masterPage.blade.php&#10;maste&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/masterPage.blade.php&#10;route&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/routes.php&#10;u&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/UserMgt/usermgt.blade.php&#10;use&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/UserMgt/usermgt.blade.php&#10;dashboard&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/public/dist/js/pages/dashboard2.js&#10;home&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/Controllers/HomeController.php&#10;employes&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/database/migrations/2016_05_28_132748_create_employes_table.php" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="204" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="237" />
@@ -676,15 +316,16 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\divisionalSecSystem\resources\views\HR\LeaveManage\Mleaves" />
       <recent name="C:\xampp\htdocs\divisionalSecSystem\public\plugins\jquery.dataTables" />
       <recent name="C:\xampp\htdocs\divisionalSecSystem\app\Http\Controllers" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\divisionalSecSystem\database\migrations" />
+      <recent name="C:\xampp\htdocs\divisionalSecSystem" />
       <recent name="C:\xampp\htdocs\divisionalSecSystem\public\plugins\jQuery" />
       <recent name="C:\xampp\htdocs\divisionalSecSystem\app\Http\Controllers" />
-      <recent name="C:\xampp\htdocs\divisionalSecSystem\database\migrations" />
       <recent name="C:\xampp\htdocs\divisionalSecSystem\app" />
-      <recent name="C:\xampp\htdocs\divisionalSecSystem\resources\views\HR" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.HRController.php">
@@ -695,6 +336,9 @@
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
       <method />
     </configuration>
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -712,6 +356,7 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
       <node-options />
       <gulpfile />
       <tasks />
@@ -723,7 +368,21 @@
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
       <command value="run-script" />
       <scripts />
+      <node-interpreter value="project" />
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
       <method />
     </configuration>
     <list size="2">
@@ -737,7 +396,9 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -746,6 +407,7 @@
       <changelist id="9f46c150-cbb5-4e00-9f26-863e6286dc91" name="Default" comment="" />
       <created>1464423499627</created>
       <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
       <updated>1464423499627</updated>
       <workItem from="1466029656391" duration="343000" />
       <workItem from="1467042326887" duration="432000" />
@@ -758,70 +420,87 @@
       <workItem from="1471595440834" duration="1013000" />
       <workItem from="1471969634752" duration="13189000" />
       <workItem from="1472186328065" duration="6421000" />
+      <workItem from="1476519425744" duration="4362000" />
+      <workItem from="1476530792816" duration="36338000" />
+      <workItem from="1476846442608" duration="599000" />
+      <workItem from="1476850350392" duration="9286000" />
+      <workItem from="1476953675480" duration="29000" />
+      <workItem from="1477330450376" duration="11635000" />
     </task>
     <task id="LOCAL-00001" summary="Create Employee model and its migration file">
       <created>1464449270865</created>
       <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
       <updated>1464449270865</updated>
     </task>
     <task id="LOCAL-00002" summary="edit add employe blade page">
       <created>1464463341989</created>
       <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
       <updated>1464463341989</updated>
     </task>
     <task id="LOCAL-00003" summary="edit add employe blade page">
       <created>1464463669162</created>
       <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
       <updated>1464463669162</updated>
     </task>
     <task id="LOCAL-00004" summary="Migration file changed(employees)">
       <created>1465037970331</created>
       <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
       <updated>1465037970331</updated>
     </task>
     <task id="LOCAL-00005" summary="Search Employee Completed">
       <created>1465079918135</created>
       <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
       <updated>1465079918135</updated>
     </task>
     <task id="LOCAL-00006" summary="Add employee details completed(without validation)">
       <created>1465277576936</created>
       <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
       <updated>1465277576936</updated>
     </task>
     <task id="LOCAL-00007" summary="Add employee details completed(without validation)">
       <created>1468124274104</created>
       <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
       <updated>1468124274104</updated>
     </task>
     <task id="LOCAL-00008" summary="Add employee details completed(without validation)">
       <created>1468124892750</created>
       <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
       <updated>1468124892750</updated>
     </task>
     <task id="LOCAL-00009" summary="Add employee details completed(without validation)">
       <created>1468125088411</created>
       <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
       <updated>1468125088411</updated>
     </task>
     <task id="LOCAL-00010" summary="Leave management, user management has been modified&#10;">
       <created>1476475489301</created>
       <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
       <updated>1476475489301</updated>
     </task>
     <task id="LOCAL-00011" summary="Leave management, user management has been modified&#10;">
       <created>1476475858096</created>
       <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
       <updated>1476475858096</updated>
     </task>
@@ -829,29 +508,29 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41814000" />
+    <option name="totallyTimeSpent" value="104063000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="1932" height="1038" extended-state="0" />
-    <editor active="false" />
+    <frame x="1358" y="-8" width="1296" height="1010" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Gulp" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17741935" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.197411" sideWeight="0.48969072" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39419794" sideWeight="0.50907713" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4777651" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47826087" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.238041" sideWeight="0.49092284" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44283414" sideWeight="0.49092284" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32312405" sideWeight="0.5103093" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22525597" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850778" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -909,359 +588,193 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/HR/employee/employeeSalary.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/profile.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/HR/AdvanceProgram/submit.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/HR/AdvanceProgram/AdvanceTable.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/reports/monthlyReport.blade.php" />
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdvanceController.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/UserMgt/usermgt.blade.php" />
+    <entry file="file://$PROJECT_DIR$/composer.json" />
+    <entry file="file://$PROJECT_DIR$/resources/views/HR/reports/employeeRecordsReport.blade.php" />
+    <entry file="file://$PROJECT_DIR$/config/app.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/HR/AdvanceProgram/InsertInfo.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/HR/AdvanceProgram/editInfo.blade.php" />
+    <entry file="file://$PROJECT_DIR$/public/plugins/jQuery/jQuery-2.1.4.min.js" />
+    <entry file="file://$PROJECT_DIR$/public/plugins/jQuery/jquery-1.7.1.min.js" />
+    <entry file="file://$PROJECT_DIR$/resources/views/HR/employee/UpdateDetails.blade.php" />
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LeaveController.php" />
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserRegisterController.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/HR/LeaveManage/applyLeaves.blade.php" />
+    <entry file="file://$PROJECT_DIR$/app/Loan.php" />
+    <entry file="file://$PROJECT_DIR$/app/Salary.php" />
+    <entry file="file://$PROJECT_DIR$/app/User.php" />
+    <entry file="file://$PROJECT_DIR$/app/AdvanceProgram.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/HR/leavesopinions.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/HR/LeaveManage/view_remaining_leaves.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/HR/LeaveManage/currentleaves.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/HR/LeaveManage/applyleavess.blade.php" />
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/debug/Exception/FatalThrowableError.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="193">
+          <caret line="25" column="45" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/plugins/jqueryValidater/additional-methods.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/css/sweetalert.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/plugins/sweetAlert/sweetalert.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="76" column="1" selection-start-line="76" selection-start-column="1" selection-end-line="76" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Authenticate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Auth/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="55" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Adduser.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_06_04_104955_create_advance_programs_table.php" />
     <entry file="file://$PROJECT_DIR$/database/migrations/2016_06_04_125959_create_loans_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/images/sort_asc.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/plugins/jquery.dataTables/jquery.dataTables.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="54" column="37" selection-start-line="54" selection-start-column="37" selection-end-line="54" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/HR/employee/employeeSalary.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="73" column="91" selection-start-line="73" selection-start-column="20" selection-end-line="73" selection-end-column="91" />
+        <state relative-caret-position="-143">
+          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2016_06_11_041717_create_salaries_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="109" selection-start-line="21" selection-start-column="109" selection-end-line="21" selection-end-column="109" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_05_28_132748_create_employes_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="-364">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Auth/profile.blade.php">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_06_05_164750_employes.php" />
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_06_05_162440_creat_Advance_Program.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+        <state relative-caret-position="17">
+          <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="33" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="33" />
+        <state relative-caret-position="209">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/HR/AdvanceProgram/submit.blade.php" />
-    <entry file="file://$PROJECT_DIR$/resources/views/HR/AdvanceProgram/AdvanceTable.blade.php">
+    <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="36">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_06_04_104955_create_advance_programs_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/reports/monthlyReport.blade.php" />
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdvanceController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_06_08_183709_leaves.php" />
-    <entry file="file://$PROJECT_DIR$/resources/views/UserMgt/usermgt.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="42" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/HR/reports/employeeRecordsReport.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="209" column="7" selection-start-line="209" selection-start-column="7" selection-end-line="209" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/HR/AdvanceProgram/InsertInfo.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/HR/AdvanceProgram/editInfo.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="8" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/plugins/jQuery/jQuery-2.1.4.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/plugins/jQuery/jquery-1.7.1.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/HR/LeaveManage/MatineryLeaves/AddnewLeaves.bash.php" />
     <entry file="file://$PROJECT_DIR$/resources/views/HR/employee/searchEmployee.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="98" column="36" selection-start-line="98" selection-start-column="36" selection-end-line="98" selection-end-column="36" />
+        <state relative-caret-position="-408">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="123" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/HR/employee/UpdateDetails.blade.php">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_06_08_183709_leaves.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="10.581819">
-          <caret line="291" column="0" selection-start-line="291" selection-start-column="0" selection-end-line="291" selection-end-column="0" />
+        <state relative-caret-position="-285">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Leave.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/framework/views/3c3f97efbd2e5e44ed3b063a78fc7e534141fefb.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/HR/LeaveManage/Mleaves/viewMleaves.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1377">
+          <caret line="81" column="27" selection-start-line="81" selection-start-column="27" selection-end-line="81" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_09_08_100000_Mleaves.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="24" column="73" selection-start-line="24" selection-start-column="73" selection-end-line="24" selection-end-column="73" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HRController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="5.490909">
-          <caret line="157" column="44" selection-start-line="157" selection-start-column="44" selection-end-line="157" selection-end-column="44" />
-          <folding />
+        <state relative-caret-position="187">
+          <caret line="53" column="34" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/HR/employee/newEmployee.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.036363635">
-          <caret line="269" column="23" selection-start-line="269" selection-start-column="23" selection-end-line="269" selection-end-column="23" />
-          <folding />
+        <state relative-caret-position="276">
+          <caret line="61" column="36" selection-start-line="61" selection-start-column="36" selection-end-line="61" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_05_28_132748_create_employes_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.036363635">
-          <caret line="25" column="34" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LeaveController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="104.83871">
-          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserRegisterController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="47" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
-          <folding>
-            <element signature="e#163#191#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/HR/LeaveManage/applyLeaves.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.46867168">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/masterPage.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-418.7097">
-          <caret line="612" column="25" selection-start-line="612" selection-start-column="25" selection-end-line="612" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Employe.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/masterPage.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="19" column="42" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Leave.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MleavesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="466">
+          <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+          <folding>
+            <element signature="e#121#136#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Loan.php">
+    <entry file="file://$PROJECT_DIR$/app/Mleave.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="170">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Salary.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/HR/LeaveManage/Mleaves/AddNewMleaves.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/AdvanceProgram.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.677419">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/HR/leavesopinions.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="68.645164">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/HR/LeaveManage/view_remaining_leaves.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="19.67742">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/HR/LeaveManage/currentleaves.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="53.935482">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/HR/LeaveManage/applyleavess.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.6192894">
-          <caret line="357" column="0" selection-start-line="357" selection-start-column="0" selection-end-line="357" selection-end-column="0" />
+        <state relative-caret-position="656">
+          <caret line="252" column="43" selection-start-line="252" selection-start-column="33" selection-end-line="252" selection-end-column="43" />
           <folding />
         </state>
       </provider>

@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- jvectormap -->
     <link rel="stylesheet" href="{{asset('plugins/jvectormap/jquery-jvectormap-1.2.2.css')}}">
+    <link rel="stylesheet" href="{{asset('plugins/sweetAlert/sweetalert.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('dist/css/AdminLTE.min.css')}}">
 
@@ -373,8 +374,10 @@
                   <li class="">
                     <a href=""><i class="fa fa-circle-o text-yellow"></i> Maternity Leaves</a>
                     <ul class="treeview-menu menu-open" style="display: block;">
-                      <li><a href="{{action('LeavePagesController@CurrentLeaves')}}"><i class="fa fa-circle-o"></i> View Leaves</a></li>
-                      <li><a href="{{action('LeavePagesController@ApplyMyLeave')}}"><i class="fa fa-circle-o"></i> Apply Leave</a></li>
+                      <li><a href="{{action('MleavesController@viewMleaves')}}"><i class="fa fa-circle-o"></i> View Leaves</a></li>
+                      <li><a href="{{action('MleavesController@addMleaves')}}"><i class="fa fa-circle-o"></i> Add Leaves</a></li>
+
+
                     </ul>
                   </li>
                   <li class="">

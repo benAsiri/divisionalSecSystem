@@ -54,14 +54,33 @@ Route::group(['middleware' => 'web'], function () {
 
 
      Route::get('ApplyLeave','LeavePagesController@ApplyMyLeave');
-
      Route::get('currentleaves','LeavePagesController@CurrentLeaves');
+
+    //Matenarity Leaves
+     Route::get('ViewMateneryLeaves','MleavesController@viewMleaves');
+     Route::get('AddMateneryLeaves','MleavesController@addMleaves');
+     Route::post('addMleavesDetails','MleavesController@addMleavesDetails');
+
+
+
+
+
+
+
 
 
      Route::get('ApplyLoans','LoanPagesController@applyLoans');
 
      Route::get('viewLoans','LoanPagesController@viewLoans');
 //
+
+
+
+
+
+
+
+
 
      Route::get('insert','AdvanceController@InsertInfo');
 
