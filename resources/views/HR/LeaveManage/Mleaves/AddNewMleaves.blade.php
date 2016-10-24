@@ -231,6 +231,7 @@
 
                         },
                         error: function (e) {
+                            swal("Error!!!", "", "error");
                             console.log(e);
                         }
 
