@@ -158,7 +158,7 @@ class HRController extends Controller
         $employee->save();
 
 
-        //return redirect()->action('HRController@loadUpdateEmployees');
+        return redirect()->action('HRController@loadUpdateEmployees');
         //return redirect()->action('HRController@addEmployee');
 
 

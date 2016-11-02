@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\BCertificate;
+use App\Employe;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -61,6 +62,17 @@ class DetailController extends Controller
         return view('Population.viewBCDetails',compact('bcDetails'));
         //return var_dump($bcDetails);
         
+    }
+    
+    public function isNicUsed(Request $request){
+        //$bCertificate = Employe::where('id_num','=',$request['NIC'])-get();
+        $bCertificate = Employe::where('id_num','=',$request['NIC'])->count();
+        if($bCertificate > 0) {
+            return 'false';
+
+        } else {
+            return 'true';
+        }
     }
 
 

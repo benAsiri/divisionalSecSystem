@@ -33,6 +33,7 @@ Route::group(['middleware' => 'web'], function () {
      route::get('AddBCDetail','DetailController@loadAddDetail');
      route::post('add','DetailController@add');
      route::get('LoadBCDetails','DetailController@loadBCDetails');
+     route::get('validateNic','DetailController@isNicUsed');
 
      
 

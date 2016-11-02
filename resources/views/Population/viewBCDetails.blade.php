@@ -28,7 +28,7 @@
         {{--</div>--}}
         <!-- /.box-header -->
         <div class="box-body">
-            <table id="example1" class="table table-bordered table-striped">
+            <table id="example1" class="table table-bordered table-striped" >
                 <thead>
                 <tr>
                     <th>ID</th>
@@ -64,7 +64,7 @@
                                 <h4 class="modal-title">Modal Header</h4>
                             </div>
                             <div class="modal-body">
-                                {{--<p><img src='{{"C:/xampp/htdocs/divisionalSecSystem/public/BCImages/".$bc->imgSide1}}'></p>--}}
+                                <p><img src='{{"C:/xampp/htdocs/divisionalSecSystem/public/BCImages/".$bc->imgSide1}}'></p>
                                 <p><img src='{{asset("/BCImages/".$bc->imgSide1)}}'></p>
                             </div>
                             <div class="modal-footer">

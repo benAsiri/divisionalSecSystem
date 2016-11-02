@@ -338,25 +338,25 @@
                // console.log(data[2]);
 
 
-//                swal({
-//                            title: "Are you sure?",
-//                            text: "You will not be able to recover this Data gain",
-//                            type: "warning",
-//                            showCancelButton: true,
-//                            confirmButtonColor: "#DD6B55",
-//                            confirmButtonText: "Yes, delete it!",
-//                            closeOnConfirm: false
-//                        },
-//                        function(){
-//
-//                        //    var path = 'Delete/'+data[2];
-//                            // console.log(path);
-//                            window.location.replace(path);
-//                           // swal("Deleted!", "Your record has been deleted.", "success");
-//
-//                        });
+                swal({
+                            title: "Are you sure?",
+                            text: "You will not be able to recover this Data gain",
+                            type: "warning",
+                            showCancelButton: true,
+                            confirmButtonColor: "#DD6B55",
+                            confirmButtonText: "Yes, delete it!",
+                            closeOnConfirm: false
+                        },
+                        function(){
 
-                //setData(data);
+                           var path = 'Delete/'+data[2];
+                            console.log(path);
+                            window.location.replace(path);
+                            swal("Deleted!", "Your record has been deleted.", "success");
+
+                        });
+
+                setData(data);
 
             });
 

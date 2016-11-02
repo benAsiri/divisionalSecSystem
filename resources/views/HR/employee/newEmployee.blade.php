@@ -76,7 +76,7 @@
                             </div>
                             <br>
 
-                            <div class="form-group">
+                            <div class="form-group fg-nic">
                                 <label for="exampleInputEmail1">NIC</label>
                                 <input class="form-control" id="nic" name="nic"
                                        placeholder="Enter National Identitiy Card Number" type="nic">
@@ -387,7 +387,19 @@
 
 
             });
+            var status = true;
+            $('#nic').focusout(function (e) {
+                $.get( "validateNic",{NIC :$('#nic').val()}).done(function(data){
+                    if(data.trim() == 'false'){
+                        status = false;
+                        $('.fg-nic').addClass('has-error');
+                    } else {
+                        $('.fg-nic').removeClass('has-error');
+                    }
+                    console.log(data);
 
+                });
+            });
 
             $('#form-add-employee').submit(function (e) {
 

@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="{{asset('plugins/jvectormap/jquery-jvectormap-1.2.2.css')}}">
         <!-- Theme style -->
         <link rel="stylesheet" href="{{asset('dist/css/AdminLTE.min.css')}}">
+        <link rel="stylesheet" href="{{asset('dist/css/custom.css')}}">
         <link rel="stylesheet" href="{{asset('/plugins/sweetAlert/sweetalert.css')}}">
 
 
