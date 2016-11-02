@@ -9,7 +9,9 @@
         "laravel/framework": "5.2.*",
         "yajra/laravel-datatables-oracle": "^6.11",
         "uxweb/sweet-alert": "~1.1",
-        "barryvdh/laravel-dompdf": "^0.6.1"
+        "barryvdh/laravel-dompdf": "^0.6.1",
+        "intervention/image": "^2.3"
+
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

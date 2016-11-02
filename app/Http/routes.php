@@ -29,9 +29,12 @@ Route::group(['middleware' => 'web'], function () {
      Route::get('/generatePDF_Emp','HRController@generatePDF');
      Route::get('Delete/{id}','HRController@deleteEmployee');
      Route::post('UpdateEmpDetail','HRController@UpdateEmployeeDetail');
+     
+     route::get('AddBCDetail','DetailController@loadAddDetail');
+     route::post('add','DetailController@add');
+     route::get('LoadBCDetails','DetailController@loadBCDetails');
 
-
-
+     
 
 
      Route::get('yearlyIncrements','PageController@yearly_Increment_Calculator');

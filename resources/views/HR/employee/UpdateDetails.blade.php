@@ -61,7 +61,7 @@
                             <tr>
                                 <td>
 
-                                    <button id="btn-edit" class="btn btn-primary btn-xs">edit</button>
+                                    <button id="btn-edit" title="Click! See Below fields & Edit ." class="btn btn-primary btn-xs">edit</button>
 
                                 </td>
                                 <td class="btn-delete-w">
@@ -264,7 +264,7 @@
                 </div>
 
                 <div class="col-md-6">
-                    <button type="submit" id="submit" class="btn btn-primary col-md-5 pull-left btn-submit">Update Details</button>
+                    <button type="submit"  id="submit" class="btn btn-primary col-md-5 pull-left btn-submit">Update Details</button>
                     <button type="reset" class="btn btn-warning col-md-5  pull-right  ">Reset</button>
                 </div>
 
@@ -338,28 +338,23 @@
                // console.log(data[2]);
 
 
-                swal({
-                            title: "Are you sure?",
-                            text: "You will not be able to recover this Data gain",
-                            type: "warning",
-                            showCancelButton: true,
-                            confirmButtonColor: "#DD6B55",
-                            confirmButtonText: "Yes, delete it!",
-                            closeOnConfirm: false
-                        },
-                        function(){
-
-                            var path = 'Delete/'+data[2];
-                            // console.log(path);
-                            window.location.replace(path);
-                            swal("Deleted!", "Your record has been deleted.", "success");
-                        });
-
-
-
-
-
-
+//                swal({
+//                            title: "Are you sure?",
+//                            text: "You will not be able to recover this Data gain",
+//                            type: "warning",
+//                            showCancelButton: true,
+//                            confirmButtonColor: "#DD6B55",
+//                            confirmButtonText: "Yes, delete it!",
+//                            closeOnConfirm: false
+//                        },
+//                        function(){
+//
+//                        //    var path = 'Delete/'+data[2];
+//                            // console.log(path);
+//                            window.location.replace(path);
+//                           // swal("Deleted!", "Your record has been deleted.", "success");
+//
+//                        });
 
                 //setData(data);
 
@@ -373,7 +368,7 @@
                  d.children('.age').html(age);
                   if( age > 70 ){
                       d.children('.btn-delete-w').html(
-                           '<button id="btn-delete" class="btn btn-danger btn-xs">delete</button>'
+                           '<button id="btn-delete"  class="btn btn-danger btn-xs">delete</button>'
                       );
                   }
 

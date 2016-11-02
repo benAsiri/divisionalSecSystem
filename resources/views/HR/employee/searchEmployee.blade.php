@@ -109,7 +109,7 @@
 
         $('#example1').on('click', function(){
 
-            alert("BAM!");
+            //alert("BAM!");
         });
 
 

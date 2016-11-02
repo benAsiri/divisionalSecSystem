@@ -16,16 +16,13 @@ class CreateEmployesTable extends Migration
             $table->increments('id');
             $table->string('surname');
             $table->string('fullname');
-            $table->string('id_num');
+            $table->string('id_num')->unique();
             $table->string('address');
             $table->date('dob');
             $table->string('gender');
             $table->string('race');
             $table->string('marital_state');
             $table->string('District');
-
-
-
             $table->dateTime('date_of_appoint');
             $table->integer('appointment_no');
             $table->integer('widow_no');

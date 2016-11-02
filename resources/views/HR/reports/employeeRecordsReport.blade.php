@@ -4,7 +4,7 @@
         border-collapse: separate;
         border-spacing: 0;
         color: #4a4a4d;
-        font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font: 12px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
     th,
     td {
@@ -43,7 +43,14 @@
     }
 </style>
 
-<h3 style="text-align: center">Employee Details Report</h3>
+
+<h3 style="text-align: center">
+
+   {{-- <img src="{{asset('./dist/img/Header.png')}}" class="user-image" alt="HeaderImage">--}}
+    <img src="./dist/img/letterHead.jpg" class="user-image" alt="HeaderImage" width="780">
+    Employee Details Report
+</h3>
+
 <div>
     <table class="table">
         <thead>
