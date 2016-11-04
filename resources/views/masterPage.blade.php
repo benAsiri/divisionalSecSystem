@@ -336,8 +336,6 @@
             </div>
           </form>
 
-
-
           <!-- /.search form -->
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
@@ -377,6 +375,7 @@
                     <ul class="treeview-menu menu-open" style="display: block;">
                       <li><a href="{{action('MleavesController@viewMleaves')}}"><i class="fa fa-circle-o"></i> View Leaves</a></li>
                       <li><a href="{{action('MleavesController@addMleaves')}}"><i class="fa fa-circle-o"></i> Add Leaves</a></li>
+                      <li><a href="{{action('MleavesController@loadUpdateMleaves')}}"><i class="fa fa-circle-o"></i> Update Leaves</a></li>
 
 
                     </ul>
@@ -389,17 +388,6 @@
                     </ul>
                   </li>
                 </ul>
-              <a href="{{action('PageController@yearly_Increment_Calculator')}}">
-                <i class="fa-user"></i> <span>HR Management</span><i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="{{action('HRController@addEmployee')}}"><i class="fa fa-circle-o"></i> Add Employee Details </a></li>
-                <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i> Page2 </a></li>
-                <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i> Page3 </a></li>
-                 <li><a href="{{url('/LeaveMgt/applyleave')}}"><i class="fa fa-circle-o"></i>Apply Leave </a></li>
-                 <li><a href="{{url('/view_remaining')}}"><i class="fa fa-circle-o"></i>View Remaining Leaves </a></li>
-
-              </ul>
             </li>
 
                 <li class="active treeview">
