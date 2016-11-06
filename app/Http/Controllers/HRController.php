@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Input;
 use Symfony\Component\HttpFoundation\Request;
 use UxWeb\SweetAlert;
 use Barryvdh\DomPDF\Facade as PDF;
+use Andheiberg\Notify\Facades\Notify;
+
 
 class HRController extends Controller
 {
@@ -35,8 +37,9 @@ class HRController extends Controller
 
     public function loadEmpSalary()
     {
+        $status=false;
         $employee=DB::table('employes')->get();
-        return view('HR.employee.employeeSalary',compact('employee'));
+        return view('HR.employee.employeeSalary',compact('employee','status'));
     }
 
     public function searchEmployee()
@@ -151,9 +154,13 @@ class HRController extends Controller
 
         $employee->save();
 
+        
+            Notify::success(' ');
+
 
         return redirect()->action('HRController@loadUpdateEmployees');
-        //return redirect()->action('HRController@addEmployee');
+
+
 
 
     }

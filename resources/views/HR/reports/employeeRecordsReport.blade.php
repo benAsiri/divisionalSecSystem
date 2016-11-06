@@ -1,3 +1,4 @@
+
 <style>
     table {
         width: 100%;
@@ -41,14 +42,22 @@
     tfoot tr:last-child {
         background: #f0f0f2;
     }
+
+
 </style>
 
 
 <h3 style="text-align: center">
 
-   {{-- <img src="{{asset('./dist/img/Header.png')}}" class="user-image" alt="HeaderImage">--}}
-    <img src="./dist/img/letterHead.jpg" class="user-image" alt="HeaderImage" width="780">
-    Employee Details Report
+    <div class="row">
+        <div class="col-md-12">
+            <img src="./dist/img/letterHead.jpg" class="user-image" alt="HeaderImage" width="780">
+            Employee Details Report
+        </div>
+    </div>
+
+
+
 </h3>
 
 <div>

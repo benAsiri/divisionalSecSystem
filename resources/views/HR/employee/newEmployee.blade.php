@@ -248,7 +248,7 @@
                             <div class="box-footer ">
                                 <input type="submit" class="btn btn-primary insert" value="Submit">
                                 <input type="button" class="btn btn-primary" value="DEMO Fill" onclick="Demo()">
-                                <input type="button" class="btn btn-primary" value="Clear All Fields" onclick="Clear()">
+                                <input type="reset" class="btn btn-primary" value="Clear All Fields" onclick="">
                             </div>
 
 
