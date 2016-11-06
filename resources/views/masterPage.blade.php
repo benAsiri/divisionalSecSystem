@@ -10,6 +10,7 @@
 
 @section('css_ref')
     <!-- Bootstrap 3.3.5 -->
+
         <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -22,6 +23,7 @@
         <link rel="stylesheet" href="{{asset('dist/css/custom.css')}}">
         <link rel="stylesheet" href="{{asset('/plugins/sweetAlert/sweetalert.css')}}">
 
+        <link rel="stylesheet" href="{{asset('/plugins/datatables/dataTables.bootstrap.css')}}">
 
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
@@ -294,7 +296,7 @@
                     </li>
                     @if (Auth::guest())
 
-                        <li><a href="{{ url('/login') }}">Login</a></li>
+                        <li><a href="{{url('/login')}}">Login</a></li>
                 @else
                     <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">
@@ -310,6 +312,7 @@
                                          class="img-circle" alt="User Image">
                                     <p>
                                         {{ Auth::user()->name }}
+
                                         <small>Member since Nov. 2012</small>
                                     </p>
                                 </li>
@@ -325,12 +328,6 @@
                                 </li>
 
                             </ul>
-                        </li>
-
-                        <!-- Control Sidebar Toggle Button -->
-                        <li>
-                            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-                        </li>
                 </ul>
             </div>
             @endif
@@ -363,45 +360,36 @@
                 <li class="active treeview">
 
                 <li><a href="#"><i class="fa fa-circle-o text-red"></i>
+
                         <span>HR Management</span> <i class="fa fa-angle-left pull-right"></i></a>
                     <ul class="treeview-menu">
-                        {{--<li class="">--}}
-                        <li><a href="#"><i class="fa fa-circle-o text-yellow "></i> Manage My Employees</a>
-                            <ul class="treeview-menu " >
-                                <li><a href="{{action('HRController@addEmployee')}}"><i class="fa fa-circle-o"></i> Add
-                                        Employees</a>
-                                </li>
+                        <li class="">
+                        <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> Manage My Employees</a>
+                            <ul class="treeview-menu ">
+                                <li><a href="{{action('HRController@addEmployee')}}"><i
+                                                class="fa fa-circle-o"></i>Add Employees</a></li>
                                 <li><a href="{{action('HRController@loadUpdateEmployees')}}"><i
-                                                class="fa fa-circle-o"></i> Update
-                                        Employee Details</a></li>
-                                <li><a href="{{action('HRController@searchEmployee')}}"><i class="fa fa-circle-o"></i>
-                                        View
-                                        All</a></li>
+                                                class="fa fa-circle-o"></i> Update Employee Details</a></li>
+                                <li><a href="{{action('HRController@searchEmployee')}}"><i
+                                                class="fa fa-circle-o"></i> View All</a></li>
                             </ul>
                         </li>
-                        {{--</li>--}}
-
-
-
-
-
-
-
+                        </li>
                         <li class="">
                             <a href="{{action('PageController@yearly_Increment_Calculator')}}"><i
                                         class="fa fa-circle-o text-yellow"></i> Yearly increment Calculator</a>
-                            <ul class="treeview-menu menu-open" >
-                                <li><a href="{{action('HRController@loadEmpSalary')}}"><i class="fa fa-circle-o"></i>
-                                        Add Employee Salary Details</a></li>
+                            <ul class="treeview-menu menu-open">
+                                <li><a href="{{action('HRController@loadEmpSalary')}}"><i
+                                                class="fa fa-circle-o"></i> Add Employee Salary Details</a></li>
                                 <li><a href="#"><i class="fa fa-circle-o"></i> Level 2</a></li>
                                 <li><a href="#"><i class="fa fa-circle-o"></i> Level 3</a></li>
                             </ul>
                         </li>
                         <li class="">
                             <a href="#"><i class="fa fa-circle-o text-yellow"></i> Loan Calculator</a>
-                            <ul class="treeview-menu menu-open" >
-                                <li><a href="{{action('LoanPagesController@viewLoans')}}"><i class="fa fa-circle-o"></i>
-                                        View Leaves</a></li>
+                            <ul class="treeview-menu menu-open">
+                                <li><a href="{{action('LoanPagesController@viewLoans')}}"><i
+                                                class="fa fa-circle-o"></i> View Leaves</a></li>
                                 <li><a href="{{action('LoanPagesController@applyLoans')}}"><i
                                                 class="fa fa-circle-o"></i> Apply Loan</a></li>
                             </ul>
@@ -409,73 +397,54 @@
                         <li class="">
                             <a href=""><i class="fa fa-circle-o text-yellow"></i> Maternity Leaves</a>
                             <ul class="treeview-menu menu-open" >
-                                <li><a href="{{action('LeavePagesController@CurrentLeaves')}}"><i
+                                <li><a href="{{action('MleavesController@viewMleaves')}}"><i
                                                 class="fa fa-circle-o"></i> View Leaves</a></li>
-                                <li><a href="{{action('LeavePagesController@ApplyMyLeave')}}"><i
-                                                class="fa fa-circle-o"></i> Apply Leave</a></li>
+                                <li><a href="{{action('MleavesController@addMleaves')}}"><i
+                                                class="fa fa-circle-o"></i> Add Leaves</a></li>
+
+
                             </ul>
-                        </li>
-                        <li class="">
-                            <a href="#"><i class="fa fa-circle-o text-yellow"></i> Advance Program</a>
-                            <ul class="treeview-menu menu-open" >
-                                <li><a href="{{action('AdvanceController@InsertInfo')}}"><i class="fa fa-circle-o"></i>
-                                        Insert Info</a></li>
-                                <li><a href="{{action('AdvanceController@show')}}"><i class="fa fa-circle-o"></i> edit
-                                        or delete</a></li>
+                            <a href="{{action('PageController@yearly_Increment_Calculator')}}">
+                                {{--<i class="fa-user"></i> <span>HR Managent</span><i class="fa fa-angle-left pull-right"></i>--}}
+                            </a>
+                            <ul class="treeview-menu">
+                                {{--<li><a href="{{action('HRController@addEmployee')}}"><i class="fa fa-circle-o"></i> Add Employee Details </a></li>--}}
+                                {{--<li><a href="{{action('HRController@searchEmployee')}}"><i class="fa fa-circle-o"></i> Search Employee Details </a></li>--}}
+                                {{--<li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i> Page3 </a></li>--}}
+
+
                             </ul>
+
                         </li>
                     </ul>
-                    <a href="{{action('PageController@yearly_Increment_Calculator')}}">
-                        {{--<i class="fa-user"></i> <span>HR Managent</span><i class="fa fa-angle-left pull-right"></i>--}}
-                    </a>
-                    <ul class="treeview-menu">
-                        {{--<li><a href="{{action('HRController@addEmployee')}}"><i class="fa fa-circle-o"></i> Add Employee Details </a></li>--}}
-                        {{--<li><a href="{{action('HRController@searchEmployee')}}"><i class="fa fa-circle-o"></i> Search Employee Details </a></li>--}}
-                        {{--<li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i> Page3 </a></li>--}}
 
 
-                    </ul>
-                </li>
-                {{--<li class="active treeview">--}}
-                {{--<li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i> <span>Land Dision</span><i class="fa fa-angle-left pull-right"></i>--}}
-                {{--</a>--}}
-                {{--<ul class="treeview-menu">--}}
-                {{--<li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>option1</a></li>--}}
-                {{--<li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>option2 </a></li>--}}
-                {{--<li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>Current Status </a></li>--}}
-                {{--<li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>Current Status </a></li>--}}
-                {{--</ul>--}}
-
-                <li class="active treeview">
-                <li><a href="#"><i class="fa fa-circle-o text-blue"></i>
-                        <span>Land Division</span><i class="fa fa-angle-left pull-right"></i></a>
-                    <ul class="treeview-menu">
-                        <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>option1</a></li>
-                        <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>option2 </a></li>
-                        <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>Current Status
-                            </a></li>
-                        <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>Current Status
-                            </a></li>
-                    </ul>
                 </li>
 
-                <li><a href="{{action('UserRegisterController@index')}}"><i class="fa fa-circle-o text-green"></i>
+
+
+
+
+                <li><a href="{{action('UserRegisterController@index')}}"><i
+                                class="fa fa-circle-o text-green"></i>
                         <span>User Management</span></a>
 
 
-                <li><a href="{{url('/Usr_register')}}"><i class="fa fa-circle-o"></i> <span>User Management</span><i
-                                class="fa fa-angle-left pull-right"></i></a>
-                </li>
+
 
                 <li class="active treeview">
                 <li><a href="#"><i class="fa fa-circle-o text-blue"></i>
                         <span>Population Details</span><i class="fa fa-angle-left pull-right"></i></a>
                     <ul class="treeview-menu">
-                        <li><a href="{{action('DetailController@loadAddDetail')}}"><i class="fa fa-circle-o"></i>Add Birth Certificate Details</a></li>
-                        <li><a href="{{action('DetailController@loadBCDetails')}}"><i class="fa fa-circle-o"></i>View Birth Certificates </a></li>
-                        <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>Current Status
+                        <li><a href="{{action('DetailController@loadAddDetail')}}"><i
+                                        class="fa fa-circle-o"></i>Add Birth Certificate Details</a></li>
+                        <li><a href="{{action('DetailController@loadBCDetails')}}"><i
+                                        class="fa fa-circle-o"></i>View Birth Certificates </a></li>
+                        <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>Current
+                                Status
                             </a></li>
-                        <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>Current Status
+                        <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>Current
+                                Status
                             </a></li>
                     </ul>
                 </li>
@@ -504,7 +473,7 @@
         <div class="pull-right hidden-xs">
             <b>Version</b> 2.3.0
         </div>
-        <strong>Copyright &copy; 2015-2016 <a href="http://almsaeedstudio.com">Wanathawilluwa Sectrial
+        <strong>Copyright &copy; 2015-2016 <a href="http://almsaeedstudio.com">Wanathawilluwa Secretariat
                 Office</a>.</strong> All rights reserved.
     </footer>
 
@@ -668,6 +637,7 @@
                 </form>
             </div><!-- /.tab-pane -->
         </div>
+
     </aside><!-- /.control-sidebar -->
     <!-- Add the sidebar's background. This div must be placed
          immediately after the control sidebar -->
@@ -677,6 +647,7 @@
 @section('js_ref')
     <!-- jQuery 2.1.4 -->
     <script src="{{asset('plugins/jQuery/jQuery-2.1.4.min.js')}}"></script>
+
     <!-- Bootstrap 3.3.5 -->
     <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
     <!-- FastClick -->

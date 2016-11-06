@@ -33,7 +33,6 @@ class Landdivisionmiddleware
     }
     else
     {
-
         return $next($request);
     }
     }

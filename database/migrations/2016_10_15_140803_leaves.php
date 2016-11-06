@@ -1,6 +1,8 @@
 <?php
+
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+
 class Leaves extends Migration
 {
     /**
@@ -12,18 +14,20 @@ class Leaves extends Migration
     {
         Schema::create('leaves', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('Emp_Id');
+            $table->string('Emp_Id')->unsingned();
             $table->string('position');
             $table->string('leavetype');
             $table->string('dept');
-            $table->string('commencingleave');
+            $table->date('commencingleave');
             $table->string('reason');
             $table->string('days');
             $table->string('status');
-            $table->timestamps('published_at');
             $table->foreign('Emp_Id')->references('id_num')->on('employes')->onDelete('cascade');
+            $table->timestamps('published_at');
         });
+
     }
+
     /**
      * Reverse the migrations.
      *

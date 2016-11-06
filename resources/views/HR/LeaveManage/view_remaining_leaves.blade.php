@@ -28,19 +28,7 @@
                                 <tbody>
 
 
-                                @foreach($remain as $r)
-                                    <tr class="row-of-data">
-                                        <td>{{$r->Emp_Id}}</td>
-                                        <td>{{$r->casual_leave}}</td>
-                                        <td>{{$r->vac_leave}}</td>
-                                        <td>{{$r->others}}</td>
-                                        <td>21-{{$r->casual_leave}}</td>
-                                        <td>24-{{$r->vac_leave}}</td>
-                                        <td>{{$r->previous}}</td>
 
-                                        </td>
-                                    </tr>
-                                @endforeach
 
                                 </tbody>
 

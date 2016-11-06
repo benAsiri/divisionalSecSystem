@@ -26,13 +26,8 @@ class LeaveController extends Controller
         $employees =DB::table('employes')->get();
         $leaves =DB::table('leaves')->get();
 
-
-
-
         return view('HR/LeaveManage/applyleavess',compact('leaves','employees'));
-
-
-    }
+      }
 
     /**
      * Put pending request to the head of the office
@@ -47,34 +42,12 @@ class LeaveController extends Controller
 
     }
 
-    protected function remaining(leaves_remain $remain){
-
-        $Emp_IDS =DB::table('leaves')->lists('Emp_Id');
-
-        foreach($Emp_IDS as $emp_id) {
-
-            $remain->Emp_Id = $emp_id;
-
-            $remain->casual_leave = DB::table('leaves')->where('status', 'approved')
-                ->where('leavetype', 'casual')
-                ->where('Emp_Id', $emp_id)
-                ->sum('days');
-
-            $remain->vac_leave = DB::table('leaves')->where('status', 'approved')
-                ->where('leavetype', 'vacation')
-                ->where('Emp_Id', $emp_id)
-                ->sum('days');
-
-            $remain->others = DB::table('leaves')->where('status', 'approved')
-                ->where('leavetype', 'others')
-                ->where('Emp_Id',$emp_id)
-                ->sum('days');
-
-            $remain->previous;
-        }
+    protected function remaining(){
 
 
-        return view('HR/LeaveManage/view_remaining_leaves',compact('remain'));
+
+
+        return 'kusal';
 
     }
 
@@ -137,9 +110,8 @@ class LeaveController extends Controller
             'leavetype' => $request['leave_type'],
             'dept' => $request['dept'],
             'commencingleave' => $request['cleave'],
-            'resumingduties' => $request['rleave'],
-            'reason' => $request['reason'],
-            'days' => $request['days'],
+             'reason' => $request['reason'],
+            'days' => $request['nofdayss'],
             'status' => 'Pending',
 
         ]);

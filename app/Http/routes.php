@@ -18,7 +18,18 @@ Route::group(['middleware' => 'web'], function () {
      Route::auth();
      Route::get('/', 'HomeController@index');
 
-     Route::post('/regi','UserRegisterController@registeruser');
+
+     Route::group(['middleware'=>'userfilter'],function(){
+
+          Route::post('/regi','UserRegisterController@registeruser');
+          Route::get('/Usr_register/updateUser', 'UserRegisterController@update');
+          Route::get('/Usr_register/deleteUser', 'UserRegisterController@delete');
+          Route::get('/Usr_register/resetPwd', 'UserRegisterController@resetPW');
+          Route::get('/Usr_register',array('as'=>'viewEmployees','uses'=>'UserRegisterController@index'));
+          Route::get('LeaveMgt/applyleave',array('as'=>'viewLeaves','uses'=>'LeaveController@index'));
+
+
+
 
      Route::get('AddEmployees','HRController@addEmployee');
      Route::get('SearchEmployee',array('as'=>'ViewEmployee','uses'=>'HRController@searchEmployee'));
@@ -39,15 +50,23 @@ Route::group(['middleware' => 'web'], function () {
 
 
      Route::get('yearlyIncrements','PageController@yearly_Increment_Calculator');
-     //Route::get('/Usr_register/updateUser', 'UserRegisterController@update');
-     //Route::get('/Usr_register/deleteUser', 'UserRegisterController@delete');
 
-    // Route::get('/Usr_register',array('as'=>'viewEmployees','uses'=>'UserRegisterController@index'));
+          Route::get('LeaveMgt/updateleave','LeaveController@updateleave');
+          Route::post('LeaveMgt/addleave','LeaveController@addleave');
+          Route::get('LeaveMgt/deleteleave', 'LeaveController@deleteleave');
+          Route::get('/LeaveStatus','LeaveController@indexforHead');
+          Route::get('/LeaveStatus/Reject','LeaveController@Reject');
+          Route::get('/LeaveStatus/Approve','LeaveController@Approve');
+          Route::get('/view_remaining','LeaveController@remaining');
 
 
+     });
 
-     //Route::get('/userReg',array('as'=>'viewEmployees','uses'=>'UserRegisterController@index'));
+     Route::group(['middleware'=>'HR'],function() {
 
+     Route::get('AddEmployees','HRController@addEmployee');
+
+     Route::get('yearlyIncrements','PageController@yearly_Increment_Calculator');
 
      Route::get('/page2','PageController@Page2');
 
@@ -58,14 +77,33 @@ Route::group(['middleware' => 'web'], function () {
 
 
      Route::get('ApplyLeave','LeavePagesController@ApplyMyLeave');
-
      Route::get('currentleaves','LeavePagesController@CurrentLeaves');
+
+
+              //Matenarity Leaves
+     Route::get('ViewMateneryLeaves','MleavesController@viewMleaves');
+     Route::get('AddMateneryLeaves','MleavesController@addMleaves');
+     Route::post('addMleavesDetails','MleavesController@addMleavesDetails');
+
+
+
+
+
+
 
 
      Route::get('ApplyLoans','LoanPagesController@applyLoans');
 
      Route::get('viewLoans','LoanPagesController@viewLoans');
-//
+
+
+
+
+
+
+
+
+
 
      Route::get('insert','AdvanceController@InsertInfo');
 
@@ -96,7 +134,6 @@ Route::group(['middleware' => 'web'], function () {
       */
      Route::resource('/EditProfileSave','UserRegisterController@editProfileSave');
 
-     // Route::get('ProgramReport','AdvanceController@AdvanceProgram');
 
      Route::get('insert','AdvanceController@InsertInfo');
 
@@ -124,34 +161,22 @@ Route::group(['middleware' => 'web'], function () {
 
 
 
+     });
+
+     Route::group(['middleware'=>'LR'],function(){
+
+
+     });
 
 
 
 
-     Route::post('/regi','UserRegisterController@registeruser');
-     Route::get('/Usr_register/updateUser', 'UserRegisterController@update');
-     Route::get('/Usr_register/deleteUser', 'UserRegisterController@delete');
-     Route::get('/Usr_register/resetPwd', 'UserRegisterController@resetPW');
-     Route::get('/Usr_register',array('as'=>'viewEmployees','uses'=>'UserRegisterController@index'));
-     Route::get('LeaveMgt/applyleave',array('as'=>'viewLeaves','uses'=>'LeaveController@index'));
-
-
-     Route::get('LeaveMgt/updateleave','LeaveController@updateleave');
-     Route::post('LeaveMgt/addleave','LeaveController@addleave');
-     Route::get('LeaveMgt/deleteleave', 'LeaveController@deleteleave');
-
-
-     Route::get('/LeaveStatus','LeaveController@indexforHead');
-     Route::get('/LeaveStatus/Reject','LeaveController@Reject');
-     Route::get('/LeaveStatus/Approve','LeaveController@Approve');
 
 
 
 
 
 });
-
-
 
 /*
 |--------------------------------------------------------------------------

@@ -16,27 +16,29 @@ class HRmiddleware
      * @return mixed
      */
     public function handle($request, Closure $next)
-    { if(Auth::check()){
-        if(Auth::user()->position != 'Divisional Secretary'){
+    { 
+            if(Auth::check()) {
+              
+            if(Auth::user()->position == 'Divisional Secretary') {
 
-            return redirect('/');
-        }
-        else if(Auth::user()->position != 'Asst.Divisional Secretary'){
+                    //return redirect('/');
+                    return $next($request);  
+                }
+                else if(Auth::user()->position !='Asst.Divisional Secretary') {
 
-            return redirect('/');
-        }
-        else if(Auth::user()->position != 'Human Resources Operator'){
+                    return redirect('/');
+                }
+                else if(Auth::user()->position != 'Human Resources Operator') {
 
-            return redirect('/');
-        }
+                    return redirect('/');
+                }
 
-           return $next($request);
+                return $next($request);  
+               
 
-    }
-    else
-    {
+            } else {
 
-        return $next($request);
-    }
+                return $next($request);
+            }
     }
 }

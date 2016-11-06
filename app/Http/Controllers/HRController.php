@@ -72,11 +72,8 @@ class HRController extends Controller
             $employe->job_grade=$data['jobGrade'];
 
 
-
-
           $employe->save();
             //return url('AddEmployees');
-            
            
 
         }
