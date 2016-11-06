@@ -79,14 +79,14 @@
                             <div class="form-group fg-nic">
                                 <label for="exampleInputEmail1">NIC</label>
                                 <input class="form-control" id="nic" name="nic"
-                                       placeholder="Enter National Identitiy Card Number" type="nic">
+                                       placeholder="Enter National Identitiy Card Number  (ex:-12346789V)" type="text">
                             </div>
                             <br>
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Address</label>
                                 <input class="form-control" name="address" id="address" placeholder="Enter Address"
-                                       type="nic">
+                                       type="text">
                             </div>
                             <br>
 
@@ -109,7 +109,7 @@
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Gender</label>
-                                <select class="form-control" id="gender">
+                                <select class="form-control" id="gender" name="gender">
                                     <option>Male</option>
                                     <option>Female</option>
                                     <option>Other</option>
@@ -119,7 +119,7 @@
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Race</label>
-                                <select class="form-control" id="race">
+                                <select class="form-control" id="race" name="race">
                                     <option>Sinhalese</option>
                                     <option>Sri Lankan Tamils</option>
                                     <option>Sri Lankan Malays</option>
@@ -131,7 +131,7 @@
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Marital status</label>
 
-                                <select class="form-control" id="maritalState">
+                                <select class="form-control" id="maritalState" name="maritalState">
                                     <option>Married</option>
                                     <option>Single</option>
                                 </select>
@@ -142,7 +142,7 @@
                             <div class="form-group">
                                 <label for="exampleInputEmail1">District</label>
 
-                                <select class="form-control" id="district">
+                                <select class="form-control" id="district" name="district">
                                     <option>Ampara</option>
                                     <option>Anuradhapura</option>
                                     <option>Badulla</option>
@@ -210,14 +210,14 @@
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Job Position</label>
                                 <input class="form-control" id="jobp" placeholder="Write Here" name="jobp"
-                                       type="nic">
+                                       type="text">
                             </div>
                             <br>
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Job Grade</label>
                                 <input class="form-control" id="jobg"
-                                       placeholder="Enter Grade if have" type="nic">
+                                       placeholder="Enter Grade if have" type="text">
                             </div>
                             <br>
 
@@ -271,30 +271,9 @@
     <script>
 
 
-        //                    /**
-        //                     *This is jquery function is for the date picker used at the Date of birth field
-        //                     */
-        //                    $(function () {
-        //                        //Date picker
-        //
-        //                    });
-        //
-        //
-        //
-        //
-        //                    /**
-        //                     *This is jquery function is for the date picker used at the Date of appointment
-        //                     */
-        //                    $(function () {
-        //                       // $("#datepicker_dob").datepicker({ dateFormat: 'yy-mm-dd' });
-        //
-        //                    });
 
 
-        $(function () {
 
-
-        });
 
 
         /**
@@ -334,7 +313,20 @@
                     },
                     jobp: {
                         required: true,
+                    },
+                    gender:{
+                        required: true,
+                    },
+                    race:{
+                        required: true,
+                    },
+                    maritalState:{
+                        required: true,
+                    },
+                    district:{
+                        required: true,
                     }
+
 
 
                 },
@@ -367,6 +359,18 @@
                     jobp: {
                         required: "This field cannot be empty"
                     },
+                    gender:{
+                        required: "This field cannot be empty"
+                    },
+                    race:{
+                        required: "This field cannot be empty"
+                    },
+                    maritalState:{
+                        required: "This field cannot be empty"
+                    },
+                    district:{
+                        required: "This field cannot be empty"
+                    }
 
 
                 }
@@ -388,13 +392,19 @@
 
 
             });
+
+
+            //This function fire when cursior leaving the text box
+            //Check whether the NIC has already been inserted before
             var status = true;
             $('#nic').focusout(function (e) {
                 $.get( "validateNic",{NIC :$('#nic').val()}).done(function(data){
                     if(data.trim() == 'false'){
                         status = false;
+                        swal("Error", "NIC has already inserted", "error");
                         $('.fg-nic').addClass('has-error');
                     } else {
+                        status = true
                         $('.fg-nic').removeClass('has-error');
                     }
                     console.log(data);
@@ -402,49 +412,55 @@
                 });
             });
 
+
             $('#form-add-employee').submit(function (e) {
 
+                if(status){
 
-                if (form.valid()) {
+                    if (form.valid()) {
 
-                    $.ajaxSetup({
-                        headers: {
-                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                        }
-                    });
+                        $.ajaxSetup({
+                            headers: {
+                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                            }
+                        });
 
 
-                    $.ajax({
-                        url: '/AddEmployeeDetails',
-                        type: "post",
-                        data: {
-                            'surname': $("#surname").val(),
-                            'fullname': $('#fullname').val(),
-                            'nic': $('#nic').val(),
-                            'address': $('#address').val(),
-                            'dob': $('#datepicker_dob').datepicker().val(),
-                            'gender': $('#gender').val(),
-                            'race': $('#race').val(),
-                            'maritals': $('#maritalState').val(),
-                            'district': $('#district').val(),
-                            'doa': $('#datepicker_doa').datepicker().val(),
-                            'appNo': $('#appNo').val(),
-                            'jobPos': $('#jobp').val(),
-                            'jobGrade': $('#jobg').val(),
-                            'widowNo': $('#widowNo').val(),
-                        },
-                        success: function (e) {
-                            swal("New Employee Added", "", "success");
-                            Clear();
-//                                        return back();
-                            //window.location="http://localhost:8000/AddEmployees";
-                        },
-                        error: function (e) {
+                        $.ajax({
+                            url: '/AddEmployeeDetails',
+                            type: "post",
+                            data: {
+                                'surname': $("#surname").val(),
+                                'fullname': $('#fullname').val(),
+                                'nic': $('#nic').val(),
+                                'address': $('#address').val(),
+                                'dob': $('#datepicker_dob').datepicker().val(),
+                                'gender': $('#gender').val(),
+                                'race': $('#race').val(),
+                                'maritals': $('#maritalState').val(),
+                                'district': $('#district').val(),
+                                'doa': $('#datepicker_doa').datepicker().val(),
+                                'appNo': $('#appNo').val(),
+                                'jobPos': $('#jobp').val(),
+                                'jobGrade': $('#jobg').val(),
+                                'widowNo': $('#widowNo').val(),
+                            },
+                            success: function (e) {
+                                swal("New Employee Added", "", "success");
+                                Clear();
+    //                                        return back();
+                                //window.location="http://localhost:8000/AddEmployees";
+                            },
+                            error: function (e) {
 
-                        }
+                            }
 
-                    })
+                        })
 
+                    }
+                }
+                else {
+                    alert("Please correct errors");
                 }
 
 
@@ -453,9 +469,7 @@
         })
 
 
-        function clear() {
 
-        }
 
         function Clear(){
             $("#surname").val('');
