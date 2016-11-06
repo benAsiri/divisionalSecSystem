@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="{{asset('plugins/sweetAlert/sweetalert.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('dist/css/AdminLTE.min.css')}}">
+    <link rel="stylesheet" href="{{asset('plugins/select2/select2.min.css')}}">
+
 
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -402,11 +404,20 @@
                         <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>Current Status </a></li>
                     </ul>
                 </li>
-            <li><a href="{{action('UserRegisterController@index')}}"><i class="fa fa-circle-o text-green"></i>
+               <li><a href="{{action('UserRegisterController@index')}}"><i class="fa fa-circle-o text-green"></i>
                 <span>User Management</span></a>
 
+               <li><a href="{{url('/Usr_register')}}"><i class="fa fa-circle-o"></i> <span>User Management</span><i class="fa fa-angle-left pull-right"></i></a>
 
-            <li><a href="{{url('/Usr_register')}}"><i class="fa fa-circle-o"></i> <span>User Management</span><i class="fa fa-angle-left pull-right"></i></a>
+            <li class="active treeview">
+            <li><a href="#"><i class="fa fa-circle-o text-blue"></i>
+                <span>Broadcast Note</span><i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="{{action('EditorController@addNote')}}"><i class="fa fa-circle-o"></i>New Note</a></li>
+              </ul>
+            </li>
+
+
           </li>
           </ul>
 
@@ -638,6 +649,7 @@
 
     <script src="{{asset('/plugins/jquery.dataTables/jquery.dataTables.js')}}"></script>
 
+Loan
     {{--<script>--}}
 
       {{--var profile_pick=false;--}}

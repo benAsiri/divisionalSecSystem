@@ -211,20 +211,21 @@
                         success: function (e) {
 
                             console.log(e);
-                            if( e){
+                            if(e.trim() =='true'){
                                 swal("Matenery Leave Added", "", "success");
                             }
                             else
                             {
-                                console.log("sldjfsldjkf");
+                                swal("Error!!!", "This persion already have leave ", "error");
+
                             }
 
 
                         },
-                        /*error: function (e) {
-                            swal("Error!!!", "", "error");
-                            console.log(e);
-                        }*/
+                        error: function (e) {
+
+                            swal("Error!!!", "Something horribly fucked up! please contact developers  ", "error");
+                        }
 
                     })
                 }

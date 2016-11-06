@@ -4,6 +4,15 @@
 @stop
 
 @section('content')
+    <style>
+        .error {
+            color: red;
+            font-family: serif;
+            border-color: red;
+            border-width: 1px;
+        }
+
+    </style>
 
     <div align="center" style="background:#CED2CD">
         <div class="model-dialog">
@@ -23,14 +32,14 @@
          <div class="tab-content no-padding">
 
             <!-- form start -->
-            <form class="" id="form-add-loan" role="form" method="POST">
+            <form class="" id="form-add-loan" role="form" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="box-body">
                     <div class="modal-dialog">
                         <div class="form-group">
 
                                     <label for="#">Select Employee ID</label>
-                                    <select class="form-control" name="empIDload" id="empIDload">
+                                    <select class="form-control" name="empIDload" onchange="fillEmpDetails()" id="empIDload">
                                         {{--loads the Emp details here from the DB--}}
                                         <option value="" disabled selected style="display: none;">Please Choose</option>
                                         @foreach($Ids as $e)
@@ -43,17 +52,17 @@
 
                                     <div class="form-group">
                                         <label>Name </label>
-                                        <input id="Lname" name="Lname" type="text" class="form-control" placeholder="Employee Name" disabled="">
+                                        <input id="Lname" name="Lname" type="text" class="form-control" placeholder="Employee Name" >
                                     </div>
 
                                     <div class="form-group">
                                         <label>Job Position </label>
-                                        <input id="Lposition" name="Lposition" type="text" class="form-control" placeholder="Employee Job Position" disabled="">
+                                        <input id="Lposition" name="Lposition" type="text" class="form-control" placeholder="Employee Job Position" >
                                     </div>
 
                                     <div class="form-group">
                                         <label>Job Grade </label>
-                                        <input id="Ljgrade" name="Ljgrade" type="text" class="form-control" placeholder="Employee Job Grade" disabled="">
+                                        <input id="Ljgrade" name="Ljgrade" type="text" class="form-control" placeholder="Employee Job Grade" >
                                     </div>
 
                                     <div class="form-group">
@@ -115,8 +124,6 @@
     <script src="{{asset('/plugins/datepicker/bootstrap-datepicker.js')}}"></script>
     <script src="{{asset('/plugins/jqueryValidater/jquery.validate.min.js')}}"></script>
     <script src="{{asset('/plugins/jqueryValidater/additional-methods.min.js')}}"></script>
-
-
     <script type="text/javascript" charset="utf8"
             src="http://cdn.datatables.net/1.10.10/js/jquery.dataTables.js"></script>
 
@@ -145,7 +152,7 @@
 
                     datepicker_LoanReqDate: {
                         required: true,
-                        pattern: '/^\d{1,2}\/\d{1,2}\/\d{4}$/;'
+
                     },
 
                     Lfile: {
@@ -162,9 +169,16 @@
                         pattern: "Selected Date Incorrect...Please Reselect"
                     },
                     Lfile: {
-                        required: "This field cannot be empty",
+                        required: "Add A File",
                     },
                 }
+            });
+
+
+            $('#datepicker_LoanReqDate').datepicker({
+                format: 'yyyy-mm-dd',
+                autoclose: true,
+                startDate:new Date(),
             });
 
 
@@ -180,22 +194,14 @@
 
 
                     $.ajax({
-                        url: 'addLoanDetails',
+                        url: 'AddLoanDetails',
                         type: "post",
-                        data: {
-
-                            'Emp_Id': $("#empIDload").val(),
-                            'Emp_Name': $("#Lname").val(),
-                            'Emp_Pos': $("#Lposition").val(),
-                            'Emp_Grade': $("#Ljgrade").val(),
-                            'Loan_request_date': $('#datepicker_LoanReqDate').val(),
-                            'Ldoc': $('#Lfile').val(),
-                            'Special_notes': $('#Lnotes').val(),
-                        },
+                        processData: false,
+                        contentType: false,
+                        data:new FormData($("#form-add-loan")[0]),
                         success: function (e) {
                             swal("Loan Details Added", "", "success");
                             //return redirectback();
-
                         },
                         error: function (e) {
                             swal("Error!!!", "", "error");
@@ -206,6 +212,36 @@
                 }
             });
         });
+
+
+
+
+
+        function fillEmpDetails(){
+            console.log($('#empIDload'));
+            $.ajax({
+                url: 'loadLoadDetails',
+                type: "get",
+                data: {
+                    id_num : $('#empIDload').val()
+                },
+                success: function (e) {
+                    console.log(e);
+                    var data = e[0];
+                    $("#Lname").val(data.fullname);
+                    $("#Lposition").val(data.job_position);
+                    $("#Ljgrade").val(data.job_grade);
+                },
+                error: function (e) {
+                    swal("Error!!!", "", "error");
+                    console.log(e);
+                }
+
+            })
+        }
+
+
+
 
         function Demo() {
 

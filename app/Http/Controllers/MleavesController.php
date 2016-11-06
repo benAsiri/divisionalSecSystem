@@ -61,9 +61,9 @@ class MleavesController extends Controller
                 $mleaves->noOfChilds=$data['noOfChilds'];
                 $mleaves->status=$data['status'];
                 $mleaves->save();
-                return 1;
+                return 'true';
             }else{
-                return 0;
+                 return 'false';
             }
 
 

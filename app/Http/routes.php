@@ -96,8 +96,13 @@ Route::group(['middleware' => 'web'], function () {
      Route::get('LoadLoans','LoanPagesController@loadUpdateLoan');
      Route::post('UpdateLoans','LoanPagesController@UpdateLoanDetails');
      Route::post('AddLoanDetails','LoanPagesController@addLoanDetails');
+     Route::get('loadLoadDetails','LoanPagesController@fillLoanDetails');
      Route::get('Delete','LoanPagesController@deleteLoan');
 
+
+
+
+     Route::get('ADDNOTE','EditorController@addNote');
 
 
 
