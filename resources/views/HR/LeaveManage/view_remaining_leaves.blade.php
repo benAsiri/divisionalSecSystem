@@ -7,7 +7,6 @@
     <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
 
 
-    @include('partials.notifications')
 
 
     <div class="container">
@@ -83,6 +82,11 @@
                                                         <option value="#"></option>
 
                                                     </select>
+                                                    @if ($errors->has('leave_year'))
+                                                        <span class="help-block">
+                                        <strong>{{ $errors->first('leave_year') }}</strong>
+                                    </span>
+                                                    @endif
                                                 </div>
                                             </div>
 
@@ -94,6 +98,11 @@
                                                         <option value="#"></option>
 
                                                     </select>
+                                                    @if ($errors->has('leave_month'))
+                                                        <span class="help-block">
+                                        <strong>{{ $errors->first('leave_month') }}</strong>
+                                    </span>
+                                                    @endif
                                                 </div>
                                             </div>
                                             <input class="form-control" id="name_month" name="name_month" type="hidden" >

@@ -45,12 +45,13 @@ class UserRegisterController extends Controller
 
 
        $this->validate($request, array(
-           'faname'=> 'required',
+           'faname'=> 'required|not_in:0',
            'NIC'=> 'required',
            'username'=>'required|max:20',
            'password'=>'required',
-           'status'=> 'required',
-           'position'=>'required'
+           'password_confirmation'=>'required',
+           'status'=> 'required|not_in:0',
+           'position'=>'required|not_in:0'
 
 
        ));

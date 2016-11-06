@@ -44,12 +44,12 @@ class DeedController extends Controller
 
         $this->validate($request, array(
             'deed_no'=> 'required',
-            'deed_type'=> 'required',
+            'deed_type'=> 'required|not_in:0',
             'extent'=>'required',
             'deed_owner'=>'required',
             'present_owner'=>'required',
             'nominee'=>'required',
-            'refe'=>'required',
+            'refe'=>'required|not_in:0',
 
         ));
 
@@ -80,7 +80,19 @@ class DeedController extends Controller
     }
 
     public function update(Request $request)
+
     {
+
+        $this->validate($request, array(
+            'no'=> 'required',
+            'dt'=> 'required',
+            'extent'=>'required',
+            'nominee'=>'required',
+            'down'=>'required',
+            'pown'=>'required',
+            'refe'=>'required',
+
+        ));
 
         $id = $request->no;
         $dt = $request->dt;

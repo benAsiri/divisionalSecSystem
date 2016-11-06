@@ -47,14 +47,14 @@ Route::group(['middleware' => 'web'], function () {
      Route::get('yearlyIncrements','PageController@yearly_Increment_Calculator');
 
           Route::get('LeaveMgt/applyleave',array('as'=>'viewLeaves','uses'=>'LeaveController@index'));
-          Route::get('LeaveMgt/updateleave','LeaveController@updateleave');
           Route::post('LeaveMgt/addleave','LeaveController@addleave');
+          Route::get('/LeaveMgt/update','LeaveController@updateleave');
           Route::get('LeaveMgt/deleteleave', 'LeaveController@deleteleave');
           Route::get('/LeaveStatus','LeaveController@indexforHead');
           Route::get('/LeaveStatus/Reject','LeaveController@Reject');
           Route::get('/LeaveStatus/Approve','LeaveController@Approve');
           Route::get('/view_remaining','LeaveController@remaining');
-          //Route::get('/view_leaves','LeaveController@indexforHead')
+
           Route::post('/generatePDF_Leaves','LeaveController@generatePDF');
 
           Route::get('/postion','LeaveController@showdata');

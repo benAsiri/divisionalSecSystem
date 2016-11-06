@@ -53,11 +53,12 @@ class LDOPermitController extends Controller
 
         $this->validate($request, array(
             'permit_no'=> 'required',
-            'gs_division'=> 'required',
+            'gs_division'=> 'required|not_in:0',
             'name_of_village'=>'required',
+            'name_of_land'=>'required',
             'permit_holder_name'=>'required',
             'extent'=>'required',
-            'unit'=>'required',
+            'unit'=>'required|not_in:0',
             'present_owner'=>'required',
             'present_situation'=>'required'
 

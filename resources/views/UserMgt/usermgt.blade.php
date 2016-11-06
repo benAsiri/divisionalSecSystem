@@ -73,7 +73,7 @@
 
                                     <div class="col-md-6">
                                         <select class="form-control" name="faname" id="fname" onchange="loadfields()">
-                                            <option value="#"></option>
+                                            <option value=0></option>
                                             @foreach($employees as $employee)
 
                                                 <option id="optionavalue_1" value="{{$employee->fullname}}" data-parent="{{$employee->id_num}}" >{{$employee->fullname}}</option>
@@ -81,6 +81,11 @@
                                             @endforeach
 
                                         </select>
+                                        @if ($errors->has('faname'))
+                                            <span class="help-block">
+                                        <strong>{{ $errors->first('faname') }}</strong>
+                                    </span>
+                                        @endif
                                     </div>
                                 </div>
 
@@ -92,6 +97,11 @@
                                         <input type="text" class="form-control" id="natic" name="NIC" readonly >
 
                                     </div>
+                                    @if ($errors->has('NIC'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('NIC') }}</strong>
+                                    </span>
+                                    @endif
                                 </div>
 
 
@@ -143,10 +153,15 @@
 
                                     <div class="col-md-6">
                                         <select name="status" class="form-control" id="statid" onchange="positionchange()">
-                                            <option value=" "></option>
+                                            <option value=0></option>
                                             <option value="Admin">Admin</option>
                                             <option value="User">User</option>
                                         </select>
+                                        @if ($errors->has('status'))
+                                            <span class="help-block">
+                                        <strong>{{ $errors->first('status') }}</strong>
+                                    </span>
+                                        @endif
                                     </div>
                                 </div>
 
@@ -155,9 +170,14 @@
 
                                     <div class="col-md-6">
                                         <select name="position" class="form-control" id="postid">
-
+                                            <option value=0></option>
 
                                         </select>
+                                        @if ($errors->has('position'))
+                                            <span class="help-block">
+                                        <strong>{{ $errors->first('position') }}</strong>
+                                    </span>
+                                        @endif
                                     </div>
                                 </div>
 

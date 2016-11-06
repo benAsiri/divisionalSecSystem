@@ -316,7 +316,11 @@
     </div>
 
 
-
+    <style>
+        .datepick-popup {
+            z-index: 100000 !important;
+        }
+    </style>
 
 
 
@@ -343,9 +347,7 @@
 
 
 
-    <style>
-        .datepick{z-index:10000 !important;}
-    </style>
+
 
 
     <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
@@ -455,7 +457,7 @@
                     <div class="form-group{{ $errors->has('issue_date1') ? ' has-error' : '' }}">
                         <label class="col-md-4 control-label">Issued Date</label>
                         <div class="col-md-6">
-                            <input type="text" class="form-control" id="issue_date1" name="issue_date1" id="issue_date1" readonly>
+                            <input type="text" class="form-control" id="issue_date1" name="issue_date1" id="issue_date1" >
                             @if ($errors->has('transfer'))
                                 <span class="help-block">
                                         <strong>{{ $errors->first('issue_date1') }}</strong>

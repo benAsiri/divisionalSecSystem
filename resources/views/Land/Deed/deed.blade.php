@@ -74,10 +74,15 @@
 
                                 <div class="col-md-6">
                                     <select class="form-control" name="refe" id="refe" readonly>
-                                        <option id="0" value=NULL></option>
+                                        <option id="0" value=0></option>
 
 
                                     </select>
+                                    @if ($errors->has('refe'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('refe') }}</strong>
+                                    </span>
+                                    @endif
                                 </div>
                             </div>
 
@@ -132,12 +137,17 @@
 
                                 <div class="col-md-6">
                                     <select class="form-control" name="deed_type" id="deed_type"  >
-                                        <option id="0" value=NULL></option>
+                                        <option id="0" value=0></option>
                                         <option id="1" value="Swarnabhumi">Swarnabhumi</option>
                                         <option id="2" value="Jayabhumi">Jayabhumi</option>
                                         <option id="3" value="Ranbhumi-North" >Ranbhumi</option>
 
                                     </select>
+                                    @if ($errors->has('deed_type'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('deed_type') }}</strong>
+                                    </span>
+                                    @endif
                                 </div>
                             </div>
 
@@ -240,71 +250,107 @@
 
                 <div class="modal-body1">
                     </br></br>
-                    <div class="form-group">
+                    <div class="form-group{{ $errors->has('reference1') ? ' has-error' : '' }}">
                         <label class="col-md-4 control-label">Reference No</label>
                         <div class="col-md-6">
                             <select class="form-control" name="reference1" id="reference1"  readonly>
-                                <option value="#"></option>
+                                <option value=0></option>
 
 
 
                             </select>
+                            @if ($errors->has('reference1'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('reference1') }}</strong>
+                                    </span>
+                            @endif
                         </div>
                     </div>
 
 
                     </br></br>
-                    <div class="form-group">
+                    <div class="form-group{{ $errors->has('present_owner1') ? ' has-error' : '' }}">
                         <label class="col-md-4 control-label">Present Owner</label>
                         <div class="col-md-6">
                             <input type="text" class="form-control" id="present_owner1" name="present_owner1" id="present_owner1" readonly >
+
                         </div>
+                        @if ($errors->has('present_owner1'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('present_owner1') }}</strong>
+                                    </span>
+                        @endif
                     </div>
 
                     </br></br>
-                    <div class="form-group">
+                    <div class="form-group{{ $errors->has('extent1') ? ' has-error' : '' }}">
                         <label class="col-md-4 control-label">Extent</label>
                         <div class="col-md-6">
                             <input type="text" class="form-control" id="extent1" name="extent1" id="extent1" readonly>
-                        </div>
+                        </div>@if ($errors->has('extent1'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('extent1') }}</strong>
+                                    </span>
+                        @endif
+
                     </div>
                     </br></br>
 
-                    <div class="form-group">
+                    <div class="form-group{{ $errors->has('deed_no1') ? ' has-error' : '' }}">
                         <label class="col-md-4 control-label">Deed No</label>
                         <div class="col-md-6">
                             <input type="text" class="form-control" name="deed_no1" id="deed_no1" readonly >
                         </div>
+                        @if ($errors->has('deed_no1'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('deed_no1') }}</strong>
+                                    </span>
+                        @endif
                     </div>
                     </br></br>
-                    <div class="form-group">
+                    <div class="form-group{{ $errors->has('deed_type1') ? ' has-error' : '' }}">
                         <label class="col-md-4 control-label">Deed type</label>
                         <div class="col-md-6">
 
                             <select class="form-control" name="deed_type1" id="deed_type1"  >
-                                <option id="0" value=NULL></option>
+                                <option id="0" value=0></option>
                                 <option id="1" value="Swarnabhumi">Swarnabhumi</option>
                                 <option id="2" value="Jayabhumi">Jayabhumi</option>
                                 <option id="3" value="Ranbhumi-North" >Ranbhumi</option>
 
                             </select>
+                            @if ($errors->has('deed_type1'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('deed_type1') }}</strong>
+                                    </span>
+                            @endif
                         </div>
                     </div>
                     </br></br>
-                    <div class="form-group">
+                    <div class="form-group{{ $errors->has('deed_owner1') ? ' has-error' : '' }}">
                         <label class="col-md-4 control-label">Deed Owner</label>
                         <div class="col-md-6">
                             <input type="text" class="form-control" name="deed_owner1" id="deed_owner1" >
                         </div>
+                        @if ($errors->has('deed_owner1'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('deed_owner1') }}</strong>
+                                    </span>
+                        @endif
                     </div>
 
 
                     </br></br>
-                    <div class="form-group">
+                    <div class="form-group{{ $errors->has('nominee1') ? ' has-error' : '' }}">
                         <label class="col-md-4 control-label">Nominee</label>
                         <div class="col-md-6">
                             <input type="text" class="form-control" name="nominee1" id="nominee1" >
                         </div>
+                        @if ($errors->has('nominee1'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('nominee1') }}</strong>
+                                    </span>
+                        @endif
                     </div>
                     </br></br>
 

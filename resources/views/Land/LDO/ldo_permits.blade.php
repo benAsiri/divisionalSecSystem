@@ -91,12 +91,17 @@
 
                                 <div class="col-md-6">
                                     <select class="form-control" name="gs_division" id="gs_division" onchange="loadcats()" >
-                                        <option id="0" value=NULL></option>
+                                        <option id="0" value=0></option>
                                         <option id="1" value="Mangalapura">Mangalapura</option>
                                         <option id="2" value="Banadaranayakepura">Banadaranayakepura</option>
                                         <option id="3" value="Wanathawilluwa-North" >Wanathawilluwa-North</option>
 
                                     </select>
+                                    @if ($errors->has('gs_division'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('gs_division') }}</strong>
+                                    </span>
+                                    @endif
                                 </div>
                             </div>
 
@@ -158,13 +163,18 @@
                                     </div>
                                 <div class="col-md-2">
                                 <select class="form-control" name="unit" id="unit"  >
-                                    <option id="0" value=NULL></option>
+                                    <option id="0" value=0></option>
                                     <option id="1" value="Rods">Rods</option>
                                     <option id="2" value="Acres">Acres</option>
                                     <option id="3" value="Hectares" >Hectares</option>
 
 
                                 </select>
+                                    @if ($errors->has('unit'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('unit') }}</strong>
+                                    </span>
+                                    @endif
                                 </div>
 
 
@@ -280,7 +290,7 @@
                         <div class="col-md-6">
 
                             <select class="form-control" name="gs_division1" id="gs_division1"  >
-                                <option id="0" value=NULL></option>
+                                <option id="0" value=0></option>
                                 <option id="1" value="Mangalapura">Mangalapura</option>
                                 <option id="2" value="Banadaranayakepura">Banadaranayakepura</option>
                                 <option id="3" value="Wanathawilluwa-North" >Wanathawilluwa-North</option>
@@ -317,7 +327,7 @@
                         </div>
                         <div class="col-md-2">
                             <select class="form-control" name="unit1" id="unit1"  >
-                                <option id="0" value=NULL></option>
+                                <option id="0" value=0></option>
                                 <option id="1" value="Rods">Rods</option>
                                 <option id="2" value="Acres">Acres</option>
                                 <option id="3" value="Hectares" >Hectares</option>

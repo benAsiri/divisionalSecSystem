@@ -133,9 +133,9 @@ class LeaveController extends Controller
 
 
         $this->validate($request, array(
-            'Emp_Id'=> 'required',
+            'Emp_Id'=> 'required| not_in:0',
             'position'=> 'required',
-            'leave_type'=>'required',
+            'leave_type'=>'required|not_in:0',
             'dept'=>'required',
             'cleave'=>'required',
             'reason'=>'required',
@@ -231,18 +231,24 @@ class LeaveController extends Controller
      * Can change leave commence date and resuming date
      * @return \Illuminate\Http\RedirectResponse
      */
-    protected function updateleave()
+    public function updateleave(Request $request)
     {
 
-        $id = $_GET['id'];
-        $st = $_GET['commence'];
-        $ps = $_GET['resume'];
-        $rss= $_GET['reason'];
+        $this->validate($request, array(
+            'nom'=> 'required',
+            'lot'=> 'required',
+
+        ));
+
+        $id = $request->id;
+        $st = $request->nom;
+        $ps = $request->lot;
+
 
 
         DB::table('leaves')
             ->where('Emp_Id', $id)
-            ->update(['commencingleave' => $st, 'resumingduties' => $ps,'reason'=>$rss]);
+            ->update(['commencingleave' => $st,'reason'=>$ps]);
 
         return back();
     }

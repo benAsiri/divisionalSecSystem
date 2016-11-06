@@ -352,7 +352,7 @@
 
                           <li><a href="{{action('DeedController@index')}}"><i class="fa fa-circle-o"></i>Add, Delete & Update</a></li>
                           <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>In Progress</a></li>
-                          <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>Completed Tasks</a></li>
+
                         </ul>
                       </li>
 
@@ -364,7 +364,7 @@
 
                           <li><a href="{{action('MiddleClassController@index')}}"><i class="fa fa-circle-o"></i>Add, Delete & Update</a></li>
                           <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>In Progress</a></li>
-                          <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>Completed Tasks</a></li>
+
                         </ul>
                       </li>
 
