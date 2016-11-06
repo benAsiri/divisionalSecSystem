@@ -13,24 +13,20 @@ class CreateLoansTable extends Migration
     public function up()
     {
         Schema::create('loans', function (Blueprint $table) {
+
             $table->increments('id');
-            //$table->integer('emp_id')->unsigned();//foregin keys
-            $table->string('name');
-            $table->string('nic');
-            $table->string('leaveType');
-            $table->string('noOfDays');
-            $table->timestamps();
-
-            //$table->foreign('emp_Id')->referencees('id')->on('employes');
-
+            $table->string('Emp_Id')->unsingned();
+            $table->string('Emp_Name');
+            $table->string('Emp_Pos');
+            $table->string('Emp_Grade');
+            $table->date('Loan_request_date');
+            $table->string('Ldoc');
+            $table->string('Special_notes');
+            $table->foreign('Emp_Id')->references('id_num')->on('employes')->onDelete('cascade');
+            $table->timestamps('published_at');
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::drop('loans');

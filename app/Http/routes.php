@@ -83,21 +83,20 @@ Route::group(['middleware' => 'web'], function () {
      Route::get('AddMateneryLeaves','MleavesController@addMleaves');
      Route::get('LoadMleaves','MleavesController@loadUpdateMleaves');
      Route::post('updateMleaves','MleavesController@UpdateMleavesDetails');
-
      Route::post('addMleavesDetails','MleavesController@addMleavesDetails');
-     Route::get('Delete','MleavesController@deleteMleaves');
+     Route::get('DeleteM','MleavesController@deleteMleaves');
 
 
 
 
-
-
-
-
-     Route::get('ApplyLoans','LoanPagesController@applyLoans');
-
-     Route::get('viewLoans','LoanPagesController@viewLoans');
-
+         //LoanRequests
+     Route::get('ViewLoans','LoanPagesController@viewLoans');
+     Route::get('DownloadLoanReport','LoanPagesController@generatePDF');
+     Route::get('AddLoanRequest','LoanPagesController@addLoan');
+     Route::get('LoadLoans','LoanPagesController@loadUpdateLoan');
+     Route::post('UpdateLoans','LoanPagesController@UpdateLoanDetails');
+     Route::post('AddLoanDetails','LoanPagesController@addLoanDetails');
+     Route::get('Delete','LoanPagesController@deleteLoan');
 
 
 

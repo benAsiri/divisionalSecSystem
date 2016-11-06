@@ -364,10 +364,12 @@
                     </ul>
                   </li>
                   <li class="">
-                    <a href="#"><i class="fa fa-circle-o text-yellow"></i> Loan Calculator</a>
+                    <a href="#"><i class="fa fa-circle-o text-yellow"></i>Loan Requests</a>
                     <ul class="treeview-menu menu-open" style="display: block;">
-                      <li><a href="{{action('LoanPagesController@viewLoans')}}"><i class="fa fa-circle-o"></i> View Leaves</a></li>
-                      <li><a href="{{action('LoanPagesController@applyLoans')}}"><i class="fa fa-circle-o"></i> Apply Loan</a></li>
+                      <li><a href="{{action('LoanPagesController@viewLoans')}}"><i class="fa fa-circle-o"></i> View Loans</a></li>
+                      <li><a href="{{action('LoanPagesController@addLoan')}}"><i class="fa fa-circle-o"></i> Add Loans</a></li>
+                      <li><a href="{{action('LoanPagesController@loadUpdateLoan')}}"><i class="fa fa-circle-o"></i> Update Loans</a></li>
+
                     </ul>
                   </li>
                   <li class="">

@@ -9,8 +9,8 @@
         <div class="model-dialog">
             <div class="small-box bg-yellow">
                 <div class="inner">
-                    <h3>Maternity Leaves</h3>
-                     <p>Proceed with the Employees who submitted the Birth Certificate of the child</p>
+                    <h3>ADD LOAN REQUEST </h3>
+                     <p>Proceed with the Loan Requesting Letter.</p>
                 </div>
                 <div class="icon">
                     <i class="ion ion-person-add"></i>
@@ -22,25 +22,12 @@
     <div class="nav-tabs-custom">
          <div class="tab-content no-padding">
 
-
             <!-- form start -->
-            <form class="" id="form-add-mleaves" role="form" method="POST">
+            <form class="" id="form-add-loan" role="form" method="POST">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="box-body">
                     <div class="modal-dialog">
                         <div class="form-group">
-                            <div class="checkbox">
-                                <label>
-                                    <input name="chkBC" id="chkBC" type="checkbox"> Submitted the Birth Certificate
-                                </label>
-                              </div>
-
-                                <div id="showDiv">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input name="chkMC" id="chkMC" type="checkbox"> Submitted the Medical Certificate
-                                        </label>
-                                    </div>
 
                                     <label for="#">Select Employee ID</label>
                                     <select class="form-control" name="empIDload" id="empIDload">
@@ -52,31 +39,49 @@
                                             </option>
                                         @endforeach
                                     </select>
-
-
                                     <br>
 
                                     <div class="form-group">
-                                        <label for="#">Number of Child</label>
-                                        <select class="form-control" name="noOfChild" id="noOfChild">
-                                            <option value="" disabled selected style="display: none;">Please Choose</option>
-                                            <option value="1">One Child Or No Child</option>
-                                            <option value="2">Two Children or More</option>
-                                        </select>
+                                        <label>Name </label>
+                                        <input id="Lname" name="Lname" type="text" class="form-control" placeholder="Employee Name" disabled="">
                                     </div>
 
+                                    <div class="form-group">
+                                        <label>Job Position </label>
+                                        <input id="Lposition" name="Lposition" type="text" class="form-control" placeholder="Employee Job Position" disabled="">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Job Grade </label>
+                                        <input id="Ljgrade" name="Ljgrade" type="text" class="form-control" placeholder="Employee Job Grade" disabled="">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Loan Request Date</label>
+                                        <!-- Date dd/mm/yyyy -->
+                                        <div class="form-group">
+                                            <div class="input-group date">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-calendar"></i>
+                                                </div>
+                                                <input type="text" class="form-control pull-right"
+                                                       id="datepicker_LoanReqDate" name="datepicker_LoanReqDate"
+                                                       placeholder="Select the date">
+                                            </div>
+                                            <!-- /.input group -->
+                                        </div>
+                                    </div>
                                     <br>
 
                                     <div class="form-group">
-                                        <label>Reasons and Comments</label>
-                                        <textarea id="Reasons" name="Reasons" class="form-control" rows="3" placeholder="Enter ..."></textarea>
+                                        <label>Add Letter Of Request</label>
+                                        <input id="Lfile" name="Lfile" type="file" class="form-control">
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Leave Mode</label>
-                                        <input id="Lstatus" name="Lstatus" type="text" class="form-control" placeholder="ACTIVATED" disabled="">
+                                        <label>Add Special Notes</label>
+                                        <textarea id="Lnotes" name="Lnotes" class="form-control" rows="2" placeholder="Add Notes here (optional) "></textarea>
                                     </div>
-                                </div>{{--End of Show Div--}}
                         </div>
 
                     </div>
@@ -129,58 +134,36 @@
     <script>
         $(document).ready(function () {
 
-            $('#showDiv').hide();
-            $('#formButtons').attr('disabled','true');
 
-            $('#chkBC').click(function () {
-               $('#showDiv').fadeToggle();
-                $('#formButtons').attr('disabled','false');
-            });
-
-            var form = $('#form-add-mleaves');
+            var form = $('#form-add-loan');
             form.validate({
                 rules: {
-                    chkBC: {
-                        required: true,
-                    },
 
-                    chkMC: {
-                        required: true,
-
-                    },
                     empIDload: {
                         required: true,
-//                        pattern: /^[0-9]{9}[vV]$/
                     },
-                    noOfChild: {
+
+                    datepicker_LoanReqDate: {
                         required: true,
+                        pattern: '/^\d{1,2}\/\d{1,2}\/\d{4}$/;'
                     },
-                    Reasons: {
-                        required: true,
-                    }
 
-
+                    Lfile: {
+                        required: false,
+                    },
                 },
 
                 messages: {
-                    chkBC: {
-                        required: "Check this Box",
-                //pattern : "If there is no Birth certificate cannot Proceed "
-                    },
-                    chkMC: {
-                        required: "This field cannot be empty",
-                    },
                     empIDload: {
+                        required: "Select Your ID",
+                    },
+                    datepicker_LoanReqDate: {
+                        required: "Select Correct Date",
+                        pattern: "Selected Date Incorrect...Please Reselect"
+                    },
+                    Lfile: {
                         required: "This field cannot be empty",
-                        pattern: "NIC Number is not in correct Format...Please Correct"
                     },
-                    noOfChild: {
-                        required: "This field cannot be empty",
-                    },
-                    Reasons: {
-                        required: "This field cannot be empty"
-                    },
-
                 }
             });
 
@@ -197,34 +180,27 @@
 
 
                     $.ajax({
-                        url: 'addMleavesDetails',
+                        url: 'addLoanDetails',
                         type: "post",
                         data: {
 
                             'Emp_Id': $("#empIDload").val(),
-                            'chkMedicalCertificate': $('#chkBC').val(),
-                            'chkChildBirthCertificate': $('#chkMC').val(),
-                            'reason': $('#Reasons').val(),
-                            'noOfChilds': $('#noOfChild').val(),
-                            'status': 'Active',
+                            'Emp_Name': $("#Lname").val(),
+                            'Emp_Pos': $("#Lposition").val(),
+                            'Emp_Grade': $("#Ljgrade").val(),
+                            'Loan_request_date': $('#datepicker_LoanReqDate').val(),
+                            'Ldoc': $('#Lfile').val(),
+                            'Special_notes': $('#Lnotes').val(),
                         },
                         success: function (e) {
-
-                            console.log(e);
-                            if( e){
-                                swal("Matenery Leave Added", "", "success");
-                            }
-                            else
-                            {
-                                console.log("sldjfsldjkf");
-                            }
-
+                            swal("Loan Details Added", "", "success");
+                            //return redirectback();
 
                         },
-                        /*error: function (e) {
+                        error: function (e) {
                             swal("Error!!!", "", "error");
                             console.log(e);
-                        }*/
+                        }
 
                     })
                 }
@@ -234,11 +210,12 @@
         function Demo() {
 
             $("#empIDload").val("931452280v");
-            $("#chkBC").val(true);
-            $("#chkMC").val(true);
-            $("#noOfChild").val("2");
-            $("#Reasons").val("TEST");
-            $("#Lstatus").val("Active");
+            $("#Lname").val("Saman Kumara");
+            $("#Lposition").val("Cleark");
+            $("#Ljgrade").val("D");
+            $("#datepicker_LoanReqDate").val("01/05/2016");
+            $("#Lfile").val(true);
+            $("#Lnotes").val("Please Consider this Before PoyaDay");
 
         }
 

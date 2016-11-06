@@ -30,21 +30,18 @@
                     <table id="example1" class="table table-bordered table-striped tr">
                         <thead>
                         <tr>
-                            <th></th>
-                            <th></th>
                             <th>NO</th>
-                            <th>FEMALE EMPLOYEE NIC</th>
-                            <th>MEDICAL CERTIFICATE</th>
-                            <th>CHILD BIRTH CERTIFICATE</th>
-                            <th>START LEAVE DATE</th>
-                            <th>END LEAVE DATE</th>
-                            <th>Reasons and Comments</th>
-                            <th>Number of Childs</th>
-                            <th>Status</th>
+                            <th>EMPLOYEE NIC </th>
+                            <th>NAME</th>
+                            <th>POSITION</th>
+                            <th>GRADE</th>
+                            <th>LOAN REQUESTED DATE</th>
+                            <th>Request Letter</th>
+                            <th>Special Notes</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($mleaves as $e)
+                        @foreach($loans as $e)
                             <tr>
                                 <td>
                                     <button id="btn-edit" class="btn btn-primary btn-xs">EDIT</button>
@@ -54,13 +51,12 @@
                                 </td>
                                 <td>{{$e->id}}</td>
                                 <td>{{$e->Emp_Id}}</td>
-                                <td>{{$e->chkMedicalCertificate}}</td>
-                                <td>{{$e->chkChildBirthCertificate}}</td>
-                                <td>{{$e->StartLeaveDate}}</td>
-                                <td>{{$e->EndLeaveDate}}</td>
-                                <td>{{$e->reason}}</td>
-                                <td>{{$e->noOfChilds}}</td>
-                                <td>{{$e->status}}</td>
+                                <td>{{$e->Emp_Name}}</td>
+                                <td>{{$e->Emp_Pos}}</td>
+                                <td>{{$e->Emp_Grade}}</td>
+                                <td>{{$e->Loan_request_date}}</td>
+                                <td>{{$e->Ldoc}}</td>
+                                <td>{{$e->Special_notes}}</td>
                             </tr>
                         @endforeach
                         </tbody>
@@ -93,7 +89,7 @@
                 </div>
             </div>
     <!-- form start -->
-                    <form role="form" method="POST" id="update_info" action="{{action('MleavesController@UpdateMleavesDetails')}}">
+                    <form role="form" method="POST" id="update_info" action="{{action('LoanPagesController@UpdateLoanDetails')}}">
                         <input type="hidden" name="_token" value="{{ csrf_token()}}">
                         <div class="row">
                             <div class="col-md-12">
@@ -106,18 +102,8 @@
                                             <!-- /.box-header -->
 
                                             <div class="box-body">
-                                                <input type="hidden" id="index" name="index">
-                                                <div class="form-group">
-                                                    <div class="checkbox">
-                                                        <label>
-                                                            <input name="chkMC" id="chkMC" type="checkbox"> Medical Certificate
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                <br>
-
-                                                <div class="form-group">
-                                                    <label for="exampleInputEmail1">Start Leave Date</label>
+                                                   <div class="form-group">
+                                                    <label for="exampleInputEmail1">Change Request Date</label>
                                                     <!-- Date dd/mm/yyyy -->
                                                     <div class="form-group">
                                                         <div class="input-group date">
@@ -125,53 +111,23 @@
                                                                 <i class="fa fa-calendar"></i>
                                                             </div>
                                                             <input type="text" class="form-control pull-right"
-                                                                   id="datepicker_SLeaveDate" name="datepicker_SLeaveDate"
+                                                                   id="datepicker_LoanReqDate" name="datepicker_LoanReqDate"
                                                                    placeholder="Select the date">
                                                         </div>
                                                         <!-- /.input group -->
                                                     </div>
                                                 </div>
                                                 <br>
-                                                <div class="form-group">
-                                                    <label for="exampleInputEmail1">End Leave Date</label>
-                                                    <!-- Date dd/mm/yyyy -->
-                                                    <div class="form-group">
-                                                        <div class="input-group date">
-                                                            <div class="input-group-addon">
-                                                                <i class="fa fa-calendar"></i>
-                                                            </div>
-                                                            <input type="text" class="form-control pull-right"
-                                                                   id="datepicker_LeaveDate" name="datepicker_LeaveDate"
-                                                                   placeholder="Select the date">
-                                                        </div>
-                                                        <!-- /.input group -->
-                                                    </div>
-                                                </div>
 
                                                 <div class="form-group">
-                                                    <label for="#">Number of Child</label>
-                                                    <select class="form-control" name="noOfChild" id="noOfChild">
-                                                        <option value="1">One Child Or No Child</option>
-                                                        <option value="2">Two Children or More</option>
-                                                    </select>
-                                                </div>
-                                                <br>
-
-                                                <div class="form-group">
-                                                    <label>Reasons and Comments</label>
-                                                    <textarea id="Reasons" name="Reasons" class="form-control" rows="3"
-                                                              placeholder="Enter ..."></textarea>
+                                                    <label>Update Of Request</label>
+                                                    <input id="Lfile" name="Lfile" type="file" class="form-control">
                                                 </div>
                                                 <br>
                                                 <div class="form-group">
-                                                    <label>Leave Mode</label>
-                                                    <select class="form-control" name="Lstatus" id="Lstatus">
-                                                        <option value="1">Activated</option>
-                                                        <option value="2">Pause</option>
-                                                        <option value="2">Cancel</option>
-                                                    </select>
+                                                    <label>Add Special Notes</label>
+                                                    <textarea id="Lnotes" name="Lnotes" class="form-control" rows="2" placeholder="Add Notes here (optional) "></textarea>
                                                 </div>
-
                                             </div>
                                             <!-- /.box-body -->
                                             <div class="box-footer with-border">
@@ -244,15 +200,10 @@
                         },
                         function () {
 
-                            var path = 'DeleteM';
+                            var path = 'Delete';
                             $.get(path,{id: data[2]})
                                     .done(function( data ) {
-                                       if(data)
-                                       {
-                                           window.location.reload(true);
-                                       }
-
-
+                                     //   alert( "Data Loaded: " + data );
                                     });
                             swal("Deleted!", "Your record has been deleted.", "success");
                         });
@@ -260,35 +211,18 @@
 
 //        });//readyEND
 
-            $('#datepicker_LeaveDate').datepicker({
+            $('#datepicker_LoanReqDate').datepicker({
                 format: 'yyyy-mm-dd',
                 autoclose: true
             }).valid();
 
-
-            $('#datepicker_SLeaveDate').datepicker({
-                // minDate: new Date(currentYear, currentMonth, currentDate),
-                format: 'yyyy-mm-dd',
-                autoclose: true,
-
-            });
-
-
             function setData(data) {
                 console.log(data[5]);
 
-                if (data[5] == 'on') {
-                    $('#chkMC').prop('checked', true);
-                } else {
-                    $('#chkMC').prop('checked', false);
-                }
-
                 $('#index').val(data[2]);
-                $('#datepicker_SLeaveDate').val(data[6]);
-                $('#datepicker_LeaveDate').val(data[7]);
-                $('#noOfChild').val(data[9]);
-                $('#Reasons').val(data[8]);
-                $('#Lstatus').val(data[10]);
+                $('#datepicker_LoanReqDate').val(data[8]);
+                $('#Lfile').val(data[9]);
+                $('#Lnotes').val(data[10]);
             }
         });
     </script>
