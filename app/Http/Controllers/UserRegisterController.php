@@ -43,19 +43,6 @@ class UserRegisterController extends Controller
 
    protected function registeruser(Request $request){
 
-      $this->validate($request, array(
-         'faname'=> 'required',
-          'NIC'=> 'required',
-          'username'=>'required|max:20',
-          'password'=>'required',
-          'status'=> 'required',
-          'position'=>'required'
-
-
-      ));
-
-
-
 
        $this->validate($request, array(
            'faname'=> 'required',
@@ -131,7 +118,7 @@ class UserRegisterController extends Controller
      * @return mixed
      */
 
-    public function editProfile(Request $request){
+    public function editProfile(){
         return view('auth/profile');
     }
 

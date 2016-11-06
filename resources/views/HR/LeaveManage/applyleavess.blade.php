@@ -71,12 +71,13 @@
                             {!! csrf_field() !!}
 
                             <div class="form-group{{ $errors->has('Emp_Id') ? ' has-error' : '' }}">
-                                <label class="col-md-4 control-label">Employee ID</label>
+                                <label class="col-md-4 control-label">Employee Name</label>
 
                                 <div class="col-md-6">
+
                                     <select class="form-control" name="Emp_Id" id="Emp_Id" onchange="loadfields()">
 
-                                        <option value="#"></option>
+                                            <option id="lol" value="#"></option>
                                         @foreach($employees as $employee)
 
                                             <option id="optiona_value_1" value="{{$employee->id_num}}" data-parent="{{$employee->job_position}}">{{$employee->fullname}}</option>
@@ -137,7 +138,7 @@
                                                 <div class="input-group-addon">
                                                     <i class="fa fa-calendar"></i>
                                                 </div>
-                                                <input type="text" class="form-control" name="cleave" id="cleave" " placeholder="Select Dates">
+                                                <input type="text" class="form-control" name="cleave" id="cleave"  placeholder="Select Dates" readonly>
                                             </div>
                                     </br>
 
@@ -185,6 +186,9 @@
 
 
 
+
+
+
     <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -205,6 +209,14 @@
         </div>
     </div>
 
+
+
+
+    <style>
+        .datepick{z-index:10000 !important;}
+    </style>
+
+
     <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -212,31 +224,19 @@
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
                     <h4 class="modal-title custom_align" id="Heading">Update Leave Details</h4>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body1">
                     <div class="form-group">
                         <label class="col-md-4 control-label">Commencing Date</label>
                         <div class="col-md-6">
-
-
-
                                 <input type="text" class="form-control" name="cleave1" id="cleave1" placeholder="Select Commencing date">
                             </div>
                         </div>
 
 
-
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">Resuming Date</label>
-                        <div class="col-md-6">
-
-
-                                <input type="text" class="form-control" name="rleave1" id="rleave1" placeholder="Select Resuming date">
-                            </div>
-                    </div>
                     </div>
 
                     </br>
-                        </br>
+                    </br>
                     <div class="form-group">
                         <label class="col-md-4 control-label">Reason</label>
                         <div class="col-md-6">
@@ -261,6 +261,23 @@
     <script type="text/javascript">
 
 
+
+            $('#cleave1').datepick({
+                 autoclose:true,
+                dateFormat: 'yyyy-mm-dd',
+                rangeSelect: false,
+                onDate: $.datepick.noWeekends,
+                startDate:new Date(),
+                todayHighlight:'true',
+                minDate: new Date(),
+                multiSelect: 24, monthsToShow: 1,
+
+
+
+            });
+
+
+
         $('#cleave').datepick({
             autoclose:true,
             dateFormat: 'yyyy-mm-dd',
@@ -274,6 +291,8 @@
 
 
            });
+
+
 
         function processdata(){
             var k = document.getElementById("cleave").value;
@@ -318,15 +337,23 @@
 
 
 
-                function loadfields() {
+        function loadfields() {
 
 
-            var prefer = document.getElementById("optiona_value_1");
+            var nic = document.getElementById("Emp_Id").value;
 
-            var show = prefer.getAttribute("data-parent");
+            var url = '{!! url('/postion') !!}';
 
-            $("#natic").val(show);
+            $.ajax({
+                url: url,
+                type: 'GET',
+                data: {data: nic},
+                success: function (data) {
+                    $('#natic').val(data);
+                }
+            });
         }
+
 
         function loadcats() {
 
@@ -349,9 +376,13 @@
         $(".deletee").click(function() {
 
             var $row = $(this).closest("tr"),
-                    $tds = $row.find("td:nth-child(1)");
+            $tds = $row.find("td:nth-child(1)");
+            $tds1 = $row.find("td:nth-child(5)");
+            $tds2 = $row.find("td:nth-child(3)");
 
             var k= $tds.text();
+            var datee = $tds1.text();
+            var ltype = $tds2.text();
 
 
             $(".yesdel").click(function(){
@@ -362,7 +393,7 @@
                     contentType: "application/json; charset=utf-8",
                     type: 'get',
                     url: '/LeaveMgt/deleteleave',
-                    data: {id: k},
+                    data: {id: k,date:datee,leave_t:ltype},
                     success: function (max) {
                     }
 

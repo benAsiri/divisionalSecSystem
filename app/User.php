@@ -26,4 +26,7 @@ class User extends Authenticatable
     public function adPrograms(){
         return $this->hasMany('App\AdvanceProgram');
     }
+    public function employe(){
+        return $this->belongsTo('App\Employe');
+    }
 }

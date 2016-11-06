@@ -35,6 +35,8 @@
 
     <script type="text/javascript" src="{{asset('plugins/jquery.datepick.package-5.0.1/jquery.datepick.js')}}"></script>
 
+    <link rel="stylesheet" href="{{asset('/plugins/sweetAlert/sweetalert.css')}}">
+
 
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
@@ -89,122 +91,20 @@
           <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
               <!-- Messages: style can be found in dropdown.less-->
-              <li class="dropdown messages-menu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <i class="fa fa-envelope-o"></i>
-                  <span class="label label-success">4</span>
-                </a>
-                <ul class="dropdown-menu">
-                  <li class="header">You have 4 messages</li>
-                  <li>
-                    <!-- inner menu: contains the actual data -->
-                    <ul class="menu">
-                      <li><!-- start message -->
-                        <a href="#">
-                          <div class="pull-left">
-                            <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
-                          </div>
-                          <h4>
-                            Support Team
-                            <small><i class="fa fa-clock-o"></i> 5 mins</small>
-                          </h4>
-                          <p>Why not buy a new awesome theme?</p>
-                        </a>
-                      </li><!-- end message -->
-                      <li>
-                        <a href="#">
-                          <div class="pull-left">
-                            <img src="{{asset('dist/img/user3-128x128.jpg')}}" class="img-circle" alt="User Image">
-                          </div>
-                          <h4>
-                            AdminLTE Design Team
-                            <small><i class="fa fa-clock-o"></i> 2 hours</small>
-                          </h4>
-                          <p>Why not buy a new awesome theme?</p>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <div class="pull-left">
-                            <img src="{{asset('dist/img/user4-128x128.jpg')}}" class="img-circle" alt="User Image">
-                          </div>
-                          <h4>
-                            Developers
-                            <small><i class="fa fa-clock-o"></i> Today</small>
-                          </h4>
-                          <p>Why not buy a new awesome theme?</p>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <div class="pull-left">
-                            <img src="{{asset('dist/img/user3-128x128.jpg')}}" class="img-circle" alt="User Image">
-                          </div>
-                          <h4>
-                            Sales Department
-                            <small><i class="fa fa-clock-o"></i> Yesterday</small>
-                          </h4>
-                          <p>Why not buy a new awesome theme?</p>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <div class="pull-left">
-                            <img src="{{asset('dist/img/user4-128x128.jpg')}}" class="img-circle" alt="User Image">
-                          </div>
-                          <h4>
-                            Reviewers
-                            <small><i class="fa fa-clock-o"></i> 2 days</small>
-                          </h4>
-                          <p>Why not buy a new awesome theme?</p>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="footer"><a href="#">See All Messages</a></li>
-                </ul>
-              </li>
+
               <!-- Notifications: style can be found in dropdown.less -->
               <li class="dropdown notifications-menu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <a href="{{action('LeaveController@indexforHead')}}">
                   <i class="fa fa-bell-o"></i>
-                  <span class="label label-warning">10</span>
+                  <span class="label label-warning">09</span>
                 </a>
-                <ul class="dropdown-menu">
-                  <li class="header">You have 10 notifications</li>
-                  <li>
-                    <!-- inner menu: contains the actual data -->
-                    <ul class="menu">
-                      <li>
-                        <a href="#">
-                          <i class="fa fa-users text-aqua"></i> 5 new members joined today
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="fa fa-warning text-yellow"></i> Very long description here that may not fit into the page and may cause design problems
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="fa fa-users text-red"></i> 5 new members joined
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="fa fa-shopping-cart text-green"></i> 25 sales made
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="fa fa-user text-red"></i> You changed your username
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="footer"><a href="#">View all</a></li>
-                </ul>
+
               </li>
+
+
+
+
+
               <!-- Tasks: style can be found in dropdown.less -->
               <li class="dropdown tasks-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -291,7 +191,7 @@
                       <img src="@if(Auth::user()->image != "null"){{asset('/profile_images/'.Auth::user()->image )}}@else{{asset('dist/img/user2-160x160.jpg')}}@endif" class="img-circle" alt="User Image">
                       <p>
                         {{ Auth::user()->name }}
-                      <small>Member since Nov. 2012</small>
+
                     </p>
                   </li>
 
@@ -414,6 +314,67 @@
 
             <li><a href="{{url('/Usr_register')}}"><i class="fa fa-circle-o"></i> <span>User Management</span><i class="fa fa-angle-left pull-right"></i></a>
           </li>
+
+
+            <li class="active treeview">
+            <li><a href="#"><i class="fa fa-circle-o text-blue"></i>
+                <span>Work Progress Tracker</span><i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>Start Monitoring</a></li>
+                <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>In Progress</a></li>
+                <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>Completed Tasks</a></li>
+                 </ul>
+            </li>
+
+
+            <li class="active treeview">
+            <li><a href="#"><i class="fa fa-circle-o text-blue"></i>
+                <span>Land Division</span><i class="fa fa-angle-left pull-right"></i></a>
+                    <ul class="treeview-menu">
+
+
+                          <li class="active treeview">
+                          <li><a href="#"><i class="fa fa-circle-o text-blue"></i>
+                          <span>LDO Permit</span><i class="fa fa-angle-left pull-right"></i></a>
+                          <ul class="treeview-menu">
+
+                            <li><a href="{{action('LDOPermitController@index')}}"><i class="fa fa-circle-o"></i>Add, Delete & Update</a></li>
+                            <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>View & Report</a></li>
+
+                          </ul>
+                        </li>
+
+
+                      <li class="active treeview">
+                      <li><a href="#"><i class="fa fa-circle-o text-blue"></i>
+                          <span>Deed</span><i class="fa fa-angle-left pull-right"></i></a>
+                        <ul class="treeview-menu">
+
+                          <li><a href="{{action('DeedController@index')}}"><i class="fa fa-circle-o"></i>Add, Delete & Update</a></li>
+                          <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>In Progress</a></li>
+                          <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>Completed Tasks</a></li>
+                        </ul>
+                      </li>
+
+
+                      <li class="active treeview">
+                      <li><a href="#"><i class="fa fa-circle-o text-blue"></i>
+                          <span>Middle Class</span><i class="fa fa-angle-left pull-right"></i></a>
+                        <ul class="treeview-menu">
+
+                          <li><a href="{{action('MiddleClassController@index')}}"><i class="fa fa-circle-o"></i>Add, Delete & Update</a></li>
+                          <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>In Progress</a></li>
+                          <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>Completed Tasks</a></li>
+                        </ul>
+                      </li>
+
+
+              </ul>
+            </li>
+
+
+
+
           </ul>
 
         </section>

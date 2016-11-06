@@ -25,7 +25,7 @@ Route::group(['middleware' => 'web'], function () {
           Route::get('/Usr_register/deleteUser', 'UserRegisterController@delete');
           Route::get('/Usr_register/resetPwd', 'UserRegisterController@resetPW');
           Route::get('/Usr_register',array('as'=>'viewEmployees','uses'=>'UserRegisterController@index'));
-          Route::get('LeaveMgt/applyleave',array('as'=>'viewLeaves','uses'=>'LeaveController@index'));
+
 
 
 
@@ -46,6 +46,7 @@ Route::group(['middleware' => 'web'], function () {
 
      Route::get('yearlyIncrements','PageController@yearly_Increment_Calculator');
 
+          Route::get('LeaveMgt/applyleave',array('as'=>'viewLeaves','uses'=>'LeaveController@index'));
           Route::get('LeaveMgt/updateleave','LeaveController@updateleave');
           Route::post('LeaveMgt/addleave','LeaveController@addleave');
           Route::get('LeaveMgt/deleteleave', 'LeaveController@deleteleave');
@@ -53,9 +54,37 @@ Route::group(['middleware' => 'web'], function () {
           Route::get('/LeaveStatus/Reject','LeaveController@Reject');
           Route::get('/LeaveStatus/Approve','LeaveController@Approve');
           Route::get('/view_remaining','LeaveController@remaining');
+          //Route::get('/view_leaves','LeaveController@indexforHead')
+          Route::post('/generatePDF_Leaves','LeaveController@generatePDF');
+
+          Route::get('/postion','LeaveController@showdata');
 
 
      });
+
+               Route::get('/view_ldo_permits','LDOPermitController@index');
+               Route::post('LDOPermit/add','LDOPermitController@store');
+               Route::get('LDOPermit/update','LDOPermitController@update');
+               Route::get('LDOPermit/delete','LDOPermitController@delete');
+
+               Route::get('/view_deeds','DeedController@index');
+               Route::post('Deed/add','DeedController@store');
+               Route::get('Deed/update','DeedController@update');
+               Route::get('Deed/delete','DeedController@delete');
+               Route::get('Deed/get_ldo_permit','DeedController@getldo');
+               Route::get('Deed/get_ldo_permit_details','DeedController@getldo_details');
+
+
+               Route::get('/view_middleclass','MiddleClassController@index');
+               Route::post('Middleclass/add','MiddleClassController@store');
+               Route::get('Middleclass/update','MiddleClassController@update');
+               Route::get('Middleclass/delete','MiddleClassController@delete');
+
+
+
+
+
+
 
      Route::group(['middleware'=>'HR'],function(){
 
@@ -103,12 +132,7 @@ Route::group(['middleware' => 'web'], function () {
       * User Profile edit route
       * UserRegisterController -> editProfile function
       */
-     Route::get('/EditProfile','UserRegisterController@editProfile');
-     /**
-      * User Profile Edit Save
-      * UserRegisterController -> editProfileSave function
-      */
-     Route::resource('/EditProfileSave','UserRegisterController@editProfileSave');
+
 
 
      Route::get('insert','AdvanceController@InsertInfo');
@@ -139,10 +163,28 @@ Route::group(['middleware' => 'web'], function () {
 
      });
 
+
+
+
+
+
+
+
+
+
+
+
      Route::group(['middleware'=>'LR'],function(){
 
 
      });
+
+     Route::get('/EditProfile','UserRegisterController@editProfile');
+     /**
+      * User Profile Edit Save
+      * UserRegisterController -> editProfileSave function
+      */
+     Route::resource('/EditProfileSave','UserRegisterController@editProfileSave');
 
 
 

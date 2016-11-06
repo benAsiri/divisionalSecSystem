@@ -13,6 +13,6 @@ class Leave extends Model
 
     public function user()
     {
-        return $this->hasOne('App\Leave');
+        return $this->belongsTo('App\Employe');
     }
 }

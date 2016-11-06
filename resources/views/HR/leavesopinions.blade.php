@@ -37,7 +37,7 @@
                                         <td>{{$leave->leavetype}}</td>
                                         <td>{{$leave->dept}}</td>
                                         <td>{{$leave->commencingleave}}</td>
-                                  <td>{{$leave->reason}}</td>
+                                        <td>{{$leave->reason}}</td>
                                         <td>{{$leave->status}}</td>
                                         <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button  class="approve" data-title="Edit" data-toggle="modal" data-target="#approve"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
                                         <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="reject" data-title="Delete" data-toggle="modal" data-target="#reject" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
@@ -79,8 +79,12 @@
 
             var $row = $(this).closest("tr"),
             $t = $row.find("td:nth-child(1)");
+            $t1 = $row.find("td:nth-child(3)");
+            $t2 = $row.find("td:nth-child(5)");
 
             var nic = $t.text();
+            var LeaveType= $t1.text();
+            var commence = $t2.text();
 
 
                 jQuery.ajax({
@@ -89,7 +93,7 @@
                     contentType : "application/json; charset=utf-8",
                     type: 'get',
                     url:'/LeaveStatus/Approve',
-                    data: {id:nic},
+                    data: {id:nic,leave_t:LeaveType,commence_date:commence},
                     success: function(max){
                     }
 
@@ -100,10 +104,14 @@
         $(".reject").click(function() {
 
             var $row = $(this).closest("tr"),
-             $t = $row.find("td:nth-child(1)");
-
+            $t = $row.find("td:nth-child(1)");
+            $t1 = $row.find("td:nth-child(3)");
+            $t2 = $row.find("td:nth-child(5)");
 
             var nic = $t.text();
+            var LeaveType= $t1.text();
+            var commence = $t2.text();
+
 
 
             jQuery.ajax({
@@ -112,7 +120,7 @@
                 contentType : "application/json; charset=utf-8",
                 type: 'get',
                 url:'/LeaveStatus/Reject',
-                data: {id:nic},
+                data: {id:nic,leave_t:LeaveType,commence_date:commence},
                 success: function(max){
                 }
 
