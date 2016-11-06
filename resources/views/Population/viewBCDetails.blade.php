@@ -7,7 +7,7 @@
     <style>
         .error {
             color: red;
-            font-family: verdana, Helvetica;
+            font-family: serif;
             border-color: red;
             border-width: 1px;
         }

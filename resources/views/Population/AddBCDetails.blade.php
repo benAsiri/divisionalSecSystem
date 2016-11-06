@@ -65,7 +65,7 @@
                         <div class="form-group">
                             <label for="image2">2nd Side of Birth Certificate</label>
                             <br>
-                            <input type="file" id="image2">
+                            <input type="file" id="image2"  name="image2">
                         </div>
 
                     </div>

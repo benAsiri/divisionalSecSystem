@@ -37,11 +37,13 @@ class DetailController extends Controller
 
         if(true){
 
-            //$image1=$request->file('image1');
+            //Create File path for image one
             $image1=Input::file('image1');
             $filename=$bCertificate->nic.'-a.'.$image1->getClientOriginalExtension();
             $location=public_path('BCImages/'.$filename);
             Image::make($image1)->save($location);
+
+
 
             $bCertificate->imgSide1=$filename;
         }
