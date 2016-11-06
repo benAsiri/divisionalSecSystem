@@ -65,7 +65,8 @@
                     <td>{{$bc->address}}</td>
                     <td>{{$bc->mName}}</td>
                     <td><button name="img1" value="img1"class="btn btn-default" data-toggle="modal" data-target="#modal{{$bc->id}}"></button>  {{$bc->imgSide1}}</td>
-                    <td>{{$bc->imgSide2}}</td>
+                    <td><button name="img2" value="img2"class="btn btn-default" data-toggle="modal" data-target="#modal2{{$bc->id}}"></button>  {{$bc->imgSide2}}</td>
+
                 </tr>
                 <!-- Modal -->
                 <div id="modal{{$bc->id}}" class="modal fade" role="dialog">
@@ -75,11 +76,32 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Modal Header</h4>
+                                <h4 class="modal-title">1st Side Of Birth Certificate</h4>
                             </div>
                             <div class="modal-body">
                                 <p><img src='{{"C:/xampp/htdocs/divisionalSecSystem/public/BCImages/".$bc->imgSide1}}'></p>
-                                <p><img src='{{asset("/BCImages/".$bc->imgSide1)}}'></p>
+                                <p><img class="img img-responsive" src='{{asset("/BCImages/".$bc->imgSide1)}}'></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div id="modal2{{$bc->id}}" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">2nd Side Of Birth Certificate</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p><img src='{{"C:/xampp/htdocs/divisionalSecSystem/public/BCImages/".$bc->imgSide2}}'></p>
+                                <p><img class="img img-responsive" src='{{asset("/BCImages/".$bc->imgSide2)}}'></p>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

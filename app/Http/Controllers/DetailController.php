@@ -10,6 +10,7 @@ use App\Http\Requests;
 use DB;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Input;
+use Andheiberg\Notify\Facades\Notify;
 
 
 class DetailController extends Controller
@@ -43,16 +44,22 @@ class DetailController extends Controller
             $location=public_path('BCImages/'.$filename);
             Image::make($image1)->save($location);
 
+            //Create File path for image two
+            $image2=Input::file('image2');
+            $filename2=$bCertificate->nic.'-b.'.$image2->getClientOriginalExtension();
+            $location2=public_path('BCImages/'.$filename2);
+            Image::make($image2)->save($location2);
 
 
+            $bCertificate->imgSide2=$filename2;
             $bCertificate->imgSide1=$filename;
         }
 
        $bCertificate->save();
 
-        
-        alert('done');
-        //return back();
+
+        Notify::success(' ');
+        return back();
 
     }
 
