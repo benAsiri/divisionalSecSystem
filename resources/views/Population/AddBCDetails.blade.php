@@ -8,8 +8,19 @@
 @section('content')
 
 
-    <div align="center" style="background:#CED2CD" >
-        <h1>Add Birth Certificate</h1>
+
+    <div align="center" style="background:#CED2CD">
+        <div class="model-dialog">
+            <div class="small-box bg-yellow">
+                <div class="inner">
+                    <h3>Add Birth Certificate</h3>
+                    <p>Add new Birth Certificate Details with Image</p>
+                </div>
+                <div class="icon">
+                    <i  class="glyphicon glyphicon-plus"></i>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="row content">

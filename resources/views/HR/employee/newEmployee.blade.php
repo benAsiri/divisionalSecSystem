@@ -24,7 +24,17 @@
     {{--</section>--}}
 
     <div align="center" style="background:#CED2CD">
-        <h1>Add Employee</h1>
+        <div class="model-dialog">
+            <div class="small-box bg-yellow">
+                <div class="inner">
+                    <h3>Add New Employee</h3>
+                    <p>Add new Employee Details with Personal and Job Details</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-person-add"></i>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Main content -->
@@ -385,6 +395,7 @@
             $('#datepicker_doa').datepicker({
                 format: 'yyyy-mm-dd',
                 autoclose: true,
+                endDate:'0d'
 
 
             });
@@ -393,7 +404,8 @@
             $('#datepicker_dob').datepicker({
                 // minDate: new Date(currentYear, currentMonth, currentDate),
                 format: 'yyyy-mm-dd',
-                autoclose: true
+                autoclose: true,
+                startDate: new Date()
 
 
             });
