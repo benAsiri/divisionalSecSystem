@@ -1,7 +1,15 @@
 @extends('masterPage')
 @section('css_ref')
     @parent
+    <style>
+        .error {
+            color: red;
+            font-family: serif;
+            border-color: red;
+            border-width: 1px;
+        }
 
+    </style>
 
 @stop
 
@@ -36,12 +44,13 @@
                 <!-- /.box-header -->
                 <!-- form start -->
 
-                <form role="form" method="post" action="{{action('DetailController@add')}}" enctype="multipart/form-data" >
+                <form role="form" id="BC_form" method="post" action="{{action('DetailController@add')}}" enctype="multipart/form-data" >
                     <input type="hidden" name="_token"  value="{{ csrf_token() }}">
                     <div class="box-body">
-                        <div class="form-group ">
+                        <div class="form-group fg-nic ">
                             <label>NIC Number</label>
-                            <input type="text" class="form-control " id="nic" name="nic" placeholder="Enter NIC">
+                            <input type="text" class="form-control " id="nic" name="nic"
+                                   placeholder=" Enter NIC ( Not necessary for children )">
                         </div>
                         <div class="form-group">
                             <label >Person Name</label>
@@ -107,8 +116,87 @@
 @section('js_ref')
     @parent
 
+    <script src="{{asset('/plugins/jqueryValidater/jquery.validate.min.js')}}"></script>
+    <script src="{{asset('/plugins/jqueryValidater/additional-methods.min.js')}}"></script>
 
     <script>
+
+        $(document).ready(function () {
+
+
+            var form= $('#BC_form');
+            form.validate({
+
+                rules: {
+                    nic: {
+
+                        pattern: /^[0-9]{9}[vV]$/
+
+                    },
+                    pName:{
+                        required: true
+                    },
+                    address:{
+                        required: true
+                    },
+                    mName:{
+                        required:true
+                    }
+                },
+                messages: {
+                    nic: {
+
+                        pattern: "NIC Number is not in correct Format...Please Correct"
+                    },
+                    pName:{
+                        required: "This field cannot be empty"
+                    },
+                    address:{
+                        required: "This field cannot be empty"
+                    },
+                    mName:{
+                        required: "This field cannot be empty"
+                    }
+                }
+
+            });
+
+
+
+
+
+
+            //This function fire when cursior leaving the text box
+            //Check whether the NIC has already been inserted before
+            var status = true;
+            $('#nic').focusout(function (e) {
+                $.get( "validateNicForBC",{NIC :$('#nic').val()}).done(function(data){
+                    if(data.trim() == 'false'){
+                        status = false;
+                        swal("Error", "NIC has already inserted", "error");
+                        $('.fg-nic').addClass('has-error');
+                    } else {
+                        status = true
+                        $('.fg-nic').removeClass('has-error');
+                    }
+                    console.log(data);
+
+                });
+            });
+
+
+
+        });
+
+
+
+
+
+
+
+
+
+
 
         @if (Notify::has('success'))
         swal(" Record Added", "{{ Notify::first('success') }}", "success");

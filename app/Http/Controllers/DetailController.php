@@ -82,6 +82,16 @@ class DetailController extends Controller
         } else {
             return 'true';
         }
+
+    }public function isBcNicUsed(Request $request){
+        //$bCertificate = Employe::where('id_num','=',$request['NIC'])-get();
+        $bCertificate = BCertificate::where('nic','=',$request['NIC'])->count();
+        if($bCertificate > 0) {
+            return 'false';
+
+        } else {
+            return 'true';
+        }
     }
 
 

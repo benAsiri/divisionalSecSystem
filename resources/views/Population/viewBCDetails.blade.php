@@ -45,6 +45,7 @@
             <table id="example1" class="table table-bordered table-striped" >
                 <thead>
                 <tr>
+                    <th>Remove Record</th>
                     <th>ID</th>
                     <th>NIC</th>
                     <th>Person Name</th>
@@ -59,13 +60,14 @@
 
                 @foreach($bcDetails as $bc)
                 <tr>
+                    <td><button class="btn btn-danger"> <span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button> </td>
                     <td>{{$bc->id}}</td>
                     <td>{{$bc->nic}}</td>
                     <td>{{$bc->name}}</td>
                     <td>{{$bc->address}}</td>
                     <td>{{$bc->mName}}</td>
-                    <td><button name="img1" value="img1"class="btn btn-default" data-toggle="modal" data-target="#modal{{$bc->id}}"></button>  {{$bc->imgSide1}}</td>
-                    <td><button name="img2" value="img2"class="btn btn-default" data-toggle="modal" data-target="#modal2{{$bc->id}}"></button>  {{$bc->imgSide2}}</td>
+                    <td><button name="img1" value="img1"class="btn btn-info" data-toggle="modal" data-target="#modal{{$bc->id}}">See 1st Side</button> </td>
+                    <td><button name="img2" value="img2"class="btn btn-info" data-toggle="modal" data-target="#modal2{{$bc->id}}">See 2nd Side</button> </td>
 
                 </tr>
                 <!-- Modal -->
