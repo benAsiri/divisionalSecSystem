@@ -6,7 +6,7 @@
     <style>
         .error {
             color: red;
-            font-family: verdana, Helvetica;
+            font-family: serif;
             border-color: red;
             border-width: 1px;
         }
@@ -287,11 +287,13 @@
                 rules: {
                     surname: {
                         required: true,
+                        pattern:/^[a-zA-Z ]*$/
 
                     },
 
                     fullname: {
                         required: true,
+                        pattern:/^[a-zA-Z ]*$/
 
                     },
 
@@ -313,6 +315,7 @@
                     },
                     jobp: {
                         required: true,
+                        pattern:/^[a-zA-Z ]*$/
                     },
                     gender:{
                         required: true,
@@ -334,11 +337,12 @@
                 messages: {
                     surname: {
                         required: "This field cannot be empty",
-//                                    pattern: "Please enter characters only "
+                                 pattern: "Please enter only letters "
                     },
                     fullname: {
                         required: "This field cannot be empty",
-                        // minlength:"bith need min 10 chars"
+                        pattern: "Please enter only letters "
+
                     },
                     nic: {
                         required: "This field cannot be empty",
@@ -357,7 +361,8 @@
                         required: "This field cannot be empty"
                     },
                     jobp: {
-                        required: "This field cannot be empty"
+                        required: "This field cannot be empty",
+                        pattern: "Please enter only letters"
                     },
                     gender:{
                         required: "This field cannot be empty"
