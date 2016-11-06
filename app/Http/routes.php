@@ -35,11 +35,12 @@ Route::group(['middleware' => 'web'], function () {
      Route::get('SearchEmployee',array('as'=>'ViewEmployee','uses'=>'HRController@searchEmployee'));
      Route::post('AddEmployeeDetails','HRController@addEmployeeDetails');
      Route::get('LoadEmployeeDetails','HRController@loadUpdateEmployees');
+     Route::post('UpdateEmpDetail','HRController@UpdateEmployeeDetail');
      Route::get('LoadEmployeeSalDetails','HRController@loadEmpSalary');
      Route::post('AddSalary','HRController@addSalaryDetails');
      Route::get('/generatePDF_Emp','HRController@generatePDF');
      Route::get('Delete/{id}','HRController@deleteEmployee');
-     Route::post('UpdateEmpDetail','HRController@UpdateEmployeeDetail');
+     //Route::post('UpdateEmpDetail','HRController@UpdateEmployeeDetail');
      
      route::get('AddBCDetail','DetailController@loadAddDetail');
      route::post('add','DetailController@add');
@@ -82,8 +83,13 @@ Route::group(['middleware' => 'web'], function () {
 
               //Matenarity Leaves
      Route::get('ViewMateneryLeaves','MleavesController@viewMleaves');
+     Route::get('DownloadMateneryLeavesReport','MleavesController@generatePDF');
      Route::get('AddMateneryLeaves','MleavesController@addMleaves');
+     Route::get('LoadMleaves','MleavesController@loadUpdateMleaves');
+     Route::post('updateMleaves','MleavesController@UpdateMleavesDetails');
+
      Route::post('addMleavesDetails','MleavesController@addMleavesDetails');
+     Route::get('Delete','MleavesController@deleteMleaves');
 
 
 
@@ -95,7 +101,6 @@ Route::group(['middleware' => 'web'], function () {
      Route::get('ApplyLoans','LoanPagesController@applyLoans');
 
      Route::get('viewLoans','LoanPagesController@viewLoans');
-
 
 
 

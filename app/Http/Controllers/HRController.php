@@ -117,10 +117,7 @@ class HRController extends Controller
     public function deleteEmployee($id){
 
         $employee =  Employe::find($id);
-
         $employee->delete();
-
-        //return redirect()->action('HRController@loadUpdateEmployees');
         return redirect('LoadEmployeeDetails');
 
     }
