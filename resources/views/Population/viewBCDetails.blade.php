@@ -17,10 +17,24 @@
 @stop
 
 @section('content_header')
-    <h1>View Birth Certificates</h1>
+
 @endsection
 
 @section('content')
+
+    <div align="center" style="background:#CED2CD">
+        <div class="model-dialog">
+            <div class="small-box bg-yellow">
+                <div class="inner">
+                    <h3>Add Birth Certificate</h3>
+                    <p>Add new Birth Certificate Details with Image</p>
+                </div>
+                <div class="icon">
+                    <i  class="glyphicon glyphicon-plus"></i>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="box">
         {{--<div class="box-header">--}}

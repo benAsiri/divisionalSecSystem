@@ -6,20 +6,33 @@
 
 
 
-
-
-
-        <section class="content-header">
-            <h1>Search Employee Details</h1>
-        </section>
+<div align="center" style="background:#CED2CD">
+    <div class="model-dialog">
+        <div class="small-box bg-yellow">
+            <div class="inner">
+                <h3>Search Employee Details</h3>
+                <p>You can search,get report about Employee Details
+            </div>
+            <div class="icon">
+                <i class="glyphicon glyphicon-download-alt"></i>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
 <div class="pull-right">
 
-    <div class="col-lg-12"><a href="{{ url('generatePDF_Emp') }}"><button class="btn btn-block btn-warning"><i class="fa fa-file">
+<div class="row">
+    <div class="col-md-12">
+        <a href="{{ url('generatePDF_Emp') }}"><button class="btn btn-block btn-success">
+                <i class="fa fa-file"></i>Generate Report</button>
+        </a>
+    </div>
 
-            </i>Generate Report</button></a></div>
+</div>
+
 </div>
 
         <!-- Main content -->
@@ -79,6 +92,7 @@
 
          </div>
     </div>
+
 </section>
 @endsection
 @section('js_ref')
