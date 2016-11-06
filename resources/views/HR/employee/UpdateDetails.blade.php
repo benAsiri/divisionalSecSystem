@@ -319,10 +319,12 @@
     @parent
     <script src="{{asset('/plugins/datepicker/bootstrap-datepicker.js')}}"></script>
     <script src="{{asset('/plugins/jqueryValidater/jquery.validate.min.js')}}"></script>
+    <script src="{{asset('/plugins/jqueryValidater/additional-methods.min.js')}}"></script>
 
     <script type="text/javascript">
 
         $(document).ready(function () {
+
             var table = $('#example1').DataTable({
                 select: true,
                 "order": [[0, "asc"]],
@@ -358,13 +360,13 @@
 
                     fullname: {
                         required: true,
-                        pattern: /^[a-zA-Z ]*$/
+                        pattern:/^[a-zA-Z ]*$/
 
                     },
 
                     nic: {
                         required: true,
-                        pattern: /^[0-9]{9}[vV]$/
+                        pattern:/^[0-9]{9}[vV]$/
                     },
                     address: {
                         required: true,
@@ -380,7 +382,7 @@
                     },
                     jobp: {
                         required: true,
-                        pattern: /^[a-zA-Z ]*$/
+                        pattern:/^[a-zA-Z ]*$/
                     },
                     gender: {
                         required: true,
@@ -453,14 +455,14 @@
 
             //update_info
 
-            $('#update_info').on('click', '#submit', function () {
-
-//                var data = table.row($(this).parents('tr')).data();
-//                setData(data);
-
-                //return redirect();
-
-            });
+//            $('#update_info').on('click', '#submit', function () {
+//
+////                var data = table.row($(this).parents('tr')).data();
+////                setData(data);
+//
+//                //return redirect();
+//
+//            });
 
 
             $('#example1 tbody').on('click', '#btn-edit', function () {

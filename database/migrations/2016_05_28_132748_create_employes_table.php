@@ -23,7 +23,7 @@ class CreateEmployesTable extends Migration
             $table->string('race');
             $table->string('marital_state');
             $table->string('District');
-            $table->dateTime('date_of_appoint');
+            $table->date('date_of_appoint');
             $table->integer('appointment_no');
             $table->integer('widow_no');
             $table->string('job_position');
