@@ -238,6 +238,7 @@
                             <div class="box-footer ">
                                 <input type="submit" class="btn btn-primary insert" value="Submit">
                                 <input type="button" class="btn btn-primary" value="DEMO Fill" onclick="Demo()">
+                                <input type="button" class="btn btn-primary" value="Clear All Fields" onclick="Clear()">
                             </div>
 
 
@@ -434,7 +435,7 @@
                         },
                         success: function (e) {
                             swal("New Employee Added", "", "success");
-                            resetForm();
+                            Clear();
 //                                        return back();
                             //window.location="http://localhost:8000/AddEmployees";
                         },
@@ -446,25 +447,34 @@
 
                 }
 
-                function resetForm(){
-                     $("#surname").val('');
-                     $('#fullname').val('');
-                     $('#nic').val('');
-                     $('#address').val('');
-                     $('#datepicker_dob').datepicker().val('');
-                     $('#gender').val('');
-                     $('#race').val('');
-                     $('#maritalState').val('');
-                     $('#district').val('');
-                     $('#datepicker_doa').datepicker().val('');
-                     $('#appNo').val('');
-                     $('#jobp').val('');
-                     $('#jobg').val('');
-                     $('#widowNo').val('');
-                }
+
                 e.preventDefault();
             });
         })
+
+
+        function clear() {
+
+        }
+
+        function Clear(){
+            $("#surname").val('');
+            $('#fullname').val('');
+            $('#nic').val('');
+            $('#address').val('');
+            $('#datepicker_dob').datepicker().val('');
+            $('#gender').val('');
+            $('#race').val('');
+            $('#maritalState').val('');
+            $('#district').val('');
+            $('#datepicker_doa').datepicker().val('');
+            $('#appNo').val('');
+            $('#jobp').val('');
+            $('#jobg').val('');
+            $('#widowNo').val('');
+        }
+
+
 
         function Demo() {
 

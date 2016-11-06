@@ -64,7 +64,7 @@ Route::group(['middleware' => 'web'], function () {
 
      Route::group(['middleware'=>'HR'],function() {
 
-     Route::get('AddEmployees','HRController@addEmployee');
+     //Route::get('AddEmployees','HRController@addEmployee');
 
      Route::get('yearlyIncrements','PageController@yearly_Increment_Calculator');
 
