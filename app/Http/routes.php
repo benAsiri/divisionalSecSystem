@@ -40,10 +40,15 @@ Route::group(['middleware' => 'web'], function () {
      Route::post('AddSalary','HRController@addSalaryDetails');
      Route::get('/generatePDF_Emp','HRController@generatePDF');
      Route::get('Delete/{id}','HRController@deleteEmployee');
+     //Route::post('UpdateEmpDetail','HRController@UpdateEmployeeDetail');
+     
+     route::get('AddBCDetail','DetailController@loadAddDetail');
+     route::post('add','DetailController@add');
+     route::get('LoadBCDetails','DetailController@loadBCDetails');
+     route::get('validateNic','DetailController@isNicUsed');
+     route::get('validateNicForBC','DetailController@isBcNicUsed');
 
-
-
-
+     
 
 
      Route::get('yearlyIncrements','PageController@yearly_Increment_Calculator');
@@ -61,7 +66,7 @@ Route::group(['middleware' => 'web'], function () {
 
      Route::group(['middleware'=>'HR'],function() {
 
-     Route::get('AddEmployees','HRController@addEmployee');
+     //Route::get('AddEmployees','HRController@addEmployee');
 
      Route::get('yearlyIncrements','PageController@yearly_Increment_Calculator');
 

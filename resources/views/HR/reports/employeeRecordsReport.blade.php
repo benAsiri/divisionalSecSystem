@@ -1,10 +1,11 @@
+
 <style>
     table {
         width: 100%;
         border-collapse: separate;
         border-spacing: 0;
         color: #4a4a4d;
-        font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font: 12px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
     th,
     td {
@@ -41,9 +42,24 @@
     tfoot tr:last-child {
         background: #f0f0f2;
     }
+
+
 </style>
 
-<h3 style="text-align: center">Employee Details Report</h3>
+
+<h3 style="text-align: center">
+
+    <div class="row">
+        <div class="col-md-12">
+            <img src="./dist/img/letterHead.jpg" class="user-image" alt="HeaderImage" width="780">
+            Employee Details Report
+        </div>
+    </div>
+
+
+
+</h3>
+
 <div>
     <table class="table">
         <thead>
