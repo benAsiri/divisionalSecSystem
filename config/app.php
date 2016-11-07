@@ -213,6 +213,7 @@ return [
        'Alert' => UxWeb\SweetAlert\SweetAlert::class,
         'PDF'       => Barryvdh\DomPDF\Facade::class,
         'Image' => Intervention\Image\Facades\Image::class,
+        'Image' => Intervention\Image\Facades\Image::class,
         'Notify' 	=> Andheiberg\Notify\Facades\Notify::class,
 
 

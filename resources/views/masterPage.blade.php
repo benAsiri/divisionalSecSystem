@@ -674,6 +674,7 @@
     <script src="{{asset('/plugins/jquery.dataTables/dataTables.bootstrap.min.js')}}"></script>
 
 
+Loan
     {{--<script>--}}
 
     {{--var profile_pick=false;--}}

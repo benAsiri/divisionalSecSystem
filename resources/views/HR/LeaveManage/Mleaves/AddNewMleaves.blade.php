@@ -1,30 +1,27 @@
 @extends('masterPage')
 @section('css_ref')
     @parent
-
-    <link rel="stylesheet" href="{{asset('/plugins/datepicker/datepicker3.css')}}">
-    <style>
-        .error {
-            color: red;
-            font-family: verdana, Helvetica;
-            border-color: red;
-            border-width: 1px;
-        }
-    </style>
 @stop
 
 @section('content')
 
     <div align="center" style="background:#CED2CD">
-        <h1>MATERNITY LEAVES</h1>
+        <div class="model-dialog">
+            <div class="small-box bg-yellow">
+                <div class="inner">
+                    <h3>Maternity Leaves</h3>
+                     <p>Proceed with the Employees who submitted the Birth Certificate of the child</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-person-add"></i>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- Main row -->
     <div class="nav-tabs-custom">
-        <!-- Tabs within a box -->
-        <ul class="nav nav-tabs pull-center">
-            <li class="pull-left header"><i class="fa fa-inbox"></i>Maternity Leaves for Employees</li>
-        </ul>
-        <div class="tab-content no-padding">
+         <div class="tab-content no-padding">
+
 
             <!-- form start -->
             <form class="" id="form-add-mleaves" role="form" method="POST">
@@ -48,6 +45,7 @@
                                     <label for="#">Select Employee ID</label>
                                     <select class="form-control" name="empIDload" id="empIDload">
                                         {{--loads the Emp details here from the DB--}}
+                                        <option value="" disabled selected style="display: none;">Please Choose</option>
                                         @foreach($Ids as $e)
                                             <option value="{{$e->id_num}}">
                                                 {{$e->id_num}}
@@ -61,6 +59,7 @@
                                     <div class="form-group">
                                         <label for="#">Number of Child</label>
                                         <select class="form-control" name="noOfChild" id="noOfChild">
+                                            <option value="" disabled selected style="display: none;">Please Choose</option>
                                             <option value="1">One Child Or No Child</option>
                                             <option value="2">Two Children or More</option>
                                         </select>
@@ -91,25 +90,6 @@
                 </div>
                 <hr>
 
-                <div class="model-dialog">
-                    <div class="small-box bg-yellow">
-                        <div class="inner">
-                            <h3>Learn More About Maternity Leaves</h3>
-                            <br>
-                            <p>The duration of maternity leave is 12 weeks (84 days) excluding weekly holidays,
-                                Poya days and statutory holidays. Out of these 12 weeks, 02 weeks maternity
-                                leave is before confinement (including the day of her confinement) and
-                                10 weeks following the day of confinement.</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-person-add"></i>
-                        </div>
-                        <a href="http://www.labourdept.gov.lk/index.php?option=com_content&view=article&id=69&Itemid=62&lang=en"
-                           class="small-box-footer">
-                            More info <i class="fa fa-arrow-circle-right"></i>
-                        </a>
-                    </div>
-                </div>
             </form>
 
         </div>
@@ -229,13 +209,22 @@
                             'status': 'Active',
                         },
                         success: function (e) {
-                            swal("Matenery Leave Added", "", "success");
-                            //return redirectback();
+
+                            console.log(e);
+                            if(e.trim() =='true'){
+                                swal("Matenery Leave Added", "", "success");
+                            }
+                            else
+                            {
+                                swal("Error!!!", "This persion already have leave ", "error");
+
+                            }
+
 
                         },
                         error: function (e) {
-                            swal("Error!!!", "", "error");
-                            console.log(e);
+
+                            swal("Error!!!", "Something horribly fucked up! please contact developers  ", "error");
                         }
 
                     })

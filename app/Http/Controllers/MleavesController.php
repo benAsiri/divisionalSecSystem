@@ -43,20 +43,30 @@ class MleavesController extends Controller
             if($data['noOfChilds'] == 1){
                 $endLeaveDate = Carbon::now()->addDays(84)->toDateString();
             }
-            else{
+            else {
                 $endLeaveDate = Carbon::now()->addDays(42)->toDateString();
             }
-            $mleaves=new Mleave();
-            $mleaves->Emp_Id=$data['Emp_Id'];
-            $mleaves->chkMedicalCertificate=$data['chkMedicalCertificate'];
-            $mleaves->chkChildBirthCertificate=$data['chkChildBirthCertificate'];
-            $mleaves->StartLeaveDate= Carbon::now();
-            $mleaves->EndLeaveDate= $endLeaveDate;
-            $mleaves->reason=$data['reason'];
-            $mleaves->noOfChilds=$data['noOfChilds'];
-            $mleaves->status=$data['status'];
-            $mleaves->save();
-        return $data;
+
+            $resul=Mleave::where('Emp_Id',$data['Emp_Id'])->count();
+
+             if($resul == 0 ){
+
+                $mleaves=new Mleave();
+                $mleaves->Emp_Id=$data['Emp_Id'];
+                $mleaves->chkMedicalCertificate=$data['chkMedicalCertificate'];
+                $mleaves->chkChildBirthCertificate=$data['chkChildBirthCertificate'];
+                $mleaves->StartLeaveDate= Carbon::now();
+                $mleaves->EndLeaveDate= $endLeaveDate;
+                $mleaves->reason=$data['reason'];
+                $mleaves->noOfChilds=$data['noOfChilds'];
+                $mleaves->status=$data['status'];
+                $mleaves->save();
+                return 'true';
+            }else{
+                 return 'false';
+            }
+
+
 
         }
     }
@@ -85,9 +95,9 @@ class MleavesController extends Controller
     }
 
     public function deleteMleaves(Request $request){
-        $mleaves = Mleave::find($request['id']);
-        $mleaves->delete();
-        return redirect()->action('MleavesController@loadUpdateMleaves');
+        $mleaves = Mleave::find($request['id'])->delete();
+        //redirect()->action('MleavesController@loadUpdateMleaves');
+        return 1;
     }
 
     public function loadUpdateMleaves(){
