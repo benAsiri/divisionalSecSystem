@@ -2,6 +2,21 @@
 
 @section('content')
 
+
+    <div align="center" style="background:#CED2CD">
+        <div class="model-dialog">
+            <div class="small-box bg-blue">
+                <div class="inner">
+                    <h3>Middle-Class Permits Information</h3>
+                    <p>Add Middle-Class permit details,update existing Middle-Class permit details and delete Middle-Class Permit details</p>
+                </div>
+                <div class="icon">
+                    <i  class=""></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
         <div class="row">
             <div class="col-md-18 col-md-offset-0">

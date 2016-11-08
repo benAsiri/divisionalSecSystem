@@ -2,6 +2,19 @@
 
 
 @section('content')
+    <div align="center" style="background:#CED2CD">
+        <div class="model-dialog">
+            <div class="small-box bg-blue">
+                <div class="inner">
+                    <h3>User Management</h3>
+                    <p>Add new users, update existing user details and delete users</p>
+                </div>
+                <div class="icon">
+                    <i  class=""></i>
+                </div>
+            </div>
+        </div>
+    </div>
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
@@ -332,6 +345,8 @@
                url:'/Usr_register/updateUser',
                data: {stat:valuestat,post:valuepos,id:nic},
                success: function(max){
+//                   swal("success","Successfully Updated","success");
+                   alert("Done");
                }
 
            });

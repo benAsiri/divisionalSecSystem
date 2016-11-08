@@ -151,6 +151,8 @@ return [
         Yajra\Datatables\DatatablesServiceProvider::class,
         UxWeb\SweetAlert\SweetAlertServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
+        Andheiberg\Notify\NotifyServiceProvider::class, //message service provider
+
 
 
 
@@ -210,7 +212,7 @@ return [
         'Datatables'=> Yajra\Datatables\Datatables::class,
        'Alert' => UxWeb\SweetAlert\SweetAlert::class,
         'PDF'       => Barryvdh\DomPDF\Facade::class,
-
+        'Notify' 	=> Andheiberg\Notify\Facades\Notify::class,
 
 
     ],

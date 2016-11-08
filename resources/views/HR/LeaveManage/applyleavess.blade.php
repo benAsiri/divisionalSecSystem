@@ -2,7 +2,19 @@
 
 @section('content')
 
-
+    <div align="center" style="background:#CED2CD">
+        <div class="model-dialog">
+            <div class="small-box bg-blue">
+                <div class="inner">
+                    <h3>Apply Leave</h3>
+                    <p>Add new leaves, update existing leave details and delete leave</p>
+                </div>
+                <div class="icon">
+                    <i  class=""></i>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="container">
         <div class="row">
@@ -408,6 +420,10 @@
                  $tds = $row.find("td:nth-child(5)");
                 $tds1 = $row.find("td:nth-child(6)");
                 $tds2 = $row.find("td:nth-child(1)");
+                 $tds3 = $row.find("td:nth-child(3)");
+
+
+                var ltype = $tds3.text();
 
 
 
@@ -425,7 +441,7 @@
 
                         url: '/LeaveMgt/update',
                         type: 'get',
-                        data: {nom:nom,lot:lot,id:id},
+                        data: {nom:nom,lot:lot,id:id,ltype:ltype},
                         success: function(data) {
                              setTimeout(function(){
                                 location.reload();

@@ -243,11 +243,13 @@ class LeaveController extends Controller
         $id = $request->id;
         $st = $request->nom;
         $ps = $request->lot;
+        $ltype=$request->ltype;
 
 
 
         DB::table('leaves')
             ->where('Emp_Id', $id)
+            ->where('leavetype', $ltype)
             ->update(['commencingleave' => $st,'reason'=>$ps]);
 
         return back();

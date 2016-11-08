@@ -2,6 +2,20 @@
 
 @section('content')
 
+    <div align="center" style="background:#CED2CD">
+        <div class="model-dialog">
+            <div class="small-box bg-blue">
+                <div class="inner">
+                    <h3>LDO Permits Information</h3>
+                    <p>Add LDO permit details,update existing LDO permit details and delete LDO Permit details</p>
+                </div>
+                <div class="icon">
+                    <i  class=""></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
         <div class="row">
             <div class="col-md-18 col-md-offset-0">
@@ -453,9 +467,11 @@
                 type: 'GET',
                 data: {no:no,gs:gs,village:village,land:land,holder_name:holder_name,extent:extent+" "+extent_unit,powner:powner,prsnt_situ:prsnt_situ,cancel:cancel},
                 success: function(data) {
+
                         setTimeout(function(){
                             location.reload();
                         }, 500);
+
                     }
 
             });
@@ -506,5 +522,20 @@
     </script>
 
 
+    <script>
+
+        @if (Notify::has('success'))
+        swal("Details Updated", "{{ Notify::first('success') }}", "success");
+        @endif
+        @if (Notify::has('error'))
+            swal("error!", "{{ Notify::first('error') }}", "error");
+        @endif
+        @if (Notify::has('warning'))
+            swal("warning!", "{{ Notify::first('warning') }}", "warning");
+        @endif
+        @if (Notify::has('info'))
+            swal("info!", "{{ Notify::first('info') }}", "info");
+        @endif
+    </script>
 
 @endsection

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Andheiberg\Notify\Facades\Notify;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -126,8 +127,8 @@ class LDOPermitController extends Controller
 
         DB::table('l_d_o__permits')
             ->where('permit_no', $id)
-            ->update(['GS_division' => $gs, 'name_of_village' => $village,'name_of_land' => $land,'permit_holder_name' => $holder_name,'extent' => $extent,'present_owner' => $powner,'present_situation' => $present_situ,'GS_division' => $present_situ,'cancellation'=>$cancellation]);
-
+            ->update(['GS_division' => $gs, 'name_of_village' => $village,'name_of_land' => $land,'permit_holder_name' => $holder_name,'extent' => $extent,'present_owner' => $powner,'present_situation' => $present_situ,'cancellation'=>$cancellation]);
+        Notify::success('dsdsd');
         return back();
     }
 
