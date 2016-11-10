@@ -11,6 +11,7 @@ use DB;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Input;
 use Andheiberg\Notify\Facades\Notify;
+use File;
 
 
 class DetailController extends Controller
@@ -97,6 +98,11 @@ class DetailController extends Controller
     public function deleteBCDetail($id){
 
         $bc=BCertificate::find($id);
+
+        $filename1 =public_path('BCImages/'.$bc->imgSide1);
+        $filename2 =public_path('BCImages/'.$bc->imgSide2);
+
+        File::delete($filename1,$filename2);
         $bc->delete();
         
         return redirect('LoadBCDetails');

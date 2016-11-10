@@ -26,8 +26,8 @@
         <div class="model-dialog">
             <div class="small-box bg-yellow">
                 <div class="inner">
-                    <h3>Add Birth Certificate</h3>
-                    <p>Add new Birth Certificate Details with Image</p>
+                    <h3>View Birth Certificate</h3>
+                    <p>View Details and delete Unnecessary Data</p>
                 </div>
                 <div class="icon">
                     <i  class="glyphicon glyphicon-plus"></i>
@@ -187,7 +187,7 @@
 
                         });
 
-                setData(data);
+
 
             });
 
