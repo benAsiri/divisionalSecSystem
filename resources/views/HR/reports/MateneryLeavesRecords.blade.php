@@ -1,11 +1,10 @@
-
 <style>
     table {
         width: 100%;
         border-collapse: separate;
         border-spacing: 0;
         color: #4a4a4d;
-        font: 12px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
     th,
     td {
@@ -42,46 +41,36 @@
     tfoot tr:last-child {
         background: #f0f0f2;
     }
-
-
 </style>
 
-
-<h3 style="text-align: center">
-
-    <div class="row">
-        <div class="col-md-12">
-            <img src="./dist/img/letterHead.jpg" class="user-image" alt="HeaderImage" width="780">
-            Employee Details Report
-        </div>
-    </div>
-
-
-
-</h3>
-
+<h3 style="text-align: center">Maternity Leaves Report</h3>
 <div>
     <table class="table">
         <thead>
         <tr>
-            <th>Employee ID</th>
-            <th>Full Nane</th>
-            <th>NIC</th>
-            <th>Gender</th>
-            <th>SAppointment Date</th>
+            <th>Index No</th>
+            <th>FEMALE EMPLOYEE NIC</th>
+            <th>MEDICAL CERTIFICATE</th>
+            <th>CHILD BIRTH CERTIFICATE</th>
+            <th>START LEAVE DATE</th>
+            <th>END LEAVE DATE</th>
+            <th>Reasons and Comments</th>
+            <th>Number of Childs</th>
+            <th>Status</th>
         </tr>
         </thead>
         <tbody>
-        @foreach($employee as $emp)
+        @foreach($mleaves as $e)
             <tr>
-                <td>{{ $emp->id }}</td>
-                <td>{{ $emp->fullname }}</td>
-                <td>{{ $emp->id_num }}</td>
-                <td>{{ $emp->gender}}</td>
-                <td>{{ $emp->appointment_no}}</td>
-                {{--<td>{{ $emp->handOverDate }}</td>--}}
-                {{--<td>{{ $emp->approvedDate }}</td>--}}
-                {{--<td align="center">{{ $ad_pro->Status }}</td>--}}
+                <td>{{$e->id}}</td>
+                <td>{{$e->Emp_Id}}</td>
+                <td>{{$e->chkMedicalCertificate}}</td>
+                <td>{{$e->chkChildBirthCertificate}}</td>
+                <td>{{$e->StartLeaveDate}}</td>
+                <td>{{$e->EndLeaveDate}}</td>
+                <td>{{$e->reason}}</td>
+                <td>{{$e->noOfChilds}}</td>
+                <td>{{$e->status}}</td>
             </tr>
         @endforeach
         </tbody>
