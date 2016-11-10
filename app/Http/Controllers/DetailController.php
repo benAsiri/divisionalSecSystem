@@ -94,6 +94,15 @@ class DetailController extends Controller
         }
     }
 
+    public function deleteBCDetail($id){
+
+        $bc=BCertificate::find($id);
+        $bc->delete();
+        
+        return redirect('LoadBCDetails');
+
+    }
+
 
     
 }

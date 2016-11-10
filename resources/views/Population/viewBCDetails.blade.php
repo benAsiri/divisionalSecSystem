@@ -60,7 +60,7 @@
 
                 @foreach($bcDetails as $bc)
                 <tr>
-                    <td><button class="btn btn-danger"> <span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button> </td>
+                    <td><button id="btn-delete" class="btn btn-danger"> <span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button> </td>
                     <td>{{$bc->id}}</td>
                     <td>{{$bc->nic}}</td>
                     <td>{{$bc->name}}</td>
@@ -143,34 +143,58 @@
 
 
         //$("#example1").DataTable();
+        $(document).ready(function () {
+
+            var table=  $('#example1').DataTable({
+
+                select: true,
+                "order": [[0, "asc"]],
+                "scrollY": "400px",
+                "scrollX": "400px",
+                "scrollCollapse": false,
+                "paging": true,
+                "bProcessing": true,
+                "scrollX":true,
+
+
+            });
 
 
 
-        $('#example1').DataTable({
 
-            select: true,
-            "order": [[0, "asc"]],
-            "scrollY": "400px",
-            "scrollX": "400px",
-            "scrollCollapse": false,
-            "paging": true,
-            "bProcessing": true,
-            "scrollX":true,
 
+            $('#example1').on('click', '#btn-delete', function () {
+
+                var data = table.row($(this).parents('tr')).data();
+                // console.log(data[2]);
+
+
+                swal({
+                            title: "Are you sure?",
+                            text: "You will not be able to recover this Data again",
+                            type: "warning",
+                            showCancelButton: true,
+                            confirmButtonColor: "#DD6B55",
+                            confirmButtonText: "Yes, delete it!",
+                            closeOnConfirm: false
+                        },
+                        function () {
+
+                            var path = 'DeleteBC/' + data[1];
+                            console.log(path);
+                            window.location.replace(path);
+                            swal("Deleted!", "Your record has been deleted.", "success");
+
+                        });
+
+                setData(data);
+
+            });
 
 
 
 
         });
-
-        $('#example1').on('click', function(){
-
-            //alert("BAM!");
-        });
-
-
-
-
 
 
 

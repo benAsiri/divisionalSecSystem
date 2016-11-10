@@ -481,7 +481,7 @@
 
                 swal({
                             title: "Are you sure?",
-                            text: "You will not be able to recover this Data gain",
+                            text: "You will not be able to recover this Data again",
                             type: "warning",
                             showCancelButton: true,
                             confirmButtonColor: "#DD6B55",

@@ -49,6 +49,8 @@ Route::group(['middleware' => 'web'], function () {
      route::get('validateNicForBC','DetailController@isBcNicUsed');
      route::get('viewSalary','HRController@searchSalaryDetails');
      route::get('/generateSalaryPDF','HRController@generateSalaryPDF');
+     route::get('DeleteBC/{id}','DetailController@deleteBCDetail');
+          
           
 
 

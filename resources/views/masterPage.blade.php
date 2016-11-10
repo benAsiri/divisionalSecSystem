@@ -47,6 +47,14 @@
         <!-- AdminLTE Skins. Choose a skin from the css/skins
              folder instead of downloading all of them to reduce the load. -->
         <link rel="stylesheet" href="{{asset('dist/css/skins/_all-skins.min.css')}}">
+
+        <style>
+            .small-box {
+                border-radius: 1px;
+                box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
+            }
+        </style>
+
     @show
 
     {{--<link rel="stylesheet" href="{{asset('/sweetalert.css')}}">--}}

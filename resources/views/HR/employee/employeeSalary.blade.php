@@ -2,10 +2,25 @@
 
 
 @section('content_header')
-    <h1>Add Salary Details</h1>
+
 @endsection
 
 @section('content')
+
+    <div align="center" style="background:#CED2CD">
+        <div class="model-dialog">
+            <div class="small-box bg-yellow">
+                <div class="inner">
+                    <h3>Add Employee Salary Details</h3>
+                    <p>You add salary details and later see them
+                </div>
+                <div class="icon">
+                    <i class="glyphicon glyphicon-plus"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <div class="row">
         <div class="col-xs-12">
