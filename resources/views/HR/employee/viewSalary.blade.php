@@ -32,7 +32,7 @@
 
         <div class="row pdf-btn-wrapper">
             <div class="col-sm-2 ">
-                <a href="{{ url('') }}">
+                <a href="{{ url('generateSalaryPDF') }}">
                     <button class="btn btn-block btn-success">
                         <i class="fa fa-file"></i>&nbsp;&nbsp;&nbsp;&nbsp;Generate Report
                     </button>

@@ -111,21 +111,22 @@ class HRController extends Controller
 
         return view('HR.employee.viewSalary',compact('salary'));
         
-        
-
-//        $employee=DB::table('employes')->get();
-//        return view('HR.employee.searchEmployee',compact('employee'));
     }
 
     public function generatePDF(Request $request){
 
         $employee=DB::table('employes')->get();
-
-
         
-
         $pdf = PDF::loadView('/HR/reports/employeeRecordsReport',['employee'=>$employee]);
         return $pdf->download('employee_details_report.pdf');
+    }
+
+    public function generateSalaryPDF(Request $request){
+
+        $salary= DB::select( DB::raw("SELECT E.fullname,E.id_num,S.basic_salary,S.emp_id,S.id From employes E,salaries S WHERE E.id = S.emp_id") );
+
+        $pdf = PDF::loadView('/HR/reports/employeeSalaryReport',['salary'=>$salary]);
+        return $pdf->download('employee_Salary_details_report.pdf');
     }
 
 

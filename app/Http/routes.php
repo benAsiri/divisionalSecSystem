@@ -48,6 +48,8 @@ Route::group(['middleware' => 'web'], function () {
      route::get('validateNic','DetailController@isNicUsed');
      route::get('validateNicForBC','DetailController@isBcNicUsed');
      route::get('viewSalary','HRController@searchSalaryDetails');
+     route::get('/generateSalaryPDF','HRController@generateSalaryPDF');
+          
 
 
      
