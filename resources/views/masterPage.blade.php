@@ -381,17 +381,17 @@
                             <ul class="treeview-menu menu-open">
                                 <li><a href="{{action('HRController@loadEmpSalary')}}"><i
                                                 class="fa fa-circle-o"></i> Add Employee Salary Details</a></li>
-                                <li><a href="#"><i class="fa fa-circle-o"></i> Level 2</a></li>
+                                <li><a href="{{action('HRController@searchSalaryDetails')}}"><i class="fa fa-circle-o"></i>View Salary Details</a></li>
                                 <li><a href="#"><i class="fa fa-circle-o"></i> Level 3</a></li>
                             </ul>
                         </li>
                         <li class="">
                             <a href="#"><i class="fa fa-circle-o text-yellow"></i> Loan Calculator</a>
                             <ul class="treeview-menu menu-open">
-                                <li><a href="{{action('LoanPagesController@viewLoans')}}"><i
-                                                class="fa fa-circle-o"></i> View Leaves</a></li>
-                                <li><a href="{{action('LoanPagesController@applyLoans')}}"><i
-                                                class="fa fa-circle-o"></i> Apply Loan</a></li>
+                                {{--<li><a href="{{action('LoanPagesController@viewLoans')}}"><i--}}
+                                                {{--class="fa fa-circle-o"></i> View Leaves</a></li>--}}
+                                {{--<li><a href="{{action('LoanPagesController@applyLoans')}}"><i--}}
+                                                {{--class="fa fa-circle-o"></i> Apply Loan</a></li>--}}
                             </ul>
                         </li>
                         <li class="">

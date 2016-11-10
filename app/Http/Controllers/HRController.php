@@ -104,6 +104,19 @@ class HRController extends Controller
         }
     }
 
+    public function searchSalaryDetails()
+    {
+
+        $salary= DB::select( DB::raw("SELECT E.fullname,E.id_num,S.basic_salary,S.emp_id,S.id From employes E,salaries S WHERE E.id = S.emp_id") );
+
+        return view('HR.employee.viewSalary',compact('salary'));
+        
+        
+
+//        $employee=DB::table('employes')->get();
+//        return view('HR.employee.searchEmployee',compact('employee'));
+    }
+
     public function generatePDF(Request $request){
 
         $employee=DB::table('employes')->get();
