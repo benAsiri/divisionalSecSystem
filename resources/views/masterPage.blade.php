@@ -735,68 +735,7 @@
     <script src="{{asset('/plugins/jquery.dataTables/dataTables.bootstrap.min.js')}}"></script>
 
 
-    Loan
-    {{--<script>--}}
 
-    {{--var profile_pick=false;--}}
-    {{--function profile_image_over(para){--}}
-    {{--if(para=="view")--}}
-    {{--$("#profile-img-picker").fadeIn();--}}
-    {{--else if(profile_pick && para!="view")--}}
-    {{--$("#profile-img-picker").fadeOut();--}}
-    {{--};--}}
-    {{--function get_image(para_1,para_2){--}}
-    {{--$("#"+para_2).trigger('click');--}}
-    {{--};--}}
-    {{--$(document).ready(function(){--}}
-    {{--// alert("chalitha!");--}}
-    {{--// $("#example2_info").DataTable();--}}
-    {{--$('.file_input').on('change', function(){ //on file input change--}}
-    {{--var div_id = $(this).attr("data-id");--}}
-    {{--var base_url = $(this).attr("data-icon");--}}
-
-    {{--if (window.File && window.FileReader && window.FileList && window.Blob) //check File API supported browser--}}
-    {{--{--}}
-    {{--//$('#thumb_output_'+id).html(''); //clear html of output element--}}
-    {{--var data = $(this)[0].files; //this file data--}}
-    {{--$.each(data, function(index, file){ //loop though each file--}}
-    {{--if(/(\.|\/)(gif|jpe?g|png)$/i.test(file.type)){ //check supported file type--}}
-    {{--var fRead = new FileReader(); //new filereader--}}
-    {{--fRead.onload = (function(file){ //trigger function on successful read--}}
-    {{--return function(e) {--}}
-    {{--//var img = $('<img/>').addClass('thumb').attr('src', e.target.result); //create image element--}}
-    {{--profile_pick=true;--}}
-    {{--profile_image_over("close");--}}
-    {{--$('#'+div_id).css("background-image",'url("'+e.target.result+'")'); //append image to output element--}}
-    {{--};--}}
-    {{--})(file);--}}
-    {{--fRead.readAsDataURL(file); //URL representing the file's data.--}}
-    {{--}--}}
-    {{--});--}}
-
-    {{--}else{--}}
-    {{--profile_pick=false;--}}
-    {{--alert("Your browser doesn't support File API!"); //if File API is absent--}}
-    {{--}--}}
-    {{--});--}}
-
-    {{--});--}}
-
-    {{--// Data Table--}}
-    {{--$(function () {--}}
-    {{--$("#example1").DataTable();--}}
-    {{--$('#example2').DataTable({--}}
-    {{--"paging": true,--}}
-    {{--"lengthChange": false,--}}
-    {{--"searching": false,--}}
-    {{--"ordering": true,--}}
-    {{--"info": true,--}}
-    {{--"autoWidth": false--}}
-    {{--});--}}
-    {{--});--}}
-
-
-    {{--</script>--}}
 @show
 
 </body>
