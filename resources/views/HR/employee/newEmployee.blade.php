@@ -404,7 +404,8 @@
                 // minDate: new Date(currentYear, currentMonth, currentDate),
                 format: 'yyyy-mm-dd',
                 autoclose: true,
-                startDate: new Date()
+                endDate:'0d'
+                //startDate: new Date()
 
 
             });
