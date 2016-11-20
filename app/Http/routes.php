@@ -73,6 +73,9 @@ Route::group(['middleware' => 'web'], function () {
           Route::get('/postion','LeaveController@showdata');
 
 
+          
+
+
      });
 
                Route::get('/view_ldo_permits','LDOPermitController@index');
@@ -117,32 +120,32 @@ Route::group(['middleware' => 'web'], function () {
      Route::get('currentleaves','LeavePagesController@CurrentLeaves');
 
 
-              //Matenarity Leaves
-     Route::get('ViewMateneryLeaves','MleavesController@viewMleaves');
-     Route::get('DownloadMateneryLeavesReport','MleavesController@generatePDF');
-     Route::get('AddMateneryLeaves','MleavesController@addMleaves');
-     Route::get('LoadMleaves','MleavesController@loadUpdateMleaves');
-     Route::post('updateMleaves','MleavesController@UpdateMleavesDetails');
-     Route::post('addMleavesDetails','MleavesController@addMleavesDetails');
-     Route::get('DeleteM','MleavesController@deleteMleaves');
+//              //Matenarity Leaves
+//     Route::get('ViewMateneryLeaves','MleavesController@viewMleaves');
+//     Route::get('DownloadMateneryLeavesReport','MleavesController@generatePDF');
+//     Route::get('AddMateneryLeaves','MleavesController@addMleaves');
+//     Route::get('LoadMleaves','MleavesController@loadUpdateMleaves');
+//     Route::post('updateMleaves','MleavesController@UpdateMleavesDetails');
+//     Route::post('addMleavesDetails','MleavesController@addMleavesDetails');
+//     Route::get('DeleteM','MleavesController@deleteMleaves');
 
 
 
 
-         //LoanRequests
-     Route::get('ViewLoans','LoanPagesController@viewLoans');
-     Route::get('DownloadLoanReport','LoanPagesController@generatePDF');
-     Route::get('AddLoanRequest','LoanPagesController@addLoan');
-     Route::get('LoadLoans','LoanPagesController@loadUpdateLoan');
-     Route::post('UpdateLoans','LoanPagesController@UpdateLoanDetails');
-     Route::post('AddLoanDetails','LoanPagesController@addLoanDetails');
-     Route::get('loadLoadDetails','LoanPagesController@fillLoanDetails');
-     Route::get('Delete','LoanPagesController@deleteLoan');
-
-
-
-
-     Route::get('ADDNOTE','EditorController@addNote');
+//         //LoanRequests
+//     Route::get('ViewLoans','LoanPagesController@viewLoans');
+//     Route::get('DownloadLoanReport','LoanPagesController@generatePDF');
+//     Route::get('AddLoanRequest','LoanPagesController@addLoan');
+//     Route::get('LoadLoans','LoanPagesController@loadUpdateLoan');
+//     Route::post('UpdateLoans','LoanPagesController@UpdateLoanDetails');
+//     Route::post('AddLoanDetails','LoanPagesController@addLoanDetails');
+//     Route::get('loadLoadDetails','LoanPagesController@fillLoanDetails');
+//     Route::get('Delete','LoanPagesController@deleteLoan');
+//
+//
+//
+//
+//     Route::get('ADDNOTE','EditorController@addNote');
 
 
 
@@ -172,7 +175,7 @@ Route::group(['middleware' => 'web'], function () {
       * User Profile edit route
       * UserRegisterController -> editProfile function
       */
-     Route::get('/EditProfile','UserRegisterController@editProfile');
+//     Route::get('/EditProfile','UserRegisterController@editProfile');
      /**
       * User Profile Edit Save
       * UserRegisterController -> editProfileSave function
@@ -216,7 +219,32 @@ Route::group(['middleware' => 'web'], function () {
 
 
 
+     Route::get('/EditProfile','UserRegisterController@editProfile');
 
+     //LoanRequests
+     Route::get('ViewLoans','LoanPagesController@viewLoans');
+     Route::get('DownloadLoanReport','LoanPagesController@generatePDF');
+     Route::get('AddLoanRequest','LoanPagesController@addLoan');
+     Route::get('LoadLoans','LoanPagesController@loadUpdateLoan');
+     Route::post('UpdateLoans','LoanPagesController@UpdateLoanDetails');
+     Route::post('AddLoanDetails','LoanPagesController@addLoanDetails');
+     Route::get('loadLoadDetails','LoanPagesController@fillLoanDetails');
+     Route::get('Delete','LoanPagesController@deleteLoan');
+
+
+
+
+     Route::get('ADDNOTE','EditorController@addNote');
+
+
+     //Matenarity Leaves
+     Route::get('ViewMateneryLeaves','MleavesController@viewMleaves');
+     Route::get('DownloadMateneryLeavesReport','MleavesController@generatePDF');
+     Route::get('AddMateneryLeaves','MleavesController@addMleaves');
+     Route::get('LoadMleaves','MleavesController@loadUpdateMleaves');
+     Route::post('updateMleaves','MleavesController@UpdateMleavesDetails');
+     Route::post('addMleavesDetails','MleavesController@addMleavesDetails');
+     Route::get('DeleteM','MleavesController@deleteMleaves');
 
 
 

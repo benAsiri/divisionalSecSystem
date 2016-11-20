@@ -8,11 +8,11 @@
     </section>
     <br>
 
-  <div class="col-lg-pull-1">
+    <div class="col-lg-pull-1">
         <div class="col-lg-12">
             <a href="{{ url('DownloadMateneryLeavesReport') }}">
                 <button class="btn btn-block btn-warning"><i class="fa fa-file">
-           </i>Generate Report</button></a>
+                    </i>Generate Report</button></a>
         </div>
     </div>
 

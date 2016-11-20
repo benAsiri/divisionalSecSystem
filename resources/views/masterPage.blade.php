@@ -393,37 +393,19 @@
                                 <li><a href="#"><i class="fa fa-circle-o"></i> Level 3</a></li>
                             </ul>
                         </li>
-                        <li class="">
-                            <a href="#"><i class="fa fa-circle-o text-red"></i> Loan Calculator</a>
-                            <ul class="treeview-menu menu-open">
-                                {{--<li><a href="{{action('LoanPagesController@viewLoans')}}"><i--}}
-                                {{--class="fa fa-circle-o"></i> View Leaves</a></li>--}}
-                                {{--<li><a href="{{action('LoanPagesController@applyLoans')}}"><i--}}
-                                {{--class="fa fa-circle-o"></i> Apply Loan</a></li>--}}
+                        <li class="active treeview">
+                        <li><a href="#"><i class="fa fa-circle-o text-red"></i>
+                                <span>Loan Request</span><i class="fa fa-angle-left pull-right"></i></a>
+                            <ul class="treeview-menu">
+
+                                <li><a href="{{action('LoanPagesController@addLoan')}}"><i class="fa fa-circle-o"></i>Add Loan Details</a></li>
+                                <li><a href="{{action('LoanPagesController@loadUpdateLoan')}}"><i class="fa fa-circle-o"></i>Update Loan Details</a></li>
+                                <li><a href="{{action('LoanPagesController@viewLoans')}}"><i class="fa fa-circle-o"></i>View Loan Details</a></li>
+
+
                             </ul>
                         </li>
-                        {{--<li class="">--}}
-                            {{--<a href=""><i class="fa fa-circle-o text-yellow"></i> Maternity Leaves</a>--}}
-                            {{--<ul class="treeview-menu menu-open" >--}}
-                                {{--<li><a href="{{action('MleavesController@viewMleaves')}}"><i--}}
-                                                {{--class="fa fa-circle-o"></i> View Leaves</a></li>--}}
-                                {{--<li><a href="{{action('MleavesController@addMleaves')}}"><i--}}
-                                                {{--class="fa fa-circle-o"></i> Add Leaves</a></li>--}}
 
-
-                            {{--</ul>--}}
-                            {{--<a href="{{action('PageController@yearly_Increment_Calculator')}}">--}}
-                                {{--<i class="fa-user"></i> <span>HR Managent</span><i class="fa fa-angle-left pull-right"></i>--}}
-                            {{--</a>--}}
-                            {{--<ul class="treeview-menu">--}}
-                                {{--<li><a href="{{action('HRController@addEmployee')}}"><i class="fa fa-circle-o"></i> Add Employee Details </a></li>--}}
-                                {{--<li><a href="{{action('HRController@searchEmployee')}}"><i class="fa fa-circle-o"></i> Search Employee Details </a></li>--}}
-                                {{--<li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i> Page3 </a></li>--}}
-
-
-                            {{--</ul>--}}
-
-                        {{--</li>--}}
                     </ul>
 
 
@@ -439,8 +421,18 @@
                         <li><a href="{{url('/view_remaining')}}"><i
                                         class="fa fa-circle-o text-purple"></i>View remaining leaves</a></li>
 
-                        <li><a href=""><i class="fa fa-circle-o text-purple"></i>Maternity Leaves
-                            </a></li>
+                        <li class="active treeview">
+                        <li><a href="#"><i class="fa fa-circle-o text-purple"></i>
+                                <span>Maternity Leaves</span><i class="fa fa-angle-left pull-right"></i></a>
+                            <ul class="treeview-menu">
+
+                                <li><a href="{{action('MleavesController@addMleaves')}}"><i class="fa fa-circle-o"></i>Add Leave</a></li>
+                                <li><a href="{{action('MleavesController@loadUpdateMleaves')}}"><i class="fa fa-circle-o"></i>Update Leave Details</a></li>
+                                <li><a href="{{action('MleavesController@viewMleaves')}}"><i class="fa fa-circle-o"></i>View Leave Details</a></li>
+
+
+                            </ul>
+                        </li>
                     </ul>
                 </li>
 
@@ -508,6 +500,24 @@
 
                     </ul>
                 </li>
+
+                <li class="active treeview">
+                <li><a href="#"><i class="fa fa-circle-o text-green"></i>
+                        <span>Broadcast Note</span><i class="fa fa-angle-left pull-right"></i></a>
+                    <ul class="treeview-menu">
+
+
+                        <li class="active treeview">
+                        <li><a href="{{action('EditorController@addNote')}}"><i class="fa fa-circle-o text-green"></i>
+                                <span>New Note</span></a>
+
+                        </li>
+
+
+
+                    </ul>
+                </li>
+
 
             </ul>
 

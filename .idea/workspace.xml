@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f46c150-cbb5-4e00-9f26-863e6286dc91" name="Default" comment="">
+    <list default="true" id="9f46c150-cbb5-4e00-9f26-863e6286dc91" name="Default" comment="Asiri part intergrated">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_11_20_191101_create_loans_table.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/database/migrations/2016_06_04_125959_create_loans_table.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/LoanPagesController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/LoanPagesController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Loan.php" afterPath="$PROJECT_DIR$/app/Loan.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/HR/LeaveManage/Mleaves/AddNewMleaves.blade.php" afterPath="$PROJECT_DIR$/resources/views/HR/LeaveManage/Mleaves/AddNewMleaves.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/HR/LeaveManage/Mleaves/UpdateMleavesDetails.blade.php" afterPath="$PROJECT_DIR$/resources/views/HR/LeaveManage/Mleaves/UpdateMleavesDetails.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/HR/LeaveManage/Mleaves/viewMleaves.blade.php" afterPath="$PROJECT_DIR$/resources/views/HR/LeaveManage/Mleaves/viewMleaves.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/HR/LoanRequests/AddNewLoanRequests.blade.php" afterPath="$PROJECT_DIR$/resources/views/HR/LoanRequests/AddNewLoanRequests.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/masterPage.blade.php" afterPath="$PROJECT_DIR$/resources/views/masterPage.blade.php" />
     </list>
     <ignored path="divisionalSecSystem.iws" />
@@ -25,70 +34,45 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="masterPage.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/masterPage.blade.php">
+      <file leaf-file-name="2016_11_20_191101_create_loans_table.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2016_11_20_191101_create_loans_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="580">
-              <caret line="737" column="4" selection-start-line="737" selection-start-column="4" selection-end-line="737" selection-end-column="4" />
+            <state relative-caret-position="136">
+              <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#a#0;n#li#0;n#ul#0;n#li#1;n#ul#0;n#li#2;n#ul#0;n#div#0;n#nav#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#a#0;n#li#1;n#ul#0;n#li#1;n#ul#0;n#li#2;n#ul#0;n#div#0;n#nav#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#a#0;n#li#2;n#ul#0;n#li#1;n#ul#0;n#li#2;n#ul#0;n#div#0;n#nav#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#a#0;n#li#3;n#ul#0;n#li#1;n#ul#0;n#li#2;n#ul#0;n#div#0;n#nav#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#a#0;n#li#0;n#ul#1;n#div#0;n#div#0;n#aside#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#a#0;n#li#1;n#ul#1;n#div#0;n#div#0;n#aside#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#a#0;n#li#2;n#ul#1;n#div#0;n#div#0;n#aside#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#a#0;n#li#3;n#ul#1;n#div#0;n#div#0;n#aside#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#7#48#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="view_remaining_leaves.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/HR/LeaveManage/view_remaining_leaves.blade.php">
+      <file leaf-file-name="2016_05_28_132748_create_employes_table.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2016_05_28_132748_create_employes_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#7#48#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Loan.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Loan.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+              <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Leaves_Report.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/HR/reports/Leaves_Report.blade.php">
+      <file leaf-file-name="LoanPagesController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LoanPagesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-408">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="employeeSalaryReport.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/HR/reports/employeeSalaryReport.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LeavePagesController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LeavePagesController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="50" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="searchEmployee.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/HR/employee/searchEmployee.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9">
-              <caret line="32" column="41" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
+            <state relative-caret-position="170">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -111,7 +95,6 @@
         <option value="$PROJECT_DIR$/resources/views/HR/employee/employeeSalary.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/HR/employee/viewSalary.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/HR/employee/UpdateDetails.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/resources/views/Population/viewBCDetails.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/DetailController.php" />
         <option value="$PROJECT_DIR$/resources/views/HR/employee/newEmployee.blade.php" />
@@ -120,7 +103,16 @@
         <option value="$PROJECT_DIR$/storage/framework/views/d5ddd88d586afc437944b21dda8d4f4e1e7c5600.php" />
         <option value="$PROJECT_DIR$/resources/views/HR/LeaveManage/view_remaining_leaves.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/LeavePagesController.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_06_04_125959_create_loans_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_11_20_191101_create_loans_table.php" />
+        <option value="$PROJECT_DIR$/app/Loan.php" />
+        <option value="$PROJECT_DIR$/resources/views/HR/LeaveManage/Mleaves/AddNewMleaves.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/HR/LeaveManage/Mleaves/viewMleaves.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/resources/views/masterPage.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/HR/LoanRequests/AddNewLoanRequests.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/HR/LeaveManage/Mleaves/UpdateMleavesDetails.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/LoanPagesController.php" />
       </list>
     </option>
   </component>
@@ -192,43 +184,7 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="storage">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="divisionalSecSystem">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="storage">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="framework">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="divisionalSecSystem">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="storage">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="framework">
+            <PATH_ELEMENT USER_OBJECT="resources">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -246,7 +202,85 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="public">
+            <PATH_ELEMENT USER_OBJECT="resources">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="views">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="HR">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="divisionalSecSystem">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="resources">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="views">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="HR">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="LeaveManage">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="divisionalSecSystem">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="resources">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="views">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="HR">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="LeaveManage">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Mleaves">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="divisionalSecSystem">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="resources">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -264,7 +298,17 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="dist">
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="divisionalSecSystem">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="database">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -278,15 +322,11 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="public">
+            <PATH_ELEMENT USER_OBJECT="database">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="dist">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="img">
+            <PATH_ELEMENT USER_OBJECT="migrations">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -518,7 +558,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="re&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/HR/reports/employeeSalaryReport.blade.php&#10;repo&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/HR/reports/Leaves_Report.blade.php&#10;se&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/HR/employee/searchEmployee.blade.php&#10;vie&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/HR/LeaveManage/view_remaining_leaves.blade.php&#10;Leave&#9;null&#9;null&#10;mas&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/masterPage.blade.php&#10;5f984a72249191f2168f6ef729a5d68ff2604573&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/storage/framework/views/5f984a72249191f2168f6ef729a5d68ff2604573.php&#10;work&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/.idea/workspace.xml&#10;new&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/HR/employee/newEmployee.blade.php&#10;rou&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/routes.php&#10;mast&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/masterPage.blade.php&#10;hr&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/Controllers/HRController.php&#10;det&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/Controllers/DetailController.php&#10;Hr&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/Controllers/HRController.php&#10;vi&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/Population/viewBCDetails.blade.php&#10;up&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/HR/employee/UpdateDetails.blade.php&#10;ad&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/Population/AddBCDetails.blade.php&#10;view&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/HR/employee/viewSalary.blade.php&#10;ro&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/routes.php&#10;2016&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/database/migrations/2016_11_09_135039_Get_Salary_Detail.php&#10;201&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/database/migrations/2016_11_09_135039_Get_Salary_Detail.php&#10;route&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/routes.php&#10;master&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/masterPage.blade.php&#10;de&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/Controllers/DetailController.php&#10;contro&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/Controllers/HRController.php&#10;let&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/public/dist/img/letterHead.jpg&#10;com&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/vendor/barryvdh/laravel-dompdf/composer.json&#10;compo&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/vendor/barryvdh/laravel-dompdf/composer.json&#10;add&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/Population/AddBCDetails.blade.php&#10;rout&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/routes.php&#10;sea&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/HR/employee/searchEmployee.blade.php&#10;deta&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="add&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/HR/LoanRequests/AddNewLoanRequests.blade.php&#10;ro&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/routes.php&#10;rou&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/routes.php&#10;HR&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/Controllers/HRController.php&#10;Loan&#9;null&#9;null&#10;route&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/routes.php&#10;lo&#9;null&#9;null&#10;mas&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/masterPage.blade.php&#10;user&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/Controllers/UserRegisterController.php&#10;rout&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/routes.php&#10;re&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/HR/reports/employeeSalaryReport.blade.php&#10;repo&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/HR/reports/Leaves_Report.blade.php&#10;se&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/HR/employee/searchEmployee.blade.php&#10;vie&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/HR/LeaveManage/view_remaining_leaves.blade.php&#10;Leave&#9;null&#9;null&#10;5f984a72249191f2168f6ef729a5d68ff2604573&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/storage/framework/views/5f984a72249191f2168f6ef729a5d68ff2604573.php&#10;work&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/.idea/workspace.xml&#10;new&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/HR/employee/newEmployee.blade.php&#10;mast&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/masterPage.blade.php&#10;hr&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/Controllers/HRController.php&#10;det&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/Controllers/DetailController.php&#10;Hr&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/Controllers/HRController.php&#10;vi&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/Population/viewBCDetails.blade.php&#10;up&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/HR/employee/UpdateDetails.blade.php&#10;ad&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/Population/AddBCDetails.blade.php&#10;view&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/HR/employee/viewSalary.blade.php&#10;2016&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/database/migrations/2016_11_09_135039_Get_Salary_Detail.php&#10;201&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/database/migrations/2016_11_09_135039_Get_Salary_Detail.php&#10;master&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/masterPage.blade.php&#10;de&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/Controllers/DetailController.php&#10;contro&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/app/Http/Controllers/HRController.php&#10;let&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/public/dist/img/letterHead.jpg&#10;com&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/vendor/barryvdh/laravel-dompdf/composer.json&#10;compo&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/vendor/barryvdh/laravel-dompdf/composer.json&#10;sea&#9;FILE&#9;file://C:/xampp/htdocs/divisionalSecSystem/resources/views/HR/employee/searchEmployee.blade.php&#10;deta&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
   <component name="RecentsManager">
@@ -608,7 +648,7 @@
       <workItem from="1479014560795" duration="940000" />
       <workItem from="1479608313915" duration="5409000" />
       <workItem from="1479614654160" duration="4427000" />
-      <workItem from="1479656277854" duration="6429000" />
+      <workItem from="1479656277854" duration="15078000" />
     </task>
     <task id="LOCAL-00005" summary="Change Home Page Image">
       <created>1478506860870</created>
@@ -659,25 +699,32 @@
       <option name="project" value="LOCAL" />
       <updated>1479662874473</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="clean code">
+      <created>1479663851831</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1479663851831</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59227000" />
+    <option name="totallyTimeSpent" value="67876000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="1296" height="1000" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40473506" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24190938" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24514563" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5317919" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19212963" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14456522" sideWeight="0.51119405" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2361111" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21965317" sideWeight="0.48880598" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21875" sideWeight="0.48880598" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -738,7 +785,9 @@
     <MESSAGE value="Changes done to delete of birth certificate function.Now its delete record from database and image from the location as well." />
     <MESSAGE value="Date Picker settings changed" />
     <MESSAGE value="Kusal Part Intergrated  and issues corrected" />
-    <option name="LAST_COMMIT_MESSAGE" value="Kusal Part Intergrated  and issues corrected" />
+    <MESSAGE value="clean code" />
+    <MESSAGE value="Asiri part intergrated" />
+    <option name="LAST_COMMIT_MESSAGE" value="Asiri part intergrated" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -747,34 +796,11 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/Land/LDO/ldo_permits_search.blade.php" />
-    <entry file="file://$PROJECT_DIR$/app/LDO_Permit.php" />
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_11_05_102514_l_d_o__permits.php" />
-    <entry file="file://$PROJECT_DIR$/storage/framework/views/bd9245736b70662aeab9bb236d23a10fa76b0785.php" />
-    <entry file="file://$PROJECT_DIR$/app/Deed.php" />
-    <entry file="file://$PROJECT_DIR$/resources/views/Land/Deed/deed.blade.php" />
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_11_05_193333_deeds.php" />
-    <entry file="file://$PROJECT_DIR$/resources/views/Land/LDO/ldo_permits.blade.php" />
-    <entry file="file://$PROJECT_DIR$/app/MiddleClass.php" />
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LeaveController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="142" column="11" selection-start-line="134" selection-start-column="7" selection-end-line="142" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DeedController.php" />
     <entry file="file://$PROJECT_DIR$/database/migrations/2016_11_06_133724_middle_classes.php" />
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LDOPermitController.php" />
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MiddleClassController.php" />
     <entry file="file://$PROJECT_DIR$/resources/views/Land/MiddleClass/middleclass.blade.php" />
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserRegisterController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="101" column="26" selection-start-line="101" selection-start-column="26" selection-end-line="101" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/HR/LeaveManage/applyleavess.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -801,20 +827,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_05_28_132748_create_employes_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="33" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_11_09_135039_Get_Salary_Detail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -882,13 +894,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HRController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1785">
-          <caret line="132" column="0" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -926,13 +931,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="407" column="18" selection-start-line="407" selection-start-column="18" selection-end-line="407" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="51" column="67" selection-start-line="51" selection-start-column="67" selection-end-line="51" selection-end-column="67" />
         </state>
       </provider>
     </entry>
@@ -1087,6 +1085,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-15566">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1098,18 +1097,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/HR/LeaveManage/view_remaining_leaves.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserRegisterController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+        <state relative-caret-position="-391">
+          <caret line="101" column="26" selection-start-line="101" selection-start-column="26" selection-end-line="101" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/HR/employee/searchEmployee.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/profile.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9">
-          <caret line="32" column="41" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/HR/LeaveManage/view_remaining_leaves.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -1138,20 +1145,130 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/HR/employee/searchEmployee.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9">
+          <caret line="32" column="41" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_11_09_135039_Get_Salary_Detail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_06_04_125959_create_loans_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_09_08_100000_Mleaves.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HRController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <marker date="1478748436627" expanded="true" signature="2499:2603" ph="SELECT E.ful... employes" />
+            <marker date="1478748436627" expanded="true" signature="3056:3160" ph="SELECT E.ful... employes" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/HR/LeaveManage/Mleaves/viewMleaves.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="587">
+          <caret line="91" column="5" selection-start-line="91" selection-start-column="5" selection-end-line="91" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/masterPage.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="737" column="4" selection-start-line="737" selection-start-column="4" selection-end-line="737" selection-end-column="4" />
+        <state relative-caret-position="459">
+          <caret line="510" column="75" selection-start-line="510" selection-start-column="75" selection-end-line="510" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="122" column="7" selection-start-line="122" selection-start-column="7" selection-end-line="130" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/HR/LoanRequests/AddNewLoanRequests.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="169" column="18" selection-start-line="169" selection-start-column="18" selection-end-line="169" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/HR/LeaveManage/Mleaves/AddNewMleaves.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_11_20_191101_create_loans_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#a#0;n#li#0;n#ul#0;n#li#1;n#ul#0;n#li#2;n#ul#0;n#div#0;n#nav#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#a#0;n#li#1;n#ul#0;n#li#1;n#ul#0;n#li#2;n#ul#0;n#div#0;n#nav#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#a#0;n#li#2;n#ul#0;n#li#1;n#ul#0;n#li#2;n#ul#0;n#div#0;n#nav#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#a#0;n#li#3;n#ul#0;n#li#1;n#ul#0;n#li#2;n#ul#0;n#div#0;n#nav#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#a#0;n#li#0;n#ul#1;n#div#0;n#div#0;n#aside#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#a#0;n#li#1;n#ul#1;n#div#0;n#div#0;n#aside#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#a#0;n#li#2;n#ul#1;n#div#0;n#div#0;n#aside#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#a#0;n#li#3;n#ul#1;n#div#0;n#div#0;n#aside#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#7#48#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_05_28_132748_create_employes_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#7#48#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Loan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/HR/LeaveManage/Mleaves/UpdateMleavesDetails.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2092">
+          <caret line="203" column="14" selection-start-line="203" selection-start-column="14" selection-end-line="203" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LoanPagesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

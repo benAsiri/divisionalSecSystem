@@ -22,8 +22,10 @@ class CreateLoansTable extends Migration
             $table->date('Loan_request_date');
             $table->string('Ldoc');
             $table->string('Special_notes');
+            $table->string('Loan_status');
             $table->foreign('Emp_Id')->references('id_num')->on('employes')->onDelete('cascade');
             $table->timestamps('published_at');
+
         });
     }
 

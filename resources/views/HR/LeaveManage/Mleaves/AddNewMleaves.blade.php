@@ -10,7 +10,7 @@
             <div class="small-box bg-yellow">
                 <div class="inner">
                     <h3>Maternity Leaves</h3>
-                     <p>Proceed with the Employees who submitted the Birth Certificate of the child</p>
+                    <p>Proceed with the Employees who submitted the Birth Certificate of the child</p>
                 </div>
                 <div class="icon">
                     <i class="ion ion-person-add"></i>
@@ -20,7 +20,7 @@
     </div>
     <!-- Main row -->
     <div class="nav-tabs-custom">
-         <div class="tab-content no-padding">
+        <div class="tab-content no-padding">
 
 
             <!-- form start -->
@@ -33,57 +33,57 @@
                                 <label>
                                     <input name="chkBC" id="chkBC" type="checkbox"> Submitted the Birth Certificate
                                 </label>
-                              </div>
+                            </div>
 
-                                <div id="showDiv">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input name="chkMC" id="chkMC" type="checkbox"> Submitted the Medical Certificate
-                                        </label>
-                                    </div>
+                            <div id="showDiv">
+                                <div class="checkbox">
+                                    <label>
+                                        <input name="chkMC" id="chkMC" type="checkbox"> Submitted the Medical Certificate
+                                    </label>
+                                </div>
 
-                                    <label for="#">Select Employee ID</label>
-                                    <select class="form-control" name="empIDload" id="empIDload">
-                                        {{--loads the Emp details here from the DB--}}
+                                <label for="#">Select Employee ID</label>
+                                <select class="form-control" name="empIDload" id="empIDload">
+                                    {{--loads the Emp details here from the DB--}}
+                                    <option value="" disabled selected style="display: none;">Please Choose</option>
+                                    @foreach($Ids as $e)
+                                        <option value="{{$e->id_num}}">
+                                            {{$e->id_num}}
+                                        </option>
+                                    @endforeach
+                                </select>
+
+
+                                <br>
+
+                                <div class="form-group">
+                                    <label for="#">Number of Child</label>
+                                    <select class="form-control" name="noOfChild" id="noOfChild">
                                         <option value="" disabled selected style="display: none;">Please Choose</option>
-                                        @foreach($Ids as $e)
-                                            <option value="{{$e->id_num}}">
-                                                {{$e->id_num}}
-                                            </option>
-                                        @endforeach
+                                        <option value="1">One Child Or No Child</option>
+                                        <option value="2">Two Children or More</option>
                                     </select>
+                                </div>
 
+                                <br>
 
-                                    <br>
+                                <div class="form-group">
+                                    <label>Reasons and Comments</label>
+                                    <textarea id="Reasons" name="Reasons" class="form-control" rows="3" placeholder="Enter ..."></textarea>
+                                </div>
 
-                                    <div class="form-group">
-                                        <label for="#">Number of Child</label>
-                                        <select class="form-control" name="noOfChild" id="noOfChild">
-                                            <option value="" disabled selected style="display: none;">Please Choose</option>
-                                            <option value="1">One Child Or No Child</option>
-                                            <option value="2">Two Children or More</option>
-                                        </select>
-                                    </div>
-
-                                    <br>
-
-                                    <div class="form-group">
-                                        <label>Reasons and Comments</label>
-                                        <textarea id="Reasons" name="Reasons" class="form-control" rows="3" placeholder="Enter ..."></textarea>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Leave Mode</label>
-                                        <input id="Lstatus" name="Lstatus" type="text" class="form-control" placeholder="ACTIVATED" disabled="">
-                                    </div>
-                                </div>{{--End of Show Div--}}
+                                <div class="form-group">
+                                    <label>Leave Mode</label>
+                                    <input id="Lstatus" name="Lstatus" type="text" class="form-control" placeholder="ACTIVATED" disabled="">
+                                </div>
+                            </div>{{--End of Show Div--}}
                         </div>
 
                     </div>
                 </div>
 
                 <div class="modal-dialog" id="formButtons">
-                      <div class="box-footer">
+                    <div class="box-footer">
                         <input type="button" class="btn btn-primary insert" value="Submit">
                         <input type="button" class="btn btn-primary" value="DEMO Fill" onclick="Demo()">
                     </div>
@@ -133,7 +133,7 @@
             $('#formButtons').attr('disabled','true');
 
             $('#chkBC').click(function () {
-               $('#showDiv').fadeToggle();
+                $('#showDiv').fadeToggle();
                 $('#formButtons').attr('disabled','false');
             });
 
@@ -165,7 +165,7 @@
                 messages: {
                     chkBC: {
                         required: "Check this Box",
-                //pattern : "If there is no Birth certificate cannot Proceed "
+                        //pattern : "If there is no Birth certificate cannot Proceed "
                     },
                     chkMC: {
                         required: "This field cannot be empty",

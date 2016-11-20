@@ -36,6 +36,7 @@ class LoanPagesController extends Controller
     {
         $Ids = DB::table('employes')->get();
         return view('HR.LoanRequests.AddNewLoanRequests',compact('Ids'));
+
     }
 
 
@@ -53,7 +54,6 @@ class LoanPagesController extends Controller
 
     public function loadUpdateLoan(){
         $loans = DB::table('loans')->get();
-        var_dump($loans);
         return view('HR.LoanRequests.UpdateLoanRequests')->with('loans',$loans);
     }
 
@@ -71,7 +71,11 @@ class LoanPagesController extends Controller
 
     public function addLoanDetails()
     {
+
         if (Input::ajax()) {
+
+
+            Input::file('Lfile')->move('loan-request-letters', Input::file('Lfile')->getClientOriginalName());
             $data = Input::all();
             $loans = new Loans();
             $loans->Emp_Id = $data['empIDload'];
@@ -79,11 +83,13 @@ class LoanPagesController extends Controller
             $loans->Emp_Pos = $data['Lposition'];
             $loans->Emp_Grade = $data['Ljgrade'];
             $loans->Loan_request_date = $data['datepicker_LoanReqDate'];
-            $loans = Input::file('Lfile')->getClientOriginalExtension();
+            $loans->Ldoc = Input::file('Lfile')->getClientOriginalName();
             $loans->Special_notes = $data['Lnotes'];
+            $loans->Loan_status ='Activate';
+
             $loans->save();
 
-            return $loans;
+
         }
     }
 
