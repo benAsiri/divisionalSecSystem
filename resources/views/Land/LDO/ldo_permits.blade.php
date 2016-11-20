@@ -2,6 +2,40 @@
 
 @section('content')
 
+
+    <link rel="stylesheet" href="{{asset('/plugins/sweetAlert/sweetalert.css')}}">
+    <script src="{{asset('/plugins/sweetAlert/sweetalert.min.js')}}"></script>
+
+    @if (notify()->ready())
+        <script>
+            swal({
+                title: "{!! notify()->message() !!}",
+                type: "{{ notify()->type() }}"
+
+            });
+        </script>
+
+
+
+    @endif
+
+
+
+
+    <div align="center" style="background:#CED2CD">
+        <div class="model-dialog">
+            <div class="small-box bg-blue">
+                <div class="inner">
+                    <h3>LDO Permits Information</h3>
+                    <p>Add LDO permit details,update existing LDO permit details and delete LDO Permit details</p>
+                </div>
+                <div class="icon">
+                    <i  class=""></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
         <div class="row">
             <div class="col-md-18 col-md-offset-0">
@@ -56,9 +90,6 @@
             </div>
         </div>
     </div>
-
-
-
 
 
 
@@ -397,20 +428,10 @@
         });
 
 
-
-        $(document).ready(function (){
-
-
-
-        });
-
-
-
-
         $(".approve").click(function(){
 
                   var $row = $(this).closest("tr"),
-                    $tds = $row.find("td:nth-child(1)");
+                    $tds  = $row.find("td:nth-child(1)");
                     $tds1 = $row.find("td:nth-child(2)");
                     $tds2 = $row.find("td:nth-child(3)");
                     $tds3 = $row.find("td:nth-child(4)");
@@ -453,9 +474,11 @@
                 type: 'GET',
                 data: {no:no,gs:gs,village:village,land:land,holder_name:holder_name,extent:extent+" "+extent_unit,powner:powner,prsnt_situ:prsnt_situ,cancel:cancel},
                 success: function(data) {
+                    swal("LDO Permit Updated", "", "success");
                         setTimeout(function(){
                             location.reload();
                         }, 500);
+
                     }
 
             });
@@ -484,6 +507,7 @@
                 type: 'GET',
                 data: {no:no},
                 success: function(data) {
+                    swal("LDO Permit Deleted", "", "success");
                     setTimeout(function(){
                         location.reload();
                     }, 1);
@@ -494,6 +518,7 @@
             });
 
             });
+
 
 
 

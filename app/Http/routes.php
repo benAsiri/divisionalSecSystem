@@ -58,6 +58,7 @@ Route::group(['middleware' => 'web'], function () {
           Route::post('/generatePDF_Leaves','LeaveController@generatePDF');
 
           Route::get('/postion','LeaveController@showdata');
+          Route::get('/nic','UserRegisterController@showdata');
 
 
      });

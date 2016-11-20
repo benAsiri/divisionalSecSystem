@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\LDO_Permit;
 use Illuminate\Support\Facades\DB;
+use UxWeb\SweetAlert\SweetAlert;
+use Alert;
+use Codecourse\Notify\Facades\Notify;
 
 class LDOPermitController extends Controller
 {
@@ -54,32 +57,53 @@ class LDOPermitController extends Controller
         $this->validate($request, array(
             'permit_no'=> 'required',
             'gs_division'=> 'required|not_in:0',
-            'name_of_village'=>'required',
-            'name_of_land'=>'required',
-            'permit_holder_name'=>'required',
-            'extent'=>'required',
+            'name_of_village'=>'required|alpha|max:30',
+            'name_of_land'=>'required|alpha|max:30',
+            'permit_holder_name'=>'required|alpha|max:100',
+            'extent'=>'required|numeric|max:50',
             'unit'=>'required|not_in:0',
-            'present_owner'=>'required',
-            'present_situation'=>'required'
+            'present_owner'=>'required|alpha|max:100',
+            'present_situation'=>'required|alpha|max:30'
 
         ));
 
-        $extent=$request['extent']." ".$request['unit'];
+        $redudnt = DB::table('l_d_o__permits')->where('permit_no',$request['permit_no'])->get();
 
-        LDO_Permit::create([
-            'permit_no' => $request['permit_no'],
-            'GS_division' => $request['gs_division'],
-            'name_of_village' => $request['name_of_village'],
-            'name_of_land' => $request['name_of_land'],
-            'permit_holder_name' => $request['permit_holder_name'],
-            'extent' => $extent,
-            'present_owner' => $request['present_owner'],
-            'present_situation' => $request['present_situation'],
-            'cancellation'=>'No'
+        if( $redudnt != null){
 
-        ]);
+            notify()->flash('LDO Permit Already Added to the system!', 'warning');
 
-        return back();
+            return back();
+
+
+        }
+        else {
+
+
+
+            $extent = $request['extent'] . " " . $request['unit'];
+
+            LDO_Permit::create([
+                'permit_no' => $request['permit_no'],
+                'GS_division' => $request['gs_division'],
+                'name_of_village' => $request['name_of_village'],
+                'name_of_land' => $request['name_of_land'],
+                'permit_holder_name' => $request['permit_holder_name'],
+                'extent' => $extent,
+                'present_owner' => $request['present_owner'],
+                'present_situation' => $request['present_situation'],
+                'cancellation' => 'No'
+
+            ]);
+
+
+
+            notify()->flash('LDO Permit Added!', 'success');
+            return back();
+
+        }
+
+
     }
 
     /**
@@ -126,8 +150,9 @@ class LDOPermitController extends Controller
 
         DB::table('l_d_o__permits')
             ->where('permit_no', $id)
-            ->update(['GS_division' => $gs, 'name_of_village' => $village,'name_of_land' => $land,'permit_holder_name' => $holder_name,'extent' => $extent,'present_owner' => $powner,'present_situation' => $present_situ,'GS_division' => $present_situ,'cancellation'=>$cancellation]);
+            ->update(['GS_division' => $gs, 'name_of_village' => $village,'name_of_land' => $land,'permit_holder_name' => $holder_name,'extent' => $extent,'present_owner' => $powner,'present_situation' => $present_situ,'cancellation'=>$cancellation]);
 
+        notify()->flash('LDO Permit successfully updated!', 'success');
         return back();
     }
 
@@ -146,6 +171,7 @@ class LDOPermitController extends Controller
             ->where('permit_no', $id)
            ->delete();
 
+        notify()->flash('LDO Permit successfully deleted!', 'success');
         return back();
 
 

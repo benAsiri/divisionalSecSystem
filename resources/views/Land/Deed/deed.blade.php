@@ -2,6 +2,39 @@
 
 @section('content')
 
+
+    <link rel="stylesheet" href="{{asset('/plugins/sweetAlert/sweetalert.css')}}">
+    <script src="{{asset('/plugins/sweetAlert/sweetalert.min.js')}}"></script>
+
+    @if (notify()->ready())
+        <script>
+            swal({
+                title: "{!! notify()->message() !!}",
+                type: "{{ notify()->type() }}"
+
+            });
+        </script>
+
+
+
+    @endif
+
+
+
+    <div align="center" style="background:#CED2CD">
+        <div class="model-dialog">
+            <div class="small-box bg-blue">
+                <div class="inner">
+                    <h3>Deed Information</h3>
+                    <p>Add Deed details,update existing Deed details and delete Deed details</p>
+                </div>
+                <div class="icon">
+                    <i  class=""></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
         <div class="row">
             <div class="col-md-18 col-md-offset-0">
@@ -253,12 +286,9 @@
                     <div class="form-group{{ $errors->has('reference1') ? ' has-error' : '' }}">
                         <label class="col-md-4 control-label">Reference No</label>
                         <div class="col-md-6">
-                            <select class="form-control" name="reference1" id="reference1"  readonly>
-                                <option value=0></option>
 
+                                <input type="text" class="form-control" id="reference1" name="reference1" id="reference1" readonly >
 
-
-                            </select>
                             @if ($errors->has('reference1'))
                                 <span class="help-block">
                                         <strong>{{ $errors->first('reference1') }}</strong>
@@ -453,21 +483,10 @@
 
                             $('#present_owner1').val(data[1]);
 
-
-
                         }
                     });
 
-
-
-
                 });
-
-
-
-
-
-
 
             });
 
@@ -476,7 +495,6 @@
             $('#refe').on('change', function (e) {
                 var optionSelected = $("option:selected", this);
                 var valueSelected = this.value;
-
 
                 $.ajax({
                     url: 'Deed/get_ldo_permit_details',
@@ -487,31 +505,12 @@
                         $('#extent').val(data[0]);
 
                         $('#present_owner').val(data[1]);
-
-
-
                     }
                 });
 
-
-
-
             });
 
-
-
-
-
-
-
-
-
         });
-
-
-
-
-
 
 
         $(".approve").click(function(){
@@ -553,17 +552,12 @@
                 type: 'GET',
                 data: {no:no,dt:dt,extent:extent,down:down,pown:pown,nominee:nominee,refe:refe},
                 success: function(data) {
+                    swal("Deed details updated", "", "success");
                     setTimeout(function(){
                         location.reload();
                     }, 500);
                 }
-
             });
-
-
-
-
-
         });
 
 
@@ -584,6 +578,7 @@
                     type: 'GET',
                     data: {no:no},
                     success: function(data) {
+                        swal("Deed details deleted", "", "success");
                         setTimeout(function(){
                             location.reload();
                         }, 1);

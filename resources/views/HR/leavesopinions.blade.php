@@ -3,6 +3,23 @@
 @section('content')
 
 
+    <link rel="stylesheet" href="{{asset('/plugins/sweetAlert/sweetalert.css')}}">
+    <script src="{{asset('/plugins/sweetAlert/sweetalert.min.js')}}"></script>
+
+    @if (notify()->ready())
+        <script>
+            swal({
+                title: "{!! notify()->message() !!}",
+                type: "{{ notify()->type() }}"
+
+            });
+        </script>
+
+
+
+    @endif
+
+
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
     <div class="container">
@@ -89,12 +106,18 @@
 
                 jQuery.ajax({
 
-                    dataType : "json",
-                    contentType : "application/json; charset=utf-8",
+
                     type: 'get',
                     url:'/LeaveStatus/Approve',
                     data: {id:nic,leave_t:LeaveType,commence_date:commence},
-                    success: function(max){
+                    success: function(data){
+
+                        swal("Leave request accepted", "", "success");
+                        setTimeout(function(){
+                            location.reload();
+                        }, 1);
+
+
                     }
 
                 });
@@ -116,12 +139,18 @@
 
             jQuery.ajax({
 
-                dataType : "json",
-                contentType : "application/json; charset=utf-8",
+
                 type: 'get',
                 url:'/LeaveStatus/Reject',
                 data: {id:nic,leave_t:LeaveType,commence_date:commence},
-                success: function(max){
+                success: function(data){
+
+                    swal("Leave request rejected", "", "success");
+                    setTimeout(function(){
+                        location.reload();
+                    }, 1);
+
+
                 }
 
             });

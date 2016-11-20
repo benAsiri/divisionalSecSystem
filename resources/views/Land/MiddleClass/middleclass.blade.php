@@ -2,6 +2,37 @@
 
 @section('content')
 
+
+    <link rel="stylesheet" href="{{asset('/plugins/sweetAlert/sweetalert.css')}}">
+    <script src="{{asset('/plugins/sweetAlert/sweetalert.min.js')}}"></script>
+
+    @if (notify()->ready())
+        <script>
+            swal({
+                title: "{!! notify()->message() !!}",
+                type: "{{ notify()->type() }}"
+
+            });
+        </script>
+
+
+
+    @endif
+
+    <div align="center" style="background:#CED2CD">
+        <div class="model-dialog">
+            <div class="small-box bg-blue">
+                <div class="inner">
+                    <h3>Middle-Class Permits Information</h3>
+                    <p>Add Middle-Class permit details,update existing Middle-Class permit details and delete Middle-Class Permit details</p>
+                </div>
+                <div class="icon">
+                    <i  class=""></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
         <div class="row">
             <div class="col-md-18 col-md-offset-0">
@@ -79,7 +110,7 @@
                 <div class="panel panel-default">
 
                     <div class="panel-body">
-                        <div class="panel-heading">Add New Deed Details</div>
+                        <div class="panel-heading">Add New Middle-class permit</div>
                         <form class="form-horizontal" role="form" id="form_create" method="POST" action="{{ url('Middleclass/add') }}">
                             {!! csrf_field() !!}
 
@@ -674,6 +705,7 @@
                 type: 'GET',
                 data: {no:no,lot:lot,file:file,gs:gs,type_grant:type_grant,date:date,extent:extent,oname:oname,powner:powner,situ:situ,nominee:nominee,transfer:transfer},
                 success: function(data) {
+                    swal("Middle class permit updated", "", "success");
                     setTimeout(function(){
                         location.reload();
                     }, 500);
@@ -706,6 +738,7 @@
                     type: 'GET',
                     data: {no:no,lot_no:lot_no,file_no:file_no,typee:typee},
                     success: function(data) {
+                        swal("Middle class permit Deleted", "", "success");
                         setTimeout(function(){
                             location.reload();
                         }, 1);
@@ -716,9 +749,6 @@
             });
 
         });
-
-
-
 
 
 

@@ -3,6 +3,39 @@
 
 @section('content')
 
+
+    <link rel="stylesheet" href="{{asset('/plugins/sweetAlert/sweetalert.css')}}">
+    <script src="{{asset('/plugins/sweetAlert/sweetalert.min.js')}}"></script>
+
+    @if (notify()->ready())
+        <script>
+            swal({
+                title: "{!! notify()->message() !!}",
+                type: "{{ notify()->type() }}"
+
+            });
+        </script>
+
+
+
+    @endif
+
+
+
+    <div align="center" style="background:#CED2CD">
+        <div class="model-dialog">
+            <div class="small-box bg-blue">
+                <div class="inner">
+                    <h3>User Management</h3>
+                    <p>Add new users, update existing user details and delete users</p>
+                </div>
+                <div class="icon">
+                    <i  class=""></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
         <div class="container">
@@ -12,7 +45,7 @@
 
         <section class="panel panel-primary">
             <div class="panel-heading">
-                <b>Employee Info</b>
+                <b>User Info</b>
             </div>
             <div class="panel-body">
                 <table id="tab" class="table table-hover table-bordered">
@@ -208,28 +241,42 @@
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
                                 <h4 class="modal-title custom_align" id="Heading">Update User Details</h4>
                             </div>
+                            </br></br>
                             <div class="modal-body">
+
                                  <div class="form-group">
                                     <label class="col-md-4 control-label">Status</label>
                                     <div class="col-md-6">
                                         <select name="status" class="form-control" id="statid1" onchange="positionchange1()">
-                                            <option value="#"></option>
+                                            <option value=0></option>
                                             <option value='Admin'>Admin</option>
                                             <option value='User'>User</option>
                                         </select>
+                                        @if ($errors->has('statid1'))
+                                            <span class="help-block">
+                                        <strong>{{ $errors->first('statid1') }}</strong>
+                                    </span>
+                                        @endif
                                     </div>
                                 </div>
-                                </br>
+                                </br></br>
                                 <div class="form-group">
                                     <label class="col-md-4 control-label">Position</label>
 
                                     <div class="col-md-6">
                                         <select name="position" class="form-control" id="postid1">
+                                            <option value=0></option>
                                         </select>
                                     </div>
+                                    @if ($errors->has('postid1'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('postid1') }}</strong>
+                                    </span>
+                                    @endif
                                 </div>
-                                </br>
+
                             </div>
+                            </br></br>
 
                             <div class="modal-footer ">
                                 <button  type="button" class="updateform" style="width: 100%;" aria-hidden="true" data-dismiss="modal"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> Update</button>
@@ -291,6 +338,8 @@
 
 
 
+
+
         <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
         <script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.10/js/jquery.dataTables.js"></script>
 
@@ -332,6 +381,13 @@
                url:'/Usr_register/updateUser',
                data: {stat:valuestat,post:valuepos,id:nic},
                success: function(max){
+
+                       swal("User Updated", "", "success");
+
+                   setTimeout(function(){
+                       location.reload();
+                   }, 500);
+
                }
 
            });
@@ -344,7 +400,7 @@
          $t = $row.find("td:nth-child(3)");
 
          var nic = $t.text();
-            alert(nic);
+
          $(".resetttt").click(function(){
 
 
@@ -356,11 +412,42 @@
                  url:'/Usr_register/resetPwd',
                  data: {id:nic},
                  success: function(max){
+
+                         swal("Password reset", "", "success");
+
+
+
                  }
 
              });
          });
      });
+
+
+
+    function loadfields(){
+
+
+         var nic = document.getElementById("fname").value;
+
+
+
+     var url = '{!! url('/nic') !!}';
+
+     $.ajax({
+         url: url,
+         type: 'GET',
+         data: {data: nic},
+         success: function (data) {
+             $('#natic').val(data);
+         }
+     });
+
+
+
+
+
+     }
 
 
 
@@ -383,6 +470,15 @@
             url: '/Usr_register/deleteUser',
             data: {id: k},
             success: function (max) {
+
+                    swal("User Deleted", "", "success");
+
+                setTimeout(function(){
+                    location.reload();
+                }, 500);
+
+
+
             }
 
         });
@@ -392,13 +488,7 @@
     });
 
 
-    function loadfields() {
-        var prefer = document.getElementById("optionavalue_1");
 
-        var show = prefer.getAttribute("data-parent");
-
-              $("#natic").val(show);
-    }
 
     function removeOptions(selectbox)
     {
@@ -489,7 +579,9 @@
 
 
 
-</script>
+ </script>
+
+
 
 
 
