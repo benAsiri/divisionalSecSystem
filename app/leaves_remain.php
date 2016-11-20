@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class leaves_remain extends Model
 {
     protected $fillable = [
-        'Emp_Id','casual_leave', 'vac_leave','others','previous'
+        'Emp_Id','casual_leave', 'vac_leave','others','previous',
     ];
 
 

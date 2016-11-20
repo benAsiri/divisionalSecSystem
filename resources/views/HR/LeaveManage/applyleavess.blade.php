@@ -2,7 +2,19 @@
 
 @section('content')
 
-
+    <div align="center" style="background:#CED2CD">
+        <div class="model-dialog">
+            <div class="small-box bg-blue">
+                <div class="inner">
+                    <h3>Apply Leave</h3>
+                    <p>Add new leaves, update existing leave details and delete leave</p>
+                </div>
+                <div class="icon">
+                    <i  class=""></i>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="container">
         <div class="row">
@@ -71,18 +83,24 @@
                             {!! csrf_field() !!}
 
                             <div class="form-group{{ $errors->has('Emp_Id') ? ' has-error' : '' }}">
-                                <label class="col-md-4 control-label">Employee ID</label>
+                                <label class="col-md-4 control-label">Employee Name</label>
 
                                 <div class="col-md-6">
+
                                     <select class="form-control" name="Emp_Id" id="Emp_Id" onchange="loadfields()">
 
-                                        <option value="#"></option>
+                                            <option id="lol" value="0"></option>
                                         @foreach($employees as $employee)
 
                                             <option id="optiona_value_1" value="{{$employee->id_num}}" data-parent="{{$employee->job_position}}">{{$employee->fullname}}</option>
 
                                         @endforeach
                                     </select>
+                                    @if ($errors->has('Emp_Id'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('Emp_Id') }}</strong>
+                                    </span>
+                                    @endif
                                 </div>
                             </div>
 
@@ -92,6 +110,11 @@
 
                                 <div class="col-md-6">
                                     <input type="text" class="form-control" id="natic" name="position" readonly >
+                                    @if ($errors->has('position'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('position') }}</strong>
+                                    </span>
+                                    @endif
 
                                 </div>
                             </div>
@@ -102,12 +125,17 @@
 
                                 <div class="col-md-6">
                                     <select class="form-control" name="leave_type" id="leave_type" onchange="loadcats()" >
-                                        <option id="0" value=NULL></option>
+                                        <option id="0" value=0></option>
                                         <option id="1" value="Casual">Casual</option>
                                         <option id="2" value="Vacation">Vacation</option>
                                         <option id="3" value="Others" >Others</option>
 
                                     </select>
+                                    @if ($errors->has('leave_type'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('leave_type') }}</strong>
+                                    </span>
+                                    @endif
                                 </div>
                             </div>
 
@@ -137,7 +165,7 @@
                                                 <div class="input-group-addon">
                                                     <i class="fa fa-calendar"></i>
                                                 </div>
-                                                <input type="text" class="form-control" name="cleave" id="cleave" " placeholder="Select Dates">
+                                                <input type="text" class="form-control" name="cleave" id="cleave"  placeholder="Select Dates" readonly>
                                             </div>
                                     </br>
 
@@ -185,6 +213,9 @@
 
 
 
+
+
+
     <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -205,6 +236,16 @@
         </div>
     </div>
 
+
+
+
+    <style>
+        .datepick-popup {
+            z-index: 100000 !important;
+        }
+    </style>
+
+
     <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -212,37 +253,35 @@
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
                     <h4 class="modal-title custom_align" id="Heading">Update Leave Details</h4>
                 </div>
-                <div class="modal-body">
-                    <div class="form-group">
+                <div class="modal-body1">
+                    <div class="form-group{{ $errors->has('cleave1') ? ' has-error' : '' }}">
                         <label class="col-md-4 control-label">Commencing Date</label>
                         <div class="col-md-6">
-
-
-
                                 <input type="text" class="form-control" name="cleave1" id="cleave1" placeholder="Select Commencing date">
                             </div>
+                        @if ($errors->has('cleave1'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('cleave1') }}</strong>
+                                    </span>
+                        @endif
                         </div>
 
 
-
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">Resuming Date</label>
-                        <div class="col-md-6">
-
-
-                                <input type="text" class="form-control" name="rleave1" id="rleave1" placeholder="Select Resuming date">
-                            </div>
-                    </div>
                     </div>
 
                     </br>
-                        </br>
-                    <div class="form-group">
+                    </br>
+                <div class="form-group{{ $errors->has('reason1') ? ' has-error' : '' }}">
                         <label class="col-md-4 control-label">Reason</label>
                         <div class="col-md-6">
                         <input type="reason" class="form-control" id="reason1" name="reason1" >
 
                     </div>
+                    @if ($errors->has('reason1'))
+                        <span class="help-block">
+                                        <strong>{{ $errors->first('reason1') }}</strong>
+                                    </span>
+                    @endif
 
                 </div>
              </br></br>
@@ -261,6 +300,23 @@
     <script type="text/javascript">
 
 
+
+            $('#cleave1').datepick({
+                 autoclose:true,
+                dateFormat: 'yyyy-mm-dd',
+                rangeSelect: false,
+                onDate: $.datepick.noWeekends,
+                startDate:new Date(),
+                todayHighlight:'true',
+                minDate: new Date(),
+                multiSelect: 24, monthsToShow: 1,
+
+
+
+            });
+
+
+
         $('#cleave').datepick({
             autoclose:true,
             dateFormat: 'yyyy-mm-dd',
@@ -275,6 +331,8 @@
 
            });
 
+
+
         function processdata(){
             var k = document.getElementById("cleave").value;
              var noOfDaysss = (k.split(",")).length;
@@ -284,49 +342,23 @@
            }
 
 
-
-        $(".editt").click(function() {
-
-            var $row = $(this).closest("tr"),
-                    $t = $row.find("td:nth-child(1)");
+        function loadfields() {
 
 
-            var nic = $t.text();
+            var nic = document.getElementById("Emp_Id").value;
 
-            $(".updateform").click(function(){
+            var url = '{!! url('/postion') !!}';
 
-                var valuestat = document.getElementById("cleave").value;
-
-
-                var rsn  = document.getElementById("reason1").value;
-                jQuery.ajax({
-
-                    dataType : "json",
-                    contentType : "application/json; charset=utf-8",
-                    type: 'get',
-                    url:'/LeaveMgt/updateleave',
-
-                    data: {commence:valuestat,reason:rsn,id:nic},
-                   success: function(max){
-                    }
-
-                });
+            $.ajax({
+                url: url,
+                type: 'GET',
+                data: {data: nic},
+                success: function (data) {
+                    $('#natic').val(data);
+                }
             });
-        });
-
-
-
-
-
-                function loadfields() {
-
-
-            var prefer = document.getElementById("optiona_value_1");
-
-            var show = prefer.getAttribute("data-parent");
-
-            $("#natic").val(show);
         }
+
 
         function loadcats() {
 
@@ -349,9 +381,13 @@
         $(".deletee").click(function() {
 
             var $row = $(this).closest("tr"),
-                    $tds = $row.find("td:nth-child(1)");
+            $tds = $row.find("td:nth-child(1)");
+            $tds1 = $row.find("td:nth-child(5)");
+            $tds2 = $row.find("td:nth-child(3)");
 
             var k= $tds.text();
+            var datee = $tds1.text();
+            var ltype = $tds2.text();
 
 
             $(".yesdel").click(function(){
@@ -362,8 +398,12 @@
                     contentType: "application/json; charset=utf-8",
                     type: 'get',
                     url: '/LeaveMgt/deleteleave',
-                    data: {id: k},
-                    success: function (max) {
+                    data: {id: k,date:datee,leave_t:ltype},
+                    success: function(max) {
+
+                        setTimeout(function(){
+                            location.reload();
+                        },500);
                     }
 
                 });
@@ -371,6 +411,50 @@
             });
 
         });
+
+
+
+            $(".editt").click(function(){
+
+                var $row = $(this).closest("tr"),
+                 $tds = $row.find("td:nth-child(5)");
+                $tds1 = $row.find("td:nth-child(6)");
+                $tds2 = $row.find("td:nth-child(1)");
+                 $tds3 = $row.find("td:nth-child(3)");
+
+
+                var ltype = $tds3.text();
+
+
+
+                document.getElementById("cleave1").value=$tds.text();
+                document.getElementById("reason1").value=$tds1.text();
+
+                var id = $tds2.text();
+
+                $(".updateform").click(function(){
+
+                    var nom=document.getElementById("cleave1").value;
+                    var lot=document.getElementById("reason1").value;
+
+                    $.ajax({
+
+                        url: '/LeaveMgt/update',
+                        type: 'get',
+                        data: {nom:nom,lot:lot,id:id,ltype:ltype},
+                        success: function(data) {
+                             setTimeout(function(){
+                                location.reload();
+                            },500);
+                        }
+
+                    });
+
+                });
+
+
+
+            });
 
 
 

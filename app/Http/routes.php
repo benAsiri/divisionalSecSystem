@@ -26,7 +26,7 @@ Route::group(['middleware' => 'web'], function () {
           Route::get('/Usr_register/deleteUser', 'UserRegisterController@delete');
           Route::get('/Usr_register/resetPwd', 'UserRegisterController@resetPW');
           Route::get('/Usr_register',array('as'=>'viewEmployees','uses'=>'UserRegisterController@index'));
-          Route::get('LeaveMgt/applyleave',array('as'=>'viewLeaves','uses'=>'LeaveController@index'));
+
 
 
 
@@ -41,7 +41,7 @@ Route::group(['middleware' => 'web'], function () {
      Route::get('/generatePDF_Emp','HRController@generatePDF');
      Route::get('Delete/{id}','HRController@deleteEmployee');
      //Route::post('UpdateEmpDetail','HRController@UpdateEmployeeDetail');
-     
+
      route::get('AddBCDetail','DetailController@loadAddDetail');
      route::post('add','DetailController@add');
      route::get('LoadBCDetails','DetailController@loadBCDetails');
@@ -54,21 +54,50 @@ Route::group(['middleware' => 'web'], function () {
           
 
 
-     
+
 
 
      Route::get('yearlyIncrements','PageController@yearly_Increment_Calculator');
 
-          Route::get('LeaveMgt/updateleave','LeaveController@updateleave');
+          Route::get('LeaveMgt/applyleave',array('as'=>'viewLeaves','uses'=>'LeaveController@index'));
           Route::post('LeaveMgt/addleave','LeaveController@addleave');
+          Route::get('/LeaveMgt/update','LeaveController@updateleave');
           Route::get('LeaveMgt/deleteleave', 'LeaveController@deleteleave');
           Route::get('/LeaveStatus','LeaveController@indexforHead');
           Route::get('/LeaveStatus/Reject','LeaveController@Reject');
           Route::get('/LeaveStatus/Approve','LeaveController@Approve');
           Route::get('/view_remaining','LeaveController@remaining');
 
+          Route::post('/generatePDF_Leaves','LeaveController@generatePDF');
+
+          Route::get('/postion','LeaveController@showdata');
+
 
      });
+
+               Route::get('/view_ldo_permits','LDOPermitController@index');
+               Route::post('LDOPermit/add','LDOPermitController@store');
+               Route::get('LDOPermit/update','LDOPermitController@update');
+               Route::get('LDOPermit/delete','LDOPermitController@delete');
+
+               Route::get('/view_deeds','DeedController@index');
+               Route::post('Deed/add','DeedController@store');
+               Route::get('Deed/update','DeedController@update');
+               Route::get('Deed/delete','DeedController@delete');
+               Route::get('Deed/get_ldo_permit','DeedController@getldo');
+               Route::get('Deed/get_ldo_permit_details','DeedController@getldo_details');
+
+
+               Route::get('/view_middleclass','MiddleClassController@index');
+               Route::post('Middleclass/add','MiddleClassController@store');
+               Route::get('Middleclass/update','MiddleClassController@update');
+               Route::get('Middleclass/delete','MiddleClassController@delete');
+
+
+
+
+
+
 
      Route::group(['middleware'=>'HR'],function() {
 
@@ -193,6 +222,8 @@ Route::group(['middleware' => 'web'], function () {
 
 
 });
+
+
 
 /*
 |--------------------------------------------------------------------------

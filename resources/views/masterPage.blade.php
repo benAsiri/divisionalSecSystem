@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -303,6 +303,99 @@
                         </ul>
                     </li>
                     @if (Auth::guest())
+          <!-- Sidebar toggle button-->
+          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
+          </a>
+          <!-- Navbar Right Menu -->
+          <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+              <!-- Messages: style can be found in dropdown.less-->
+
+              <!-- Notifications: style can be found in dropdown.less -->
+              <li class="dropdown notifications-menu">
+                <a href="{{action('LeaveController@indexforHead')}}">
+                  <i class="fa fa-bell-o"></i>
+                  <span class="label label-warning">09</span>
+                </a>
+
+              </li>
+
+
+
+
+
+              <!-- Tasks: style can be found in dropdown.less -->
+              <li class="dropdown tasks-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <i class="fa fa-flag-o"></i>
+                  <span class="label label-danger">9</span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="header">You have 9 tasks</li>
+                  <li>
+                    <!-- inner menu: contains the actual data -->
+                    <ul class="menu">
+                      <li><!-- Task item -->
+                        <a href="#">
+                          <h3>
+                            Design some buttons
+                            <small class="pull-right">20%</small>
+                          </h3>
+                          <div class="progress xs">
+                            <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                              <span class="sr-only">20% Complete</span>
+                            </div>
+                          </div>
+                        </a>
+                      </li><!-- end task item -->
+                      <li><!-- Task item -->
+                        <a href="#">
+                          <h3>
+                            Create a nice theme
+                            <small class="pull-right">40%</small>
+                          </h3>
+                          <div class="progress xs">
+                            <div class="progress-bar progress-bar-green" style="width: 40%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                              <span class="sr-only">40% Complete</span>
+                            </div>
+                          </div>
+                        </a>
+                      </li><!-- end task item -->
+                      <li><!-- Task item -->
+                        <a href="#">
+                          <h3>
+                            Some task I need to do
+                            <small class="pull-right">60%</small>
+                          </h3>
+                          <div class="progress xs">
+                            <div class="progress-bar progress-bar-red" style="width: 60%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                              <span class="sr-only">60% Complete</span>
+                            </div>
+                          </div>
+                        </a>
+                      </li><!-- end task item -->
+                      <li><!-- Task item -->
+                        <a href="#">
+                          <h3>
+                            Make beautiful transitions
+                            <small class="pull-right">80%</small>
+                          </h3>
+                          <div class="progress xs">
+                            <div class="progress-bar progress-bar-yellow" style="width: 80%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                              <span class="sr-only">80% Complete</span>
+                            </div>
+                          </div>
+                        </a>
+                      </li><!-- end task item -->
+                    </ul>
+                  </li>
+                  <li class="footer">
+                    <a href="#">View all tasks</a>
+                  </li>
+                </ul>
+              </li>
+              @if (Auth::guest())
 
                         <li><a href="{{url('/login')}}">Login</a></li>
                 @else
@@ -420,6 +513,53 @@
                                 {{--<li><a href="{{action('HRController@searchEmployee')}}"><i class="fa fa-circle-o"></i> Search Employee Details </a></li>--}}
                                 {{--<li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i> Page3 </a></li>--}}
 
+                  <span>HR Management</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                  <li class="">
+                    <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> Manage My Employees</a>
+                    <ul class="treeview-menu " style="display: block;">
+                      <li><a href="{{action('HRController@addEmployee')}}"><i class="fa fa-circle-o"></i> Add Employees</a></li>
+                      <li><a href="{{action('HRController@loadUpdateEmployees')}}"><i class="fa fa-circle-o"></i> Update Employee Details</a></li>
+                      <li><a href="{{action('HRController@searchEmployee')}}"><i class="fa fa-circle-o"></i> View All</a></li>
+                    </ul>
+                  </li>
+                  </li>
+                  <li class="">
+                    <a href="{{action('PageController@yearly_Increment_Calculator')}}"><i class="fa fa-circle-o text-yellow"></i> Yearly increment Calculator</a>
+                    <ul class="treeview-menu menu-open" style="display: block;">
+                      <li><a href="{{action('HRController@loadEmpSalary')}}"><i class="fa fa-circle-o"></i> Add Employee Salary Details</a></li>
+                      <li><a href="#"><i class="fa fa-circle-o"></i> Level 2</a></li>
+                      <li><a href="#"><i class="fa fa-circle-o"></i> Level 3</a></li>
+                    </ul>
+                  </li>
+                  <li class="">
+                    <a href="#"><i class="fa fa-circle-o text-yellow"></i> Loan Calculator</a>
+                    <ul class="treeview-menu menu-open" style="display: block;">
+                      <li><a href="{{action('LoanPagesController@viewLoans')}}"><i class="fa fa-circle-o"></i> View Leaves</a></li>
+                      <li><a href="{{action('LoanPagesController@applyLoans')}}"><i class="fa fa-circle-o"></i> Apply Loan</a></li>
+                    </ul>
+                  </li>
+                  <li class="">
+                    <a href=""><i class="fa fa-circle-o text-yellow"></i> Maternity Leaves</a>
+                    <ul class="treeview-menu menu-open" style="display: block;">
+                      <li><a href="{{action('LeavePagesController@CurrentLeaves')}}"><i class="fa fa-circle-o"></i> View Leaves</a></li>
+                      <li><a href="{{action('LeavePagesController@ApplyMyLeave')}}"><i class="fa fa-circle-o"></i> Apply Leave</a></li>
+                    </ul>
+                  </li>
+                  <li class="">
+                    <a href="#"><i class="fa fa-circle-o text-yellow"></i> Advance Program</a>
+                    <ul class="treeview-menu menu-open" style="display: block;">
+                      <li><a href="{{action('AdvanceController@InsertInfo')}}"><i class="fa fa-circle-o"></i> Insert Info</a></li>
+                      <li><a href="{{action('AdvanceController@show')}}"><i class="fa fa-circle-o"></i> edit or delete</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              <a href="{{action('PageController@yearly_Increment_Calculator')}}">
+                <i class="fa-user"></i> <span>HR Management</span><i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                 <li><a href="{{url('/LeaveMgt/applyleave')}}"><i class="fa fa-circle-o"></i>Apply Leave </a></li>
+                 <li><a href="{{url('/view_remaining')}}"><i class="fa fa-circle-o"></i>View Remaining Leaves </a></li>
 
                             </ul>
 
@@ -456,6 +596,74 @@
                             </a></li>
                     </ul>
                 </li>
+            <li><a href="{{action('UserRegisterController@index')}}"><i class="fa fa-circle-o text-green"></i>
+                <span>User Management</span></a>
+
+
+            <li><a href="{{url('/Usr_register')}}"><i class="fa fa-circle-o"></i> <span>User Management</span><i class="fa fa-angle-left pull-right"></i></a>
+          </li>
+
+
+            <li class="active treeview">
+            <li><a href="#"><i class="fa fa-circle-o text-blue"></i>
+                <span>Work Progress Tracker</span><i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>Start Monitoring</a></li>
+                <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>In Progress</a></li>
+                <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>Completed Tasks</a></li>
+                 </ul>
+            </li>
+
+
+            <li class="active treeview">
+            <li><a href="#"><i class="fa fa-circle-o text-blue"></i>
+                <span>Land Division</span><i class="fa fa-angle-left pull-right"></i></a>
+                    <ul class="treeview-menu">
+
+
+                          <li class="active treeview">
+                          <li><a href="#"><i class="fa fa-circle-o text-blue"></i>
+                          <span>LDO Permit</span><i class="fa fa-angle-left pull-right"></i></a>
+                          <ul class="treeview-menu">
+
+                            <li><a href="{{action('LDOPermitController@index')}}"><i class="fa fa-circle-o"></i>Add, Delete & Update</a></li>
+                            <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>View & Report</a></li>
+
+                          </ul>
+                        </li>
+
+
+                      <li class="active treeview">
+                      <li><a href="#"><i class="fa fa-circle-o text-blue"></i>
+                          <span>Deed</span><i class="fa fa-angle-left pull-right"></i></a>
+                        <ul class="treeview-menu">
+
+                          <li><a href="{{action('DeedController@index')}}"><i class="fa fa-circle-o"></i>Add, Delete & Update</a></li>
+                          <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>In Progress</a></li>
+
+                        </ul>
+                      </li>
+
+
+                      <li class="active treeview">
+                      <li><a href="#"><i class="fa fa-circle-o text-blue"></i>
+                          <span>Middle Class</span><i class="fa fa-angle-left pull-right"></i></a>
+                        <ul class="treeview-menu">
+
+                          <li><a href="{{action('MiddleClassController@index')}}"><i class="fa fa-circle-o"></i>Add, Delete & Update</a></li>
+                          <li><a href="{{action('PageController@Page2')}}"><i class="fa fa-circle-o"></i>In Progress</a></li>
+
+                        </ul>
+                      </li>
+
+
+              </ul>
+            </li>
+
+
+
+
+          </ul>
             </ul>
 
         </section>
@@ -721,30 +929,30 @@ Loan
     {{--}--}}
     {{--});--}}
 
-    {{--}else{--}}
-    {{--profile_pick=false;--}}
-    {{--alert("Your browser doesn't support File API!"); //if File API is absent--}}
-    {{--}--}}
-    {{--});--}}
+          {{--}else{--}}
+            {{--profile_pick=false;--}}
+            {{--alert("Your browser doesn't support File API!"); //if File API is absent--}}
+          {{--}--}}
+        {{--});--}}
 
-    {{--});--}}
+      {{--});--}}
 
-    {{--// Data Table--}}
-    {{--$(function () {--}}
-    {{--$("#example1").DataTable();--}}
-    {{--$('#example2').DataTable({--}}
-    {{--"paging": true,--}}
-    {{--"lengthChange": false,--}}
-    {{--"searching": false,--}}
-    {{--"ordering": true,--}}
-    {{--"info": true,--}}
-    {{--"autoWidth": false--}}
-    {{--});--}}
-    {{--});--}}
+      {{--// Data Table--}}
+      {{--$(function () {--}}
+        {{--$("#example1").DataTable();--}}
+        {{--$('#example2').DataTable({--}}
+          {{--"paging": true,--}}
+          {{--"lengthChange": false,--}}
+          {{--"searching": false,--}}
+          {{--"ordering": true,--}}
+          {{--"info": true,--}}
+          {{--"autoWidth": false--}}
+        {{--});--}}
+      {{--});--}}
 
 
     {{--</script>--}}
-@show
-
-</body>
+    @show
+  
+  </body>
 </html>
