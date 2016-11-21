@@ -18,6 +18,7 @@ Route::group(['middleware' => 'web'], function () {
      Route::auth();
      Route::get('/', 'HomeController@index');
 
+
      Route::group(['middleware'=>'userfilter'],function(){
 
           Route::post('/regi','UserRegisterController@registeruser');
@@ -34,11 +35,23 @@ Route::group(['middleware' => 'web'], function () {
      Route::get('SearchEmployee',array('as'=>'ViewEmployee','uses'=>'HRController@searchEmployee'));
      Route::post('AddEmployeeDetails','HRController@addEmployeeDetails');
      Route::get('LoadEmployeeDetails','HRController@loadUpdateEmployees');
+     Route::post('UpdateEmpDetail','HRController@UpdateEmployeeDetail');
      Route::get('LoadEmployeeSalDetails','HRController@loadEmpSalary');
      Route::post('AddSalary','HRController@addSalaryDetails');
      Route::get('/generatePDF_Emp','HRController@generatePDF');
      Route::get('Delete/{id}','HRController@deleteEmployee');
-     Route::post('UpdateEmpDetail','HRController@UpdateEmployeeDetail');
+     //Route::post('UpdateEmpDetail','HRController@UpdateEmployeeDetail');
+
+     route::get('AddBCDetail','DetailController@loadAddDetail');
+     route::post('add','DetailController@add');
+     route::get('LoadBCDetails','DetailController@loadBCDetails');
+     route::get('validateNic','DetailController@isNicUsed');
+     route::get('validateNicForBC','DetailController@isBcNicUsed');
+     route::get('viewSalary','HRController@searchSalaryDetails');
+     route::get('/generateSalaryPDF','HRController@generateSalaryPDF');
+     route::get('DeleteBC/{id}','DetailController@deleteBCDetail');
+          
+          
 
 
 
@@ -59,6 +72,9 @@ Route::group(['middleware' => 'web'], function () {
 
           Route::get('/postion','LeaveController@showdata');
           Route::get('/nic','UserRegisterController@showdata');
+
+
+          
 
 
      });
@@ -87,9 +103,9 @@ Route::group(['middleware' => 'web'], function () {
 
 
 
-     Route::group(['middleware'=>'HR'],function(){
+     Route::group(['middleware'=>'HR'],function() {
 
-     Route::get('AddEmployees','HRController@addEmployee');
+     //Route::get('AddEmployees','HRController@addEmployee');
 
      Route::get('yearlyIncrements','PageController@yearly_Increment_Calculator');
 
@@ -102,13 +118,40 @@ Route::group(['middleware' => 'web'], function () {
 
 
      Route::get('ApplyLeave','LeavePagesController@ApplyMyLeave');
-
      Route::get('currentleaves','LeavePagesController@CurrentLeaves');
 
 
-     Route::get('ApplyLoans','LoanPagesController@applyLoans');
+//              //Matenarity Leaves
+//     Route::get('ViewMateneryLeaves','MleavesController@viewMleaves');
+//     Route::get('DownloadMateneryLeavesReport','MleavesController@generatePDF');
+//     Route::get('AddMateneryLeaves','MleavesController@addMleaves');
+//     Route::get('LoadMleaves','MleavesController@loadUpdateMleaves');
+//     Route::post('updateMleaves','MleavesController@UpdateMleavesDetails');
+//     Route::post('addMleavesDetails','MleavesController@addMleavesDetails');
+//     Route::get('DeleteM','MleavesController@deleteMleaves');
 
-     Route::get('viewLoans','LoanPagesController@viewLoans');
+
+
+
+//         //LoanRequests
+//     Route::get('ViewLoans','LoanPagesController@viewLoans');
+//     Route::get('DownloadLoanReport','LoanPagesController@generatePDF');
+//     Route::get('AddLoanRequest','LoanPagesController@addLoan');
+//     Route::get('LoadLoans','LoanPagesController@loadUpdateLoan');
+//     Route::post('UpdateLoans','LoanPagesController@UpdateLoanDetails');
+//     Route::post('AddLoanDetails','LoanPagesController@addLoanDetails');
+//     Route::get('loadLoadDetails','LoanPagesController@fillLoanDetails');
+//     Route::get('Delete','LoanPagesController@deleteLoan');
+//
+//
+//
+//
+//     Route::get('ADDNOTE','EditorController@addNote');
+
+
+
+
+
 
 
      Route::get('insert','AdvanceController@InsertInfo');
@@ -133,7 +176,12 @@ Route::group(['middleware' => 'web'], function () {
       * User Profile edit route
       * UserRegisterController -> editProfile function
       */
-
+//     Route::get('/EditProfile','UserRegisterController@editProfile');
+     /**
+      * User Profile Edit Save
+      * UserRegisterController -> editProfileSave function
+      */
+     Route::resource('/EditProfileSave','UserRegisterController@editProfileSave');
 
 
      Route::get('insert','AdvanceController@InsertInfo');
@@ -164,33 +212,40 @@ Route::group(['middleware' => 'web'], function () {
 
      });
 
-
-
-
-
-
-
-
-
-
-
-
      Route::group(['middleware'=>'LR'],function(){
 
 
      });
 
+
+
+
      Route::get('/EditProfile','UserRegisterController@editProfile');
-     /**
-      * User Profile Edit Save
-      * UserRegisterController -> editProfileSave function
-      */
-     Route::resource('/EditProfileSave','UserRegisterController@editProfileSave');
+
+     //LoanRequests
+     Route::get('ViewLoans','LoanPagesController@viewLoans');
+     Route::get('DownloadLoanReport','LoanPagesController@generatePDF');
+     Route::get('AddLoanRequest','LoanPagesController@addLoan');
+     Route::get('LoadLoans','LoanPagesController@loadUpdateLoan');
+     Route::post('UpdateLoans','LoanPagesController@UpdateLoanDetails');
+     Route::post('AddLoanDetails','LoanPagesController@addLoanDetails');
+     Route::get('loadLoadDetails','LoanPagesController@fillLoanDetails');
+     Route::get('Delete','LoanPagesController@deleteLoan');
 
 
 
 
+     Route::get('ADDNOTE','EditorController@addNote');
 
+
+     //Matenarity Leaves
+     Route::get('ViewMateneryLeaves','MleavesController@viewMleaves');
+     Route::get('DownloadMateneryLeavesReport','MleavesController@generatePDF');
+     Route::get('AddMateneryLeaves','MleavesController@addMleaves');
+     Route::get('LoadMleaves','MleavesController@loadUpdateMleaves');
+     Route::post('updateMleaves','MleavesController@UpdateMleavesDetails');
+     Route::post('addMleavesDetails','MleavesController@addMleavesDetails');
+     Route::get('DeleteM','MleavesController@deleteMleaves');
 
 
 

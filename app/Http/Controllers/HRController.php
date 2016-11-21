@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Input;
 use Symfony\Component\HttpFoundation\Request;
 use UxWeb\SweetAlert;
 use Barryvdh\DomPDF\Facade as PDF;
+use Andheiberg\Notify\Facades\Notify;
+
 
 class HRController extends Controller
 {
@@ -35,8 +37,9 @@ class HRController extends Controller
 
     public function loadEmpSalary()
     {
+        $status=false;
         $employee=DB::table('employes')->get();
-        return view('HR.employee.employeeSalary',compact('employee'));
+        return view('HR.employee.employeeSalary',compact('employee','status'));
     }
 
     public function searchEmployee()
@@ -72,11 +75,8 @@ class HRController extends Controller
             $employe->job_grade=$data['jobGrade'];
 
 
-
-
           $employe->save();
             //return url('AddEmployees');
-            
            
 
         }
@@ -104,15 +104,29 @@ class HRController extends Controller
         }
     }
 
+    public function searchSalaryDetails()
+    {
+
+        $salary= DB::select( DB::raw("SELECT E.fullname,E.id_num,S.basic_salary,S.emp_id,S.id From employes E,salaries S WHERE E.id = S.emp_id") );
+
+        return view('HR.employee.viewSalary',compact('salary'));
+        
+    }
+
     public function generatePDF(Request $request){
 
         $employee=DB::table('employes')->get();
-
-
-        //$data = AdvanceProgram::where( DB::raw('MONTH(created_at)'), '=', date('n') )->get();
-        //$pdf = PDF::loadView('reports/monthlyReport',['advance_pro'=>$employee]);
+        
         $pdf = PDF::loadView('/HR/reports/employeeRecordsReport',['employee'=>$employee]);
         return $pdf->download('employee_details_report.pdf');
+    }
+
+    public function generateSalaryPDF(Request $request){
+
+        $salary= DB::select( DB::raw("SELECT E.fullname,E.id_num,S.basic_salary,S.emp_id,S.id From employes E,salaries S WHERE E.id = S.emp_id") );
+
+        $pdf = PDF::loadView('/HR/reports/employeeSalaryReport',['salary'=>$salary]);
+        return $pdf->download('employee_Salary_details_report.pdf');
     }
 
 
@@ -120,10 +134,7 @@ class HRController extends Controller
     public function deleteEmployee($id){
 
         $employee =  Employe::find($id);
-
         $employee->delete();
-
-        //return redirect()->action('HRController@loadUpdateEmployees');
         return redirect('LoadEmployeeDetails');
 
     }
@@ -157,9 +168,13 @@ class HRController extends Controller
 
         $employee->save();
 
+        
+            Notify::success(' ');
 
-        //return redirect()->action('HRController@loadUpdateEmployees');
-        //return redirect()->action('HRController@addEmployee');
+
+        return redirect()->action('HRController@loadUpdateEmployees');
+
+
 
 
     }

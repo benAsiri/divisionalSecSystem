@@ -152,6 +152,8 @@ return [
         UxWeb\SweetAlert\SweetAlertServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
         Codecourse\Notify\NotifyServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
+        Andheiberg\Notify\NotifyServiceProvider::class, //message service provider
 
 
 
@@ -212,6 +214,9 @@ return [
        'Alert' => UxWeb\SweetAlert\SweetAlert::class,
         'PDF'       => Barryvdh\DomPDF\Facade::class,
         'Notify' => Codecourse\Notify\Facades\Notify::class,
+        'Image' => Intervention\Image\Facades\Image::class,
+        'Image' => Intervention\Image\Facades\Image::class,
+        'Notify' 	=> Andheiberg\Notify\Facades\Notify::class,
 
 
 
