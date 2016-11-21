@@ -3,6 +3,7 @@
 @section('content')
 
 
+
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
     <div class="container">
@@ -22,7 +23,7 @@
                                 <th>Leave Type</th>
                                 <th>Department</th>
                                 <th>Commencing Leave</th>
-                                 <th>Reason</th>
+                                <th>Reason</th>
                                 <th>Status</th>
                                 <th>Approve</th>
                                 <th>Reject</th>
@@ -78,7 +79,7 @@
         $(".approve").click(function() {
 
             var $row = $(this).closest("tr"),
-            $t = $row.find("td:nth-child(1)");
+                    $t = $row.find("td:nth-child(1)");
             $t1 = $row.find("td:nth-child(3)");
             $t2 = $row.find("td:nth-child(5)");
 
@@ -87,24 +88,30 @@
             var commence = $t2.text();
 
 
-                jQuery.ajax({
+            jQuery.ajax({
 
-                    dataType : "json",
-                    contentType : "application/json; charset=utf-8",
-                    type: 'get',
-                    url:'/LeaveStatus/Approve',
-                    data: {id:nic,leave_t:LeaveType,commence_date:commence},
-                    success: function(max){
-                    }
 
-                });
+                type: 'get',
+                url:'/LeaveStatus/Approve',
+                data: {id:nic,leave_t:LeaveType,commence_date:commence},
+                success: function(data){
+
+                    swal("Leave request accepted", "", "success");
+                    setTimeout(function(){
+                        location.reload();
+                    }, 1);
+
+
+                }
+
+            });
 
         });
 
         $(".reject").click(function() {
 
             var $row = $(this).closest("tr"),
-            $t = $row.find("td:nth-child(1)");
+                    $t = $row.find("td:nth-child(1)");
             $t1 = $row.find("td:nth-child(3)");
             $t2 = $row.find("td:nth-child(5)");
 
@@ -116,12 +123,18 @@
 
             jQuery.ajax({
 
-                dataType : "json",
-                contentType : "application/json; charset=utf-8",
+
                 type: 'get',
                 url:'/LeaveStatus/Reject',
                 data: {id:nic,leave_t:LeaveType,commence_date:commence},
-                success: function(max){
+                success: function(data){
+
+                    swal("Leave request rejected", "", "success");
+                    setTimeout(function(){
+                        location.reload();
+                    }, 1);
+
+
                 }
 
             });

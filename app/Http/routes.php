@@ -72,6 +72,8 @@ Route::group(['middleware' => 'web'], function () {
 
           Route::get('/postion','LeaveController@showdata');
 
+          Route::get('/nic','UserRegisterController@showdata');
+
 
           
 

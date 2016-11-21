@@ -8,6 +8,8 @@ use App\Http\Requests;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 use App\Deed;
+use Andheiberg\Notify\Facades\Notify;
+
 
 class DeedController extends Controller
 {
@@ -43,23 +45,29 @@ class DeedController extends Controller
     {
 
         $this->validate($request, array(
-            'deed_no'=> 'required',
+            'deed_no'=> 'required|numeric|max:10000',
             'deed_type'=> 'required|not_in:0',
-            'extent'=>'required',
-            'deed_owner'=>'required',
-            'present_owner'=>'required',
-            'nominee'=>'required',
-            'refe'=>'required|not_in:0',
+            'extent'=>'required|max:50',
+            'deed_owner'=>'required|alpha|max:50',
+            'present_owner'=>'required|alpha|max:50',
+            'nominee'=>'required|alpha|max:50',
+            'refe'=>'required|not_in:0|max:50',
 
         ));
 
 
-            $id = $request['refe'];
+        $id = $request['refe'];
         $count = DB::table('deeds')
             ->where('reference_no', $id)
             ->count();
 
-        if( $count == 0) {
+        $deed_count = DB::table('deeds')
+            ->where('deed_no', $request['deed_no'])
+            ->count();
+
+
+
+        if( $count == 0 && $deed_count==0) {
             Deed::create([
                 'deed_no' => $request['deed_no'],
                 'deed_type' => $request['deed_type'],
@@ -71,9 +79,28 @@ class DeedController extends Controller
 
 
             ]);
+
+
+            Notify::success('Deed details successfully added to the system!');
         }
+        elseif($deed_count ==0 && $count != 0){
+
+
+            Notify::warning('LDO Permit number already refers to a deed number!');
+
+
+        }
+
+        elseif($deed_count !=0 && $count == 0){
+
+
+            Notify::warning('Deed number already in!');
+        }
+
         else{
 
+
+            Notify::warning('Deed details already exist!');
         }
 
         return back();
@@ -103,16 +130,22 @@ class DeedController extends Controller
         $refe=$request->refe;
 
 
-        $id = $request->refe;
         $count = DB::table('deeds')
-            ->where('reference_no', $id)
+            ->where('reference_no',$request->refe)
             ->count();
 
-        if( $count == 0) {
+        if( $count == 1) {
 
             DB::table('deeds')
                 ->where('deed_no', $id)
                 ->update(['deed_type' => $dt, 'deed_owner' => $down, 'extent' => $extent, 'present_owner' => $pown, 'nominee' => $nominee, 'reference_no' => $refe]);
+
+
+            Notify::success('Deed Permit has been updated!');
+        }
+        else{
+
+            Notify::warning('Deed Permit number already in!');
         }
 
         return back();
@@ -126,6 +159,10 @@ class DeedController extends Controller
         DB::table('deeds')
             ->where('deed_no', $id)
             ->delete();
+
+
+
+        Notify::success('Deed Permit has been deleted!');
 
         return back();
 
@@ -143,9 +180,9 @@ class DeedController extends Controller
 
         $id = $request->id;
 
-       $extent = DB::table('l_d_o__permits')->where('permit_no',$id)->value('extent');
+        $extent = DB::table('l_d_o__permits')->where('permit_no',$id)->value('extent');
 
-       $present_owner = DB::table('l_d_o__permits')->where('permit_no',$id)->value('present_owner');
+        $present_owner = DB::table('l_d_o__permits')->where('permit_no',$id)->value('present_owner');
 
         return array($extent,$present_owner);
 

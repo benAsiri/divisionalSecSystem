@@ -42,7 +42,7 @@
         background: #f0f0f2;
     }
 </style>
-<h3 style="text-align: center"><img src="./dist/img/letterHead.jpg" class="user-image" alt="HeaderImage" width="780"></h3>
+<h3 style="text-align: center"><img src="./dist/img/letterHead.png" class="user-image" alt="HeaderImage" width="780"></h3>
 </br>
 <h3 style="text-align: center">Leaves Details Report</h3>
 </br>

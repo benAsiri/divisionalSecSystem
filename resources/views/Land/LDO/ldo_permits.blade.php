@@ -2,15 +2,19 @@
 
 @section('content')
 
+
+
+
     <div align="center" style="background:#CED2CD">
         <div class="model-dialog">
             <div class="small-box bg-blue">
                 <div class="inner">
                     <h3>LDO Permits Information</h3>
+
                     <p>Add LDO permit details,update existing LDO permit details and delete LDO Permit details</p>
                 </div>
                 <div class="icon">
-                    <i  class=""></i>
+                    <i class=""></i>
                 </div>
             </div>
         </div>
@@ -54,8 +58,20 @@
                                         <td>{{$permit->present_owner}}</td>
                                         <td>{{$permit->present_situation}}</td>
                                         <td>{{$permit->cancellation}}</td>
-                                        <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button  class="approve" data-title="Edit" data-toggle="modal"  data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-                                        <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="reject" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
+                                        <td>
+                                            <p data-placement="top" data-toggle="tooltip" title="Edit">
+                                                <button class="approve" data-title="Edit" data-toggle="modal"
+                                                        data-target="#edit"><span
+                                                            class="glyphicon glyphicon-pencil"></span></button>
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <p data-placement="top" data-toggle="tooltip" title="Delete">
+                                                <button class="reject" data-title="Delete" data-toggle="modal"
+                                                        data-target="#delete"><span
+                                                            class="glyphicon glyphicon-trash"></span></button>
+                                            </p>
+                                        </td>
 
                                     </tr>
                                 @endforeach
@@ -73,9 +89,6 @@
 
 
 
-
-
-
     <div class="container">
         <div class="row">
             <div class="col-md-15 col-md-offset-0">
@@ -90,7 +103,8 @@
                                 <label class="col-md-4 control-label">Permit No</label>
 
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control" name="permit_no" value="{{ old('permit_no') }}">
+                                    <input type="text" class="form-control" name="permit_no"
+                                           value="{{ old('permit_no') }}">
 
                                     @if ($errors->has('permit_no'))
                                         <span class="help-block">
@@ -104,11 +118,12 @@
                                 <label class="col-md-4 control-label">GS Division</label>
 
                                 <div class="col-md-6">
-                                    <select class="form-control" name="gs_division" id="gs_division" onchange="loadcats()" >
+                                    <select class="form-control" name="gs_division" id="gs_division"
+                                            onchange="loadcats()">
                                         <option id="0" value=0></option>
                                         <option id="1" value="Mangalapura">Mangalapura</option>
                                         <option id="2" value="Banadaranayakepura">Banadaranayakepura</option>
-                                        <option id="3" value="Wanathawilluwa-North" >Wanathawilluwa-North</option>
+                                        <option id="3" value="Wanathawilluwa-North">Wanathawilluwa-North</option>
 
                                     </select>
                                     @if ($errors->has('gs_division'))
@@ -123,7 +138,8 @@
                                 <label class="col-md-4 control-label">Name of Village</label>
 
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control" name="name_of_village" value="{{ old('name_of_village') }}">
+                                    <input type="text" class="form-control" name="name_of_village"
+                                           value="{{ old('name_of_village') }}">
 
                                     @if ($errors->has('name_of_village'))
                                         <span class="help-block">
@@ -137,7 +153,8 @@
                                 <label class="col-md-4 control-label">Name of Land</label>
 
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control" name="name_of_land" value="{{ old('name_of_land') }}">
+                                    <input type="text" class="form-control" name="name_of_land"
+                                           value="{{ old('name_of_land') }}">
 
                                     @if ($errors->has('name_of_land'))
                                         <span class="help-block">
@@ -151,7 +168,8 @@
                                 <label class="col-md-4 control-label">LDO Permit Holder's Name</label>
 
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control" name="permit_holder_name" value="{{ old('permit_holder_name') }}">
+                                    <input type="text" class="form-control" name="permit_holder_name"
+                                           value="{{ old('permit_holder_name') }}">
 
                                     @if ($errors->has('permit_holder_name'))
                                         <span class="help-block">
@@ -174,16 +192,16 @@
                                     </span>
                                     @endif
 
-                                    </div>
+                                </div>
                                 <div class="col-md-2">
-                                <select class="form-control" name="unit" id="unit"  >
-                                    <option id="0" value=0></option>
-                                    <option id="1" value="Rods">Rods</option>
-                                    <option id="2" value="Acres">Acres</option>
-                                    <option id="3" value="Hectares" >Hectares</option>
+                                    <select class="form-control" name="unit" id="unit">
+                                        <option id="0" value=0></option>
+                                        <option id="1" value="Rods">Rods</option>
+                                        <option id="2" value="Acres">Acres</option>
+                                        <option id="3" value="Hectares">Hectares</option>
 
 
-                                </select>
+                                    </select>
                                     @if ($errors->has('unit'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('unit') }}</strong>
@@ -192,15 +210,15 @@
                                 </div>
 
 
-                                </div>
-
+                            </div>
 
 
                             <div class="form-group{{ $errors->has('present_owner') ? ' has-error' : '' }}">
                                 <label class="col-md-4 control-label">Present Owner</label>
 
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control" name="present_owner" value="{{ old('present_owner') }}">
+                                    <input type="text" class="form-control" name="present_owner"
+                                           value="{{ old('present_owner') }}">
 
                                     @if ($errors->has('present_owner'))
                                         <span class="help-block">
@@ -215,7 +233,8 @@
                                 <label class="col-md-4 control-label">Present Situation</label>
 
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control" name="present_situation" value="{{ old('present_situation') }}">
+                                    <input type="text" class="form-control" name="present_situation"
+                                           value="{{ old('present_situation') }}">
 
                                     @if ($errors->has('present_situation'))
                                         <span class="help-block">
@@ -226,27 +245,21 @@
                             </div>
 
 
+                            <div class="form-group">
+                                <div class="col-md-6 col-md-offset-4">
 
-
-
-
-
-
-
-                                <div class="form-group">
-                                    <div class="col-md-6 col-md-offset-4">
-
-                                        <button type="submit" class="btn btn-primary" id="form_submit"  name="form_submit" >
-                                            <i class="fa fa-btn fa-user"></i>Submit Data</button>
-                                    </div>
+                                    <button type="submit" class="btn btn-primary" id="form_submit" name="form_submit">
+                                        <i class="fa fa-btn fa-user"></i>Submit Data
+                                    </button>
                                 </div>
                             </div>
-                        </form>
-
                     </div>
+                    </form>
+
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
 
@@ -258,17 +271,24 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span
+                                class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
                     <h4 class="modal-title custom_align" id="Heading">Delete this entry</h4>
                 </div>
                 <div class="modal-body">
 
-                    <div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span> Are you sure you want to delete this Record?</div>
+                    <div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span> Are you sure
+                        you want to delete this Record?
+                    </div>
 
                 </div>
                 <div class="modal-footer ">
-                    <button type="button" class="yesdel"  aria-hidden="true" data-dismiss="modal" ><span class="glyphicon glyphicon-ok-sign"></span> Yes</button>
-                    <button type="button" class="nodel" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
+                    <button type="button" class="yesdel" aria-hidden="true" data-dismiss="modal"><span
+                                class="glyphicon glyphicon-ok-sign"></span> Yes
+                    </button>
+                    <button type="button" class="nodel" data-dismiss="modal"><span
+                                class="glyphicon glyphicon-remove"></span> No
+                    </button>
                 </div>
             </div>
         </div>
@@ -278,7 +298,9 @@
 
 
     <style>
-        .datepick{z-index:10000 !important;}
+        .datepick {
+            z-index: 10000 !important;
+        }
     </style>
 
 
@@ -286,7 +308,8 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span
+                                class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
                     <h4 class="modal-title custom_align" id="Heading">Update LDO Permit Details</h4>
                 </div>
 
@@ -294,20 +317,22 @@
                     </br></br>
                     <div class="form-group">
                         <label class="col-md-4 control-label">Permit No</label>
+
                         <div class="col-md-6">
-                            <input type="text" class="form-control" name="permit_no1" id="permit_no1" readonly >
+                            <input type="text" class="form-control" name="permit_no1" id="permit_no1" readonly>
                         </div>
                     </div>
                     </br></br>
                     <div class="form-group">
                         <label class="col-md-4 control-label">GS Division</label>
+
                         <div class="col-md-6">
 
-                            <select class="form-control" name="gs_division1" id="gs_division1"  >
+                            <select class="form-control" name="gs_division1" id="gs_division1">
                                 <option id="0" value=0></option>
                                 <option id="1" value="Mangalapura">Mangalapura</option>
                                 <option id="2" value="Banadaranayakepura">Banadaranayakepura</option>
-                                <option id="3" value="Wanathawilluwa-North" >Wanathawilluwa-North</option>
+                                <option id="3" value="Wanathawilluwa-North">Wanathawilluwa-North</option>
 
                             </select>
                         </div>
@@ -315,6 +340,7 @@
                     </br></br>
                     <div class="form-group">
                         <label class="col-md-4 control-label">Name of Village</label>
+
                         <div class="col-md-6">
                             <input type="text" class="form-control" name="name_of_village1" id="name_of_village1">
                         </div>
@@ -322,29 +348,32 @@
                     </br></br>
                     <div class="form-group">
                         <label class="col-md-4 control-label">Name of Land</label>
+
                         <div class="col-md-6">
-                            <input type="text" class="form-control" name="name_of_land1" id="name_of_land1" >
+                            <input type="text" class="form-control" name="name_of_land1" id="name_of_land1">
                         </div>
                     </div>
                     </br></br>
                     <div class="form-group">
                         <label class="col-md-4 control-label">LDO Permit Holder's Name</label>
+
                         <div class="col-md-6">
-                            <input type="text" class="form-control" name="permit_holder_name1" id="permit_holder_name1" >
+                            <input type="text" class="form-control" name="permit_holder_name1" id="permit_holder_name1">
                         </div>
                     </div>
                     </br></br>
                     <div class="form-group">
                         <label class="col-md-4 control-label">Extent</label>
+
                         <div class="col-md-4">
-                            <input type="text" class="form-control" name="extent1" id="extent1" >
+                            <input type="text" class="form-control" name="extent1" id="extent1">
                         </div>
                         <div class="col-md-2">
-                            <select class="form-control" name="unit1" id="unit1"  >
+                            <select class="form-control" name="unit1" id="unit1">
                                 <option id="0" value=0></option>
                                 <option id="1" value="Rods">Rods</option>
                                 <option id="2" value="Acres">Acres</option>
-                                <option id="3" value="Hectares" >Hectares</option>
+                                <option id="3" value="Hectares">Hectares</option>
 
 
                             </select>
@@ -353,22 +382,25 @@
                     </br></br>
                     <div class="form-group">
                         <label class="col-md-4 control-label">Name of Land</label>
+
                         <div class="col-md-6">
-                            <input type="text" class="form-control" name="present_owner1" id="present_owner1" >
+                            <input type="text" class="form-control" name="present_owner1" id="present_owner1">
                         </div>
                     </div>
                     </br></br>
                     <div class="form-group">
                         <label class="col-md-4 control-label">Present Situation</label>
+
                         <div class="col-md-6">
-                            <input type="text" class="form-control" name="present_situation1" id="present_situation1" >
+                            <input type="text" class="form-control" name="present_situation1" id="present_situation1">
                         </div>
                     </div>
                     </br></br>
                     <div class="form-group">
                         <label class="col-md-4 control-label">Cancelled?</label>
+
                         <div class="col-md-6">
-                            <select class="form-control" name="cancellation" id="cancellation"  >
+                            <select class="form-control" name="cancellation" id="cancellation">
                                 <option id="0" value="No">No</option>
                                 <option id="1" value="Yes">Yes</option>
 
@@ -383,7 +415,9 @@
 
                 </br></br>
                 <div class="modal-footer ">
-                    <button  type="button" class="updateform" style="width: 100%;" aria-hidden="true" data-dismiss="modal"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> Update</button>
+                    <button type="button" class="updateform" style="width: 100%;" aria-hidden="true"
+                            data-dismiss="modal"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> Update
+                    </button>
                 </div>
             </div>
             <!-- /.modal-content -->
@@ -398,144 +432,116 @@
 
 
         var mainTable = $('#tab').DataTable({
-            select:true,
-            "order": [[0,"asc"]],
+            select: true,
+            "order": [[0, "asc"]],
             "scrollY": "300px",
             "scrollCollapse": false,
-            "paging"  : true,
-            "bProcessing" :true,
-
-
-
-
-        });
-
-
-
-        $(document).ready(function (){
-
+            "paging": true,
+            "bProcessing": true,
 
 
         });
 
 
+        $(".approve").click(function () {
 
-
-        $(".approve").click(function(){
-
-                  var $row = $(this).closest("tr"),
+            var $row = $(this).closest("tr"),
                     $tds = $row.find("td:nth-child(1)");
-                    $tds1 = $row.find("td:nth-child(2)");
-                    $tds2 = $row.find("td:nth-child(3)");
-                    $tds3 = $row.find("td:nth-child(4)");
-                    $tds4 = $row.find("td:nth-child(5)");
-                    $tds5 = $row.find("td:nth-child(6)");
-                    $tds6 = $row.find("td:nth-child(7)");
-                    $tds7 = $row.find("td:nth-child(8)");
+            $tds1 = $row.find("td:nth-child(2)");
+            $tds2 = $row.find("td:nth-child(3)");
+            $tds3 = $row.find("td:nth-child(4)");
+            $tds4 = $row.find("td:nth-child(5)");
+            $tds5 = $row.find("td:nth-child(6)");
+            $tds6 = $row.find("td:nth-child(7)");
+            $tds7 = $row.find("td:nth-child(8)");
 
-                    var split = $tds5.text().split(" ");
+            var split = $tds5.text().split(" ");
 
-                    document.getElementById("permit_no1").value=$tds.text();
-                    document.getElementById("gs_division1").value=$tds1.text();
-                    document.getElementById("name_of_village1").value=$tds2.text();
-                    document.getElementById("name_of_land1").value=$tds3.text();
-                    document.getElementById("permit_holder_name1").value=$tds4.text();
-                    document.getElementById("extent1").value=split[0];
-                    document.getElementById("unit1").value=split[1];
-                    document.getElementById("present_owner1").value=$tds6.text();
-                    document.getElementById("present_situation1").value=$tds7.text();
+            document.getElementById("permit_no1").value = $tds.text();
+            document.getElementById("gs_division1").value = $tds1.text();
+            document.getElementById("name_of_village1").value = $tds2.text();
+            document.getElementById("name_of_land1").value = $tds3.text();
+            document.getElementById("permit_holder_name1").value = $tds4.text();
+            document.getElementById("extent1").value = split[0];
+            document.getElementById("unit1").value = split[1];
+            document.getElementById("present_owner1").value = $tds6.text();
+            document.getElementById("present_situation1").value = $tds7.text();
 
-            });
+        });
 
-        $(".updateform").click(function(){
+        $(".updateform").click(function () {
 
-            var no=document.getElementById("permit_no1").value;
-            var gs=document.getElementById("gs_division1").value;
-            var village=document.getElementById("name_of_village1").value;
-            var land=document.getElementById("name_of_land1").value;
-            var holder_name=document.getElementById("permit_holder_name1").value;
-            var extent=document.getElementById("extent1").value;
-            var extent_unit=document.getElementById("unit1").value;
-            var powner=document.getElementById("present_owner1").value;
-            var prsnt_situ=document.getElementById("present_situation1").value;
-            var cancel =document.getElementById("cancellation").value;
-
+            var no = document.getElementById("permit_no1").value;
+            var gs = document.getElementById("gs_division1").value;
+            var village = document.getElementById("name_of_village1").value;
+            var land = document.getElementById("name_of_land1").value;
+            var holder_name = document.getElementById("permit_holder_name1").value;
+            var extent = document.getElementById("extent1").value;
+            var extent_unit = document.getElementById("unit1").value;
+            var powner = document.getElementById("present_owner1").value;
+            var prsnt_situ = document.getElementById("present_situation1").value;
+            var cancel = document.getElementById("cancellation").value;
 
 
             $.ajax({
                 url: 'LDOPermit/update',
                 type: 'GET',
-                data: {no:no,gs:gs,village:village,land:land,holder_name:holder_name,extent:extent+" "+extent_unit,powner:powner,prsnt_situ:prsnt_situ,cancel:cancel},
-                success: function(data) {
+                data: {
+                    no: no,
+                    gs: gs,
+                    village: village,
+                    land: land,
+                    holder_name: holder_name,
+                    extent: extent + " " + extent_unit,
+                    powner: powner,
+                    prsnt_situ: prsnt_situ,
+                    cancel: cancel
+                },
+                success: function (data) {
+                    swal("LDO Permit Updated", "", "success");
+                    setTimeout(function () {
+                        location.reload();
+                    }, 500);
 
-                        setTimeout(function(){
-                            location.reload();
-                        }, 500);
-
-                    }
+                }
 
             });
-
-
-
 
 
         });
 
 
-        $(".reject").click(function(){
+        $(".reject").click(function () {
 
             var $row = $(this).closest("tr");
 
             $tds = $row.find("td:nth-child(1)");
 
-            var no=$tds.text();
+            var no = $tds.text();
 
 
+            $(".yesdel").click(function () {
 
-            $(".yesdel").click(function(){
+                $.ajax({
+                    url: 'LDOPermit/delete',
+                    type: 'GET',
+                    data: {no: no},
+                    success: function (data) {
+                        swal("LDO Permit Deleted", "", "success");
+                        setTimeout(function () {
+                            location.reload();
+                        }, 1);
+                    }
 
-            $.ajax({
-                url: 'LDOPermit/delete',
-                type: 'GET',
-                data: {no:no},
-                success: function(data) {
-                    setTimeout(function(){
-                        location.reload();
-                    }, 1);
-                }
-
-            });
-
-            });
+                });
 
             });
 
-
-
-
-
-
-
+        });
 
 
     </script>
 
 
-    <script>
-
-        @if (Notify::has('success'))
-        swal("Details Updated", "{{ Notify::first('success') }}", "success");
-        @endif
-        @if (Notify::has('error'))
-            swal("error!", "{{ Notify::first('error') }}", "error");
-        @endif
-        @if (Notify::has('warning'))
-            swal("warning!", "{{ Notify::first('warning') }}", "warning");
-        @endif
-        @if (Notify::has('info'))
-            swal("info!", "{{ Notify::first('info') }}", "info");
-        @endif
-    </script>
 
 @endsection

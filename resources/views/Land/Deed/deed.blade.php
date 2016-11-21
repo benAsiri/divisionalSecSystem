@@ -3,6 +3,9 @@
 @section('content')
 
 
+
+
+
     <div align="center" style="background:#CED2CD">
         <div class="model-dialog">
             <div class="small-box bg-blue">
@@ -213,13 +216,13 @@
                                         <i class="fa fa-btn fa-user"></i>Submit Data</button>
                                 </div>
                             </div>
-                    </div>
-                    </form>
 
+                        </form>
+
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
 
 
@@ -268,12 +271,9 @@
                     <div class="form-group{{ $errors->has('reference1') ? ' has-error' : '' }}">
                         <label class="col-md-4 control-label">Reference No</label>
                         <div class="col-md-6">
-                            <select class="form-control" name="reference1" id="reference1"  readonly>
-                                <option value=0></option>
 
+                            <input type="text" class="form-control" id="reference1" name="reference1" id="reference1" readonly >
 
-
-                            </select>
                             @if ($errors->has('reference1'))
                                 <span class="help-block">
                                         <strong>{{ $errors->first('reference1') }}</strong>
@@ -409,7 +409,7 @@
                 url: 'Deed/get_ldo_permit',
                 type: 'GET',
                 success: function (data) {
-                  for (var i = 0; i <data.length; i++) {
+                    for (var i = 0; i <data.length; i++) {
 
 
                         var opt = data[i];
@@ -417,7 +417,7 @@
                         ek.textContent = opt;
                         ek.value = opt;
                         document.getElementById("refe").appendChild(ek);
-                       // document.getElementById("reference1").appendChild(ek);
+                        // document.getElementById("reference1").appendChild(ek);
 
                     }
                 }
@@ -468,21 +468,10 @@
 
                             $('#present_owner1').val(data[1]);
 
-
-
                         }
                     });
 
-
-
-
                 });
-
-
-
-
-
-
 
             });
 
@@ -491,7 +480,6 @@
             $('#refe').on('change', function (e) {
                 var optionSelected = $("option:selected", this);
                 var valueSelected = this.value;
-
 
                 $.ajax({
                     url: 'Deed/get_ldo_permit_details',
@@ -502,37 +490,18 @@
                         $('#extent').val(data[0]);
 
                         $('#present_owner').val(data[1]);
-
-
-
                     }
                 });
 
-
-
-
             });
 
-
-
-
-
-
-
-
-
         });
-
-
-
-
-
 
 
         $(".approve").click(function(){
 
             var $row = $(this).closest("tr"),
-            $tds = $row.find("td:nth-child(1)");
+                    $tds = $row.find("td:nth-child(1)");
             $tds1 = $row.find("td:nth-child(2)");
             $tds2 = $row.find("td:nth-child(3)");
             $tds3 = $row.find("td:nth-child(4)");
@@ -568,17 +537,12 @@
                 type: 'GET',
                 data: {no:no,dt:dt,extent:extent,down:down,pown:pown,nominee:nominee,refe:refe},
                 success: function(data) {
+                    swal("Deed details updated", "", "success");
                     setTimeout(function(){
                         location.reload();
                     }, 500);
                 }
-
             });
-
-
-
-
-
         });
 
 
@@ -599,6 +563,7 @@
                     type: 'GET',
                     data: {no:no},
                     success: function(data) {
+                        swal("Deed details deleted", "", "success");
                         setTimeout(function(){
                             location.reload();
                         }, 1);

@@ -3,6 +3,8 @@
 @section('content')
 
 
+
+
     <div align="center" style="background:#CED2CD">
         <div class="model-dialog">
             <div class="small-box bg-blue">
@@ -94,7 +96,7 @@
                 <div class="panel panel-default">
 
                     <div class="panel-body">
-                        <div class="panel-heading">Add New Deed Details</div>
+                        <div class="panel-heading">Add New Middle-class permit</div>
                         <form class="form-horizontal" role="form" id="form_create" method="POST" action="{{ url('Middleclass/add') }}">
                             {!! csrf_field() !!}
 
@@ -321,13 +323,13 @@
                                         <i class="fa fa-btn fa-user"></i>Submit Data</button>
                                 </div>
                             </div>
-                    </div>
-                    </form>
 
+                        </form>
+
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
 
 
@@ -466,8 +468,8 @@
                                         <strong>{{ $errors->first('gs_division1') }}</strong>
                                     </span>
                             @endif
-                    </div>
                         </div>
+                    </div>
                     </br></br>
                     <div class="form-group{{ $errors->has('issue_date1') ? ' has-error' : '' }}">
                         <label class="col-md-4 control-label">Issued Date</label>
@@ -634,7 +636,7 @@
         $(".approve").click(function(){
 
             var $row = $(this).closest("tr"),
-             $tds = $row.find("td:nth-child(1)");
+                    $tds = $row.find("td:nth-child(1)");
             $tds1 = $row.find("td:nth-child(2)");
             $tds2 = $row.find("td:nth-child(3)");
             $tds3 = $row.find("td:nth-child(4)");
@@ -649,7 +651,7 @@
 
 
 
-                    var typee=$tds4.text().split(" ");
+            var typee=$tds4.text().split(" ");
 
             document.getElementById("plan_no1").value=$tds.text();
             document.getElementById("lot_no1").value=$tds1.text();
@@ -689,6 +691,7 @@
                 type: 'GET',
                 data: {no:no,lot:lot,file:file,gs:gs,type_grant:type_grant,date:date,extent:extent,oname:oname,powner:powner,situ:situ,nominee:nominee,transfer:transfer},
                 success: function(data) {
+                    swal("Middle class permit updated", "", "success");
                     setTimeout(function(){
                         location.reload();
                     }, 500);
@@ -721,6 +724,7 @@
                     type: 'GET',
                     data: {no:no,lot_no:lot_no,file_no:file_no,typee:typee},
                     success: function(data) {
+                        swal("Middle class permit Deleted", "", "success");
                         setTimeout(function(){
                             location.reload();
                         }, 1);
@@ -731,9 +735,6 @@
             });
 
         });
-
-
-
 
 
 

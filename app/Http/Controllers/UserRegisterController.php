@@ -3,11 +3,7 @@
 namespace App\Http\Controllers;
 
 
-//use Illuminate\Http\Request;
-//use App\Http\Controllers\Controller;
-//use DB;
-//use app\User;
-//use App\Http\Requests;
+
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -21,83 +17,148 @@ use Illuminate\Support\Facades\Redirect;
 use Validator;
 use Mockery\CountValidator\Exception;
 
+use Andheiberg\Notify\Facades\Notify;
+
+
 
 
 
 class UserRegisterController extends Controller
 {
-//   public function __construct()
-//   {
-//      $this->middleware('auth');
-//   }
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
 
-   public function index(){
+    public function index(){
 
-      $employees =DB::table('employes')->get();
-      $users = DB::table('users')->get();
-      return view('UserMgt/usermgt',compact('employees','users'));
-
-
-   }
-
-   protected function registeruser(Request $request){
+        $employees =DB::table('employes')->get();
+        $users = DB::table('users')->get();
+        return view('UserMgt/usermgt',compact('employees','users'));
 
 
-       $this->validate($request, array(
-           'faname'=> 'required|not_in:0',
-           'NIC'=> 'required',
-           'username'=>'required|max:20',
-           'password'=>'required',
-           'password_confirmation'=>'required',
-           'status'=> 'required|not_in:0',
-           'position'=>'required|not_in:0'
+    }
+
+    protected function registeruser(Request $request){
 
 
-       ));
+        $this->validate($request, array(
+            'faname'=> 'required|not_in:0',
+            'NIC'=> 'required',
+            'username'=>'required|max:20',
+            'password'=>'required',
+            'password_confirmation'=>'required|same:password',
+            'status'=> 'required|not_in:0',
+            'position'=>'required|not_in:0'
+
+
+        ));
+
+        $info = DB::table('users')->where('NIC',$request['NIC'])->count();
+
+
+        if($request['position']== "Divisional Secretary"){
+
+            $count_of_secretary = DB::table('users')->where('position',$request['position'])->count();
+
+            if( $count_of_secretary ==0){
+
+                User::create([
+                    'name' => $request['faname'],
+                    'NIC' => $request['NIC'],
+                    'username' => $request['username'],
+                    'password' => bcrypt($request['password']),
+                    'status' => $request['status'],
+                    'position' => $request['position'],
+
+                ]);
 
 
 
 
-       User::create([
-          'name' => $request['faname'],
-          'NIC' => $request['NIC'],
-          'username' => $request['username'],
-          'password' => bcrypt($request['password']),
-          'status' => $request['status'],
-          'position' => $request['position'],
+                Notify::success('Admin has been added!');
+            }
+            else{
 
-      ]);
+                Notify::error('Divisional Secretary already in the system!');
+            }
 
-      return back();
-   }
+        }
 
 
-   public function delete()
-   {
-      $id = $_GET['id'];
+        if($info == 0) {
 
-      DB::table('users')
-          ->where('NIC', $id)
-          ->delete();
+            User::create([
+                'name' => $request['faname'],
+                'NIC' => $request['NIC'],
+                'username' => $request['username'],
+                'password' => bcrypt($request['password']),
+                'status' => $request['status'],
+                'position' => $request['position'],
 
-      return back();
-   }
-   protected function update()
-   {
-      $id = $_GET['id'];
-      $st = $_GET['stat'];
-      $ps = $_GET['post'];
-
-      DB::table('users')
-          ->where('NIC', $id)
-          ->update(['status' => $st, 'position' => $ps]);
-
-      return back();
-   }
+            ]);
 
 
-    protected function resetPW(){
+            Notify::success('New User has been added!');
+
+        }
+        else{
+
+
+            Notify::error('User already added!');
+        }
+
+
+        return back();
+
+    }
+
+
+    public function delete()
+    {
+        $id = $_GET['id'];
+
+        DB::table('users')
+            ->where('NIC', $id)
+            ->delete();
+
+        Notify::success('User details has been deleted!');
+
+        return back();
+    }
+    protected function update(Request $request)
+    {
+        $this->validate($request, array(
+            'stat'=> 'required|not_in:0',
+            'post'=>'required|not_in:0',
+
+
+        ));
+
+        $id = $_GET['id'];
+        $st = $_GET['stat'];
+        $ps = $_GET['post'];
+
+        DB::table('users')
+            ->where('NIC', $id)
+            ->update(['status' => $st, 'position' => $ps]);
+
+
+        Notify::success('User details has been updated!');
+
+        return back();
+    }
+
+
+    public function showdata(Request $request){
+        $nic=DB::table('employes')->where('fullname',$request->data)->value('id_num');
+        return $nic;
+    }
+
+
+
+    protected function resetPW(Request $request){
         {
             $id = $_GET['id'];
 
@@ -106,7 +167,10 @@ class UserRegisterController extends Controller
                 ->where('NIC', $id)
                 ->update(['password' => bcrypt($id)]);
 
+
+           // return redirect()->back()->flash('User passwords successfully reset!', 'success');
             return back();
+
         }
 
     }

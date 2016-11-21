@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\MiddleClass;
 
 use App\Http\Requests;
+use Andheiberg\Notify\Facades\Notify;
 
 class MiddleClassController extends Controller
 {
@@ -45,25 +46,29 @@ class MiddleClassController extends Controller
     {
         $this->validate($request, array(
             'plan_no'=> 'required|not_in:0',
-            'lot_no'=> 'required',
-            'file_no'=>'required',
-            'unit'=>'required',
-            'type'=>'required',
+            'lot_no'=> 'required|max:10000',
+            'file_no'=>'required|max:10000',
+            'unit'=>'required|not_in:0',
+            'type'=>'required|numeric|max:10000',
             'gs_division'=>'required|not_in:0',
             'issue_date'=>'required',
-            'extent'=>'required',
-            'owner_name'=>'required',
-            'present_owner'=>'required',
+            'extent'=>'required|numeric|max:500',
+            'owner_name'=>'required|alpha|max:30',
+            'present_owner'=>'required|alpha|max:30',
             'present_situation'=>'required|not_in:0',
-            'nominee'=>'required',
-            'transfer'=>'required'
+            'nominee'=>'required|alpha|max:30',
+            'transfer'=>'required|alpha|max:30'
 
         ));
 
 
+        $count_middle_classes = DB::table('middle_classes')->where('lot_no',$request['lot_no'])->count();
 
 
-       $typee=  $request['unit']." ".$request['type'];
+        if($count_middle_classes ==0) {
+
+
+            $typee = $request['unit'] . " " . $request['type'];
 
             MiddleClass::create([
                 'plan_no' => $request['plan_no'],
@@ -80,9 +85,19 @@ class MiddleClassController extends Controller
                 'transfer' => $request['transfer'],
 
 
-
             ]);
 
+
+            Notify::success('Middle Class Permit added!');
+
+        }
+
+        else{
+
+
+            Notify::warning('Middle class permit already in!');
+
+        }
 
 
         return back();
@@ -92,36 +107,39 @@ class MiddleClassController extends Controller
     {
 
         $this->validate($request, array(
-            $request->no=> 'required',
-            $request->lot=> 'required',
-            $request->file=>'required',
-            $request->gs=>'required',
-            $request->type_grant=>'required',
+            'no'=> 'required',
+            'lot'=> 'required',
+            'file'=>'required',
+            'gs'=>'required',
+            'type_grant'=>'required',
 
 
         ));
 
 
-            $id = $request->no;
-            $lot = $request->lot;
-            $file = $request->file;
-            $gs = $request->gs;
-            $type_grant = $request->type_grant;
-            $date = $request->date;
-            $extent=$request->extent;
-            $oname = $request->oname;
-            $powner = $request->powner;
-            $situ = $request->situ;
-            $nominee=$request->nominee;
-            $transfer=$request->transfer;
+        $id = $request->no;
+        $lot = $request->lot;
+        $file = $request->file;
+        $gs = $request->gs;
+        $type_grant = $request->type_grant;
+        $date = $request->date;
+        $extent=$request->extent;
+        $oname = $request->oname;
+        $powner = $request->powner;
+        $situ = $request->situ;
+        $nominee=$request->nominee;
+        $transfer=$request->transfer;
 
 
 
 
-            DB::table('middle_classes')
-                ->where('grant',$type_grant )
-                ->update(['lot_no' => $lot, 'plan_no' => $id, 'file_no' => $file, 'gs' => $gs, 'issue_date' => $date, 'owner' => $oname, 'extent' => $extent, 'present_owner' => $powner,'present_situ' => $situ, 'nominee' => $nominee, 'transfer' => $transfer]);
+        DB::table('middle_classes')
+            ->where('lot_no',$lot)
+            ->update(['plan_no' => $id, 'file_no' => $file, 'gs' => $gs, 'issue_date' => $date,'grant'=>$type_grant, 'owner' => $oname, 'extent' => $extent, 'present_owner' => $powner,'present_situ' => $situ, 'nominee' => $nominee, 'transfer' => $transfer]);
 
+
+
+        Notify::success('Middle Class Permit has been updated!');
 
         return back();
     }
@@ -143,6 +161,10 @@ class MiddleClassController extends Controller
             ->where('plan_no',$no )
             ->where('file_no',$fileno )
             ->delete();
+
+
+        
+        Notify::success('Middle Class Permit has been deleted!');
 
         return back();
 
