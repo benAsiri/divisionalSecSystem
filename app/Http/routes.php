@@ -122,7 +122,7 @@ Route::group(['middleware' => 'web'], function () {
      Route::get('currentleaves','LeavePagesController@CurrentLeaves');
 
 
-//              //Matenarity Leaves
+              //Matenarity Leaves
 //     Route::get('ViewMateneryLeaves','MleavesController@viewMleaves');
 //     Route::get('DownloadMateneryLeavesReport','MleavesController@generatePDF');
 //     Route::get('AddMateneryLeaves','MleavesController@addMleaves');
@@ -134,20 +134,20 @@ Route::group(['middleware' => 'web'], function () {
 
 
 
-//         //LoanRequests
-//     Route::get('ViewLoans','LoanPagesController@viewLoans');
-//     Route::get('DownloadLoanReport','LoanPagesController@generatePDF');
-//     Route::get('AddLoanRequest','LoanPagesController@addLoan');
-//     Route::get('LoadLoans','LoanPagesController@loadUpdateLoan');
-//     Route::post('UpdateLoans','LoanPagesController@UpdateLoanDetails');
-//     Route::post('AddLoanDetails','LoanPagesController@addLoanDetails');
-//     Route::get('loadLoadDetails','LoanPagesController@fillLoanDetails');
+       //LoanRequests
+//   Route::get('ViewLoans','LoanPagesController@viewLoans');
+//    Route::get('DownloadLoanReport','LoanPagesController@generatePDF');
+//  Route::get('AddLoanRequest','LoanPagesController@addLoan');
+//    Route::get('LoadLoans','LoanPagesController@loadUpdateLoan');
+//    Route::post('UpdateLoans','LoanPagesController@UpdateLoanDetails');
+//  Route::post('AddLoanDetails','LoanPagesController@addLoanDetails');
+//    Route::get('loadLoadDetails','LoanPagesController@fillLoanDetails');
 //     Route::get('Delete','LoanPagesController@deleteLoan');
 //
 //
 //
 //
-//     Route::get('ADDNOTE','EditorController@addNote');
+//  Route::get('ADDNOTE','EditorController@addNote');
 
 
 
@@ -239,7 +239,7 @@ Route::group(['middleware' => 'web'], function () {
      Route::get('ADDNOTE','EditorController@addNote');
 
 
-     //Matenarity Leaves
+//     //Matenarity Leaves
      Route::get('ViewMateneryLeaves','MleavesController@viewMleaves');
      Route::get('DownloadMateneryLeavesReport','MleavesController@generatePDF');
      Route::get('AddMateneryLeaves','MleavesController@addMleaves');

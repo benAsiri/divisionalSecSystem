@@ -143,35 +143,35 @@
             });
 
 
-            var form = $("salary_form");
-
-            form.validate({
-                rules: {
-                    name: {
-                        required: true,
-                        pattern: /^[a-zA-Z ]*$/
-                    },
-                    empid: {
-                        required: true,
-                    }
-                },
-                messages: {
-                    name: {
-                        required: "This field cannot be empty",
-                        pattern: "Please enter only letters "
-                    },
-                    empid: {
-                        required: "This field cannot be empty.Please Select Employee"
-                    }
-                }
-
-            });
+//            var form = $("salary_form");
+//
+//            form.validate({
+//                rules: {
+//                    name: {
+//                        required: true,
+//                        pattern: /^[a-zA-Z ]*$/
+//                    },
+//                    empid: {
+//                        required: true,
+//                    }
+//                },
+//                messages: {
+//                    name: {
+//                        required: "This field cannot be empty",
+//                        pattern: "Please enter only letters "
+//                    },
+//                    empid: {
+//                        required: "This field cannot be empty.Please Select Employee"
+//                    }
+//                }
+//
+//            });
 
 
             $('#salary_form').submit(function (e) {
 
 
-                if (form.valid()) {
+             //   if (form.valid()) {
 
                     $.ajaxSetup({
                         headers: {
@@ -203,7 +203,7 @@
                     });
 
 
-                }
+             //   }
 
                 e.preventDefault();
             });

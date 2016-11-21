@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Loans;
+
+
+use App\Loan;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -59,11 +61,11 @@ class LoanPagesController extends Controller
 
 
     public function UpdateLoanDetails(Request $request){
-        $loans = Loans::find($request ['index']);
-        $loans ->Loan_request_date=$request['datepicker_LoanReqDate'];
-        $loans ->Ldoc = $request['Lfile'];
-        $loans ->Special_notes=$request['Lnotes'];
-        $loans-> save();
+//        $loans = Loan::find($request ['index']);
+//        $loans ->Loan_request_date=$request['datepicker_LoanReqDate'];
+//        $loans ->Ldoc = $request['Lfile'];
+//        $loans ->Special_notes=$request['Lnotes'];
+//        $loans-> save();
 
         return redirect()->action('LoanPagesController@loadUpdateLoan');
     }
@@ -77,7 +79,7 @@ class LoanPagesController extends Controller
 
             Input::file('Lfile')->move('loan-request-letters', Input::file('Lfile')->getClientOriginalName());
             $data = Input::all();
-            $loans = new Loans();
+            $loans =new Loan();
             $loans->Emp_Id = $data['empIDload'];
             $loans->Emp_Name = $data['Lname'];
             $loans->Emp_Pos = $data['Lposition'];
@@ -94,7 +96,7 @@ class LoanPagesController extends Controller
     }
 
     public function deleteLoan(Request $request){
-        $loans = Loans::find($request['id']);
+        $loans = Loan::find($request['id']);
         $loans-> delete();
         return redirect()->action('LoanPagesController@loadUpdateLoan');
     }
