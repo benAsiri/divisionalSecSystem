@@ -421,7 +421,7 @@
                         swal("Error", "NIC has already inserted", "error");
                         $('.fg-nic').addClass('has-error');
                     } else {
-                        status = true
+                        status = true;
                         $('.fg-nic').removeClass('has-error');
                     }
                     console.log(data);

@@ -567,20 +567,6 @@
 
     </script>
 
-    <script>
 
-        @if (Notify::has('success'))
-        swal("Employee Details Updates", "{{ Notify::first('success') }}", "success");
-        @endif
-        @if (Notify::has('error'))
-            swal("error!", "{{ Notify::first('error') }}", "error");
-        @endif
-        @if (Notify::has('warning'))
-            swal("warning!", "{{ Notify::first('warning') }}", "warning");
-        @endif
-        @if (Notify::has('info'))
-            swal("info!", "{{ Notify::first('info') }}", "info");
-        @endif
-    </script>
 
 @stop

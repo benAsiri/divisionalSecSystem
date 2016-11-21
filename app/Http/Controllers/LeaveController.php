@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Session;
 use App\Leave;
 use App\leaves_remain;
 use Barryvdh\DomPDF\Facade as PDF;
+use Andheiberg\Notify\Facades\Notify;
 
 class LeaveController extends Controller
 {
@@ -201,7 +202,7 @@ class LeaveController extends Controller
 
         }
 
-
+        Notify::success('successfully Added');
         return back();
 
 
@@ -222,6 +223,7 @@ class LeaveController extends Controller
             ->where('commencingleave',$date)
             ->where('leavetype',$leave_type)
             ->delete();
+
 
         return back();
     }

@@ -372,7 +372,9 @@
                         <span>HR Management</span> <i class="fa fa-angle-left pull-right"></i></a>
                     <ul class="treeview-menu">
                         <li class="">
-                        <li><a href="#"><i class="fa fa-circle-o text-red"></i> Manage My Employees</a>
+                        <li><a href="#"><i class="fa fa-circle-o text-red"></i><span>Manage My Employees</span>
+                                <i class="fa fa-angle-left pull-right"></i></a>
+
                             <ul class="treeview-menu ">
                                 <li><a href="{{action('HRController@addEmployee')}}"><i
                                                 class="fa fa-circle-o"></i>Add Employees</a></li>
@@ -385,12 +387,13 @@
                         </li>
                         <li class="">
                             <a href="{{action('PageController@yearly_Increment_Calculator')}}"><i
-                                        class="fa fa-circle-o text-red"></i> Yearly increment Calculator</a>
+                                        class="fa fa-circle-o text-red"></i><span>Yearly increment Calculator</span>
+                                <i class="fa fa-angle-left pull-right"></i></a>
                             <ul class="treeview-menu menu-open">
                                 <li><a href="{{action('HRController@loadEmpSalary')}}"><i
                                                 class="fa fa-circle-o"></i> Add Employee Salary Details</a></li>
                                 <li><a href="{{action('HRController@searchSalaryDetails')}}"><i class="fa fa-circle-o"></i>View Salary Details</a></li>
-                                <li><a href="#"><i class="fa fa-circle-o"></i> Level 3</a></li>
+
                             </ul>
                         </li>
                         <li class="active treeview">
@@ -747,6 +750,23 @@
 
 
 @show
+<script>
+    @if (Notify::has('success'))
+     swal("success!", "{{ Notify::first('success') }}", "success");
+    @endif
+    @if (Notify::has('error'))
+        swal("error!", "{{ Notify::first('error') }}", "error");
+    @endif
+    @if (Notify::has('warning'))
+        swal("warning!", "{{ Notify::first('warning') }}", "warning");
+    @endif
+    @if (Notify::has('info'))
+        swal("info!", "{{ Notify::first('info') }}", "info");
+    @endif
+
+</script>
+
+
 
 </body>
 </html>

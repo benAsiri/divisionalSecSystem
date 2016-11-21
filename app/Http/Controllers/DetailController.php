@@ -59,7 +59,7 @@ class DetailController extends Controller
        $bCertificate->save();
 
 
-        Notify::success(' ');
+        Notify::success('Record Added');
         return back();
 
     }
@@ -84,7 +84,8 @@ class DetailController extends Controller
             return 'true';
         }
 
-    }public function isBcNicUsed(Request $request){
+    }
+    public function isBcNicUsed(Request $request){
         //$bCertificate = Employe::where('id_num','=',$request['NIC'])-get();
         $bCertificate = BCertificate::where('nic','=',$request['NIC'])->count();
         if($bCertificate > 0) {

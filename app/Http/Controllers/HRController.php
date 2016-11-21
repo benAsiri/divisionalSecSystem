@@ -169,7 +169,7 @@ class HRController extends Controller
         $employee->save();
 
         
-            Notify::success(' ');
+            Notify::success('Employee Details Updates');
 
 
         return redirect()->action('HRController@loadUpdateEmployees');
@@ -179,7 +179,17 @@ class HRController extends Controller
 
     }
 
+    public function isNicUsed(Request $request){
+        //$bCertificate = Employe::where('id_num','=',$request['NIC'])-get();
+        $salary = Salary::where('emp_id','=',$request['empId'])->count();
+        if($salary > 0) {
+            return 'false';
 
+        } else {
+            return 'true';
+        }
+
+    }
 
 
 }

@@ -50,7 +50,7 @@ Route::group(['middleware' => 'web'], function () {
      route::get('viewSalary','HRController@searchSalaryDetails');
      route::get('/generateSalaryPDF','HRController@generateSalaryPDF');
      route::get('DeleteBC/{id}','DetailController@deleteBCDetail');
-          
+          route::get('IsNicUsed','HRController@isNicUsed');     
           
 
 

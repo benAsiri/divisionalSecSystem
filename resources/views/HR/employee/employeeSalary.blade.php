@@ -85,31 +85,37 @@
                 </div>
                 <!-- /.box-header -->
                 <!-- form start -->
-                <form role="form" method="POST" id="salary_form" action="#">
+                <form role="form" method="POST" id="salary_form">
                     <input type="hidden" name="_token" required value="{{ csrf_token() }}">
 
                     <div class="box-body">
-                        <div class="form-group">
+                        <div class="form-group fg-id">
+                            <label for="name">Employee ID</label>
+                            <input type="text" id="empid" name="empid" class="form-control" required readonly
+                                   placeholder="Select Employee from table">
+
+                        </div>
+                        <div class="form-group fg-name">
                             <label for="name">Employee Name</label>
                             <input type="text" class="form-control" required readonly id="name"
                                    placeholder="Select Employee from table">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group fg-nic">
                             <label for="nic">NIC Number</label>
                             <input type="text" class="form-control" required readonly id="nic"
                                    placeholder="Select Employee from table">
                         </div>
                         <div class="form-group">
                             <label for="nic">Basic Salary</label>
-                            <input type="hidden" id="empid" class="form-control" required placeholder="">
-                            <input type="text" id="salary" class="form-control" required placeholder="Enter the salary in LKR">
+
+                            <input type="text" id="salary" name="salary" class="form-control" required
+                                   placeholder="Enter the salary in LKR">
                         </div>
                     </div>
                     <!-- /.box-body -->
 
                     <div class="box-footer">
-                        <button type="submit" class="btn btn-primary insert">Enter Salary Details</button>
-                    </div>
+                        <input type="submit" value="Enter Salary Details" class="btn btn-primary insert">
                 </form>
             </div>
             <!-- /.box -->
@@ -125,6 +131,7 @@
         $(document).ready(function () {
             var table = $("#employee-details").DataTable();
 
+
             $('#employee-details tbody').on('click', 'tr', function () {
 
                 var data = table.row(this).data();
@@ -132,50 +139,96 @@
                 $('#name').val(data[1]);
                 $('#nic').val(data[2]);
 
+                isValidNIC();
+            });
+
+
+            var form = $("salary_form");
+
+            form.validate({
+                rules: {
+                    name: {
+                        required: true,
+                        pattern: /^[a-zA-Z ]*$/
+                    },
+                    empid: {
+                        required: true,
+                    }
+                },
+                messages: {
+                    name: {
+                        required: "This field cannot be empty",
+                        pattern: "Please enter only letters "
+                    },
+                    empid: {
+                        required: "This field cannot be empty.Please Select Employee"
+                    }
+                }
+
             });
 
 
             $('#salary_form').submit(function (e) {
 
 
-//                if (form.valid()) {
+                if (form.valid()) {
 
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    }
-                });
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
 //                    console.log( $("#empid").val());
 //                    console.log( $('#salary').val());
 
-                $.ajax({
-                    url: '/AddSalary',
-                    type: "post",
-                    data: {
+                    $.ajax({
+                        url: '/AddSalary',
+                        type: "post",
+                        data: {
 
-                        'empid':  $("#empid").val(),
-                        'salary': $('#salary').val(),
-
-
-                    },
-                    success: function (data) {
-                        // console.log(data);
-                        //alert("Employee details Added");
-                        //alert(data);
-                        swal("Salary Details Added", "", "success");
-                        $('#salary_form').trigger("reset");
-                        //0alert()->success('tuiii','errr')->persistent("ok");
-
-                    }
-                });
+                            'empid': $("#empid").val(),
+                            'salary': $('#salary').val(),
 
 
-//                }
+                        },
+                        success: function (data) {
+                            // console.log(data);
+                            //alert("Employee details Added");
+                            //alert(data);
+                            swal("Salary Details Added", "", "success");
+                            $('#salary_form').trigger("reset");
+                            //0alert()->success('tuiii','errr')->persistent("ok");
+
+                        }
+                    });
+
+
+                }
 
                 e.preventDefault();
             });
 
+            function isValidNIC() {
+                //alert("Already Salary details have been inserted for this Employee");
 
+                $.get("IsNicUsed", {empId: $('#empid').val()}).done(function (data) {
+                    if (data.trim() == 'false') {
+                        status = false;
+                        swal("Error", "Already Salary details have been inserted for this Employee", "error");
+                        $('.fg-nic').addClass('has-error');
+                        $('.fg-name').addClass('has-error');
+                        $('.fg-id').addClass('has-error');
+                    } else {
+                        status = true;
+                        $('.fg-nic').removeClass('has-error');
+                        $('.fg-name').removeClass('has-error');
+                        $('.fg-id').removeClass('has-error');
+
+                    }
+                    console.log(data);
+
+                });
+            }
         });
 
 
